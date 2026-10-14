@@ -4,7 +4,8 @@ export default function layout(content) {
 <html>
 <head>
     <title>My website</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="icon" href="/assets/icon.svg">
 </head>
 <body>
     <header>
