@@ -1,6 +1,9 @@
 {
     "tasks": {
-        "serve": "deno --allow-net main.js",
-        "dev": "deno --watch --allow-net main.js"
+        "serve": "deno --allow-net ./main.js",
+        "dev": "deno --watch --allow-net ./main.js"
+    },
+    "imports": {
+        "@std/http": "jsr:@std/http@^1.1.4"
     }
 }
