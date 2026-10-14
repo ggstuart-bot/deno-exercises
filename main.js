@@ -4,7 +4,7 @@ import { staticController } from "./controllers/static.js";
 import { notFoundController } from "./controllers/notFound.js";
 import layout from "./layout.js";
 
-export default function server(request) {
+function server(request) {
     const url = new URL(request.url);
     const ctx = { request, url, layout };
     console.log(url.pathname);
