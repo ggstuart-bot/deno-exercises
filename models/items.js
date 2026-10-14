@@ -5,5 +5,9 @@ const items = [
 ];
 
 export function getItems() { 
-    return [...items];
+    return [...items].map((label, id) => ({ label, id }));
+}
+
+export function getItem(id) {
+    return { id, label: items[id]};
 }

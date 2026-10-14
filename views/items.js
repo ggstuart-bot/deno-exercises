@@ -11,5 +11,7 @@ export default function itemsView(ctx) {
 }
 
 function itemToHTML(item) {
-    return `<li>${item}</li>`;
+    return `<li>
+    <a href="/items/${item.id}">${item.label}</a>
+    </li>`;
 }
