@@ -1,4 +1,4 @@
-export default function layout() {
+export default function layout(content) {
     return`
 <!DOCTYPE html>
 <html>
@@ -15,8 +15,7 @@ export default function layout() {
         </nav>
     </header>
     <main>        
-        <h2>This is an experiment.</h2>
-        <p>See the <a href="/about">about</a> page for more information</p>
+    ${content}
     </main>
     <footer>
         &copy; My website developers
