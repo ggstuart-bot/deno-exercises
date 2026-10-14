@@ -13,6 +13,7 @@ export default function layout(content) {
         <nav>
             <a href="/">home</a>
             <a href="/about">about</a>
+            <a href="/items">items</a>
         </nav>
     </header>
     <main>        
