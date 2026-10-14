@@ -1,5 +1,6 @@
 import { aboutController } from "./controllers/about.js";
 import { homeController } from "./controllers/home.js";
+import { itemsController } from "./controllers/items.js";
 import { staticController } from "./controllers/static.js";
 import { notFoundController } from "./controllers/notFound.js";
 import layout from "./layout.js";
@@ -19,6 +20,10 @@ function server(request) {
 
     if (url.pathname == "/about") {
         return aboutController(ctx);
+    }
+
+    if (url.pathname == "/items") {
+        return itemsController(ctx);
     }
 
     return notFoundController(ctx);
