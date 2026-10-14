@@ -7,7 +7,7 @@ import layout from "./layout.js";
 
 function server(request) {
     const url = new URL(request.url);
-    const ctx = { request, url, layout };
+    const ctx = { request, url, layout, data: {} };
     console.log(url.pathname);
 
     if(url.pathname.startsWith("/assets/")) {
