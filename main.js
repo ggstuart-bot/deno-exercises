@@ -1,22 +1,20 @@
-import layout from './layout.js';
-import render from "./tools/render.js";
-import aboutView from "./views/about.js";
-import homeView from "./views/home.js";
-import notFoundView from "./views/notFound.js";
+import { aboutController } from "./controllers/about.js";
+import { homeController } from "./controllers/home.js";
+import { notFoundController } from "./controllers/notFound.js";
 
 function server(request) {
-    const url = new URL(request.url); 
-    console.log(url.pathname);    
+    const url = new URL(request.url);
+    console.log(url.pathname);
 
     if (url.pathname == "/") {
-        return render(homeView, layout);
+        return homeController()
     }
 
     if (url.pathname == "/about") {
-        return render(aboutView, layout);
+        return aboutController();
     }
 
-    return render(notFoundView, layout);
+    return notFoundController();
 }
 
 Deno.serve(server);
