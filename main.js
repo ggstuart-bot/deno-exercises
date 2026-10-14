@@ -1,9 +1,12 @@
 import { aboutController } from "./controllers/about.js";
 import { homeController } from "./controllers/home.js";
+import { itemController } from "./controllers/item.js";
 import { itemsController } from "./controllers/items.js";
 import { staticController } from "./controllers/static.js";
 import { notFoundController } from "./controllers/notFound.js";
 import layout from "./layout.js";
+
+const itemPattern = new URLPattern({ pathname: "/items/:id" });
 
 function server(request) {
     const url = new URL(request.url);
@@ -24,6 +27,12 @@ function server(request) {
 
     if (url.pathname == "/items") {
         return itemsController(ctx);
+    }
+
+    const itemMatch = itemPattern.exec(url);
+    if (itemMatch) {
+        ctx.params = itemMatch.pathname.groups;
+        return itemController(ctx);
     }
 
     return notFoundController(ctx);

@@ -10,6 +10,6 @@ export default function itemsView(ctx) {
     `;
 }
 
-function itemToHTML(item) {
-    return `<li>${item}</li>`;
+function itemToHTML({ id, name }) {
+    return `<li><a href="/items/${id}">${name}</a></li>`;
 }
