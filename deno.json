@@ -1,9 +1,13 @@
 {
     "tasks": {
-        "serve": "deno --allow-net --allow-read=./public ./main.js",
-        "dev": "deno --watch --allow-net --allow-read=./public ./main.js"
+        "start": "deno --allow-net --allow-read --allow-write --allow-env --allow-ffi server/main.js",
+        "dev": "deno --watch --allow-net --allow-read --allow-write --allow-env --allow-ffi server/main.js",
+        "db:create": "deno --allow-net --allow-read --allow-write --allow-env --allow-ffi tasks/db-create.js",
+        "db:seed": "deno --allow-net --allow-read --allow-write --allow-env --allow-ffi tasks/db-seed.js",
+        "db:reset": "deno task db:create && deno task db:seed"
     },
     "imports": {
+        "@db/sqlite": "jsr:@db/sqlite@^0.12.0",
         "@std/http": "jsr:@std/http@^1.1.4"
     }
 }
