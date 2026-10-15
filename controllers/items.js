@@ -1,4 +1,5 @@
 import { getItem, getItems } from "../models/items.js";
+import { NotFoundError } from "../tools/errors.js";
 import render from "../tools/render.js";
 import itemView from "../views/item.js";
 import itemsView from "../views/items.js";
@@ -11,7 +12,11 @@ export function itemsController(ctx) {
 
 export function itemController(ctx) {
     const { params: { itemId } } = ctx;
-    ctx.data.item = getItem(itemId);
+    const item = getItem(Number(itemId));
+    if (!item) {
+        throw new NotFoundError(`Item ${itemId} not found`);
+    }
+    ctx.data.item = item;
     ctx.view = itemView;
     return render(ctx);
 }
