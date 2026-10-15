@@ -1,4 +1,4 @@
-export default function aboutView() { 
+export function aboutView() { 
     return `
     <section>
         <h2>About</h2>

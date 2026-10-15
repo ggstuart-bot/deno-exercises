@@ -1,4 +1,4 @@
-export default function render(ctx) {
+export function render(ctx) {
     const { view, layout, status } = ctx;
     const headers = new Headers({ "content-type": "text/html" });
     const content = view(ctx);

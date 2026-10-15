@@ -1,4 +1,4 @@
-export default function itemsView(ctx) { 
+export function itemsView(ctx) { 
     const { data: { items } } = ctx;
     return `
     <section>

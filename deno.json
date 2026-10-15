@@ -1,9 +1,13 @@
 {
     "tasks": {
-        "serve": "deno --allow-net --allow-read=./public ./main.js",
-        "dev": "deno --watch --allow-net --allow-read=./public ./main.js"
+        "start": "deno -A server/main.js",
+        "dev": "deno --watch -A server/main.js",
+        "db:create": "deno -A tasks/db-create.js",
+        "db:seed": "deno -A tasks/db-seed.js",
+        "db:reset": "deno task db:create && deno task db:seed"
     },
     "imports": {
+        "@db/sqlite": "jsr:@db/sqlite@^0.12.0",
         "@std/http": "jsr:@std/http@^1.1.4"
     }
 }

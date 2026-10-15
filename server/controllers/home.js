@@ -1,5 +1,5 @@
-import render from "../tools/render.js";
-import homeView from "../views/home.js";
+import { render } from "../tools/render.js";
+import { homeView } from "../views/home.js";
 
 export function homeController(ctx) {
     ctx.view = homeView;

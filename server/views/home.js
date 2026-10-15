@@ -1,4 +1,4 @@
-export default function homeView() { 
+export function homeView() { 
     return `
     <section>
         <h2>Home</h2>
