@@ -4,10 +4,19 @@ const items = [
     { id: 3, label: "cherries" }
 ];
 
+let nextId = items.length + 1;
+
 export function getItems() { 
     return items;
 }
 
 export function getItemById(id) {
     return items.find(item => item.id === id);
+}
+
+export function createItem(label) {
+    const item = { id: nextId, label };
+    nextId = nextId + 1;
+    items.push(item);
+    return item;
 }

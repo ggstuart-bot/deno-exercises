@@ -3,6 +3,13 @@ export default function itemsView(ctx) {
     return `
     <section>
         <h2>Items list</h2>
+
+        <form method="POST">
+            <label for="new">New item</label>
+            <input id="new" name="label">
+            <button>create</button>
+        </form>
+
         <ul>
             ${items.map(itemToHTML).join("\n\t\t\t")}
         </ul>

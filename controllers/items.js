@@ -1,8 +1,16 @@
-import { getItemById, getItems } from "../models/items.js";
+import { createItem, getItemById, getItems } from "../models/items.js";
 import { NotFoundError } from "../tools/errors.js";
+import redirect from "../tools/redirect.js";
 import render from "../tools/render.js";
 import itemView from "../views/item.js";
 import itemsView from "../views/items.js";
+
+export async function createItemController(ctx) { 
+    const { request } = ctx;
+    const formData = await request.formData();
+    const item = createItem(formData.get("label"));
+    return redirect(`/items/${item.id}`);
+}
 
 export function itemsController(ctx) { 
     ctx.data.items = getItems();

@@ -1,6 +1,6 @@
 import { aboutController } from "./controllers/about.js";
 import { homeController } from "./controllers/home.js";
-import { itemController, itemsController } from "./controllers/items.js";
+import { createItemController, itemController, itemsController } from "./controllers/items.js";
 import { staticController } from "./controllers/static.js";
 import { notFoundController } from "./controllers/notFound.js";
 import layout from "./layout.js";
@@ -27,7 +27,12 @@ function server(request) {
         }
 
         if (url.pathname == "/items") {
-            return itemsController(ctx);
+            if (request.method == "GET") {
+                return itemsController(ctx);
+            }
+            if (request.method == "POST") {
+                return createItemController(ctx);
+            }
         }
 
         if (itemPattern.test(url)) {
