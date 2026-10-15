@@ -34,14 +34,14 @@ function server(request) {
             ctx.params = itemPattern.exec(url).pathname.groups;
             return itemController(ctx);
         }
+
+        throw new NotFoundError();
     } catch (error) {
         if (error instanceof NotFoundError) {
             return notFoundController(ctx);
         }
         throw error;
     }
-
-    return notFoundController(ctx);
 }
 
 Deno.serve(server);
