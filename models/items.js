@@ -8,6 +8,6 @@ export function getItems() {
     return items;
 }
 
-export function getItem(id) {
+export function getItemById(id) {
     return items.find(item => item.id === id);
 }
