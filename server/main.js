@@ -3,7 +3,7 @@ import { homeController } from "./controllers/home.js";
 import { createItemController, deleteItemController, editItemController, itemController, itemsController } from "./controllers/items.js";
 import { staticController } from "./controllers/static.js";
 import { notFoundController } from "./controllers/notFound.js";
-import layout from "./layout.js";
+import { layout } from "./layout.js";
 import { NotFoundError } from "./tools/errors.js";
 
 const itemPattern = new URLPattern({ pathname: "/items/:itemId" });

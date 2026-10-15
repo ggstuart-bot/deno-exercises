@@ -1,4 +1,4 @@
-export default function notFoundView() { 
+export function notFoundView() { 
     return `
     <section>
         <h2>Not Found</h2>
