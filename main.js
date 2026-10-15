@@ -1,14 +1,16 @@
 import { aboutController } from "./controllers/about.js";
 import { homeController } from "./controllers/home.js";
-import { createItemController, itemController, itemsController } from "./controllers/items.js";
+import { createItemController, deleteItemController, editItemController, itemController, itemsController } from "./controllers/items.js";
 import { staticController } from "./controllers/static.js";
 import { notFoundController } from "./controllers/notFound.js";
 import layout from "./layout.js";
 import { NotFoundError } from "./tools/errors.js";
 
 const itemPattern = new URLPattern({ pathname: "/items/:itemId" });
+const editItemPattern = new URLPattern({ pathname: "/items/:itemId/edit" });
+const deleteItemPattern = new URLPattern({ pathname: "/items/:itemId/delete" });
 
-function server(request) {
+async function server(request) {
     const url = new URL(request.url);
     const ctx = { request, url, layout, data: {} };
     console.log(url.pathname);
@@ -38,6 +40,16 @@ function server(request) {
         if (itemPattern.test(url)) {
             ctx.params = itemPattern.exec(url).pathname.groups;
             return itemController(ctx);
+        }
+
+        if (request.method == "POST" && editItemPattern.test(url)) {
+            ctx.params = editItemPattern.exec(url).pathname.groups;
+            return await editItemController(ctx);
+        }
+
+        if (request.method == "POST" && deleteItemPattern.test(url)) {
+            ctx.params = deleteItemPattern.exec(url).pathname.groups;
+            return deleteItemController(ctx);
         }
 
         throw new NotFoundError();

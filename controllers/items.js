@@ -1,4 +1,4 @@
-import { createItem, getItemById, getItems } from "../models/items.js";
+import { createItem, deleteItem, getItemById, getItems, updateItem } from "../models/items.js";
 import { NotFoundError } from "../tools/errors.js";
 import redirect from "../tools/redirect.js";
 import render from "../tools/render.js";
@@ -27,4 +27,23 @@ export function itemController(ctx) {
     ctx.data.item = item;
     ctx.view = itemView;
     return render(ctx);
+}
+
+export async function editItemController(ctx) {
+    const { request, params: { itemId } } = ctx;
+    const formData = await request.formData();
+    const item = updateItem(Number(itemId), formData.get("label"));
+    if (!item) {
+        throw new NotFoundError(`Item ${itemId} not found`);
+    }
+    return redirect(`/items/${item.id}`);
+}
+
+export function deleteItemController(ctx) {
+    const { params: { itemId } } = ctx;
+    const item = deleteItem(Number(itemId));
+    if (!item) {
+        throw new NotFoundError(`Item ${itemId} not found`);
+    }
+    return redirect("/items");
 }

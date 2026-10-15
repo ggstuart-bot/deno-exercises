@@ -20,3 +20,20 @@ export function createItem(label) {
     items.push(item);
     return item;
 }
+
+export function updateItem(id, label) {
+    const item = getItemById(id);
+    if (item) {
+        item.label = label;
+    }
+    return item;
+}
+
+export function deleteItem(id) {
+    const index = items.findIndex(item => item.id === id);
+    if (index == -1) {
+        return;
+    }
+    const [item] = items.splice(index, 1);
+    return item;
+}
