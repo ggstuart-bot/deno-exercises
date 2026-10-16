@@ -8,7 +8,7 @@ import { itemsView } from "../views/items.js";
 export function createItemController(ctx) { 
     const { validated } = ctx;    
     const item = createItem(validated.label);
-    return redirect(`/items/${item.id}`);
+    return redirect(`/items/${item.id}`, ctx);
 }
 
 export function itemsController(ctx) { 
@@ -32,7 +32,7 @@ export function editItemController(ctx) {
     if (!item) {
         throw new NotFoundError(`Item ${itemId} not found`);
     }
-    return redirect(`/items/${item.id}`);
+    return redirect(`/items/${item.id}`, ctx);
 }
 
 export function deleteItemController(ctx) {
@@ -41,5 +41,5 @@ export function deleteItemController(ctx) {
     if (!item) {
         throw new NotFoundError(`Item ${itemId} not found`);
     }
-    return redirect("/items");
+    return redirect("/items", ctx);
 }

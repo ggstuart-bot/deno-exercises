@@ -28,7 +28,8 @@ app.use(withLogs);
 
 export async function server(request) {
     const url = new URL(request.url);
-    const ctx = { request, url, layout, data: {} };
+    const headers = new Headers();
+    const ctx = { request, url, layout, data: {}, headers };
 
     try {
         return await app.handle(ctx);
