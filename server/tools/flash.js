@@ -15,7 +15,6 @@ export function getFlash(ctx) {
     const { request, headers } = ctx;
     const { flash } = getCookies(request.headers);
     if (flash) {
-        console.log({ flash });
         ctx.data.flash = decodeURIComponent(flash);        
         deleteCookie(headers, "flash", { path: "/" });
     }

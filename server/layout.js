@@ -29,7 +29,7 @@ export function layout(content, ctx) {
 
 
 function flashMessage(flash) {
-    return flash ? `<aside id="flash">
+    return flash ? `<aside id="flash" role="status" aria-label="flash message">
         <p>${flash}</p>
     </aside>` : "";
 }
