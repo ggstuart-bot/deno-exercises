@@ -4,7 +4,12 @@ export function itemsView(ctx) {
     return `
     <section>
         <h2>Items list</h2>
-
+        <ul>
+            ${items.map(itemToHTML).join("\n\t\t\t")}
+        </ul>
+    </section>
+    <aside>
+        <h3>New item</h3>
         <form method="POST">
             <label for="new">New item</label>
             <input id="new" name="label" value="${label?.value ?? ""}">
@@ -12,10 +17,7 @@ export function itemsView(ctx) {
             <button>create</button>
         </form>
 
-        <ul>
-            ${items.map(itemToHTML).join("\n\t\t\t")}
-        </ul>
-    </section>
+    </aside>
     `;
 }
 

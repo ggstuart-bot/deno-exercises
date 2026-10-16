@@ -14,13 +14,16 @@ body {
         padding: 0.25rem 1rem;
     }
 
+    header, footer {
+        background: linear-gradient(#222, #555);
+        color: white;
+    }
+
     header {
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        background: linear-gradient(#222, #555);
-        color: white;   
         
         h1 { 
             font-size: 1.4em;
@@ -51,7 +54,7 @@ body {
         font-size: 1.4em;
 
         &:has(aside) {
-            padding-inline: 0;
+            padding: 0;
             > * {
                 padding-inline: 1rem;
             }
