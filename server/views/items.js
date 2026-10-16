@@ -1,5 +1,5 @@
 export function itemsView(ctx) { 
-    const { data: { items, errors: { label } = {} } } = ctx;
+    const { data: { items, errors = {} } } = ctx;
     
     return `
     <section>
@@ -12,11 +12,10 @@ export function itemsView(ctx) {
         <h3>New item</h3>
         <form method="POST">
             <label for="new">New item</label>
-            <input id="new" name="label" value="${label?.value ?? ""}">
-            <span class="error">${label?.message ?? ""}</span>
+            <input id="new" name="label" value="${errors.label?.value ?? ""}">
+            <span class="error">${errors.label?.message ?? ""}</span>
             <button>create</button>
         </form>
-
     </aside>
     `;
 }
