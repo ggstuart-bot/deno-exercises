@@ -71,7 +71,7 @@ body {
             /* place-self: start; */
             max-width: 70ch;
             list-style: none;
-            background: linear-gradient(#888, #aaa);
+            background: linear-gradient(90deg, #aaa, #888);
             padding: 0;
             li {
                 backdrop-filter: brightness(1.4);
@@ -93,6 +93,10 @@ form {
         grid-template-columns: auto 1fr;
         gap: 0.5ch;
 
+        padding: 1rem;
+        background: linear-gradient(45deg, #555, #222);
+        color: white;
+
         label {
             text-align: right;
             &::after {
@@ -104,7 +108,16 @@ form {
             grid-column: -2;
             place-self: end;
         }
+
+        span.error {
+            grid-column: span 2;
+            text-align: right;
+            font-size: 0.8em;
+            color: orangered;
+            text-shadow: 0 0 2px black;
+        }
     }
+
 }
 input, button {
     font: inherit;

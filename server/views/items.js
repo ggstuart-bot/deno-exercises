@@ -1,12 +1,14 @@
 export function itemsView(ctx) { 
-    const { data: { items } } = ctx;
+    const { data: { items, errors: { label } = {} } } = ctx;
+    
     return `
     <section>
         <h2>Items list</h2>
 
         <form method="POST">
             <label for="new">New item</label>
-            <input id="new" name="label">
+            <input id="new" name="label" value="${label?.value ?? ""}">
+            <span class="error">${label?.message ?? ""}</span>
             <button>create</button>
         </form>
 

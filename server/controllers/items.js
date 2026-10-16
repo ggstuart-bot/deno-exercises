@@ -5,10 +5,9 @@ import { render } from "../tools/render.js";
 import { itemView } from "../views/item.js";
 import { itemsView } from "../views/items.js";
 
-export async function createItemController(ctx) { 
-    const { request } = ctx;
-    const formData = await request.formData();
-    const item = createItem(formData.get("label"));
+export function createItemController(ctx) { 
+    const { validated } = ctx;    
+    const item = createItem(validated.label);
     return redirect(`/items/${item.id}`);
 }
 
