@@ -11,6 +11,7 @@ import { withValidation } from "./middleware/validation.js";
 import { itemSchema } from "./schema/item.js";
 
 const validateNewItem = withValidation(itemSchema, itemsController);
+const validateEditItem = withValidation(itemSchema, itemController);
 
 const app = new Router();
 
@@ -20,7 +21,7 @@ app.get("/about", aboutController);
 app.get("/items", itemsController);
 app.post("/items", validateNewItem, createItemController);
 app.get("/items/:itemId", itemController);
-app.post("/items/:itemId/edit", editItemController);
+app.post("/items/:itemId/edit", validateEditItem, editItemController);
 app.post("/items/:itemId/delete", deleteItemController);
 
 app.use(withLogs);

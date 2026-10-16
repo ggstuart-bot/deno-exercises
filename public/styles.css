@@ -14,20 +14,6 @@ body {
         padding: 0.25rem 1rem;
     }
 
-    [popover] {
-        background: linear-gradient(#333, #555);
-        color: white;
-        padding: 1rem;
-        h2, h3 {
-            margin-top: 0;
-        }
-        border: none;
-        border-radius: 3px;
-        &::backdrop {
-            backdrop-filter: brightness(0.7) blur(3px);
-        }
-    }
-
     header {
         display: flex;
         justify-content: space-between;
@@ -63,6 +49,21 @@ body {
     main {
         background: linear-gradient(#ddd, #eee);
         font-size: 1.4em;
+
+        &:has(aside) {
+            padding-inline: 0;
+            > * {
+                padding-inline: 1rem;
+            }
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 1rem;
+            aside {
+                background: white;
+                color: black;
+            }
+        }
+
         a {
             color: orangered;
         }

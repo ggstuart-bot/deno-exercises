@@ -26,10 +26,9 @@ export function itemController(ctx) {
     return render(itemView, ctx);
 }
 
-export async function editItemController(ctx) {
-    const { request, params: { itemId } } = ctx;
-    const formData = await request.formData();
-    const item = updateItem(Number(itemId), formData.get("label"));
+export function editItemController(ctx) {
+    const { validated, params: { itemId } } = ctx;
+    const item = updateItem(Number(itemId), validated.label);
     if (!item) {
         throw new NotFoundError(`Item ${itemId} not found`);
     }
