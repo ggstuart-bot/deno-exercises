@@ -1,71 +1,123 @@
 body {
-    margin: 0;
     display: grid;
-    grid-template-rows: auto 1fr auto;
     min-height: 100dvh;
-    background-color: orange;
-    font-size: 1.4em;
-    font-family: monospace;
-    header, main, footer {
-        padding: 1rem;
+    grid-template-rows: auto 1fr auto;
+    font-family: system-ui;
+    font-weight: 300;
+    margin: 0;
+
+    h2, h3 {
+        font-weight: 200;
     }
-    header {
-        background-color: orangered;
+
+    header, main, footer {
+        padding: 0.25rem 1rem;
+    }
+
+    [popover] {
+        background: linear-gradient(#333, #555);
         color: white;
+        padding: 1rem;
+        h2, h3 {
+            margin-top: 0;
+        }
+        border: none;
+        border-radius: 3px;
+        &::backdrop {
+            backdrop-filter: brightness(0.7) blur(3px);
+        }
+    }
+
+    header {
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        h1 {
+        background: linear-gradient(#222, #555);
+        color: white;   
+        
+        h1 { 
+            font-size: 1.4em;
+            font-weight: 200; 
             margin: 0;
         }
-        nav a {
-            color: inherit;
-            text-decoration: none;
-            padding: 0.25em 0.5em;
-            border-radius: 1em;
-            &:hover {
-                backdrop-filter: brightness(0.9);
-            }
-            &.current {
+        nav {
+            display: flex;
+            gap: 0.5ch;
+
+            a {
+                font-size: 1.4em;
+                color: inherit;
+                padding: 0.25em 0.5em;
+                border-radius: 1em;
+                text-decoration: none;
+                transition: backdrop-filter 300ms;
                 backdrop-filter: brightness(0.8);
+                &:hover {
+                    backdrop-filter: brightness(0.6);
+                }
             }
         }
     }
-    footer {
-        font-size: 0.7em;
-        text-align: right;
+
+    main {
+        background: linear-gradient(#ddd, #eee);
+        font-size: 1.4em;
+        a {
+            color: orangered;
+        }
+        ul {
+            display: grid;
+            /* place-self: start; */
+            max-width: 70ch;
+            list-style: none;
+            background: linear-gradient(#888, #aaa);
+            padding: 0;
+            li {
+                backdrop-filter: brightness(1.4);
+                &:nth-child(even) {
+                    backdrop-filter: brightness(1.5);
+                }
+                padding: 0.25rem 0.5rem;
+            }
+        }
+
     }
 }
 
 form {
-    display: flex;
-    gap: 0.5em;
-    align-items: center;
+    display: grid;
+    place-self: start;
+
+    &:has(label) {
+        grid-template-columns: auto 1fr;
+        gap: 0.5ch;
+
+        label {
+            text-align: right;
+            &::after {
+                content: ":";
+            }
+        }
+
+        button {
+            grid-column: -2;
+            place-self: end;
+        }
+    }
 }
 input, button {
     font: inherit;
-    padding: 0.25em 0.5em;
-    border: 2px solid orangered;
-    border-radius: 0.5em;
 }
-button {
-    background-color: white;
-    cursor: pointer;
-    &:hover {
-        background-color: orangered;
-        color: white;
+
+@layer classes {
+    .controls {
+        display: flex;
+        gap: 1ch;
     }
-}
-.controls {
-    display: flex;
-    gap: 0.5em;
-}
-[popover] {
-    padding: 1em;
-    border: 2px solid orangered;
-    border-radius: 0.5em;
-    &::backdrop {
-        background-color: rgb(0 0 0 / 0.3);
+
+    form .controls {
+        grid-column: 1 / -1;
+        justify-content: end;
     }
 }

@@ -13,11 +13,14 @@ export function itemView(ctx) {
         </div>
 
         <div id="edit-item" popover>
+            <h3>Edit item</h3>
             <form method="POST" action="/items/${item.id}/edit">
                 <label for="label">Label</label>
                 <input id="label" name="label" value="${item.label}">
-                <button>save</button>
-                <button type="button" popovertarget="edit-item" popovertargetaction="hide">cancel</button>
+                <div class="controls">
+                    <button>save</button>
+                    <button type="button" popovertarget="edit-item" popovertargetaction="hide">cancel</button>
+                </div>
             </form>
         </div>
 
