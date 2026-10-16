@@ -1,6 +1,6 @@
 import { NotFoundError } from "./errors.js";
 
-export default class Router { 
+export class Router { 
     constructor() { 
         this.routes = [];
         this.middleware = [];

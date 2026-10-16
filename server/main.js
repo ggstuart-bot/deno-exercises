@@ -5,9 +5,9 @@ import { staticController } from "./controllers/static.js";
 import { notFoundController } from "./controllers/notFound.js";
 import { layout } from "./layout.js";
 import { NotFoundError } from "./tools/errors.js";
-import Router from "./tools/router.js";
-import withLogs from "./middleware/logging.js";
-import withValidation from "./middleware/validation.js";
+import { Router } from "./tools/router.js";
+import { withLogs } from "./middleware/logging.js";
+import { withValidation } from "./middleware/validation.js";
 import { itemSchema } from "./schema/item.js";
 
 const validateNewItem = withValidation(itemSchema, itemsController);
@@ -25,7 +25,7 @@ app.post("/items/:itemId/delete", deleteItemController);
 
 app.use(withLogs);
 
-export default async function server(request) {
+export async function server(request) {
     const url = new URL(request.url);
     const ctx = { request, url, layout, data: {} };
 

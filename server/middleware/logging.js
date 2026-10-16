@@ -1,4 +1,4 @@
-export default async function withLogs(ctx, next) {
+export async function withLogs(ctx, next) {
     const { url, request } = ctx;
     console.log("\n============================");
     console.log(`${request.method} ${url.pathname}`);    

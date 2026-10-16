@@ -1,3 +1,3 @@
-import server from '../server/main.js';
+import { server } from '../server/main.js';
 
 Deno.serve(server);

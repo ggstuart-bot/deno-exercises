@@ -1,7 +1,7 @@
 import { SchemaValidationError } from "../tools/errors.js";
 import { validateSchema } from "../tools/validation.js";
 
-export default function withValidation(schema, fallback) {
+export function withValidation(schema, fallback) {
     return async (ctx, next) => { 
         const { request } = ctx;
         const formData = await request.formData();
