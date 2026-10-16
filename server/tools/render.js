@@ -1,5 +1,5 @@
-export function render(ctx) {
-    const { view, layout, status } = ctx;
+export function render(view, ctx) {
+    const { layout, status } = ctx;
     const headers = new Headers({ "content-type": "text/html" });
     const content = view(ctx);
     const html = layout(content);

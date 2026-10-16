@@ -14,8 +14,7 @@ export async function createItemController(ctx) {
 
 export function itemsController(ctx) { 
     ctx.data.items = getItems();
-    ctx.view = itemsView;
-    return render(ctx);
+    return render(itemsView, ctx);
 }
 
 export function itemController(ctx) {
@@ -25,8 +24,7 @@ export function itemController(ctx) {
         throw new NotFoundError(`Item ${itemId} not found`);
     }
     ctx.data.item = item;
-    ctx.view = itemView;
-    return render(ctx);
+    return render(itemView, ctx);
 }
 
 export async function editItemController(ctx) {
