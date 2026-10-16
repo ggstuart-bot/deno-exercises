@@ -8,6 +8,7 @@ import { itemsView } from "../views/items.js";
 export function createItemController(ctx) { 
     const { validated } = ctx;    
     const item = createItem(validated.label);
+    ctx.flash = `Item '${item.label}' created`;
     return redirect(`/items/${item.id}`, ctx);
 }
 
@@ -32,6 +33,7 @@ export function editItemController(ctx) {
     if (!item) {
         throw new NotFoundError(`Item ${itemId} not found`);
     }
+    ctx.flash = `Item '${item.label}' updated`;
     return redirect(`/items/${item.id}`, ctx);
 }
 
@@ -41,5 +43,6 @@ export function deleteItemController(ctx) {
     if (!item) {
         throw new NotFoundError(`Item ${itemId} not found`);
     }
+    ctx.flash = `Item '${item.label}' deleted`;
     return redirect("/items", ctx);
 }

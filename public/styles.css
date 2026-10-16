@@ -49,6 +49,22 @@ body {
         }
     }
 
+    aside#flash {
+        position: fixed;
+        right: 0;
+        top: 4em;
+        padding-inline: 2rem;
+        background: orangered;
+        color: white;
+        font-weight: 400;
+        translate: calc(100% - 1rem);
+        transition: translate 200ms;
+        animation: flash 2s;
+        &:hover {
+            translate: none;
+        }
+    }
+
     main {
         background: linear-gradient(#ddd, #eee);
         font-size: 1.4em;
@@ -127,14 +143,6 @@ input, button {
     font: inherit;
 }
 
-@layer classes {
-    .controls {
-        display: flex;
-        gap: 1ch;
-    }
-
-    form .controls {
-        grid-column: 1 / -1;
-        justify-content: end;
-    }
+@keyframes flash {
+    10%, 90% { translate: none; }
 }

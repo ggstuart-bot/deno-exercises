@@ -1,4 +1,4 @@
-export function layout(content) {
+export function layout(content, ctx) {
     return`
 <!DOCTYPE html>
 <html>
@@ -16,6 +16,7 @@ export function layout(content) {
             <a href="/items">items</a>
         </nav>
     </header>
+    ${flashMessage(ctx.data.flash)}
     <main>        
     ${content}
     </main>
@@ -24,4 +25,11 @@ export function layout(content) {
     </footer>
 </body>
 </html>`;
+}
+
+
+function flashMessage(flash) {
+    return flash ? `<aside id="flash">
+        <p>${flash}</p>
+    </aside>` : "";
 }
