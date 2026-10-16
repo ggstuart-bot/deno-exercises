@@ -1,9 +1,10 @@
 export function layout(content, ctx) {
-    return`
+    return `
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>My website</title>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="/assets/styles.css">
     <link rel="icon" href="/assets/icon.svg">
 </head>
@@ -27,9 +28,10 @@ export function layout(content, ctx) {
 </html>`;
 }
 
-
 function flashMessage(flash) {
-    return flash ? `<aside id="flash" role="status" aria-label="flash message">
+    return flash
+        ? `<aside id="flash" role="status" aria-label="flash message">
         <p>${flash}</p>
-    </aside>` : "";
+    </aside>`
+        : "";
 }

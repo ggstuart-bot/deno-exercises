@@ -6,15 +6,19 @@ body {
     font-weight: 300;
     margin: 0;
 
-    h2, h3 {
+    h2,
+    h3 {
         font-weight: 200;
     }
 
-    header, main, footer {
+    header,
+    main,
+    footer {
         padding: 0.25rem 1rem;
     }
 
-    header, footer {
+    header,
+    footer {
         background: linear-gradient(#222, #555);
         color: white;
     }
@@ -24,10 +28,9 @@ body {
         justify-content: space-between;
         align-items: center;
 
-        
-        h1 { 
+        h1 {
             font-size: 1.4em;
-            font-weight: 200; 
+            font-weight: 200;
             margin: 0;
         }
         nav {
@@ -101,7 +104,6 @@ body {
                 padding: 0.25rem 0.5rem;
             }
         }
-
     }
 }
 
@@ -137,12 +139,15 @@ form {
             text-shadow: 0 0 2px black;
         }
     }
-
 }
-input, button {
+input,
+button {
     font: inherit;
 }
 
 @keyframes flash {
-    10%, 90% { translate: none; }
+    10%,
+    90% {
+        translate: none;
+    }
 }

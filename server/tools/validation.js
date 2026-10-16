@@ -1,4 +1,4 @@
-import { ValidationError, SchemaValidationError } from "./errors.js";
+import { SchemaValidationError, ValidationError } from "./errors.js";
 
 function validateField(name, value, validators) {
     for (const validate of validators) {
@@ -6,7 +6,7 @@ function validateField(name, value, validators) {
     }
 }
 
-export function validateSchema(formData, schema) {    
+export function validateSchema(formData, schema) {
     const errors = {};
     const validated = {};
     for (const [key, { validators, displayName }] of Object.entries(schema)) {
@@ -16,8 +16,8 @@ export function validateSchema(formData, schema) {
             validated[key] = value;
         } catch (error) {
             if (!(error instanceof ValidationError)) throw error;
-            errors[key] = {value, message: error.message};                
-        }        
+            errors[key] = { value, message: error.message };
+        }
     }
     if (Object.keys(errors).length) {
         throw new SchemaValidationError(errors);

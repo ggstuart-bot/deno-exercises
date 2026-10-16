@@ -1,6 +1,12 @@
 import { aboutController } from "./controllers/about.js";
 import { homeController } from "./controllers/home.js";
-import { createItemController, deleteItemController, editItemController, itemController, itemsController } from "./controllers/items.js";
+import {
+    createItemController,
+    deleteItemController,
+    editItemController,
+    itemController,
+    itemsController,
+} from "./controllers/items.js";
 import { staticController } from "./controllers/static.js";
 import { notFoundController } from "./controllers/notFound.js";
 import { layout } from "./layout.js";
@@ -15,6 +21,8 @@ const validateEditItem = withValidation(itemSchema, itemController);
 
 const app = new Router();
 
+app.use(withLogs);
+
 app.get("/assets/*", staticController);
 app.get("/", homeController);
 app.get("/about", aboutController);
@@ -23,8 +31,6 @@ app.post("/items", validateNewItem, createItemController);
 app.get("/items/:itemId", itemController);
 app.post("/items/:itemId/edit", validateEditItem, editItemController);
 app.post("/items/:itemId/delete", deleteItemController);
-
-app.use(withLogs);
 
 export async function server(request) {
     const url = new URL(request.url);

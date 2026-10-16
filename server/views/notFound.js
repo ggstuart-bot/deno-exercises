@@ -1,8 +1,8 @@
-export function notFoundView() { 
+export function notFoundView() {
     return `
     <section>
-        <h2>Not Found</h2>
+        <h2>Not found</h2>
         <p>The requested resource was not found.</p>
     </section>
-    `
+    `;
 }

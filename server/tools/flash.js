@@ -7,15 +7,15 @@ export function setFlash(ctx) {
         name: "flash",
         value: encodeURIComponent(flash),
         path: "/",
-        httpOnly: true
-    })
+        httpOnly: true,
+    });
 }
 
 export function getFlash(ctx) {
     const { request, headers } = ctx;
     const { flash } = getCookies(request.headers);
     if (flash) {
-        ctx.data.flash = decodeURIComponent(flash);        
+        ctx.data.flash = decodeURIComponent(flash);
         deleteCookie(headers, "flash", { path: "/" });
     }
 }

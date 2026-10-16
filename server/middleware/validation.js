@@ -2,7 +2,7 @@ import { SchemaValidationError } from "../tools/errors.js";
 import { validateSchema } from "../tools/validation.js";
 
 export function withValidation(schema, fallback) {
-    return async (ctx, next) => { 
+    return async (ctx, next) => {
         const { request } = ctx;
         const formData = await request.formData();
         try {
@@ -14,5 +14,5 @@ export function withValidation(schema, fallback) {
             ctx.status = 400;
             return fallback(ctx);
         }
-    }
+    };
 }

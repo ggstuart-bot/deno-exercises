@@ -1,18 +1,24 @@
-import { createItem, deleteItem, getItemById, getItems, updateItem } from "../models/items.js";
+import {
+    createItem,
+    deleteItem,
+    getItemById,
+    getItems,
+    updateItem,
+} from "../models/items.js";
 import { NotFoundError } from "../tools/errors.js";
 import { redirect } from "../tools/redirect.js";
 import { render } from "../tools/render.js";
 import { itemView } from "../views/item.js";
 import { itemsView } from "../views/items.js";
 
-export function createItemController(ctx) { 
-    const { validated } = ctx;    
+export function createItemController(ctx) {
+    const { validated } = ctx;
     const item = createItem(validated.label);
     ctx.flash = `Item '${item.label}' created`;
     return redirect(`/items/${item.id}`, ctx);
 }
 
-export function itemsController(ctx) { 
+export function itemsController(ctx) {
     ctx.data.items = getItems();
     return render(itemsView, ctx);
 }

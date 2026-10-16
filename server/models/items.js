@@ -9,13 +9,19 @@ export function getItemById(id) {
 }
 
 export function createItem(label) {
-    return db.prepare("INSERT INTO items (label) VALUES (?) RETURNING id, label").get(label);
+    return db.prepare(
+        "INSERT INTO items (label) VALUES (?) RETURNING id, label",
+    ).get(label);
 }
 
 export function updateItem(id, label) {
-    return db.prepare("UPDATE items SET label = ? WHERE id = ? RETURNING id, label").get(label, id);
+    return db.prepare(
+        "UPDATE items SET label = ? WHERE id = ? RETURNING id, label",
+    ).get(label, id);
 }
 
 export function deleteItem(id) {
-    return db.prepare("DELETE FROM items WHERE id = ? RETURNING id, label").get(id);
+    return db.prepare("DELETE FROM items WHERE id = ? RETURNING id, label").get(
+        id,
+    );
 }
