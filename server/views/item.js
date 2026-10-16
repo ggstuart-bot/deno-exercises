@@ -13,8 +13,8 @@ export function itemView(ctx) {
         <h3>Edit item</h3>
         <form method="POST" action="/items/${item.id}/edit">
             <label for="label">Label</label>
-            <input id="label" name="label" value="${errors?.label?.value || item.label || ""}">
-            <span class="error">${errors?.label?.message || ""}</span>
+            <input id="label" name="label" value="${errors?.label?.value ?? item.label }">
+            <span class="error">${errors?.label?.message ?? ""}</span>
             <button>save</button>
         </form>
         <h3>Delete item</h3>
