@@ -1,5 +1,7 @@
+import { html } from "./tools/html.js";
+
 export function layout(content, ctx) {
-    return `
+    return html`
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +32,7 @@ export function layout(content, ctx) {
 
 function flashMessage(flash) {
     return flash
-        ? `<aside id="flash" role="status" aria-label="flash message">
+        ? html`<aside id="flash" role="status" aria-label="flash message">
         <p>${flash}</p>
     </aside>`
         : "";

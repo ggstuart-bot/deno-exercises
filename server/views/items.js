@@ -1,11 +1,13 @@
+import { html } from "../tools/html.js";
+
 export function itemsView(ctx) {
     const { data: { items, errors = {} } } = ctx;
 
-    return `
+    return html`
     <section>
         <h2>Items list</h2>
         <ul>
-            ${items.map(itemToHTML).join("\n\t\t\t")}
+${items.map(itemToHTML)}
         </ul>
     </section>
     <aside>
@@ -21,7 +23,7 @@ export function itemsView(ctx) {
 }
 
 function itemToHTML(item) {
-    return `<li>
-    <a href="/items/${item.id}">${item.label}</a>
-    </li>`;
+    return html`            <li>
+                <a href="/items/${item.id}">${item.label}</a>
+            </li>`;
 }

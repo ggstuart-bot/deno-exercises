@@ -1,14 +1,14 @@
+import { html } from "../tools/html.js";
+
 export function itemView(ctx) {
     const { data: { item, errors = {} } } = ctx;
-    return `
+    return html`
     <section>
         <h2>${item.label}</h2>
         <p>This is item ${item.id}</p>
-
-        <p>
-            <a href="/items">Back to items list</a>
-        </p>
+        <p><a href="/items">Back to items list</a></p>
     </section>
+
     <aside>
         <h3>Edit item</h3>
         <form method="POST" action="/items/${item.id}/edit">
@@ -23,7 +23,6 @@ export function itemView(ctx) {
         <form method="POST" action="/items/${item.id}/delete">
             <button>delete</button>
         </form>
-
     </aside>
     `;
 }
