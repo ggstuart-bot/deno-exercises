@@ -1,4 +1,4 @@
-import { currentSession } from "../tools/auth.js";
+import { currentSession } from "../tools/session.js";
 import { getUserById } from "../models/users.js";
 
 export function withSession(ctx, next) { 

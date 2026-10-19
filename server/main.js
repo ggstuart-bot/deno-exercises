@@ -17,14 +17,18 @@ import { withValidation } from "./middleware/validation.js";
 import { itemSchema } from "./schema/item.js";
 import { createUserController, signupFormController, usersController } from "./controllers/users.js";
 import { userSchema } from "./schema/user.js";
-import { signinController, signinFormController, signoutController } from "./controllers/auth.js";
+import { alreadySignedInRedirectController, signinController, signinFormController, signinRedirectController, signoutController } from "./controllers/auth.js";
 import { signinSchema } from "./schema/signin.js";
 import { withSession } from "./middleware/session.js";
+import { requireGuest, requireUser } from "./middleware/access.js";
 
 const validateNewItem = withValidation(itemSchema, itemsController);
 const validateEditItem = withValidation(itemSchema, itemController);
 const validateNewUser = withValidation(userSchema, signupFormController);
 const validateSignin = withValidation(signinSchema, signinFormController);
+
+const gentleSignIn = requireUser(signinRedirectController);
+const gentleSignedIn = requireGuest(alreadySignedInRedirectController);
 
 const app = new Router();
 
@@ -34,17 +38,19 @@ app.use(withSession);
 app.get("/assets/*", staticController);
 app.get("/", homeController);
 app.get("/about", aboutController);
+
+app.get("/signup", gentleSignedIn, signupFormController);
+app.post("/signup", gentleSignedIn, validateNewUser, createUserController);
+app.get("/signin", gentleSignedIn, signinFormController);
+app.post("/signin", gentleSignedIn, validateSignin, signinController);
+app.post("/signout", gentleSignIn, signoutController);
+
 app.get("/items", itemsController);
 app.post("/items", validateNewItem, createItemController);
 app.get("/items/:itemId", itemController);
 app.post("/items/:itemId/edit", validateEditItem, editItemController);
 app.post("/items/:itemId/delete", deleteItemController);
-app.get("/signup", signupFormController);
-app.post("/signup", validateNewUser, createUserController);
 app.get("/users", usersController);
-app.get("/signin", signinFormController);
-app.post("/signin", validateSignin, signinController);
-app.post("/signout", signoutController);
 
 export async function server(request) {
     const url = new URL(request.url);
