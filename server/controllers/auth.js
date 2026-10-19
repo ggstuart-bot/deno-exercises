@@ -25,7 +25,7 @@ export async function signinController(ctx) {
 
 export function signoutController(ctx) { 
     signout(ctx);
-    ctx.flash = `Signed out`;
+    ctx.flash = "Signed out";
     return redirect("/", ctx);
 }
 
@@ -36,6 +36,6 @@ export function signinRedirectController(ctx) {
 
 export function alreadySignedInRedirectController(ctx) {
     const { user: { username } } = ctx;
-    ctx.flash = `You are already signed in as ${username}`;
+    ctx.flash = `You are already signed in as '${username}'`;
     return redirect("/", ctx);
 }

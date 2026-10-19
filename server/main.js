@@ -27,8 +27,8 @@ const validateEditItem = withValidation(itemSchema, itemController);
 const validateNewUser = withValidation(userSchema, signupFormController);
 const validateSignin = withValidation(signinSchema, signinFormController);
 
-const gentleSignIn = requireUser(signinRedirectController);
-const gentleSignedIn = requireGuest(alreadySignedInRedirectController);
+const mustBeSignedIn = requireUser(signinRedirectController);
+const mustBeSignedOut = requireGuest(alreadySignedInRedirectController);
 
 const app = new Router();
 
@@ -39,17 +39,17 @@ app.get("/assets/*", staticController);
 app.get("/", homeController);
 app.get("/about", aboutController);
 
-app.get("/signup", gentleSignedIn, signupFormController);
-app.post("/signup", gentleSignedIn, validateNewUser, createUserController);
-app.get("/signin", gentleSignedIn, signinFormController);
-app.post("/signin", gentleSignedIn, validateSignin, signinController);
-app.post("/signout", gentleSignIn, signoutController);
+app.get("/signup", mustBeSignedOut, signupFormController);
+app.post("/signup", mustBeSignedOut, validateNewUser, createUserController);
+app.get("/signin", mustBeSignedOut, signinFormController);
+app.post("/signin", mustBeSignedOut, validateSignin, signinController);
+app.post("/signout", signoutController);
 
 app.get("/items", itemsController);
-app.post("/items", validateNewItem, createItemController);
+app.post("/items", mustBeSignedIn, validateNewItem, createItemController);
 app.get("/items/:itemId", itemController);
-app.post("/items/:itemId/edit", validateEditItem, editItemController);
-app.post("/items/:itemId/delete", deleteItemController);
+app.post("/items/:itemId/edit", mustBeSignedIn, validateEditItem, editItemController);
+app.post("/items/:itemId/delete", mustBeSignedIn, deleteItemController);
 app.get("/users", usersController);
 
 export async function server(request) {
