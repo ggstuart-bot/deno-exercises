@@ -40,6 +40,7 @@ export function hasDigit(name, value) {
         throw new ValidationError(`${name} must include a digit.`);
     }
 }
+
 export function hasSymbol(name, value) {
     if (!/[^A-Za-z0-9\s]/.test(value)) {
         throw new ValidationError(`${name} must include a symbol.`);
@@ -49,7 +50,7 @@ export function hasSymbol(name, value) {
 export function unique(exists) {
     return (name, value) => { 
         if (exists(value)) {
-            throw new ValidationError(`${name} already taken`);
+            throw new ValidationError(`${name} already taken.`);
         }
     }
 }

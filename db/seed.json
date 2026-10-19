@@ -1,5 +1,17 @@
-[
-    { "label": "apples" },
-    { "label": "bananas" },
-    { "label": "cherries" }
-]
+{
+    "items": [
+        { "label": "apples" },
+        { "label": "bananas" },
+        { "label": "cherries" }
+    ],
+    "users": [
+        {
+            "username": "testUser1",
+            "password": "testUser1!"
+        },
+        {
+            "username": "testUser2",
+            "password": "testUser2!"
+        }
+    ]
+}

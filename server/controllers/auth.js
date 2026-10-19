@@ -18,7 +18,7 @@ export async function signinController(ctx) {
         ctx.status = 401;
         return render(signinView, ctx);
     }
-    signin(username, ctx);
+    signin(user.id, ctx);
     ctx.flash = `Signed in as '${username}'`;
     return redirect("/", ctx);
 }

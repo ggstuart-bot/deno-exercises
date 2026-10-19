@@ -11,6 +11,12 @@ export function getUserByUsername(username) {
     ).get({ username });
 }
 
+export function getUserById(id) {
+    return db.prepare(
+        `SELECT id, username, isAdmin FROM users WHERE id=:id`
+    ).get({ id });
+}
+
 export async function createUser({ username, password }) {
     const hashedPassword = await hashPassword(password);
     return db.prepare(`

@@ -26,7 +26,7 @@ export function layout(content, ctx) {
     ${content}
     </main>
     <footer>
-        ${sessionMessage(ctx.session)}
+        ${userMessage(ctx.user)}
         <p>&copy; My website developers</p>
     </footer>
 </body>
@@ -42,11 +42,10 @@ function flashMessage(flash) {
 }
 
 
-function sessionMessage(session) {
-    return session
-        ? html`<p>Signed in as '${session.username}'</p>`
-        : html`<p><a href="/signin">sign in</a></p>`
-        
+function userMessage(user) {
+    return user
+        ? html`<p>Signed in as '${user.username}'</p>`
+        : html`<p></p>`;       
 }
 
 function authLinks(session) {

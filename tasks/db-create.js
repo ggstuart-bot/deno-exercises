@@ -8,6 +8,16 @@ db.exec(`
     )
 `);
 
+db.exec("DROP TABLE IF EXISTS sessions");
+db.exec(`
+    CREATE TABLE sessions (
+        id TEXT PRIMARY KEY,
+        userId INTEGER NOT NULL,
+        expires INTEGER NOT NULL,
+        FOREIGN KEY (userId) REFERENCES users(id)
+    )
+`);
+
 
 db.exec("DROP TABLE IF EXISTS users");
 db.exec(`
@@ -19,11 +29,3 @@ db.exec(`
     )
 `);
 
-db.exec("DROP TABLE IF EXISTS sessions");
-db.exec(`
-    CREATE TABLE sessions (
-        id TEXT PRIMARY KEY,
-        username TEXT NOT NULL,
-        FOREIGN KEY (username) REFERENCES users(username)
-    )
-`);

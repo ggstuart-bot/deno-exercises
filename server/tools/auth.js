@@ -1,14 +1,19 @@
 import { deleteCookie, getCookies, setCookie } from "@std/http";
 import { createSession, deleteSessionById, getSessionById } from "../models/sessions.js";
 
-export function signin(username, ctx) {
+const SESSION_LENGTH = 1000 * 60 * 60 * 24;
+
+export function signin(userId, ctx) {
+    const expires = Date.now() + SESSION_LENGTH;
+    const session = createSession(userId, expires);
     const { headers } = ctx;
-    const session = createSession(username);
     setCookie(headers, {
         name: "sessionId",
         value: session.id,
         path: "/",
-        httpOnly: true
+        httpOnly: true,
+        sameSite: "Lax",
+        maxAge: SESSION_LENGTH / 1000
     })
 }
 
