@@ -14,7 +14,7 @@ export function signin(userId, ctx) {
         httpOnly: true,
         sameSite: "Lax",
         maxAge: SESSION_LENGTH / 1000
-    })
+    });
 }
 
 export function currentSession(ctx) {

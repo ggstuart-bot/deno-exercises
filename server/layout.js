@@ -18,7 +18,7 @@ export function layout(content, ctx) {
             <a href="/about">about</a>
             <a href="/items">items</a>
             <a href="/users">users</a>            
-            ${authLinks(ctx.session)}
+            ${authLinks(ctx.user)}
         </nav>
     </header>
     ${flashMessage(ctx.data.flash)}
@@ -45,11 +45,11 @@ function flashMessage(flash) {
 function userMessage(user) {
     return user
         ? html`<p>Signed in as '${user.username}'</p>`
-        : html`<p></p>`;       
+        : "";
 }
 
-function authLinks(session) {
-    return session
+function authLinks(user) {
+    return user
         ? html`<form method="POST" action="/signout">
                 <button>sign out</button>
             </form>`

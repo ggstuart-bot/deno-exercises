@@ -7,7 +7,7 @@ for (const item of seed.items) {
 }
 
 for (const user of seed.users) {
-    createUser(user);
+    await createUser(user);
 }
 
 
