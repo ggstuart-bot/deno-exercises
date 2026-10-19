@@ -125,11 +125,9 @@ body {
 
     footer {
         display: flex;
-        justify-content: space-between;
-        text-align: right;
         font-weight: 200;
-        :last-child {
-            margin-left: auto; 
+        & > :last-child {
+            margin-left: auto;
         }
     }
 }
