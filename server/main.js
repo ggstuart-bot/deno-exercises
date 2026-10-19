@@ -19,7 +19,7 @@ import { createUserController, signupFormController, usersController } from "./c
 import { userSchema } from "./schema/user.js";
 import { signinController, signinFormController, signoutController } from "./controllers/auth.js";
 import { signinSchema } from "./schema/signin.js";
-import { withSession } from "./middleware/auth.js";
+import { withSession } from "./middleware/session.js";
 
 const validateNewItem = withValidation(itemSchema, itemsController);
 const validateEditItem = withValidation(itemSchema, itemController);

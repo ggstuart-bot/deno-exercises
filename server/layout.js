@@ -44,17 +44,15 @@ function flashMessage(flash) {
 
 function sessionMessage(session) {
     return session
-        ? html`<p>Logged in as '${session.username}'</p>`
+        ? html`<p>Signed in as '${session.username}'</p>`
         : html`<p><a href="/signin">sign in</a></p>`
         
 }
 
 function authLinks(session) {
     return session
-        ? html`     <form method="POST" action="/signout">
+        ? html`<form method="POST" action="/signout">
                 <button>sign out</button>
             </form>`
-        : html`<a href="/signin">sign in</a>
-    </nav>
-    `
+        : html`<a href="/signin">sign in</a>`
 }
