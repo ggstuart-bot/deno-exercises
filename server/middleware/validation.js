@@ -11,6 +11,7 @@ export function withValidation(schema, fallback) {
         } catch (error) {
             if (!(error instanceof SchemaValidationError)) throw error;
             ctx.data.errors = error.errors;
+            ctx.data.values = error.values;
             ctx.status = 400;
             return fallback(ctx);
         }

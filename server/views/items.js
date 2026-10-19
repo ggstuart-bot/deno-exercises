@@ -1,7 +1,7 @@
 import { html } from "../tools/html.js";
 
 export function itemsView(ctx) {
-    const { data: { items, errors = {} } } = ctx;
+    const { data: { items, errors, values } } = ctx;
 
     return html`
     <section>
@@ -14,8 +14,8 @@ ${items.map(itemToHTML)}
         <h3>New item</h3>
         <form method="POST">
             <label for="new">Label</label>
-            <input id="new" name="label" value="${errors.label?.value ?? ""}">
-            <span class="error">${errors.label?.message ?? ""}</span>
+            <input id="new" name="label" value="${values?.label ?? ""}">
+            <span class="error">${errors?.label ?? ""}</span>
             <button>create</button>
         </form>
     </aside>

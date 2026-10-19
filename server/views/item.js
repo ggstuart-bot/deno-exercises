@@ -1,7 +1,9 @@
 import { html } from "../tools/html.js";
 
 export function itemView(ctx) {
-    const { data: { item, errors = {} } } = ctx;
+    const { data: { item, errors, values } } = ctx;
+    console.log(values);
+    
     return html`
     <section>
         <h2>${item.label}</h2>
@@ -14,9 +16,9 @@ export function itemView(ctx) {
         <form method="POST" action="/items/${item.id}/edit">
             <label for="label">Label</label>
             <input id="label" name="label" value="${
-        errors.label?.value ?? item.label
-    }">
-            <span class="error">${errors.label?.message ?? ""}</span>
+                values?.label ?? item.label
+            }">
+            <span class="error">${errors?.label ?? ""}</span>
             <button>save</button>
         </form>
         <h3>Delete item</h3>
