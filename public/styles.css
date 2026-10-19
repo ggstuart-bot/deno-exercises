@@ -14,13 +14,20 @@ body {
     header,
     main,
     footer {
-        padding: 0.25rem 1rem;
+        padding: 0.5rem 1rem;
     }
 
     header,
     footer {
         background: linear-gradient(#222, #555);
         color: white;
+        form button,
+        a {
+            color: inherit;
+            line-height: 1;
+            border: none;
+            background: transparent;
+        }
     }
 
     header {
@@ -37,17 +44,20 @@ body {
             display: flex;
             gap: 0.5ch;
 
+            form button,
             a {
-                font-size: 1.4em;
-                color: inherit;
+                font-size: 1.2em;
                 padding: 0.25em 0.5em;
                 border-radius: 1em;
-                text-decoration: none;
-                transition: backdrop-filter 300ms;
                 backdrop-filter: brightness(0.8);
                 &:hover {
                     backdrop-filter: brightness(0.6);
                 }
+            }
+
+            a {
+                text-decoration: none;
+                transition: backdrop-filter 300ms;
             }
         }
     }
@@ -111,6 +121,13 @@ body {
                 place-self: center;
             }
         }
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        text-align: right;
+        font-weight: 200;
     }
 }
 

@@ -18,3 +18,12 @@ db.exec(`
         isAdmin INTEGER DEFAULT 0
     )
 `);
+
+db.exec("DROP TABLE IF EXISTS sessions");
+db.exec(`
+    CREATE TABLE sessions (
+        id TEXT PRIMARY KEY,
+        username TEXT NOT NULL,
+        FOREIGN KEY (username) REFERENCES users(username)
+    )
+`);

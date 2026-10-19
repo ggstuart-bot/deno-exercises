@@ -5,6 +5,12 @@ export function getUsers() {
     return db.prepare(`SELECT id, username FROM users;`).all();
 }
 
+export function getUSerByUsername(username) {
+    return db.prepare(
+        `SELECT * FROM users WHERE username=:username`
+    ).get({ username });
+}
+
 export async function createUser({ username, password }) {
     const hashedPassword = await hashPassword(password);
     return db.prepare(`

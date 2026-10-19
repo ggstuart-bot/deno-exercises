@@ -17,14 +17,19 @@ import { withValidation } from "./middleware/validation.js";
 import { itemSchema } from "./schema/item.js";
 import { createUserController, signupFormController, usersController } from "./controllers/users.js";
 import { userSchema } from "./schema/user.js";
+import { signinController, signinFormController, signoutController } from "./controllers/auth.js";
+import { signinSchema } from "./schema/signin.js";
+import { withSession } from "./middleware/auth.js";
 
 const validateNewItem = withValidation(itemSchema, itemsController);
 const validateEditItem = withValidation(itemSchema, itemController);
 const validateNewUser = withValidation(userSchema, signupFormController);
+const validateSignin = withValidation(signinSchema, signinFormController);
 
 const app = new Router();
 
 app.use(withLogs);
+app.use(withSession);
 
 app.get("/assets/*", staticController);
 app.get("/", homeController);
@@ -37,6 +42,9 @@ app.post("/items/:itemId/delete", deleteItemController);
 app.get("/signup", signupFormController);
 app.post("/signup", validateNewUser, createUserController);
 app.get("/users", usersController);
+app.get("/signin", signinFormController);
+app.post("/signin", validateSignin, signinController);
+app.post("/signout", signoutController);
 
 export async function server(request) {
     const url = new URL(request.url);

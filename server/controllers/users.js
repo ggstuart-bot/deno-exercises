@@ -12,7 +12,7 @@ export async function createUserController(ctx) {
     const { validated } = ctx;
     const user = await createUser(validated);
     ctx.flash = `User '${user.username}' created`;
-    return redirect("/", ctx);
+    return redirect("/signin", ctx);
 }
 
 export function usersController(ctx) {
