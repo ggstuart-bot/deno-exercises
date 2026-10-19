@@ -12,7 +12,8 @@ db.exec(`
 db.exec("DROP TABLE IF EXISTS users");
 db.exec(`
     CREATE TABLE users (
-        username TEXT PRIMARY KEY,
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT UNIQUE NOT NULL,
         hashedPassword TEXT NOT NULL,
         isAdmin INTEGER DEFAULT 0
     )

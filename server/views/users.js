@@ -7,13 +7,13 @@ export function usersView(ctx) {
     <section>
         <h2>Users</h2>
         <ul>
-${users.map(itemToHTML)}
+${users.map(userToHTML)}
         </ul>
     </section>
     `;
 }
 
-function itemToHTML(user) {
+function userToHTML(user) {
     return html`            <li>
                 <a href="/users/${user.username}">${user.username}</a>
             </li>`;

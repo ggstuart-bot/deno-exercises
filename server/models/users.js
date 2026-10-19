@@ -2,7 +2,7 @@ import { hashPassword } from "../tools/hash.js";
 import { db } from "./db.js";
 
 export function getUsers() { 
-    return db.prepare(`SELECT * FROM users;`).all();
+    return db.prepare(`SELECT id, username FROM users;`).all();
 }
 
 export async function createUser({ username, password }) {
