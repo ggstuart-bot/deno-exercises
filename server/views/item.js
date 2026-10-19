@@ -1,9 +1,7 @@
 import { html } from "../tools/html.js";
 
 export function itemView(ctx) {
-    const { data: { item, errors, values } } = ctx;
-    console.log(values);
-    
+    const { data: { item, errors, values } } = ctx;    
     return html`
     <section>
         <h2>${item.label}</h2>
