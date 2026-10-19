@@ -15,12 +15,12 @@ import { Router } from "./tools/router.js";
 import { withLogs } from "./middleware/logging.js";
 import { withValidation } from "./middleware/validation.js";
 import { itemSchema } from "./schema/item.js";
-import { createUserController, signupFormController, usersController } from "./controllers/users.js";
+import { createUserController, profileController, signupFormController, usersController } from "./controllers/users.js";
 import { userSchema } from "./schema/user.js";
-import { alreadySignedInRedirectController, signinController, signinFormController, signinRedirectController, signoutController } from "./controllers/auth.js";
+import { alreadySignedInRedirectController, forbiddenController, signinController, signinFormController, signinRedirectController, signoutController } from "./controllers/auth.js";
 import { signinSchema } from "./schema/signin.js";
 import { withSession } from "./middleware/session.js";
-import { requireGuest, requireUser } from "./middleware/access.js";
+import { requireAdmin, requireGuest, requireUser } from "./middleware/access.js";
 
 const validateNewItem = withValidation(itemSchema, itemsController);
 const validateEditItem = withValidation(itemSchema, itemController);
@@ -29,6 +29,7 @@ const validateSignin = withValidation(signinSchema, signinFormController);
 
 const mustBeSignedIn = requireUser(signinRedirectController);
 const mustBeSignedOut = requireGuest(alreadySignedInRedirectController);
+const mustBeAdmin = requireAdmin(forbiddenController);
 
 const app = new Router();
 
@@ -44,13 +45,14 @@ app.post("/signup", mustBeSignedOut, validateNewUser, createUserController);
 app.get("/signin", mustBeSignedOut, signinFormController);
 app.post("/signin", mustBeSignedOut, validateSignin, signinController);
 app.post("/signout", signoutController);
+app.get("/profile", mustBeSignedIn, profileController);
 
 app.get("/items", itemsController);
 app.post("/items", mustBeSignedIn, validateNewItem, createItemController);
 app.get("/items/:itemId", itemController);
 app.post("/items/:itemId/edit", mustBeSignedIn, validateEditItem, editItemController);
 app.post("/items/:itemId/delete", mustBeSignedIn, deleteItemController);
-app.get("/users", usersController);
+app.get("/users", mustBeSignedIn, mustBeAdmin, usersController);
 
 export async function server(request) {
     const url = new URL(request.url);

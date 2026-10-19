@@ -4,6 +4,7 @@ import { verifyPassword } from "../tools/hash.js";
 import { redirect } from "../tools/redirect.js";
 import { render } from "../tools/render.js";
 import { signinView } from "../views/signin.js";
+import { forbiddenView } from "../views/forbidden.js";
 
 export function signinFormController(ctx) {
     return render(signinView, ctx);
@@ -38,4 +39,9 @@ export function alreadySignedInRedirectController(ctx) {
     const { user: { username } } = ctx;
     ctx.flash = `You are already signed in as '${username}'`;
     return redirect("/", ctx);
+}
+
+export function forbiddenController(ctx) {
+    ctx.status = 403;
+    return render(forbiddenView, ctx);
 }
