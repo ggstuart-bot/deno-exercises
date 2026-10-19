@@ -5,3 +5,7 @@ export function requireUser(fallback) {
 export function requireGuest(fallback) {
     return (ctx, next) => ctx.user ? fallback(ctx) : next(ctx);
 }
+
+export function requireAdmin(fallback) {
+    return (ctx, next) => ctx.user?.isAdmin ? next(ctx) : fallback(ctx);
+}

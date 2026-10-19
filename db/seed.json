@@ -12,6 +12,11 @@
         {
             "username": "testUser2",
             "password": "testUser2!"
+        },
+        {
+            "username": "adminUser",
+            "password": "adminUser1!",
+            "isAdmin": 1
         }
     ]
 }

@@ -17,13 +17,13 @@ export function getUserById(id) {
     ).get({ id });
 }
 
-export async function createUser({ username, password }) {
+export async function createUser({ username, password, isAdmin = 0 }) {
     const hashedPassword = await hashPassword(password);
     return db.prepare(`
-        INSERT INTO users(username, hashedPassword)
-        VALUES (:username, :hashedPassword)
+        INSERT INTO users(username, hashedPassword, isAdmin)
+        VALUES (:username, :hashedPassword, :isAdmin)
         RETURNING *
-    `).get({ username, hashedPassword });
+    `).get({ username, hashedPassword, isAdmin });
 }
 
 export function usernameExists(username) {

@@ -17,7 +17,7 @@ export function layout(content, ctx) {
             <a href="/">home</a>
             <a href="/about">about</a>
             <a href="/items">items</a>
-            <a href="/users">users</a>            
+            ${adminLinks(ctx.user)}
             ${authLinks(ctx.user)}
         </nav>
     </header>
@@ -48,9 +48,16 @@ function userMessage(user) {
         : "";
 }
 
+function adminLinks(user) {
+    return user?.isAdmin
+        ? html`<a href="/users">users</a>`
+        : "";
+}
+
 function authLinks(user) {
     return user
-        ? html`<form method="POST" action="/signout">
+        ? html`<a href="/profile">profile</a>
+            <form method="POST" action="/signout">
                 <button>sign out</button>
             </form>`
         : html`<a href="/signin">sign in</a>`

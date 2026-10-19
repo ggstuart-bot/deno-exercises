@@ -14,7 +14,5 @@ ${users.map(userToHTML)}
 }
 
 function userToHTML(user) {
-    return html`            <li>
-                <a href="/users/${user.username}">${user.username}</a>
-            </li>`;
+    return html`            <li>${user.username}</li>`;
 }
