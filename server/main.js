@@ -15,9 +15,12 @@ import { Router } from "./tools/router.js";
 import { withLogs } from "./middleware/logging.js";
 import { withValidation } from "./middleware/validation.js";
 import { itemSchema } from "./schema/item.js";
+import { createUserController, registrationFormController, usersController } from "./controllers/users.js";
+import { userSchema } from "./schema/user.js";
 
 const validateNewItem = withValidation(itemSchema, itemsController);
 const validateEditItem = withValidation(itemSchema, itemController);
+const validateNewUser = withValidation(userSchema, registrationFormController);
 
 const app = new Router();
 
@@ -31,6 +34,9 @@ app.post("/items", validateNewItem, createItemController);
 app.get("/items/:itemId", itemController);
 app.post("/items/:itemId/edit", validateEditItem, editItemController);
 app.post("/items/:itemId/delete", deleteItemController);
+app.get("/register", registrationFormController);
+app.post("/register", validateNewUser, createUserController);
+app.get("/users", usersController);
 
 export async function server(request) {
     const url = new URL(request.url);
