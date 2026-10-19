@@ -13,16 +13,16 @@ export function safe(value) {
     return new SafeHTML(String(value ?? ""));
 }
 
-function render(value) {    
+function toHTML(value) {    
     if (value === undefined || value === null) return "";
     if (value instanceof SafeHTML) return value.value;
-    if (Array.isArray(value)) return value.map(render).join("\n");
+    if (Array.isArray(value)) return value.map(toHTML).join("\n");
     return escape(String(value));
 }
 
 export function html(strings, ...values) {
     return safe(strings.reduce(
-        (output, string, index) => output + string + render(values[index]),
+        (output, string, index) => output + string + toHTML(values[index]),
         "",
     ));
 }
