@@ -18,7 +18,7 @@ export function layout(content, ctx) {
             <a href="/about">about</a>
             <a href="/items">items</a>
             <a href="/users">users</a>            
-            <a href="/register">sign up</a>            
+            <a href="/signup">sign up</a>            
         </nav>
     </header>
     ${flashMessage(ctx.data.flash)}

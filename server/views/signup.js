@@ -1,9 +1,7 @@
 import { html } from "../tools/html.js";
 
-export function registrationView(ctx) { 
+export function signupView(ctx) { 
     const { data: { errors, values } } = ctx;
-    console.log(errors, values);
-    
     return html`
     <section class="center">
         <h2>Sign up</h2>
@@ -13,9 +11,9 @@ export function registrationView(ctx) {
             <input id="username" name="username" value="${values?.username ?? ""}">
             <span class="error">${errors?.username ?? ""}</span>
             <label for="password">Password</label>
-            <input id="password" type="password" name="password" value="${values?.password ?? ""}"> 
+            <input id="password" type="password" name="password"> 
             <span class="error">${errors?.password ?? ""}</span>
-            <button>Register</button>
+            <button>sign up</button>
         </form>
     </section>
     `;
