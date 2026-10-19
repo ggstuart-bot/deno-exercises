@@ -13,3 +13,12 @@ export async function createUser({ username, password }) {
         RETURNING *
     `).get({ username, hashedPassword });
 }
+
+export function usernameExists(username) {
+    return Boolean(
+        db.prepare(`
+            SELECT 1 FROM users
+            WHERE username=:username
+        `).get({ username })
+    );
+}

@@ -45,3 +45,11 @@ export function hasSymbol(name, value) {
         throw new ValidationError(`${name} must include a symbol.`);
     }
 }
+
+export function unique(exists) {
+    return (name, value) => { 
+        if (exists(value)) {
+            throw new ValidationError(`${name} already taken`);
+        }
+    }
+}
