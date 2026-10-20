@@ -6,6 +6,32 @@ body {
     font-weight: 300;
     margin: 0;
 
+    .avatar {
+        --size: 8rem;
+        display: inline-block;
+        width: var(--size);
+        height: var(--size);
+        border-radius: 50%;
+        object-fit: cover;
+        vertical-align: middle;
+        background: #ccc;
+    }
+
+    a:has(> .avatar) {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5ch;
+    }
+
+    nav .avatar {
+        --size: 1.4em;
+        margin-block: -0.2em;
+    }
+
+    li .avatar {
+        --size: 2em;
+    }
+
     h2,
     h3 {
         font-weight: 200;
@@ -99,13 +125,6 @@ body {
         a {
             color: orangered;
         }
-        .avatar {
-            width: 8rem;
-            height: 8rem;
-            border-radius: 50%;
-            object-fit: cover;
-            background: #ccc;
-        }
         .admin {
             font-size: 0.6em;
             color: #444;
@@ -123,6 +142,12 @@ body {
             li {
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
+                > span {
+                    display: flex;
+                    align-items: center;
+                    gap: 1ch;
+                }
                 backdrop-filter: brightness(1.4);
                 &:nth-child(even) {
                     backdrop-filter: brightness(1.5);
