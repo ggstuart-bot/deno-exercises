@@ -12,6 +12,7 @@
             "username": "testUser1",
             "password": "testUser1!",
             "avatar": "testUser1.webp",
+            "isPublic": 1,
             "listIsPublic": 1
         },
         {

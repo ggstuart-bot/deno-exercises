@@ -1,4 +1,5 @@
 import { html } from "../tools/html.js";
+import { avatarImage } from "./avatar.js";
 
 export function homeView(ctx) {
     const { user, data: { lists, publicLists, errors, values } } = ctx;
@@ -50,6 +51,9 @@ function listToHTML(list) {
 function publicListToHTML(list) {
     return html`            <li>
                 <a href="/lists/${list.id}">${list.title}</a>
-                <span>'${list.username}', ${list.itemCount} ${list.itemCount === 1 ? "item" : "items"}</span>
+                <span>
+                    <a href="/users/${list.ownerId}">${avatarImage({ id: list.ownerId, avatarId: list.avatarId })}${list.username}</a>
+                    ${list.itemCount} ${list.itemCount === 1 ? "item" : "items"}
+                </span>
             </li>`;
 }

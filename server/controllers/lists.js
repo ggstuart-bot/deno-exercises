@@ -1,4 +1,4 @@
-import { createList, deleteList, updateIsPublic, updateListTitle } from "../models/lists.js";
+import { createList, deleteList, updateListIsPublic, updateListTitle } from "../models/lists.js";
 import { getItemsByListId } from "../models/items.js";
 import { getUserById } from "../models/users.js";
 import { canUseList } from "../tools/permissions.js";
@@ -34,12 +34,18 @@ export function editListController(ctx) {
 function listVisibilityController(isPublic) {
     return (ctx) => {
         const { data: { list: { id } } } = ctx;
-        const list = updateIsPublic(id, isPublic);
+        const list = updateListIsPublic(id, isPublic);
         ctx.flash = isPublic
             ? `List '${list.title}' is now public`
             : `List '${list.title}' is now private`;
         return redirect(`/lists/${list.id}`, ctx);
     };
+}
+
+export function privateProfileController(ctx) {
+    const { data: { list } } = ctx;
+    ctx.flash = "Publish your profile to share lists";
+    return redirect(`/lists/${list.id}`, ctx);
 }
 
 export const publishListController = listVisibilityController(1);

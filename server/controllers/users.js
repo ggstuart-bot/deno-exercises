@@ -1,4 +1,5 @@
-import { createUser, getUsers, updateAvatarId, updateIsAdmin } from "../models/users.js";
+import { createUser, getUsers, updateAvatarId, updateIsAdmin, updateUserIsPublic } from "../models/users.js";
+import { getPublicListsByOwnerId, unpublishListsByOwnerId } from "../models/lists.js";
 import { createFile, deleteFile, getFile } from "../models/files.js";
 import { NotFoundError } from "../tools/errors.js";
 import { redirect } from "../tools/redirect.js";
@@ -24,6 +25,8 @@ export function usersController(ctx) {
 }
 
 export function userController(ctx) {
+    const { data: { targetUser } } = ctx;
+    ctx.data.publicLists = getPublicListsByOwnerId(targetUser.id);
     return render(userDetailView, ctx);
 }
 
@@ -69,3 +72,22 @@ function adminStatusController(isAdmin) {
 
 export const promoteController = adminStatusController(1);
 export const demoteController = adminStatusController(0);
+
+// Unpublishing a profile also unpublishes its lists,
+// so a public list always has a public owner
+function profileVisibilityController(isPublic) {
+    return (ctx) => {
+        const { data: { targetUser } } = ctx;
+        updateUserIsPublic(targetUser.id, isPublic);
+        if (!isPublic) {
+            unpublishListsByOwnerId(targetUser.id);
+        }
+        ctx.flash = isPublic
+            ? "Your profile is now public"
+            : "Your profile is now private";
+        return redirect("/profile", ctx);
+    };
+}
+
+export const publishProfileController = profileVisibilityController(1);
+export const unpublishProfileController = profileVisibilityController(0);

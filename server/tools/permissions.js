@@ -1,7 +1,9 @@
 export const isSelf = (user, targetUser) => user.id === targetUser.id;
-export const canViewUser = (user, targetUser) => isSelf(user, targetUser) || user.isAdmin;
+export const canViewUser = (user, targetUser) => isSelf(user, targetUser) || user.isAdmin || Boolean(targetUser.isPublic);
 export const canChangeAdmin = (user, targetUser) => user.isAdmin && !isSelf(user, targetUser);
 export const canChangeAvatar = (user, targetUser) => isSelf(user, targetUser);
+export const canPublishProfile = (user, targetUser) => isSelf(user, targetUser);
 export const isOwner = (user, resource) => user.id === resource.ownerId;
 export const canUseList = (user, list) => isOwner(user, list);
+export const canPublishList = (user, list) => isOwner(user, list) && Boolean(user.isPublic);
 export const canViewList = (user, list) => isOwner(user, list) || Boolean(list.isPublic);

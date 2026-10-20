@@ -21,7 +21,8 @@ db.exec(`
         username TEXT UNIQUE NOT NULL,
         hashedPassword TEXT NOT NULL,
         isAdmin INTEGER DEFAULT 0,
-        avatarId INTEGER REFERENCES files(id) ON DELETE SET NULL
+        avatarId INTEGER REFERENCES files(id) ON DELETE SET NULL,
+        isPublic INTEGER NOT NULL DEFAULT 0
     )
 `);
 

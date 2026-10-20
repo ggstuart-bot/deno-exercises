@@ -1,4 +1,5 @@
 import { html } from "../tools/html.js";
+import { avatarImage } from "./avatar.js";
 
 export function readOnlyListView(ctx) {
     const { data: { list, items, owner } } = ctx;
@@ -6,7 +7,7 @@ export function readOnlyListView(ctx) {
     return html`
     <section>
         <h2>${list.title}</h2>
-        <p>A public list by '${owner.username}'</p>
+        <p>A public list by <a href="/users/${owner.id}">${avatarImage(owner)}${owner.username}</a></p>
         <ul>
 ${items.map(itemToHTML)}
         </ul>
