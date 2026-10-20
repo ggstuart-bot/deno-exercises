@@ -2,7 +2,7 @@ import { hashPassword } from "../tools/hash.js";
 import { db } from "./db.js";
 
 export function getUsers() { 
-    return db.prepare(`SELECT id, username FROM users;`).all();
+    return db.prepare(`SELECT id, username, isAdmin FROM users;`).all();
 }
 
 export function getUserByUsername(username) {
@@ -15,6 +15,12 @@ export function getUserById(id) {
     return db.prepare(
         `SELECT id, username, isAdmin FROM users WHERE id=:id`
     ).get({ id });
+}
+
+export function makeAdmin(id) {
+    return db.prepare(
+        `UPDATE users SET isAdmin = 1 WHERE id=:id`
+    ).run({ id });
 }
 
 export async function createUser({ username, password, isAdmin = 0 }) {

@@ -1,4 +1,5 @@
-import { createUser, getUsers } from "../models/users.js";
+import { createUser, getUserById, getUsers, makeAdmin } from "../models/users.js";
+import { NotFoundError } from "../tools/errors.js";
 import { redirect } from "../tools/redirect.js";
 import { render } from "../tools/render.js";
 import { signupView } from "../views/signup.js";
@@ -23,4 +24,15 @@ export function usersController(ctx) {
 
 export function profileController(ctx) {
     return render(profileView, ctx);
+}
+
+export function makeAdminController(ctx) {
+    const { params: { userId } } = ctx;
+    const user = getUserById(Number(userId));
+    if (!user) {
+        throw new NotFoundError(`User ${userId} not found`);
+    }
+    makeAdmin(user.id);
+    ctx.flash = `'${user.username}' is now an admin`;
+    return redirect("/users", ctx);
 }

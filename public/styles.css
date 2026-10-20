@@ -112,6 +112,9 @@ body {
                     backdrop-filter: brightness(1.5);
                 }
                 padding: 0.25rem 0.5rem;
+                form {
+                    display: inline;
+                }
             }
         }
 

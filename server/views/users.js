@@ -14,5 +14,16 @@ ${users.map(userToHTML)}
 }
 
 function userToHTML(user) {
-    return html`            <li>${user.username}</li>`;
+    return html`            <li>
+                ${user.username}
+                ${adminControl(user)}
+            </li>`;
+}
+
+function adminControl(user) {
+    return user.isAdmin
+        ? html`<em>admin</em>`
+        : html`<form method="POST" action="/users/${user.id}/admin">
+                    <button>make admin</button>
+                </form>`;
 }

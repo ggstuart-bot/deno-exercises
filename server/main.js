@@ -15,7 +15,7 @@ import { Router } from "./tools/router.js";
 import { withLogs } from "./middleware/logging.js";
 import { withValidation } from "./middleware/validation.js";
 import { itemSchema } from "./schema/item.js";
-import { createUserController, profileController, signupFormController, usersController } from "./controllers/users.js";
+import { createUserController, makeAdminController, profileController, signupFormController, usersController } from "./controllers/users.js";
 import { userSchema } from "./schema/user.js";
 import { alreadySignedInRedirectController, forbiddenController, signinController, signinFormController, signinRedirectController, signoutController } from "./controllers/auth.js";
 import { signinSchema } from "./schema/signin.js";
@@ -53,6 +53,7 @@ app.get("/items/:itemId", itemController);
 app.post("/items/:itemId/edit", mustBeSignedIn, validateEditItem, editItemController);
 app.post("/items/:itemId/delete", mustBeSignedIn, deleteItemController);
 app.get("/users", mustBeSignedIn, mustBeAdmin, usersController);
+app.post("/users/:userId/admin", mustBeSignedIn, mustBeAdmin, makeAdminController);
 
 export async function server(request) {
     const url = new URL(request.url);
