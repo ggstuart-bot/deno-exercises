@@ -1,7 +1,7 @@
 import { db } from "./db.js";
 
 export async function createFile(file) {
-    const bytes = new Uint8Array(await file.arrayBuffer());
+    const bytes = await file.bytes();
     const { id } = db.prepare(`
         INSERT INTO files(name, bytes, type)
         VALUES (:name, :bytes, :type)
