@@ -1,7 +1,8 @@
 import { html } from "../tools/html.js";
 
+const DEFAULT_AVATAR = "/assets/default-avatar.svg";
+
 export function avatarImage({ id, avatarId }, alt = "") {
-    return avatarId
-        ? html`<img class="avatar" src="/users/${id}/avatar?v=${avatarId}" alt="${alt}">`
-        : html`<span class="avatar"></span>`;
+    const src = avatarId ? `/users/${id}/avatar?v=${avatarId}` : DEFAULT_AVATAR;
+    return html`<img class="avatar" src="${src}" alt="${alt}">`;
 }

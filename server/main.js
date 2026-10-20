@@ -15,25 +15,28 @@ import { Router } from "./tools/router.js";
 import { withLogs } from "./middleware/logging.js";
 import { withValidation } from "./middleware/validation.js";
 import { itemSchema } from "./schema/item.js";
-import { avatarController, createUserController, demoteController, profileController, promoteController, selfChangeController, signupFormController, userController, usersController } from "./controllers/users.js";
+import { avatarController, createUserController, uploadAvatarController, demoteController, profileController, promoteController, selfChangeController, signupFormController, userController, usersController } from "./controllers/users.js";
 import { userSchema } from "./schema/user.js";
+import { avatarSchema } from "./schema/avatar.js";
 import { alreadySignedInRedirectController, forbiddenController, signinController, signinFormController, signinRedirectController, signoutController } from "./controllers/auth.js";
 import { signinSchema } from "./schema/signin.js";
 import { withSession } from "./middleware/session.js";
 import { allow, requireAdmin, requireGuest, requireUser } from "./middleware/access.js";
 import { withTargetUser } from "./middleware/resources.js";
-import { canChangeAdmin, canViewUser } from "./tools/permissions.js";
+import { canChangeAdmin, canChangeAvatar, canViewUser } from "./tools/permissions.js";
 
 const validateNewItem = withValidation(itemSchema, itemsController);
 const validateEditItem = withValidation(itemSchema, itemController);
 const validateNewUser = withValidation(userSchema, signupFormController);
 const validateSignin = withValidation(signinSchema, signinFormController);
+const validateAvatar = withValidation(avatarSchema, userController);
 
 const mustBeSignedIn = requireUser(signinRedirectController);
 const mustBeSignedOut = requireGuest(alreadySignedInRedirectController);
 const mustBeAdmin = requireAdmin(forbiddenController);
 const mayViewUser = allow(canViewUser, notFoundController);
 const mayChangeAdmin = allow(canChangeAdmin, selfChangeController);
+const mayChangeAvatar = allow(canChangeAvatar, notFoundController);
 
 const app = new Router();
 
@@ -59,6 +62,7 @@ app.post("/items/:itemId/delete", mustBeSignedIn, deleteItemController);
 app.get("/users", mustBeSignedIn, mustBeAdmin, usersController);
 app.get("/users/:userId", mustBeSignedIn, withTargetUser, mayViewUser, userController);
 app.get("/users/:userId/avatar", mustBeSignedIn, withTargetUser, mayViewUser, avatarController);
+app.post("/users/:userId/avatar", mustBeSignedIn, withTargetUser, mayChangeAvatar, validateAvatar, uploadAvatarController);
 app.post("/users/:userId/promote", mustBeSignedIn, mustBeAdmin, withTargetUser, mayChangeAdmin, promoteController);
 app.post("/users/:userId/demote", mustBeSignedIn, mustBeAdmin, withTargetUser, mayChangeAdmin, demoteController);
 

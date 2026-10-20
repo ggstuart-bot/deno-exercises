@@ -54,3 +54,37 @@ export function unique(exists) {
         }
     }
 }
+
+export function requiredFile(name, value) {
+    if (!(value instanceof File) || !value.size) {
+        throw new ValidationError(`${name} is a required field.`);
+    }
+}
+
+export function notSvg(name, value) {
+    if (value.type === "image/svg+xml") {
+        throw new ValidationError(
+            `${name} can't be an SVG because SVG files can contain scripts.`,
+        );
+    }
+}
+
+export function fileType(types) {
+    return (name, value) => {
+        if (!types.includes(value.type)) {
+            throw new ValidationError(
+                `${name} must be one of these types: ${types.join(", ")}.`,
+            );
+        }
+    };
+}
+
+export function maxFileSize(bytes) {
+    return (name, value) => {
+        if (value.size > bytes) {
+            throw new ValidationError(
+                `${name} must be no more than ${bytes / 1024 ** 2} MB.`,
+            );
+        }
+    };
+}

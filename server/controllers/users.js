@@ -1,5 +1,5 @@
-import { createUser, getUsers, updateIsAdmin } from "../models/users.js";
-import { getFile } from "../models/files.js";
+import { createUser, getUsers, updateAvatarId, updateIsAdmin } from "../models/users.js";
+import { createFile, deleteFile, getFile } from "../models/files.js";
 import { NotFoundError } from "../tools/errors.js";
 import { redirect } from "../tools/redirect.js";
 import { render } from "../tools/render.js";
@@ -34,6 +34,17 @@ export function avatarController(ctx) {
         throw new NotFoundError(`No avatar for user ${targetUser.id}`);
     }
     return new Response(avatarFile);
+}
+
+export async function uploadAvatarController(ctx) {
+    const { validated: { avatar }, data: { targetUser } } = ctx;
+    const avatarId = await createFile(avatar);
+    updateAvatarId(targetUser.id, avatarId);
+    if (targetUser.avatarId) {
+        deleteFile(targetUser.avatarId);
+    }
+    ctx.flash = "Avatar updated";
+    return redirect("/profile", ctx);
 }
 
 export function profileController(ctx) {
