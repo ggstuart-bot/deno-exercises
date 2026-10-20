@@ -5,7 +5,6 @@ import { render } from "../tools/render.js";
 import { signupView } from "../views/signup.js";
 import { usersView } from "../views/users.js";
 import { profileView } from "../views/profile.js";
-import { forbiddenController } from "./auth.js";
 
 export function signupFormController(ctx) { 
     return render(signupView, ctx);
@@ -42,7 +41,8 @@ function changeAdmin(ctx, isAdmin) {
         throw new NotFoundError(`User ${userId} not found`);
     }
     if (user.id === ctx.user.id) {
-        return forbiddenController(ctx);
+        ctx.flash = "You can't change your own admin status";
+        return redirect("/users", ctx);
     }
     setAdmin(user.id, isAdmin);
     ctx.flash = isAdmin
