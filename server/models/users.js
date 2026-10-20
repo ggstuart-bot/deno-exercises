@@ -2,7 +2,7 @@ import { hashPassword } from "../tools/hash.js";
 import { db } from "./db.js";
 
 export function getUsers() { 
-    return db.prepare(`SELECT id, username, isAdmin FROM users;`).all();
+    return db.prepare(`SELECT id, username, isAdmin, avatarId FROM users;`).all();
 }
 
 export function getUserByUsername(username) {

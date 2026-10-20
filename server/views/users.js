@@ -1,5 +1,6 @@
 import { html } from "../tools/html.js";
 import { canChangeAdmin } from "../tools/permissions.js";
+import { avatarImage } from "./avatar.js";
 
 export function usersView(ctx) {
     const { data: { users }, user: currentUser } = ctx;
@@ -17,7 +18,7 @@ ${users.map((user) => userToHTML(user, currentUser))}
 function userToHTML(user, currentUser) {
     return html`            <li>
                 <span>
-                    <a href="/users/${user.id}">${user.username}</a>
+                    <a href="/users/${user.id}">${avatarImage(user)}${user.username}</a>
                     ${user.isAdmin ? html`<span class="admin">admin</span>` : ""}
                 </span>
                 ${canChangeAdmin(currentUser, user) ? adminButton(user) : ""}
