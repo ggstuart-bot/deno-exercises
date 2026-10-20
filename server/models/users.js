@@ -13,7 +13,7 @@ export function getUserByUsername(username) {
 
 export function getUserById(id) {
     return db.prepare(
-        `SELECT id, username, isAdmin FROM users WHERE id=:id`
+        `SELECT id, username, isAdmin, avatarId FROM users WHERE id=:id`
     ).get({ id });
 }
 
@@ -21,6 +21,12 @@ export function updateIsAdmin(id, isAdmin) {
     return db.prepare(
         `UPDATE users SET isAdmin=:isAdmin WHERE id=:id`
     ).run({ id, isAdmin });
+}
+
+export function updateAvatarId(id, avatarId) {
+    return db.prepare(
+        `UPDATE users SET avatarId=:avatarId WHERE id=:id`
+    ).run({ id, avatarId });
 }
 
 export async function createUser({ username, password, isAdmin = 0 }) {
