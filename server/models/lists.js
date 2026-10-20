@@ -8,6 +8,12 @@ export function createList({ title, ownerId }) {
     `).get({ title, ownerId });
 }
 
+export function getListById(id) {
+    return db.prepare(
+        `SELECT id, title, ownerId FROM lists WHERE id=:id`
+    ).get({ id });
+}
+
 export function getListsByOwnerId(ownerId) {
     return db.prepare(
         `SELECT id, title, ownerId FROM lists WHERE ownerId=:ownerId`

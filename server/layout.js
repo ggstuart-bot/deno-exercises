@@ -17,7 +17,7 @@ export function layout(content, ctx) {
         <nav>
             <a href="/">home</a>
             <a href="/about">about</a>
-            <a href="/items">items</a>
+            ${userLinks(ctx.user)}
             ${adminLinks(ctx.user)}
             ${authLinks(ctx.user)}
         </nav>
@@ -46,6 +46,12 @@ function flashMessage(flash) {
 function userMessage(user) {
     return user
         ? html`<p>Signed in as '${user.username}'</p>`
+        : "";
+}
+
+function userLinks(user) {
+    return user
+        ? html`<a href="/items">items</a>`
         : "";
 }
 

@@ -22,8 +22,8 @@ import { alreadySignedInRedirectController, forbiddenController, signinControlle
 import { signinSchema } from "./schema/signin.js";
 import { withSession } from "./middleware/session.js";
 import { allow, requireAdmin, requireGuest, requireUser } from "./middleware/access.js";
-import { withTargetUser } from "./middleware/resources.js";
-import { canChangeAdmin, canChangeAvatar, canViewUser } from "./tools/permissions.js";
+import { withItem, withList, withTargetUser } from "./middleware/resources.js";
+import { canChangeAdmin, canChangeAvatar, canUseList, canViewUser } from "./tools/permissions.js";
 
 const validateNewItem = withValidation(itemSchema, itemsController);
 const validateEditItem = withValidation(itemSchema, itemController);
@@ -34,9 +34,10 @@ const validateAvatar = withValidation(avatarSchema, userController);
 const mustBeSignedIn = requireUser(signinRedirectController);
 const mustBeSignedOut = requireGuest(alreadySignedInRedirectController);
 const mustBeAdmin = requireAdmin(forbiddenController);
-const mayViewUser = allow(canViewUser, notFoundController);
-const mayChangeAdmin = allow(canChangeAdmin, selfChangeController);
-const mayChangeAvatar = allow(canChangeAvatar, notFoundController);
+const mayViewUser = allow(canViewUser, "targetUser", notFoundController);
+const mayChangeAdmin = allow(canChangeAdmin, "targetUser", selfChangeController);
+const mayChangeAvatar = allow(canChangeAvatar, "targetUser", notFoundController);
+const mayUseList = allow(canUseList, "list", notFoundController);
 
 const app = new Router();
 
@@ -51,14 +52,14 @@ app.get("/signup", mustBeSignedOut, signupFormController);
 app.post("/signup", mustBeSignedOut, validateNewUser, createUserController);
 app.get("/signin", mustBeSignedOut, signinFormController);
 app.post("/signin", mustBeSignedOut, validateSignin, signinController);
-app.post("/signout", signoutController);
+app.post("/signout", mustBeSignedIn, signoutController);
 app.get("/profile", mustBeSignedIn, profileController);
 
 app.get("/items", mustBeSignedIn, itemsController);
-app.post("/items", mustBeSignedIn, validateNewItem, createItemController);
-app.get("/items/:itemId", itemController);
-app.post("/items/:itemId/edit", mustBeSignedIn, validateEditItem, editItemController);
-app.post("/items/:itemId/delete", mustBeSignedIn, deleteItemController);
+app.post("/lists/:listId/items", mustBeSignedIn, withList, mayUseList, validateNewItem, createItemController);
+app.get("/items/:itemId", mustBeSignedIn, withItem, mayUseList, itemController);
+app.post("/items/:itemId/edit", mustBeSignedIn, withItem, mayUseList, validateEditItem, editItemController);
+app.post("/items/:itemId/delete", mustBeSignedIn, withItem, mayUseList, deleteItemController);
 app.get("/users", mustBeSignedIn, mustBeAdmin, usersController);
 app.get("/users/:userId", mustBeSignedIn, withTargetUser, mayViewUser, userController);
 app.get("/users/:userId/avatar", mustBeSignedIn, withTargetUser, mayViewUser, avatarController);

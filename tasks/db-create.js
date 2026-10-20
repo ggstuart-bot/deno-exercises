@@ -46,7 +46,7 @@ db.exec(`
         id TEXT PRIMARY KEY,
         userId INTEGER NOT NULL,
         expires INTEGER NOT NULL,
-        FOREIGN KEY (userId) REFERENCES users(id)
+        FOREIGN KEY (userId) REFERENCES users(id) ON DELETE CASCADE
     )
 `);
 

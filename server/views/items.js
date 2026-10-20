@@ -1,7 +1,7 @@
 import { html } from "../tools/html.js";
 
 export function itemsView(ctx) {
-    const { data: { items, errors, values } } = ctx;
+    const { data: { items, list, errors, values } } = ctx;
 
     return html`
     <section>
@@ -12,14 +12,18 @@ ${items.map(itemToHTML)}
     </section>
     <aside>
         <h3>New item</h3>
-        <form method="POST">
+        ${list ? newItemForm(list, errors, values) : html`<p>You don't have any lists yet</p>`}
+    </aside>
+    `;
+}
+
+function newItemForm(list, errors, values) {
+    return html`<form method="POST" action="/lists/${list.id}/items">
             <label for="new">Label</label>
             <input id="new" name="label" value="${values?.label ?? ""}">
             <span class="error">${errors?.label ?? ""}</span>
             <button>create</button>
-        </form>
-    </aside>
-    `;
+        </form>`;
 }
 
 function itemToHTML(item) {
