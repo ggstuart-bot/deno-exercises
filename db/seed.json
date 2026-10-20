@@ -11,7 +11,8 @@
         {
             "username": "testUser1",
             "password": "testUser1!",
-            "avatar": "testUser1.webp"
+            "avatar": "testUser1.webp",
+            "listIsPublic": 1
         },
         {
             "username": "testUser2",

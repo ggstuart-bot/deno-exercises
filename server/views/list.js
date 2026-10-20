@@ -25,6 +25,16 @@ ${items.map((item) => itemToHTML(list, item))}
             <span class="error">${errors?.title ?? ""}</span>
             <button>rename</button>
         </form>
+        <h3>Visibility</h3>
+        ${list.isPublic
+            ? html`<p>Anyone signed in can see this list</p>
+        <form method="POST" action="/lists/${list.id}/unpublish">
+            <button>make private</button>
+        </form>`
+            : html`<p>Only you can see this list</p>
+        <form method="POST" action="/lists/${list.id}/publish">
+            <button>make public</button>
+        </form>`}
         <h3>Delete list</h3>
         <p>This also deletes all of its items</p>
         <form method="POST" action="/lists/${list.id}/delete">

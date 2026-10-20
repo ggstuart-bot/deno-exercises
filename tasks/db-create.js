@@ -29,7 +29,8 @@ db.exec(`
     CREATE TABLE lists (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         title TEXT NOT NULL,
-        ownerId INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE
+        ownerId INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+        isPublic INTEGER NOT NULL DEFAULT 0
     )
 `);
 

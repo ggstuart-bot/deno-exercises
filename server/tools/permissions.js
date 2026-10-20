@@ -4,3 +4,4 @@ export const canChangeAdmin = (user, targetUser) => user.isAdmin && !isSelf(user
 export const canChangeAvatar = (user, targetUser) => isSelf(user, targetUser);
 export const isOwner = (user, resource) => user.id === resource.ownerId;
 export const canUseList = (user, list) => isOwner(user, list);
+export const canViewList = (user, list) => isOwner(user, list) || Boolean(list.isPublic);
