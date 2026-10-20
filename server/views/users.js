@@ -16,7 +16,7 @@ ${users.map((user) => userToHTML(user, currentUser))}
 function userToHTML(user, currentUser) {
     return html`            <li>
                 ${user.username}
-                ${user.isAdmin ? html`<em>admin</em>` : ""}
+                ${user.isAdmin ? html`<span class="admin">admin</span>` : ""}
                 ${user.id === currentUser.id ? "" : adminButton(user)}
             </li>`;
 }

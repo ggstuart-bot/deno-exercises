@@ -115,6 +115,13 @@ body {
                 form {
                     display: inline;
                 }
+                .admin {
+                    font-size: 0.75em;
+                    color: #444;
+                    border: 1px solid currentColor;
+                    border-radius: 0.25em;
+                    padding: 0 0.5ch;
+                }
             }
         }
 
