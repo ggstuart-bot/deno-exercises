@@ -36,17 +36,17 @@ export function demoteController(ctx) {
 
 function changeAdmin(ctx, isAdmin) {
     const { params: { userId } } = ctx;
-    const user = getUserById(Number(userId));
-    if (!user) {
+    const targetUser = getUserById(Number(userId));
+    if (!targetUser) {
         throw new NotFoundError(`User ${userId} not found`);
     }
-    if (user.id === ctx.user.id) {
+    if (targetUser.id === ctx.user.id) {
         ctx.flash = "You can't change your own admin status";
         return redirect("/users", ctx);
     }
-    setAdmin(user.id, isAdmin);
+    setAdmin(targetUser.id, isAdmin);
     ctx.flash = isAdmin
-        ? `'${user.username}' is now an admin`
-        : `'${user.username}' is no longer an admin`;
+        ? `'${targetUser.username}' is now an admin`
+        : `'${targetUser.username}' is no longer an admin`;
     return redirect("/users", ctx);
 }
