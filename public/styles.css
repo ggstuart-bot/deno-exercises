@@ -76,8 +76,12 @@ body {
                 padding: 0.25em 0.5em;
                 border-radius: 1em;
                 backdrop-filter: brightness(0.8);
+                border: 0.5px solid white;
                 &:hover {
                     backdrop-filter: brightness(0.6);
+                }
+                &:has(img) {
+                    padding-left: 0;
                 }
             }
 
