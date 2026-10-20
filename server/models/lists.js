@@ -21,3 +21,15 @@ export function getListsByOwnerId(ownerId) {
         FROM lists WHERE ownerId=:ownerId
     `).all({ ownerId });
 }
+
+export function updateListTitle(id, title) {
+    return db.prepare(
+        `UPDATE lists SET title=:title WHERE id=:id RETURNING id, title, ownerId`
+    ).get({ id, title });
+}
+
+export function deleteList(id) {
+    return db.prepare(
+        `DELETE FROM lists WHERE id=:id RETURNING id, title, ownerId`
+    ).get({ id });
+}

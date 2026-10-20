@@ -213,6 +213,18 @@ form {
         }
     }
 }
+form.inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5ch;
+
+    span.error {
+        flex-basis: 100%;
+        font-size: 0.8em;
+        color: orangered;
+    }
+}
+
 input,
 button {
     font: inherit;
