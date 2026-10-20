@@ -225,6 +225,76 @@ form.inline {
     }
 }
 
+form.item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5ch;
+    flex: 1;
+
+    input {
+        flex: 1;
+        min-width: 0;
+        font: inherit;
+        color: inherit;
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: 0.25em;
+        padding: 0.1em 0.3em;
+        cursor: text;
+        transition: background-color 200ms, border-color 200ms;
+
+        &:hover:not(:focus) {
+            background: rgb(255 255 255 / 0.5);
+            border-bottom: 1px dashed #666;
+        }
+
+        &:focus {
+            background: white;
+            border-color: #444;
+            outline: 2px solid orangered;
+            outline-offset: 1px;
+        }
+
+        &[aria-invalid="true"] {
+            border-color: orangered;
+        }
+    }
+
+    /* hidden until the row has focus; visibility switches instantly when
+       showing (so Tab can reach it) and only after the fade when hiding */
+    button.save {
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 200ms, visibility 0s 200ms;
+    }
+
+    &:focus-within button.save {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 200ms;
+    }
+
+    button.delete {
+        font-size: 0.7em;
+        color: #555;
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: 0.25em;
+        &:hover,
+        &:focus-visible {
+            color: orangered;
+            border-color: currentColor;
+        }
+    }
+
+    span.error {
+        flex-basis: 100%;
+        font-size: 0.8em;
+        color: orangered;
+    }
+}
+
 input,
 button {
     font: inherit;
