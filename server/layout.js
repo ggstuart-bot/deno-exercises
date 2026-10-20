@@ -13,9 +13,8 @@ export function layout(content, ctx) {
 </head>
 <body>
     <header>
-        <h1>My website</h1>
+        <h1><a href="/">My website</a></h1>
         <nav>
-            <a href="/">home</a>
             <a href="/about">about</a>
             ${adminLinks(ctx.user)}
             ${authLinks(ctx.user)}
