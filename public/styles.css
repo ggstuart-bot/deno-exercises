@@ -99,6 +99,13 @@ body {
         a {
             color: orangered;
         }
+        .admin {
+            font-size: 0.75em;
+            color: #444;
+            border: 1px solid currentColor;
+            border-radius: 0.25em;
+            padding: 0 0.5ch;
+        }
         ul {
             display: grid;
             /* place-self: start; */
@@ -112,6 +119,9 @@ body {
                     backdrop-filter: brightness(1.5);
                 }
                 padding: 0.25rem 0.5rem;
+                form {
+                    display: inline;
+                }
             }
         }
 
