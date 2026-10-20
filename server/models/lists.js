@@ -15,7 +15,9 @@ export function getListById(id) {
 }
 
 export function getListsByOwnerId(ownerId) {
-    return db.prepare(
-        `SELECT id, title, ownerId FROM lists WHERE ownerId=:ownerId`
-    ).all({ ownerId });
+    return db.prepare(`
+        SELECT id, title, ownerId,
+            (SELECT count(*) FROM items WHERE listId = lists.id) AS itemCount
+        FROM lists WHERE ownerId=:ownerId
+    `).all({ ownerId });
 }

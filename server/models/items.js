@@ -1,11 +1,9 @@
 import { db } from "./db.js";
 
-export function getItemsByOwnerId(ownerId) {
-    return db.prepare(`
-        SELECT items.id, items.label, items.listId
-        FROM items JOIN lists ON items.listId = lists.id
-        WHERE lists.ownerId = ?
-    `).all(ownerId);
+export function getItemsByListId(listId) {
+    return db.prepare(
+        "SELECT id, label, listId FROM items WHERE listId = ?",
+    ).all(listId);
 }
 
 export function getItemById(id) {
