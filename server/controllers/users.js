@@ -1,5 +1,6 @@
 import { createUser, getUsers, updateAvatarId, updateIsAdmin } from "../models/users.js";
 import { createFile, deleteFile, getFile } from "../models/files.js";
+import { createList } from "../models/lists.js";
 import { NotFoundError } from "../tools/errors.js";
 import { redirect } from "../tools/redirect.js";
 import { render } from "../tools/render.js";
@@ -14,6 +15,7 @@ export function signupFormController(ctx) {
 export async function createUserController(ctx) {
     const { validated } = ctx;
     const user = await createUser(validated);
+    createList({ title: "shopping", ownerId: user.id });
     ctx.flash = `User '${user.username}' created`;
     return redirect("/signin", ctx);
 }

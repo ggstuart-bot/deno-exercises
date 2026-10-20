@@ -54,7 +54,7 @@ app.post("/signin", mustBeSignedOut, validateSignin, signinController);
 app.post("/signout", signoutController);
 app.get("/profile", mustBeSignedIn, profileController);
 
-app.get("/items", itemsController);
+app.get("/items", mustBeSignedIn, itemsController);
 app.post("/items", mustBeSignedIn, validateNewItem, createItemController);
 app.get("/items/:itemId", itemController);
 app.post("/items/:itemId/edit", mustBeSignedIn, validateEditItem, editItemController);
