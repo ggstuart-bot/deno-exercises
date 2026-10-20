@@ -17,10 +17,10 @@ export function getUserById(id) {
     ).get({ id });
 }
 
-export function makeAdmin(id) {
+export function setAdmin(id, isAdmin) {
     return db.prepare(
-        `UPDATE users SET isAdmin = 1 WHERE id=:id`
-    ).run({ id });
+        `UPDATE users SET isAdmin=:isAdmin WHERE id=:id`
+    ).run({ id, isAdmin });
 }
 
 export async function createUser({ username, password, isAdmin = 0 }) {
