@@ -15,12 +15,14 @@ import { Router } from "./tools/router.js";
 import { withLogs } from "./middleware/logging.js";
 import { withValidation } from "./middleware/validation.js";
 import { itemSchema } from "./schema/item.js";
-import { createUserController, demoteController, profileController, promoteController, signupFormController, usersController } from "./controllers/users.js";
+import { createUserController, demoteController, profileController, promoteController, selfChangeController, signupFormController, usersController } from "./controllers/users.js";
 import { userSchema } from "./schema/user.js";
 import { alreadySignedInRedirectController, forbiddenController, signinController, signinFormController, signinRedirectController, signoutController } from "./controllers/auth.js";
 import { signinSchema } from "./schema/signin.js";
 import { withSession } from "./middleware/session.js";
-import { requireAdmin, requireGuest, requireUser } from "./middleware/access.js";
+import { allow, requireAdmin, requireGuest, requireUser } from "./middleware/access.js";
+import { withTargetUser } from "./middleware/resources.js";
+import { canChangeAdmin } from "./tools/permissions.js";
 
 const validateNewItem = withValidation(itemSchema, itemsController);
 const validateEditItem = withValidation(itemSchema, itemController);
@@ -30,6 +32,7 @@ const validateSignin = withValidation(signinSchema, signinFormController);
 const mustBeSignedIn = requireUser(signinRedirectController);
 const mustBeSignedOut = requireGuest(alreadySignedInRedirectController);
 const mustBeAdmin = requireAdmin(forbiddenController);
+const mayChangeAdmin = allow(canChangeAdmin, selfChangeController);
 
 const app = new Router();
 
@@ -53,8 +56,8 @@ app.get("/items/:itemId", itemController);
 app.post("/items/:itemId/edit", mustBeSignedIn, validateEditItem, editItemController);
 app.post("/items/:itemId/delete", mustBeSignedIn, deleteItemController);
 app.get("/users", mustBeSignedIn, mustBeAdmin, usersController);
-app.post("/users/:userId/promote", mustBeSignedIn, mustBeAdmin, promoteController);
-app.post("/users/:userId/demote", mustBeSignedIn, mustBeAdmin, demoteController);
+app.post("/users/:userId/promote", mustBeSignedIn, mustBeAdmin, withTargetUser, mayChangeAdmin, promoteController);
+app.post("/users/:userId/demote", mustBeSignedIn, mustBeAdmin, withTargetUser, mayChangeAdmin, demoteController);
 
 export async function server(request) {
     const url = new URL(request.url);

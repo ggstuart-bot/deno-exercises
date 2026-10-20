@@ -1,5 +1,4 @@
-import { createUser, getUserById, getUsers, setAdmin } from "../models/users.js";
-import { NotFoundError } from "../tools/errors.js";
+import { createUser, getUsers, updateIsAdmin } from "../models/users.js";
 import { redirect } from "../tools/redirect.js";
 import { render } from "../tools/render.js";
 import { signupView } from "../views/signup.js";
@@ -26,27 +25,21 @@ export function profileController(ctx) {
     return render(profileView, ctx);
 }
 
-export function promoteController(ctx) {
-    return changeAdmin(ctx, 1);
-}
-
-export function demoteController(ctx) {
-    return changeAdmin(ctx, 0);
-}
-
-function changeAdmin(ctx, isAdmin) {
-    const { params: { userId } } = ctx;
-    const targetUser = getUserById(Number(userId));
-    if (!targetUser) {
-        throw new NotFoundError(`User ${userId} not found`);
-    }
-    if (targetUser.id === ctx.user.id) {
-        ctx.flash = "You can't change your own admin status";
-        return redirect("/users", ctx);
-    }
-    setAdmin(targetUser.id, isAdmin);
-    ctx.flash = isAdmin
-        ? `'${targetUser.username}' is now an admin`
-        : `'${targetUser.username}' is no longer an admin`;
+export function selfChangeController(ctx) {
+    ctx.flash = "You can't change your own admin status";
     return redirect("/users", ctx);
 }
+
+function adminStatusController(isAdmin) {
+    return (ctx) => {
+        const { data: { targetUser } } = ctx;
+        updateIsAdmin(targetUser.id, isAdmin);
+        ctx.flash = isAdmin
+            ? `'${targetUser.username}' is now an admin`
+            : `'${targetUser.username}' is no longer an admin`;
+        return redirect("/users", ctx);
+    };
+}
+
+export const promoteController = adminStatusController(1);
+export const demoteController = adminStatusController(0);
