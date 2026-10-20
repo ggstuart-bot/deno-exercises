@@ -54,3 +54,29 @@ export function unique(exists) {
         }
     }
 }
+
+export function isFile(name, value) {
+    if (!(value instanceof File) || !value.size) {
+        throw new ValidationError(`${name} is a required field.`);
+    }
+}
+
+export function isType(types) {
+    return (name, value) => {
+        if (!types.includes(value.type)) {
+            throw new ValidationError(
+                `${name} must be one of these types: ${types.join(", ")}.`,
+            );
+        }
+    };
+}
+
+export function maxSize(bytes) {
+    return (name, value) => {
+        if (value.size > bytes) {
+            throw new ValidationError(
+                `${name} must be no more than ${bytes / 1024 ** 2} MB.`,
+            );
+        }
+    };
+}
