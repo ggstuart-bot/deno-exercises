@@ -15,7 +15,7 @@ import { Router } from "./tools/router.js";
 import { withLogs } from "./middleware/logging.js";
 import { withValidation } from "./middleware/validation.js";
 import { itemSchema } from "./schema/item.js";
-import { createUserController, demoteController, profileController, promoteController, selfChangeController, signupFormController, userController, usersController } from "./controllers/users.js";
+import { avatarController, createUserController, demoteController, profileController, promoteController, selfChangeController, signupFormController, userController, usersController } from "./controllers/users.js";
 import { userSchema } from "./schema/user.js";
 import { alreadySignedInRedirectController, forbiddenController, signinController, signinFormController, signinRedirectController, signoutController } from "./controllers/auth.js";
 import { signinSchema } from "./schema/signin.js";
@@ -58,6 +58,7 @@ app.post("/items/:itemId/edit", mustBeSignedIn, validateEditItem, editItemContro
 app.post("/items/:itemId/delete", mustBeSignedIn, deleteItemController);
 app.get("/users", mustBeSignedIn, mustBeAdmin, usersController);
 app.get("/users/:userId", mustBeSignedIn, withTargetUser, mayViewUser, userController);
+app.get("/users/:userId/avatar", mustBeSignedIn, withTargetUser, mayViewUser, avatarController);
 app.post("/users/:userId/promote", mustBeSignedIn, mustBeAdmin, withTargetUser, mayChangeAdmin, promoteController);
 app.post("/users/:userId/demote", mustBeSignedIn, mustBeAdmin, withTargetUser, mayChangeAdmin, demoteController);
 
