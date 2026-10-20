@@ -16,8 +16,10 @@ ${users.map((user) => userToHTML(user, currentUser))}
 
 function userToHTML(user, currentUser) {
     return html`            <li>
-                <a href="/users/${user.id}">${user.username}</a>
-                ${user.isAdmin ? html`<span class="admin">admin</span>` : ""}
+                <span>
+                    <a href="/users/${user.id}">${user.username}</a>
+                    ${user.isAdmin ? html`<span class="admin">admin</span>` : ""}
+                </span>
                 ${canChangeAdmin(currentUser, user) ? adminButton(user) : ""}
             </li>`;
 }
