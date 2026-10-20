@@ -17,7 +17,6 @@ export function layout(content, ctx) {
         <nav>
             <a href="/">home</a>
             <a href="/about">about</a>
-            <a href="/items">items</a>
             ${adminLinks(ctx.user)}
             ${authLinks(ctx.user)}
         </nav>

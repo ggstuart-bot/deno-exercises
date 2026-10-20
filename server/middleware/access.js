@@ -10,6 +10,6 @@ export function requireAdmin(fallback) {
     return (ctx, next) => ctx.user?.isAdmin ? next(ctx) : fallback(ctx);
 }
 
-export function allow(predicate, fallback) {
-    return (ctx, next) => predicate(ctx.user, ctx.data.targetUser) ? next(ctx) : fallback(ctx);
+export function requirePermission(predicate, key, fallback) {
+    return (ctx, next) => predicate(ctx.user, ctx.data[key]) ? next(ctx) : fallback(ctx);
 }

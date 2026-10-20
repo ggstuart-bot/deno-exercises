@@ -1,9 +1,12 @@
 {
-    "items": [
-        { "label": "apples" },
-        { "label": "bananas" },
-        { "label": "cherries" }
-    ],
+    "defaultList": {
+        "title": "shopping",
+        "items": [
+            { "label": "apples" },
+            { "label": "bananas" },
+            { "label": "cherries" }
+        ]
+    },
     "users": [
         {
             "username": "testUser1",

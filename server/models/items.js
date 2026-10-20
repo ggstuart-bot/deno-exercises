@@ -1,27 +1,29 @@
 import { db } from "./db.js";
 
-export function getItems() {
-    return db.prepare("SELECT id, label FROM items").all();
+export function getItemsByListId(listId) {
+    return db.prepare(
+        "SELECT id, label, listId FROM items WHERE listId = ?",
+    ).all(listId);
 }
 
 export function getItemById(id) {
-    return db.prepare("SELECT id, label FROM items WHERE id = ?").get(id);
+    return db.prepare("SELECT id, label, listId FROM items WHERE id = ?").get(id);
 }
 
-export function createItem(label) {
+export function createItem({ label, listId }) {
     return db.prepare(
-        "INSERT INTO items (label) VALUES (?) RETURNING id, label",
-    ).get(label);
+        "INSERT INTO items (label, listId) VALUES (?, ?) RETURNING id, label, listId",
+    ).get(label, listId);
 }
 
 export function updateItem(id, label) {
     return db.prepare(
-        "UPDATE items SET label = ? WHERE id = ? RETURNING id, label",
+        "UPDATE items SET label = ? WHERE id = ? RETURNING id, label, listId",
     ).get(label, id);
 }
 
 export function deleteItem(id) {
-    return db.prepare("DELETE FROM items WHERE id = ? RETURNING id, label").get(
+    return db.prepare("DELETE FROM items WHERE id = ? RETURNING id, label, listId").get(
         id,
     );
 }
