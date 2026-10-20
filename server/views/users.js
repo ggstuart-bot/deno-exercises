@@ -1,4 +1,5 @@
 import { html } from "../tools/html.js";
+import { canChangeAdmin } from "../tools/permissions.js";
 
 export function usersView(ctx) {
     const { data: { users }, user: currentUser } = ctx;
@@ -15,13 +16,13 @@ ${users.map((user) => userToHTML(user, currentUser))}
 
 function userToHTML(user, currentUser) {
     return html`            <li>
-                ${user.username}
+                <a href="/users/${user.id}">${user.username}</a>
                 ${user.isAdmin ? html`<span class="admin">admin</span>` : ""}
-                ${user.id === currentUser.id ? "" : adminButton(user)}
+                ${canChangeAdmin(currentUser, user) ? adminButton(user) : ""}
             </li>`;
 }
 
-function adminButton(user) {
+export function adminButton(user) {
     return user.isAdmin
         ? html`<form method="POST" action="/users/${user.id}/demote">
                     <button>remove admin</button>

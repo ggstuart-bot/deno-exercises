@@ -3,7 +3,7 @@ import { redirect } from "../tools/redirect.js";
 import { render } from "../tools/render.js";
 import { signupView } from "../views/signup.js";
 import { usersView } from "../views/users.js";
-import { profileView } from "../views/profile.js";
+import { userDetailView } from "../views/userDetail.js";
 
 export function signupFormController(ctx) { 
     return render(signupView, ctx);
@@ -21,8 +21,12 @@ export function usersController(ctx) {
     return render(usersView, ctx);
 }
 
+export function userController(ctx) {
+    return render(userDetailView, ctx);
+}
+
 export function profileController(ctx) {
-    return render(profileView, ctx);
+    return redirect(`/users/${ctx.user.id}`, ctx);
 }
 
 export function selfChangeController(ctx) {
