@@ -55,21 +55,13 @@ export function unique(exists) {
     }
 }
 
-export function requiredFile(name, value) {
+export function isFile(name, value) {
     if (!(value instanceof File) || !value.size) {
         throw new ValidationError(`${name} is a required field.`);
     }
 }
 
-export function notSvg(name, value) {
-    if (value.type === "image/svg+xml") {
-        throw new ValidationError(
-            `${name} can't be an SVG because SVG files can contain scripts.`,
-        );
-    }
-}
-
-export function fileType(types) {
+export function isType(types) {
     return (name, value) => {
         if (!types.includes(value.type)) {
             throw new ValidationError(
@@ -79,7 +71,7 @@ export function fileType(types) {
     };
 }
 
-export function maxFileSize(bytes) {
+export function maxSize(bytes) {
     return (name, value) => {
         if (value.size > bytes) {
             throw new ValidationError(
