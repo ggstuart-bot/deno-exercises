@@ -7,16 +7,19 @@
     "users": [
         {
             "username": "testUser1",
-            "password": "testUser1!"
+            "password": "testUser1!",
+            "avatar": "testUser1.webp"
         },
         {
             "username": "testUser2",
-            "password": "testUser2!"
+            "password": "testUser2!",
+            "avatar": "testUser2.webp"
         },
         {
             "username": "adminUser",
             "password": "adminUser1!",
-            "isAdmin": 1
+            "isAdmin": 1,
+            "avatar": "adminUser.webp"
         }
     ]
 }

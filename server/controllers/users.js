@@ -1,4 +1,6 @@
 import { createUser, getUsers, updateIsAdmin } from "../models/users.js";
+import { getFile } from "../models/files.js";
+import { NotFoundError } from "../tools/errors.js";
 import { redirect } from "../tools/redirect.js";
 import { render } from "../tools/render.js";
 import { signupView } from "../views/signup.js";
@@ -23,6 +25,15 @@ export function usersController(ctx) {
 
 export function userController(ctx) {
     return render(userDetailView, ctx);
+}
+
+export function avatarController(ctx) {
+    const { data: { targetUser } } = ctx;
+    const avatarFile = targetUser.avatarId && getFile(targetUser.avatarId);
+    if (!avatarFile) {
+        throw new NotFoundError(`No avatar for user ${targetUser.id}`);
+    }
+    return new Response(avatarFile);
 }
 
 export function profileController(ctx) {
