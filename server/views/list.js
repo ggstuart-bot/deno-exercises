@@ -35,13 +35,13 @@ ${items.map((item) => itemToHTML(list, item))}
 }
 
 function itemToHTML(list, item) {
-    const action = `/lists/${list.id}/items/${item.id}`;
+    const itemUrl = `/lists/${list.id}/items/${item.id}`;
     return html`            <li>
-                <form class="item" method="POST" action="${action}/edit">
+                <form class="item" method="POST" action="${itemUrl}/edit">
                     <input name="label" value="${item.label}" aria-label="Item label"
                         required minlength="${LABEL_MIN}" maxlength="${LABEL_MAX}">
                     <button class="save">save</button>
-                    <button class="delete" formaction="${action}/delete" formnovalidate>delete</button>
+                    <button class="delete" formaction="${itemUrl}/delete" formnovalidate>delete</button>
                 </form>
             </li>`;
 }
