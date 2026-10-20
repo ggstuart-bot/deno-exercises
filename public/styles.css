@@ -225,6 +225,58 @@ form.inline {
     }
 }
 
+form.item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5ch;
+    flex: 1;
+
+    input {
+        flex: 1;
+        min-width: 0;
+        cursor: text;
+        transition: background-color 200ms, border-color 200ms;
+
+        &:not(:focus) {
+            background-color: transparent;
+            border-color: transparent;
+
+            &:hover {
+                background-color: rgb(255 255 255 / 0.5);
+                text-decoration: underline dashed #666;
+            }
+        }
+    }
+
+    /* hidden until the row has focus; visibility switches instantly when
+       showing (so Tab can reach it) and only after the fade when hiding */
+    button.save {
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 200ms, visibility 0s 200ms;
+    }
+
+    &:focus-within button.save {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 200ms;
+    }
+
+    button.delete {
+        font-size: 0.7em;
+        color: #555;
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: 0.25em;
+        &:hover,
+        &:focus-visible {
+            color: orangered;
+            border-color: currentColor;
+        }
+    }
+}
+
 input,
 button {
     font: inherit;

@@ -1,4 +1,5 @@
 import { html } from "../tools/html.js";
+import { LABEL_MAX, LABEL_MIN } from "../schema/item.js";
 
 export function listView(ctx) {
     const { data: { list, items, errors, values } } = ctx;
@@ -34,7 +35,13 @@ ${items.map((item) => itemToHTML(list, item))}
 }
 
 function itemToHTML(list, item) {
+    const itemUrl = `/lists/${list.id}/items/${item.id}`;
     return html`            <li>
-                <a href="/lists/${list.id}/items/${item.id}">${item.label}</a>
+                <form class="item" method="POST" action="${itemUrl}/edit">
+                    <input name="label" value="${item.label}" aria-label="Item label"
+                        required minlength="${LABEL_MIN}" maxlength="${LABEL_MAX}">
+                    <button class="save">save</button>
+                    <button class="delete" formaction="${itemUrl}/delete" formnovalidate>delete</button>
+                </form>
             </li>`;
 }

@@ -4,7 +4,7 @@ import {
     createItemController,
     deleteItemController,
     editItemController,
-    itemController,
+    invalidEditItemController,
 } from "./controllers/items.js";
 import { createListController, deleteListController, editListController, listController } from "./controllers/lists.js";
 import { staticController } from "./controllers/static.js";
@@ -29,7 +29,7 @@ import { canChangeAdmin, canChangeAvatar, canUseList, canViewUser } from "./tool
 const validateNewList = withValidation(listSchema, homeController);
 const validateEditList = withValidation(listSchema, listController);
 const validateNewItem = withValidation(itemSchema, listController);
-const validateEditItem = withValidation(itemSchema, itemController);
+const validateEditItem = withValidation(itemSchema, invalidEditItemController);
 const validateNewUser = withValidation(userSchema, signupFormController);
 const validateSignin = withValidation(signinSchema, signinFormController);
 const validateAvatar = withValidation(avatarSchema, userController);
@@ -63,7 +63,6 @@ app.get("/lists/:listId", mustBeSignedIn, withList, mayUseList, listController);
 app.post("/lists/:listId/edit", mustBeSignedIn, withList, mayUseList, validateEditList, editListController);
 app.post("/lists/:listId/delete", mustBeSignedIn, withList, mayUseList, deleteListController);
 app.post("/lists/:listId/items", mustBeSignedIn, withList, mayUseList, validateNewItem, createItemController);
-app.get("/lists/:listId/items/:itemId", mustBeSignedIn, withList, withItem, mayUseList, itemController);
 app.post("/lists/:listId/items/:itemId/edit", mustBeSignedIn, withList, withItem, mayUseList, validateEditItem, editItemController);
 app.post("/lists/:listId/items/:itemId/delete", mustBeSignedIn, withList, withItem, mayUseList, deleteItemController);
 app.get("/users", mustBeSignedIn, mustBeAdmin, usersController);
