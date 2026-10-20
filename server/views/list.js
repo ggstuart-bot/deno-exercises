@@ -1,26 +1,19 @@
 import { html } from "../tools/html.js";
+import { LABEL_MAX, LABEL_MIN } from "../schema/item.js";
 
 export function listView(ctx) {
-    const { data: { list, items, item: failedItem, errors, values } } = ctx;
-    // ctx.data.item is only set when an item edit failed validation,
-    // so the label error belongs to that row rather than the add form.
-    const addErrors = failedItem ? {} : errors;
-    const addValues = failedItem ? {} : values;
+    const { data: { list, items, errors, values } } = ctx;
 
     return html`
     <section>
         <h2>${list.title}</h2>
         <form class="inline" method="POST" action="/lists/${list.id}/items">
-            <input name="label" aria-label="New item" placeholder="new item" value="${addValues?.label ?? ""}">
+            <input name="label" aria-label="New item" placeholder="new item" value="${values?.label ?? ""}">
             <button>add</button>
-            <span class="error">${addErrors?.label ?? ""}</span>
+            <span class="error">${errors?.label ?? ""}</span>
         </form>
         <ul>
-${items.map((item) =>
-    item.id === failedItem?.id
-        ? itemToHTML(list, item, values.label, errors.label)
-        : itemToHTML(list, item)
-)}
+${items.map((item) => itemToHTML(list, item))}
         </ul>
         <p><a href="/">Back to your lists</a></p>
     </section>
@@ -41,17 +34,14 @@ ${items.map((item) =>
     `;
 }
 
-function itemToHTML(list, item, label = item.label, error = "") {
+function itemToHTML(list, item) {
     const action = `/lists/${list.id}/items/${item.id}`;
-    const errorId = `item-${item.id}-error`;
     return html`            <li>
                 <form class="item" method="POST" action="${action}/edit">
-                    <input name="label" value="${label}" aria-label="Item label"${
-        error ? html` aria-invalid="true" aria-describedby="${errorId}"` : ""
-    }>
+                    <input name="label" value="${item.label}" aria-label="Item label"
+                        required minlength="${LABEL_MIN}" maxlength="${LABEL_MAX}">
                     <button class="save">save</button>
-                    <button class="delete" formaction="${action}/delete">delete</button>
-                    ${error ? html`<span class="error" id="${errorId}">${error}</span>` : ""}
+                    <button class="delete" formaction="${action}/delete" formnovalidate>delete</button>
                 </form>
             </li>`;
 }

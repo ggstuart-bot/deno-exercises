@@ -15,6 +15,12 @@ export function editItemController(ctx) {
     return redirect(`/lists/${list.id}`, ctx);
 }
 
+export function invalidEditItemController(ctx) {
+    const { data: { list, errors } } = ctx;
+    ctx.flash = errors.label;
+    return redirect(`/lists/${list.id}`, ctx);
+}
+
 export function deleteItemController(ctx) {
     const { data: { list, item: { id } } } = ctx;
     const item = deleteItem(id);

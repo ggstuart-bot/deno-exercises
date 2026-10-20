@@ -4,6 +4,7 @@ import {
     createItemController,
     deleteItemController,
     editItemController,
+    invalidEditItemController,
 } from "./controllers/items.js";
 import { createListController, deleteListController, editListController, listController } from "./controllers/lists.js";
 import { staticController } from "./controllers/static.js";
@@ -28,7 +29,7 @@ import { canChangeAdmin, canChangeAvatar, canUseList, canViewUser } from "./tool
 const validateNewList = withValidation(listSchema, homeController);
 const validateEditList = withValidation(listSchema, listController);
 const validateNewItem = withValidation(itemSchema, listController);
-const validateEditItem = withValidation(itemSchema, listController);
+const validateEditItem = withValidation(itemSchema, invalidEditItemController);
 const validateNewUser = withValidation(userSchema, signupFormController);
 const validateSignin = withValidation(signinSchema, signinFormController);
 const validateAvatar = withValidation(avatarSchema, userController);
