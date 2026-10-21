@@ -6,14 +6,14 @@ export function layout(content, ctx) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>My website</title>
+    <title>Bookshelves</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/assets/styles.css">
     <link rel="icon" href="/assets/icon.svg">
 </head>
 <body>
     <header>
-        <h1><a href="/">My website</a></h1>
+        <h1><a href="/">Bookshelves</a></h1>
         <nav>
             <a href="/books">books</a>
             ${adminLinks(ctx.user)}
@@ -31,7 +31,7 @@ export function layout(content, ctx) {
             <a href="/about">about</a>
         </p>
         <p>
-            &copy; My website developers
+            &copy; Bookshelves developers
         </p>
     </footer>
 </body>
