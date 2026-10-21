@@ -3,13 +3,18 @@ import { canPublishList } from "../tools/permissions.js";
 import { bookDetails } from "./book.js";
 
 export function listView(ctx) {
-    const { user, data: { list, books, errors, values } } = ctx;
+    const { user, data: { list, books, q, results, errors, values } } = ctx;
 
     return html`
     <section class="list">
         <header>
             <h2>${list.title}</h2>
         </header>
+        <form class="inline" method="GET" action="/lists/${list.id}">
+            <input name="q" aria-label="Search books" placeholder="search by title or author" value="${q ?? ""}">
+            <button>search</button>
+        </form>
+        ${results ? searchResults(results) : ""}
         <ul>
 ${books.map((book) => bookToHTML(list, book))}
         </ul>
@@ -49,6 +54,20 @@ function visibilityControls(user, list) {
     }
     return html`<p>Only you can see this list</p>
         <p><a href="/profile">Publish your profile</a> to share lists</p>`;
+}
+
+function searchResults(results) {
+    return results.length
+        ? html`<h3>Search results</h3>
+        <ul>
+${results.map(resultToHTML)}
+        </ul>
+        <h3>On this list</h3>`
+        : html`<p>No books found</p>`;
+}
+
+function resultToHTML(book) {
+    return html`            <li>${bookDetails(book)}</li>`;
 }
 
 function bookToHTML(list, book) {

@@ -13,3 +13,11 @@ export function getBookById(id) {
         `SELECT id, title, author, year, coverUrl FROM books WHERE id=:id`
     ).get({ id });
 }
+
+export function searchBooks(q) {
+    return db.prepare(`
+        SELECT id, title, author, year, coverUrl FROM books
+        WHERE title LIKE :pattern OR author LIKE :pattern
+        LIMIT 10
+    `).all({ pattern: `%${q}%` });
+}
