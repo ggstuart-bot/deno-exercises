@@ -1,23 +1,20 @@
 import { html } from "../tools/html.js";
 import { canPublishList } from "../tools/permissions.js";
-import { bookDetails } from "./book.js";
+import { bookSummary } from "./book.js";
 
 export function listView(ctx) {
-    const { user, data: { list, books, q, results, errors, values } } = ctx;
+    const { user, data: { list, books, errors, values } } = ctx;
 
     return html`
     <section class="list">
         <header>
             <h2>${list.title}</h2>
         </header>
-        <form class="inline" method="GET" action="/lists/${list.id}">
-            <input name="q" aria-label="Search books" placeholder="search by title or author" value="${q ?? ""}">
-            <button>search</button>
-        </form>
-        ${results ? searchResults(list, results) : ""}
-        <ul>
+        ${books.length
+            ? html`<ul>
 ${books.map((book) => bookToHTML(list, book))}
-        </ul>
+        </ul>`
+            : html`<p>No books yet, <a href="/books">find some books</a> to add</p>`}
         <p><a href="/">Back to your lists</a></p>
     </section>
     <aside>
@@ -56,28 +53,9 @@ function visibilityControls(user, list) {
         <p><a href="/profile">Publish your profile</a> to share lists</p>`;
 }
 
-function searchResults(list, results) {
-    return results.length
-        ? html`<h3>Search results</h3>
-        <ul>
-${results.map((book) => resultToHTML(list, book))}
-        </ul>
-        <h3>On this list</h3>`
-        : html`<p>No books found</p>`;
-}
-
-function resultToHTML(list, book) {
-    return html`            <li>
-                ${bookDetails(book)}
-                <form method="POST" action="/lists/${list.id}/books/${book.id}/add">
-                    <button>add</button>
-                </form>
-            </li>`;
-}
-
 function bookToHTML(list, book) {
     return html`            <li>
-                ${bookDetails(book)}
+                ${bookSummary(book)}
                 <form method="POST" action="/lists/${list.id}/books/${book.id}/delete">
                     <button>remove</button>
                 </form>

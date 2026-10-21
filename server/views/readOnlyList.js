@@ -1,6 +1,6 @@
 import { html } from "../tools/html.js";
 import { avatarImage } from "./avatar.js";
-import { bookDetails } from "./book.js";
+import { bookSummary } from "./book.js";
 
 export function readOnlyListView(ctx) {
     const { data: { list, books, owner } } = ctx;
@@ -20,5 +20,5 @@ ${books.map(bookToHTML)}
 }
 
 function bookToHTML(book) {
-    return html`            <li>${bookDetails(book)}</li>`;
+    return html`            <li>${bookSummary(book)}</li>`;
 }

@@ -1,6 +1,5 @@
 import { createList, deleteList, updateListIsPublic, updateListTitle } from "../models/lists.js";
 import { getBooksByListId } from "../models/listBooks.js";
-import { searchBooks } from "../models/books.js";
 import { getUserById } from "../models/users.js";
 import { canUseList } from "../tools/permissions.js";
 import { redirect } from "../tools/redirect.js";
@@ -16,14 +15,9 @@ export function createListController(ctx) {
 }
 
 export function listController(ctx) {
-    const { user, url, data: { list } } = ctx;
+    const { user, data: { list } } = ctx;
     ctx.data.books = getBooksByListId(list.id);
     if (canUseList(user, list)) {
-        const q = url.searchParams.get("q");
-        if (q) {
-            ctx.data.q = q;
-            ctx.data.results = searchBooks(q);
-        }
         return render(listView, ctx);
     }
     ctx.data.owner = getUserById(list.ownerId);

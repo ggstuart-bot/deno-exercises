@@ -1,5 +1,7 @@
 import { db } from "./db.js";
 
+export const PAGE_SIZE = 20;
+
 export function createBook({ title, author, year, coverUrl }) {
     return db.prepare(`
         INSERT INTO books(title, author, year, coverUrl)
@@ -14,10 +16,17 @@ export function getBookById(id) {
     ).get({ id });
 }
 
-export function searchBooks(q) {
+export function searchBooks(q, page) {
     return db.prepare(`
         SELECT id, title, author, year, coverUrl FROM books
         WHERE title LIKE :pattern OR author LIKE :pattern
-        LIMIT 10
-    `).all({ pattern: `%${q}%` });
+        LIMIT :limit OFFSET :offset
+    `).all({ pattern: `%${q}%`, limit: PAGE_SIZE, offset: (page - 1) * PAGE_SIZE });
+}
+
+export function countBooks(q) {
+    return db.prepare(`
+        SELECT count(*) AS count FROM books
+        WHERE title LIKE :pattern OR author LIKE :pattern
+    `).get({ pattern: `%${q}%` }).count;
 }

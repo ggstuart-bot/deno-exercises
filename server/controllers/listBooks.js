@@ -5,9 +5,9 @@ export function addBookController(ctx) {
     const { data: { list, book } } = ctx;
     const changes = addBookToList(list.id, book.id);
     ctx.flash = changes
-        ? `Book '${book.title}' added`
-        : `Book '${book.title}' is already on this list`;
-    return redirect(`/lists/${list.id}`, ctx);
+        ? `Book '${book.title}' added to '${list.title}'`
+        : `Book '${book.title}' is already on '${list.title}'`;
+    return redirect(`/books/${book.id}`, ctx);
 }
 
 export function removeBookController(ctx) {
