@@ -1,5 +1,5 @@
 import { html } from "../tools/html.js";
-import { bookDetails } from "./book.js";
+import { bookSummary } from "./book.js";
 
 export function booksView(ctx) {
     const { data: { books } } = ctx;
@@ -17,5 +17,5 @@ ${books.map(bookToHTML)}
 }
 
 function bookToHTML(book) {
-    return html`            <li>${bookDetails(book)}</li>`;
+    return html`            <li>${bookSummary(book)}</li>`;
 }

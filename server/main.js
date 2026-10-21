@@ -1,6 +1,6 @@
 import { aboutController } from "./controllers/about.js";
 import { homeController } from "./controllers/home.js";
-import { booksController } from "./controllers/books.js";
+import { bookController, booksController } from "./controllers/books.js";
 import { addBookController, removeBookController } from "./controllers/listBooks.js";
 import { createListController, deleteListController, editListController, listController, privateProfileController, publishListController, unpublishListController } from "./controllers/lists.js";
 import { staticController } from "./controllers/static.js";
@@ -47,6 +47,7 @@ app.get("/assets/*", staticController);
 app.get("/", homeController);
 app.get("/about", aboutController);
 app.get("/books", booksController);
+app.get("/books/:bookId", withBook, bookController);
 
 app.get("/signup", mustBeSignedOut, signupFormController);
 app.post("/signup", mustBeSignedOut, validateNewUser, createUserController);

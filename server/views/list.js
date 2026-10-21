@@ -1,6 +1,6 @@
 import { html } from "../tools/html.js";
 import { canPublishList } from "../tools/permissions.js";
-import { bookDetails } from "./book.js";
+import { bookSummary } from "./book.js";
 
 export function listView(ctx) {
     const { user, data: { list, books, q, results, errors, values } } = ctx;
@@ -68,7 +68,7 @@ ${results.map((book) => resultToHTML(list, book))}
 
 function resultToHTML(list, book) {
     return html`            <li>
-                ${bookDetails(book)}
+                ${bookSummary(book)}
                 <form method="POST" action="/lists/${list.id}/books/${book.id}/add">
                     <button>add</button>
                 </form>
@@ -77,7 +77,7 @@ function resultToHTML(list, book) {
 
 function bookToHTML(list, book) {
     return html`            <li>
-                ${bookDetails(book)}
+                ${bookSummary(book)}
                 <form method="POST" action="/lists/${list.id}/books/${book.id}/delete">
                     <button>remove</button>
                 </form>

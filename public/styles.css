@@ -22,6 +22,10 @@ body {
         vertical-align: middle;
     }
 
+    .book .cover {
+        height: 15em;
+    }
+
     a:has(> .avatar) {
         display: inline-flex;
         align-items: center;
