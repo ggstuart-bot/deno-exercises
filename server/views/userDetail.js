@@ -12,9 +12,6 @@ export function userDetailView(ctx) {
         ${avatarImage(targetUser, `Avatar for '${targetUser.username}'`)}
         <h2>${targetUser.username}</h2>
         ${targetUser.isAdmin ? html`<p><span class="admin">admin</span></p>` : ""}
-        ${canChangeAdmin(currentUser, targetUser) ? adminButton(targetUser) : ""}
-        ${canChangeAvatar(currentUser, targetUser) ? avatarForm(targetUser, errors) : ""}
-        ${canPublishProfile(currentUser, targetUser) ? visibilityForm(targetUser) : ""}
         <h3>Public lists</h3>
         ${publicLists.length
             ? html`<ul>
@@ -22,11 +19,18 @@ ${publicLists.map(listToHTML)}
         </ul>`
             : html`<p>No public lists</p>`}
     </section>
+    <aside>
+        ${canChangeAvatar(currentUser, targetUser) ? avatarForm(targetUser, errors) : ""}
+        ${canChangeAdmin(currentUser, targetUser) ? html`<h3>Admin status</h3>${adminButton(targetUser)}` : ""}
+        ${canPublishProfile(currentUser, targetUser) ? visibilityForm(targetUser) : ""}
+    </aside>
     `;
 }
 
 function avatarForm(user, errors) {
-    return html`<form method="POST" action="/users/${user.id}/avatar" enctype="multipart/form-data">
+    return html`
+        <h3>Change avatar</h3>
+        <form method="POST" action="/users/${user.id}/avatar" enctype="multipart/form-data">
             <label for="avatar">Avatar</label>
             <input id="avatar" type="file" name="avatar" accept="${AVATAR_TYPES.join(",")}" required>
             <span class="error">${errors?.avatar ?? ""}</span>
@@ -36,12 +40,16 @@ function avatarForm(user, errors) {
 
 function visibilityForm(user) {
     return user.isPublic
-        ? html`<p>Anyone signed in can see your profile and public lists</p>
+        ? html`
+        <h3>Profile is public</h3>
+        <p>Anyone signed in can see your profile and public lists</p>
         <form method="POST" action="/users/${user.id}/unpublish">
             <button>make profile private</button>
         </form>
         <p>This also makes all of your lists private</p>`
-        : html`<p>Only you can see your profile</p>
+        : html`
+        <h3>Profile is private</h3>
+        <p>Only you can see your profile</p>
         <form method="POST" action="/users/${user.id}/publish">
             <button>make profile public</button>
         </form>`;

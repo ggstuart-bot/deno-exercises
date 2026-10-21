@@ -5,9 +5,11 @@ export function readOnlyListView(ctx) {
     const { data: { list, items, owner } } = ctx;
 
     return html`
-    <section>
-        <h2>${list.title}</h2>
-        <p>A public list by <a href="/users/${owner.id}">${avatarImage(owner)}${owner.username}</a></p>
+    <section class="list">
+        <header>
+            <h2>${list.title}</h2>
+            <p>A public list by <a href="/users/${owner.id}">${avatarImage(owner)}${owner.username}</a></p>
+        </header>
         <ul>
 ${items.map(itemToHTML)}
         </ul>

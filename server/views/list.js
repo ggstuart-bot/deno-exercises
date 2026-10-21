@@ -6,8 +6,10 @@ export function listView(ctx) {
     const { user, data: { list, items, errors, values } } = ctx;
 
     return html`
-    <section>
-        <h2>${list.title}</h2>
+    <section class="list">
+        <header>
+            <h2>${list.title}</h2>
+        </header>
         <form class="inline" method="POST" action="/lists/${list.id}/items">
             <input name="label" aria-label="New item" placeholder="new item" value="${values?.label ?? ""}">
             <button>add</button>

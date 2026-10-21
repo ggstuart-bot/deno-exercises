@@ -15,7 +15,6 @@ export function layout(content, ctx) {
     <header>
         <h1><a href="/">My website</a></h1>
         <nav>
-            <a href="/about">about</a>
             ${adminLinks(ctx.user)}
             ${authLinks(ctx.user)}
         </nav>
@@ -26,7 +25,13 @@ export function layout(content, ctx) {
     </main>
     <footer>
         ${userMessage(ctx.user)}
-        <p>&copy; My website developers</p>
+        
+        <p>
+            <a href="/about">about</a>
+        </p>
+        <p>
+            &copy; My website developers
+        </p>
     </footer>
 </body>
 </html>`;

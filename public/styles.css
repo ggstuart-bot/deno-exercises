@@ -150,10 +150,8 @@ body {
         }
         ul {
             display: grid;
-            /* place-self: start; */
-            max-width: 70ch;
             list-style: none;
-            background: linear-gradient(90deg, #aaa, #888);
+            background: linear-gradient(90deg, #999, #bbb);
             padding: 0;
             li {
                 display: flex;
@@ -164,14 +162,40 @@ body {
                     align-items: center;
                     gap: 1ch;
                 }
-                backdrop-filter: brightness(1.4);
+                backdrop-filter: brightness(1.1);
                 &:nth-child(even) {
-                    backdrop-filter: brightness(1.5);
+                    backdrop-filter: brightness(1.2);
                 }
                 padding: 0.25rem 0.5rem;
                 form {
                     display: inline;
                 }
+            }
+        }
+
+        section.list {
+            display: grid;
+            place-content: start stretch;
+            margin-block: 0.5rem;
+            header {
+                h2, p { margin: 0;}
+                p {
+                    font-size: 0.8em;
+                    display: flex;
+                    gap: 1ch;
+                }
+                .avatar {
+                    background: green;
+                    --size: 1.2em;
+                }
+            }
+            header + form {
+                background: #555;
+                place-self: stretch;
+                padding: 0 1rem 0.5rem 1rem;
+            }
+            ul {
+                margin-top: 0;
             }
         }
 
@@ -185,6 +209,7 @@ body {
 
     footer {
         display: flex;
+        gap: 2rem;
         flex-wrap: wrap;
         font-weight: 200;
         & > :last-child {
@@ -203,7 +228,6 @@ form {
         text-align: right;
         font-size: 0.8em;
         color: orangered;
-        /* text-shadow: 0 0 2px black; */
     }
 
     &:has(label) {
@@ -228,6 +252,7 @@ form {
 
     &.inline {
         grid-auto-flow: column;
+        grid-template-columns: 1fr auto;
     
         * {
             grid-row: 1;
