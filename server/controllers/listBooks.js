@@ -1,5 +1,14 @@
-import { removeBookFromList } from "../models/listBooks.js";
+import { addBookToList, removeBookFromList } from "../models/listBooks.js";
 import { redirect } from "../tools/redirect.js";
+
+export function addBookController(ctx) {
+    const { data: { list, book } } = ctx;
+    const changes = addBookToList(list.id, book.id);
+    ctx.flash = changes
+        ? `Book '${book.title}' added`
+        : `Book '${book.title}' is already on this list`;
+    return redirect(`/lists/${list.id}`, ctx);
+}
 
 export function removeBookController(ctx) {
     const { data: { list, book } } = ctx;

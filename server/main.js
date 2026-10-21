@@ -1,6 +1,6 @@
 import { aboutController } from "./controllers/about.js";
 import { homeController } from "./controllers/home.js";
-import { removeBookController } from "./controllers/listBooks.js";
+import { addBookController, removeBookController } from "./controllers/listBooks.js";
 import { createListController, deleteListController, editListController, listController, privateProfileController, publishListController, unpublishListController } from "./controllers/lists.js";
 import { staticController } from "./controllers/static.js";
 import { notFoundController } from "./controllers/notFound.js";
@@ -59,6 +59,7 @@ app.post("/lists/:listId/edit", mustBeSignedIn, withList, mayUseList, validateEd
 app.post("/lists/:listId/publish", mustBeSignedIn, withList, mayUseList, mayPublishList, publishListController);
 app.post("/lists/:listId/unpublish", mustBeSignedIn, withList, mayUseList, unpublishListController);
 app.post("/lists/:listId/delete", mustBeSignedIn, withList, mayUseList, deleteListController);
+app.post("/lists/:listId/books/:bookId/add", mustBeSignedIn, withList, withBook, mayUseList, addBookController);
 app.post("/lists/:listId/books/:bookId/delete", mustBeSignedIn, withList, withBook, mayUseList, removeBookController);
 app.get("/users", mustBeSignedIn, mustBeAdmin, usersController);
 app.get("/users/:userId", mustBeSignedIn, withTargetUser, mayViewUser, userController);

@@ -10,7 +10,7 @@ export function getBooksByListId(listId) {
 
 export function addBookToList(listId, bookId) {
     return db.prepare(
-        `INSERT INTO listBooks(listId, bookId) VALUES (:listId, :bookId)`
+        `INSERT OR IGNORE INTO listBooks(listId, bookId) VALUES (:listId, :bookId)`
     ).run({ listId, bookId });
 }
 
