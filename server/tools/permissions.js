@@ -4,6 +4,6 @@ export const canChangeAdmin = (user, targetUser) => user.isAdmin && !isSelf(user
 export const canChangeAvatar = (user, targetUser) => isSelf(user, targetUser);
 export const canPublishProfile = (user, targetUser) => isSelf(user, targetUser);
 export const isOwner = (user, resource) => user.id === resource.ownerId;
-export const canUseList = (user, list) => isOwner(user, list);
-export const canPublishList = (user, list) => isOwner(user, list) && Boolean(user.isPublic);
-export const canViewList = (user, list) => isOwner(user, list) || Boolean(list.isPublic);
+export const canUseShelf = (user, shelf) => isOwner(user, shelf);
+export const canPublishShelf = (user, shelf) => isOwner(user, shelf) && Boolean(user.isPublic);
+export const canViewShelf = (user, shelf) => isOwner(user, shelf) || Boolean(shelf.isPublic);

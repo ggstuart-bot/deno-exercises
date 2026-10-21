@@ -2,9 +2,9 @@ import seed from "../db/seed.json" with { type: "json" };
 import books from "../db/books.json" with { type: "json" };
 import { createUser, updateAvatarId } from "../server/models/users.js";
 import { createFile } from "../server/models/files.js";
-import { createList } from "../server/models/lists.js";
+import { createShelf } from "../server/models/shelves.js";
 import { createBook } from "../server/models/books.js";
-import { addBookToList } from "../server/models/listBooks.js";
+import { addBookToShelf } from "../server/models/shelfBooks.js";
 
 const bookIds = {};
 for (const book of books) {
@@ -18,14 +18,14 @@ for (const user of seed.users) {
     const file = new File([await Deno.readFile(path)], user.avatar, { type: "image/webp" });
     updateAvatarId(userId, await createFile(file));
 
-    for (const list of user.lists) {
-        const { id: listId } = createList({ title: list.title, ownerId: userId, isPublic: list.isPublic });
-        for (const title of list.books) {
+    for (const shelf of user.shelves) {
+        const { id: shelfId } = createShelf({ title: shelf.title, ownerId: userId, isPublic: shelf.isPublic });
+        for (const title of shelf.books) {
             const bookId = bookIds[title];
             if (!bookId) {
                 throw new Error(`Book '${title}' not found in books.json`);
             }
-            addBookToList(listId, bookId);
+            addBookToShelf(shelfId, bookId);
         }
     }
 }

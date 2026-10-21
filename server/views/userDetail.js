@@ -5,7 +5,7 @@ import { avatarImage } from "./avatar.js";
 import { AVATAR_TYPES } from "../schema/avatar.js";
 
 export function userDetailView(ctx) {
-    const { data: { targetUser, publicLists, errors }, user: currentUser } = ctx;
+    const { data: { targetUser, publicShelves, errors }, user: currentUser } = ctx;
 
     return html`
     <section>
@@ -13,9 +13,9 @@ export function userDetailView(ctx) {
         <h2>${targetUser.username}</h2>
         ${targetUser.isAdmin ? html`<p><span class="admin">admin</span></p>` : ""}
         <h3>Public shelves</h3>
-        ${publicLists.length
+        ${publicShelves.length
             ? html`<ul>
-${publicLists.map(listToHTML)}
+${publicShelves.map(shelfToHTML)}
         </ul>`
             : html`<p>No public shelves</p>`}
     </section>
@@ -55,9 +55,9 @@ function visibilityForm(user) {
         </form>`;
 }
 
-function listToHTML(list) {
+function shelfToHTML(shelf) {
     return html`            <li>
-                <a href="/lists/${list.id}">${list.title}</a>
-                <span>${list.bookCount} ${list.bookCount === 1 ? "book" : "books"}</span>
+                <a href="/shelves/${shelf.id}">${shelf.title}</a>
+                <span>${shelf.bookCount} ${shelf.bookCount === 1 ? "book" : "books"}</span>
             </li>`;
 }

@@ -1,8 +1,8 @@
 import { db } from "../server/models/db.js";
 
 db.exec("DROP TABLE IF EXISTS sessions");
-db.exec("DROP TABLE IF EXISTS listBooks");
-db.exec("DROP TABLE IF EXISTS lists");
+db.exec("DROP TABLE IF EXISTS shelfBooks");
+db.exec("DROP TABLE IF EXISTS shelves");
 db.exec("DROP TABLE IF EXISTS books");
 db.exec("DROP TABLE IF EXISTS users");
 db.exec("DROP TABLE IF EXISTS files");
@@ -28,7 +28,7 @@ db.exec(`
 `);
 
 db.exec(`
-    CREATE TABLE lists (
+    CREATE TABLE shelves (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         title TEXT NOT NULL,
         ownerId INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
@@ -48,10 +48,10 @@ db.exec(`
 `);
 
 db.exec(`
-    CREATE TABLE listBooks (
-        listId INTEGER NOT NULL REFERENCES lists(id) ON DELETE CASCADE,
+    CREATE TABLE shelfBooks (
+        shelfId INTEGER NOT NULL REFERENCES shelves(id) ON DELETE CASCADE,
         bookId INTEGER NOT NULL REFERENCES books(id) ON DELETE CASCADE,
-        PRIMARY KEY (listId, bookId)
+        PRIMARY KEY (shelfId, bookId)
     )
 `);
 

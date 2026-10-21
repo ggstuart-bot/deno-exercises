@@ -1,8 +1,8 @@
 import { aboutController } from "./controllers/about.js";
 import { homeController } from "./controllers/home.js";
 import { bookController, booksController } from "./controllers/books.js";
-import { addBookController, removeBookController } from "./controllers/listBooks.js";
-import { createListController, deleteListController, editListController, listController, privateProfileController, publishListController, unpublishListController } from "./controllers/lists.js";
+import { addBookController, removeBookController } from "./controllers/shelfBooks.js";
+import { createShelfController, deleteShelfController, editShelfController, shelfController, privateProfileController, publishShelfController, unpublishShelfController } from "./controllers/shelves.js";
 import { staticController } from "./controllers/static.js";
 import { notFoundController } from "./controllers/notFound.js";
 import { layout } from "./layout.js";
@@ -10,7 +10,7 @@ import { NotFoundError } from "./tools/errors.js";
 import { Router } from "./tools/router.js";
 import { withLogs } from "./middleware/logging.js";
 import { withValidation } from "./middleware/validation.js";
-import { listSchema } from "./schema/list.js";
+import { shelfSchema } from "./schema/shelf.js";
 import { avatarController, createUserController, uploadAvatarController, demoteController, profileController, promoteController, publishProfileController, unpublishProfileController, selfChangeController, signupFormController, userController, usersController } from "./controllers/users.js";
 import { userSchema } from "./schema/user.js";
 import { avatarSchema } from "./schema/avatar.js";
@@ -18,11 +18,11 @@ import { alreadySignedInRedirectController, forbiddenController, signinControlle
 import { signinSchema } from "./schema/signin.js";
 import { withSession } from "./middleware/session.js";
 import { requireAdmin, requireGuest, requirePermission, requireUser } from "./middleware/access.js";
-import { withBook, withList, withTargetUser } from "./middleware/resources.js";
-import { canChangeAdmin, canChangeAvatar, canPublishList, canPublishProfile, canUseList, canViewList, canViewUser } from "./tools/permissions.js";
+import { withBook, withShelf, withTargetUser } from "./middleware/resources.js";
+import { canChangeAdmin, canChangeAvatar, canPublishShelf, canPublishProfile, canUseShelf, canViewShelf, canViewUser } from "./tools/permissions.js";
 
-const validateNewList = withValidation(listSchema, homeController);
-const validateEditList = withValidation(listSchema, listController);
+const validateNewShelf = withValidation(shelfSchema, homeController);
+const validateEditShelf = withValidation(shelfSchema, shelfController);
 const validateNewUser = withValidation(userSchema, signupFormController);
 const validateSignin = withValidation(signinSchema, signinFormController);
 const validateAvatar = withValidation(avatarSchema, userController);
@@ -34,9 +34,9 @@ const mayViewUser = requirePermission(canViewUser, "targetUser", notFoundControl
 const mayChangeAdmin = requirePermission(canChangeAdmin, "targetUser", selfChangeController);
 const mayChangeAvatar = requirePermission(canChangeAvatar, "targetUser", notFoundController);
 const mayPublishProfile = requirePermission(canPublishProfile, "targetUser", notFoundController);
-const mayPublishList = requirePermission(canPublishList, "list", privateProfileController);
-const mayViewList = requirePermission(canViewList, "list", notFoundController);
-const mayUseList = requirePermission(canUseList, "list", notFoundController);
+const mayPublishShelf = requirePermission(canPublishShelf, "shelf", privateProfileController);
+const mayViewShelf = requirePermission(canViewShelf, "shelf", notFoundController);
+const mayUseShelf = requirePermission(canUseShelf, "shelf", notFoundController);
 
 const app = new Router();
 
@@ -56,14 +56,14 @@ app.post("/signin", mustBeSignedOut, validateSignin, signinController);
 app.post("/signout", signoutController);
 app.get("/profile", mustBeSignedIn, profileController);
 
-app.post("/lists", mustBeSignedIn, validateNewList, createListController);
-app.get("/lists/:listId", mustBeSignedIn, withList, mayViewList, listController);
-app.post("/lists/:listId/edit", mustBeSignedIn, withList, mayUseList, validateEditList, editListController);
-app.post("/lists/:listId/publish", mustBeSignedIn, withList, mayUseList, mayPublishList, publishListController);
-app.post("/lists/:listId/unpublish", mustBeSignedIn, withList, mayUseList, unpublishListController);
-app.post("/lists/:listId/delete", mustBeSignedIn, withList, mayUseList, deleteListController);
-app.post("/lists/:listId/books/:bookId/add", mustBeSignedIn, withList, withBook, mayUseList, addBookController);
-app.post("/lists/:listId/books/:bookId/delete", mustBeSignedIn, withList, withBook, mayUseList, removeBookController);
+app.post("/shelves", mustBeSignedIn, validateNewShelf, createShelfController);
+app.get("/shelves/:shelfId", mustBeSignedIn, withShelf, mayViewShelf, shelfController);
+app.post("/shelves/:shelfId/edit", mustBeSignedIn, withShelf, mayUseShelf, validateEditShelf, editShelfController);
+app.post("/shelves/:shelfId/publish", mustBeSignedIn, withShelf, mayUseShelf, mayPublishShelf, publishShelfController);
+app.post("/shelves/:shelfId/unpublish", mustBeSignedIn, withShelf, mayUseShelf, unpublishShelfController);
+app.post("/shelves/:shelfId/delete", mustBeSignedIn, withShelf, mayUseShelf, deleteShelfController);
+app.post("/shelves/:shelfId/books/:bookId/add", mustBeSignedIn, withShelf, withBook, mayUseShelf, addBookController);
+app.post("/shelves/:shelfId/books/:bookId/delete", mustBeSignedIn, withShelf, withBook, mayUseShelf, removeBookController);
 app.get("/users", mustBeSignedIn, mustBeAdmin, usersController);
 app.get("/users/:userId", mustBeSignedIn, withTargetUser, mayViewUser, userController);
 app.get("/users/:userId/avatar", mustBeSignedIn, withTargetUser, mayViewUser, avatarController);

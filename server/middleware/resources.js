@@ -1,5 +1,5 @@
 import { getUserById } from "../models/users.js";
-import { getListById } from "../models/lists.js";
+import { getShelfById } from "../models/shelves.js";
 import { getBookById } from "../models/books.js";
 import { NotFoundError } from "../tools/errors.js";
 
@@ -13,13 +13,13 @@ export function withTargetUser(ctx, next) {
     return next(ctx);
 }
 
-export function withList(ctx, next) {
-    const { params: { listId } } = ctx;
-    const list = getListById(Number(listId));
-    if (!list) {
-        throw new NotFoundError(`List ${listId} not found`);
+export function withShelf(ctx, next) {
+    const { params: { shelfId } } = ctx;
+    const shelf = getShelfById(Number(shelfId));
+    if (!shelf) {
+        throw new NotFoundError(`Shelf ${shelfId} not found`);
     }
-    ctx.data.list = list;
+    ctx.data.shelf = shelf;
     return next(ctx);
 }
 
