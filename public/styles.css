@@ -17,13 +17,13 @@ body {
         background: #ccc;
     }
 
-    .cover {
+    .thumbnail {
         height: 3em;
         vertical-align: middle;
     }
 
-    .book .cover {
-        height: 15em;
+    .cover {
+        max-width: 100%;
     }
 
     a:has(> .avatar) {
