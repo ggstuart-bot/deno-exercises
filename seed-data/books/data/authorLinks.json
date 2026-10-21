@@ -1,0 +1,3338 @@
+[
+ {
+  "id": 1,
+  "authorId": 1,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Suzanne_Collins"
+ },
+ {
+  "id": 2,
+  "authorId": 2,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/J._K._Rowling"
+ },
+ {
+  "id": 3,
+  "authorId": 3,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Stephenie_Meyer"
+ },
+ {
+  "id": 4,
+  "authorId": 4,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Harper_Lee"
+ },
+ {
+  "id": 5,
+  "authorId": 5,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/F._Scott_Fitzgerald"
+ },
+ {
+  "id": 6,
+  "authorId": 6,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/John_Green"
+ },
+ {
+  "id": 7,
+  "authorId": 7,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/J._R._R._Tolkien"
+ },
+ {
+  "id": 8,
+  "authorId": 8,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/J._D._Salinger"
+ },
+ {
+  "id": 9,
+  "authorId": 9,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jane_Austen"
+ },
+ {
+  "id": 10,
+  "authorId": 10,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Dan_Brown"
+ },
+ {
+  "id": 11,
+  "authorId": 11,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Anne_Frank"
+ },
+ {
+  "id": 12,
+  "authorId": 12,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/George_Orwell"
+ },
+ {
+  "id": 13,
+  "authorId": 13,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Veronica_Roth"
+ },
+ {
+  "id": 14,
+  "authorId": 14,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Khaled_Hosseini"
+ },
+ {
+  "id": 15,
+  "authorId": 15,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Stieg_Larsson"
+ },
+ {
+  "id": 16,
+  "authorId": 16,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/William_Shakespeare"
+ },
+ {
+  "id": 17,
+  "authorId": 17,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Alice_Sebold"
+ },
+ {
+  "id": 18,
+  "authorId": 18,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/William_Golding"
+ },
+ {
+  "id": 19,
+  "authorId": 19,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/C._S._Lewis"
+ },
+ {
+  "id": 20,
+  "authorId": 20,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Kathryn_Stockett"
+ },
+ {
+  "id": 21,
+  "authorId": 21,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/John_Steinbeck"
+ },
+ {
+  "id": 22,
+  "authorId": 22,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Rick_Riordan"
+ },
+ {
+  "id": 23,
+  "authorId": 23,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/E._L._James"
+ },
+ {
+  "id": 24,
+  "authorId": 24,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/George_R._R._Martin"
+ },
+ {
+  "id": 25,
+  "authorId": 25,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Arthur_Golden"
+ },
+ {
+  "id": 26,
+  "authorId": 26,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Paulo_Coelho"
+ },
+ {
+  "id": 27,
+  "authorId": 27,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Lois_Lowry"
+ },
+ {
+  "id": 28,
+  "authorId": 28,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Louisa_May_Alcott"
+ },
+ {
+  "id": 29,
+  "authorId": 29,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Charlotte_Brontë"
+ },
+ {
+  "id": 30,
+  "authorId": 30,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Elizabeth_Gilbert"
+ },
+ {
+  "id": 31,
+  "authorId": 31,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Markus_Zusak"
+ },
+ {
+  "id": 32,
+  "authorId": 32,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Cassandra_Clare"
+ },
+ {
+  "id": 33,
+  "authorId": 33,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Christopher_Paolini"
+ },
+ {
+  "id": 34,
+  "authorId": 34,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Sara_Gruen"
+ },
+ {
+  "id": 35,
+  "authorId": 35,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/E._B._White"
+ },
+ {
+  "id": 36,
+  "authorId": 36,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Nicholas_Sparks"
+ },
+ {
+  "id": 37,
+  "authorId": 37,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Aldous_Huxley"
+ },
+ {
+  "id": 38,
+  "authorId": 38,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Shel_Silverstein"
+ },
+ {
+  "id": 39,
+  "authorId": 39,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Paula_Hawkins_(author)"
+ },
+ {
+  "id": 40,
+  "authorId": 40,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Yann_Martel"
+ },
+ {
+  "id": 41,
+  "authorId": 41,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Philip_Pullman"
+ },
+ {
+  "id": 42,
+  "authorId": 42,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Mark_Twain"
+ },
+ {
+  "id": 43,
+  "authorId": 43,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Douglas_Adams"
+ },
+ {
+  "id": 44,
+  "authorId": 44,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Sue_Monk_Kidd"
+ },
+ {
+  "id": 45,
+  "authorId": 45,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Emily_Brontë"
+ },
+ {
+  "id": 46,
+  "authorId": 46,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Stephen_Chbosky"
+ },
+ {
+  "id": 47,
+  "authorId": 47,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Margaret_Mitchell"
+ },
+ {
+  "id": 48,
+  "authorId": 48,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Mark_Haddon"
+ },
+ {
+  "id": 49,
+  "authorId": 49,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jodi_Picoult"
+ },
+ {
+  "id": 50,
+  "authorId": 50,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Kurt_Vonnegut"
+ },
+ {
+  "id": 51,
+  "authorId": 51,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Orson_Scott_Card"
+ },
+ {
+  "id": 52,
+  "authorId": 52,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Mary_Shelley"
+ },
+ {
+  "id": 53,
+  "authorId": 53,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Stephen_King"
+ },
+ {
+  "id": 54,
+  "authorId": 54,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Louis_Sachar"
+ },
+ {
+  "id": 55,
+  "authorId": 55,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Audrey_Niffenegger"
+ },
+ {
+  "id": 56,
+  "authorId": 56,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Antoine_de_Saint-Exupéry"
+ },
+ {
+  "id": 57,
+  "authorId": 57,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Helen_Fielding"
+ },
+ {
+  "id": 58,
+  "authorId": 58,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/James_Dashner"
+ },
+ {
+  "id": 59,
+  "authorId": 59,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Elie_Wiesel"
+ },
+ {
+  "id": 60,
+  "authorId": 60,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Homer"
+ },
+ {
+  "id": 61,
+  "authorId": 61,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Lauren_Weisberger"
+ },
+ {
+  "id": 62,
+  "authorId": 62,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/S._E._Hinton"
+ },
+ {
+  "id": 63,
+  "authorId": 63,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jon_Krakauer"
+ },
+ {
+  "id": 64,
+  "authorId": 64,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Frances_Hodgson_Burnett"
+ },
+ {
+  "id": 65,
+  "authorId": 65,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Charles_Dickens"
+ },
+ {
+  "id": 66,
+  "authorId": 66,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/William_Goldman"
+ },
+ {
+  "id": 67,
+  "authorId": 67,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jeannette_Walls"
+ },
+ {
+  "id": 68,
+  "authorId": 68,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Maurice_Sendak"
+ },
+ {
+  "id": 69,
+  "authorId": 69,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Bram_Stoker"
+ },
+ {
+  "id": 70,
+  "authorId": 70,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Madeleine_L'Engle"
+ },
+ {
+  "id": 71,
+  "authorId": 71,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Ransom_Riggs"
+ },
+ {
+  "id": 72,
+  "authorId": 72,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Margaret_Atwood"
+ },
+ {
+  "id": 73,
+  "authorId": 73,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/John_Grisham"
+ },
+ {
+  "id": 74,
+  "authorId": 74,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Oscar_Wilde"
+ },
+ {
+  "id": 75,
+  "authorId": 75,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jojo_Moyes"
+ },
+ {
+  "id": 76,
+  "authorId": 76,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Ray_Bradbury"
+ },
+ {
+  "id": 77,
+  "authorId": 77,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Joseph_Heller"
+ },
+ {
+  "id": 78,
+  "authorId": 78,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Walter_Isaacson"
+ },
+ {
+  "id": 79,
+  "authorId": 79,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Mitch_Albom"
+ },
+ {
+  "id": 80,
+  "authorId": 80,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Alexandre_Dumas"
+ },
+ {
+  "id": 81,
+  "authorId": 81,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Barbara_Kingsolver"
+ },
+ {
+  "id": 82,
+  "authorId": 82,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Sophie_Kinsella"
+ },
+ {
+  "id": 83,
+  "authorId": 83,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Ann_Brashares"
+ },
+ {
+  "id": 84,
+  "authorId": 84,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Steven_Levitt"
+ },
+ {
+  "id": 85,
+  "authorId": 85,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Stephen_J._Dubner"
+ },
+ {
+  "id": 86,
+  "authorId": 86,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Ernest_Hemingway"
+ },
+ {
+  "id": 87,
+  "authorId": 87,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Diana_Gabaldon"
+ },
+ {
+  "id": 88,
+  "authorId": 88,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Amy_Tan"
+ },
+ {
+  "id": 89,
+  "authorId": 89,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Rainbow_Rowell"
+ },
+ {
+  "id": 90,
+  "authorId": 90,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Victor_Hugo"
+ },
+ {
+  "id": 91,
+  "authorId": 91,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Gillian_Flynn"
+ },
+ {
+  "id": 92,
+  "authorId": 92,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Ally_Condie"
+ },
+ {
+  "id": 93,
+  "authorId": 93,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Emma_Donoghue"
+ },
+ {
+  "id": 94,
+  "authorId": 94,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Nathaniel_Hawthorne"
+ },
+ {
+  "id": 95,
+  "authorId": 95,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Gregory_Maguire"
+ },
+ {
+  "id": 96,
+  "authorId": 96,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Tina_Fey"
+ },
+ {
+  "id": 97,
+  "authorId": 97,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Kiera_Cass"
+ },
+ {
+  "id": 98,
+  "authorId": 98,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Cormac_McCarthy"
+ },
+ {
+  "id": 99,
+  "authorId": 99,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Gayle_Forman"
+ },
+ {
+  "id": 100,
+  "authorId": 100,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Lucy_Maud_Montgomery"
+ },
+ {
+  "id": 101,
+  "authorId": 101,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Kim_Edwards"
+ },
+ {
+  "id": 102,
+  "authorId": 102,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/David_Sedaris"
+ },
+ {
+  "id": 103,
+  "authorId": 103,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Ken_Kesey"
+ },
+ {
+  "id": 104,
+  "authorId": 104,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Gabriel_García_Márquez"
+ },
+ {
+  "id": 105,
+  "authorId": 105,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Malcolm_Gladwell"
+ },
+ {
+  "id": 106,
+  "authorId": 106,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jeffrey_Eugenides"
+ },
+ {
+  "id": 107,
+  "authorId": 107,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Laura_Hillenbrand"
+ },
+ {
+  "id": 108,
+  "authorId": 108,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Frank_Herbert"
+ },
+ {
+  "id": 109,
+  "authorId": 109,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Anthony_Doerr"
+ },
+ {
+  "id": 110,
+  "authorId": 110,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Vladimir_Nabokov"
+ },
+ {
+  "id": 111,
+  "authorId": 111,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Tracy_Chevalier"
+ },
+ {
+  "id": 112,
+  "authorId": 112,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Rebecca_Wells"
+ },
+ {
+  "id": 113,
+  "authorId": 113,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jay_Asher"
+ },
+ {
+  "id": 114,
+  "authorId": 114,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Ken_Follett"
+ },
+ {
+  "id": 115,
+  "authorId": 115,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Dr._Seuss"
+ },
+ {
+  "id": 116,
+  "authorId": 116,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Roald_Dahl"
+ },
+ {
+  "id": 117,
+  "authorId": 117,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Scott_Westerfeld"
+ },
+ {
+  "id": 118,
+  "authorId": 118,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Becca_Fitzpatrick"
+ },
+ {
+  "id": 119,
+  "authorId": 119,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Michael_Crichton"
+ },
+ {
+  "id": 120,
+  "authorId": 120,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Kami_Garcia"
+ },
+ {
+  "id": 121,
+  "authorId": 121,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Margaret_Stohl"
+ },
+ {
+  "id": 122,
+  "authorId": 122,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Anthony_Burgess"
+ },
+ {
+  "id": 123,
+  "authorId": 123,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Erin_Morgenstern"
+ },
+ {
+  "id": 124,
+  "authorId": 124,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Marissa_Meyer"
+ },
+ {
+  "id": 125,
+  "authorId": 125,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Anita_Diamant"
+ },
+ {
+  "id": 126,
+  "authorId": 126,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Andy_Weir"
+ },
+ {
+  "id": 127,
+  "authorId": 127,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Charlaine_Harris"
+ },
+ {
+  "id": 128,
+  "authorId": 128,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Albert_Camus"
+ },
+ {
+  "id": 129,
+  "authorId": 129,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/William_P._Young"
+ },
+ {
+  "id": 130,
+  "authorId": 130,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jamie_McGuire_(author)"
+ },
+ {
+  "id": 131,
+  "authorId": 131,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Agatha_Christie"
+ },
+ {
+  "id": 132,
+  "authorId": 132,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Emily_Giffin"
+ },
+ {
+  "id": 133,
+  "authorId": 133,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Sylvia_Plath"
+ },
+ {
+  "id": 134,
+  "authorId": 134,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Patrick_Rothfuss"
+ },
+ {
+  "id": 135,
+  "authorId": 135,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Alan_Moore"
+ },
+ {
+  "id": 136,
+  "authorId": 136,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Dave_Gibbons"
+ },
+ {
+  "id": 137,
+  "authorId": 137,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Donna_Tartt"
+ },
+ {
+  "id": 138,
+  "authorId": 138,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Lauren_Kate"
+ },
+ {
+  "id": 139,
+  "authorId": 139,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Mary_Ann_Shaffer"
+ },
+ {
+  "id": 140,
+  "authorId": 140,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Annie_Barrows"
+ },
+ {
+  "id": 141,
+  "authorId": 141,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Frank_McCourt"
+ },
+ {
+  "id": 142,
+  "authorId": 142,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Janet_Evanovich"
+ },
+ {
+  "id": 143,
+  "authorId": 143,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Eoin_Colfer"
+ },
+ {
+  "id": 144,
+  "authorId": 144,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Truman_Capote"
+ },
+ {
+  "id": 145,
+  "authorId": 145,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Philippa_Gregory"
+ },
+ {
+  "id": 146,
+  "authorId": 146,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Fyodor_Dostoevsky"
+ },
+ {
+  "id": 147,
+  "authorId": 147,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Cheryl_Strayed"
+ },
+ {
+  "id": 148,
+  "authorId": 148,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Neil_Gaiman"
+ },
+ {
+  "id": 149,
+  "authorId": 149,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Rebecca_Skloot"
+ },
+ {
+  "id": 150,
+  "authorId": 150,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Alice_Walker"
+ },
+ {
+  "id": 151,
+  "authorId": 151,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Anne_Rice"
+ },
+ {
+  "id": 152,
+  "authorId": 152,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Hermann_Hesse"
+ },
+ {
+  "id": 153,
+  "authorId": 154,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Chuck_Palahniuk"
+ },
+ {
+  "id": 154,
+  "authorId": 155,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Franz_Kafka"
+ },
+ {
+  "id": 155,
+  "authorId": 156,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Laurie_Halse_Anderson"
+ },
+ {
+  "id": 156,
+  "authorId": 157,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/P._C._Cast"
+ },
+ {
+  "id": 157,
+  "authorId": 158,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Kristin_Cast"
+ },
+ {
+  "id": 158,
+  "authorId": 159,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Herman_Melville"
+ },
+ {
+  "id": 159,
+  "authorId": 160,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Maggie_Stiefvater"
+ },
+ {
+  "id": 160,
+  "authorId": 161,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Thomas_Harris"
+ },
+ {
+  "id": 161,
+  "authorId": 162,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Ernest_Cline"
+ },
+ {
+  "id": 162,
+  "authorId": 163,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Ian_McEwan"
+ },
+ {
+  "id": 163,
+  "authorId": 165,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Lewis_Carroll"
+ },
+ {
+  "id": 164,
+  "authorId": 166,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Gail_Carson_Levine"
+ },
+ {
+  "id": 165,
+  "authorId": 167,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Katherine_Paterson"
+ },
+ {
+  "id": 166,
+  "authorId": 168,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Garth_Stein"
+ },
+ {
+  "id": 167,
+  "authorId": 169,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Robert_Ludlum"
+ },
+ {
+  "id": 168,
+  "authorId": 170,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Emma_McLaughlin"
+ },
+ {
+  "id": 169,
+  "authorId": 171,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Nicola_Kraus"
+ },
+ {
+  "id": 170,
+  "authorId": 172,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Stephen_Covey"
+ },
+ {
+  "id": 171,
+  "authorId": 173,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Daniel_Keyes"
+ },
+ {
+  "id": 172,
+  "authorId": 174,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Max_Brooks"
+ },
+ {
+  "id": 173,
+  "authorId": 175,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Tatiana_de_Rosnay"
+ },
+ {
+  "id": 174,
+  "authorId": 176,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Dave_Pelzer"
+ },
+ {
+  "id": 175,
+  "authorId": 177,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/James_Patterson"
+ },
+ {
+  "id": 176,
+  "authorId": 178,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Erik_Larson_(author)"
+ },
+ {
+  "id": 177,
+  "authorId": 179,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Liane_Moriarty"
+ },
+ {
+  "id": 178,
+  "authorId": 180,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Marie_Lu"
+ },
+ {
+  "id": 179,
+  "authorId": 181,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Terry_Pratchett"
+ },
+ {
+  "id": 180,
+  "authorId": 182,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/J._K._Rowling"
+ },
+ {
+  "id": 181,
+  "authorId": 183,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Leo_Tolstoy"
+ },
+ {
+  "id": 182,
+  "authorId": 184,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Eric_Carle"
+ },
+ {
+  "id": 183,
+  "authorId": 185,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jonathan_Safran_Foer"
+ },
+ {
+  "id": 184,
+  "authorId": 186,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Kazuo_Ishiguro"
+ },
+ {
+  "id": 185,
+  "authorId": 187,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Augusten_Burroughs"
+ },
+ {
+  "id": 186,
+  "authorId": 188,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Richard_Adams"
+ },
+ {
+  "id": 187,
+  "authorId": 189,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Betty_Smith"
+ },
+ {
+  "id": 188,
+  "authorId": 190,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Mark_Cotta_Vaz"
+ },
+ {
+  "id": 189,
+  "authorId": 191,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Mindy_Kaling"
+ },
+ {
+  "id": 190,
+  "authorId": 192,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/John_Boyne"
+ },
+ {
+  "id": 191,
+  "authorId": 193,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Cornelia_Funke"
+ },
+ {
+  "id": 192,
+  "authorId": 194,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Greg_Mortenson"
+ },
+ {
+  "id": 193,
+  "authorId": 195,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Ayn_Rand"
+ },
+ {
+  "id": 194,
+  "authorId": 196,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Dale_Carnegie"
+ },
+ {
+  "id": 195,
+  "authorId": 197,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Kristin_Cashore"
+ },
+ {
+  "id": 196,
+  "authorId": 198,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Lisa_See"
+ },
+ {
+  "id": 197,
+  "authorId": 199,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Isaac_Asimov"
+ },
+ {
+  "id": 198,
+  "authorId": 200,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Frances_Mayes"
+ },
+ {
+  "id": 199,
+  "authorId": 201,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/H._G._Wells"
+ },
+ {
+  "id": 200,
+  "authorId": 202,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Daniel_Handler"
+ },
+ {
+  "id": 201,
+  "authorId": 203,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Sarah_J._Maas"
+ },
+ {
+  "id": 202,
+  "authorId": 204,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/E._Lockhart"
+ },
+ {
+  "id": 203,
+  "authorId": 205,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Maya_Angelou"
+ },
+ {
+  "id": 204,
+  "authorId": 206,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/John_Tiffany"
+ },
+ {
+  "id": 205,
+  "authorId": 208,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Tom_Clancy"
+ },
+ {
+  "id": 206,
+  "authorId": 209,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Wilson_Rawls"
+ },
+ {
+  "id": 207,
+  "authorId": 210,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Robert_Louis_Stevenson"
+ },
+ {
+  "id": 208,
+  "authorId": 211,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Richelle_Mead"
+ },
+ {
+  "id": 209,
+  "authorId": 212,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Carlos_Ruiz_Zafón"
+ },
+ {
+  "id": 210,
+  "authorId": 213,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Laura_Esquivel"
+ },
+ {
+  "id": 211,
+  "authorId": 214,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Cecelia_Ahern"
+ },
+ {
+  "id": 212,
+  "authorId": 215,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Robert_Jordan"
+ },
+ {
+  "id": 213,
+  "authorId": 216,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Rick_Yancey"
+ },
+ {
+  "id": 214,
+  "authorId": 217,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Wally_Lamb"
+ },
+ {
+  "id": 215,
+  "authorId": 218,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Stephanie_Perkins"
+ },
+ {
+  "id": 216,
+  "authorId": 219,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Abraham_Verghese"
+ },
+ {
+  "id": 217,
+  "authorId": 220,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Lauren_Oliver"
+ },
+ {
+  "id": 218,
+  "authorId": 221,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Mario_Puzo"
+ },
+ {
+  "id": 219,
+  "authorId": 222,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Colleen_McCullough"
+ },
+ {
+  "id": 220,
+  "authorId": 223,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Joseph_Conrad"
+ },
+ {
+  "id": 221,
+  "authorId": 224,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jeff_Kinney"
+ },
+ {
+  "id": 222,
+  "authorId": 225,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Kristin_Hannah"
+ },
+ {
+  "id": 223,
+  "authorId": 227,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Sylvia_Day"
+ },
+ {
+  "id": 224,
+  "authorId": 228,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Graeme_Simsion"
+ },
+ {
+  "id": 225,
+  "authorId": 229,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Amy_Poehler"
+ },
+ {
+  "id": 226,
+  "authorId": 230,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Bill_Bryson"
+ },
+ {
+  "id": 227,
+  "authorId": 231,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Erich_Maria_Remarque"
+ },
+ {
+  "id": 228,
+  "authorId": 232,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jennifer_Weiner"
+ },
+ {
+  "id": 229,
+  "authorId": 233,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/L._Frank_Baum"
+ },
+ {
+  "id": 230,
+  "authorId": 234,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jack_Kerouac"
+ },
+ {
+  "id": 231,
+  "authorId": 235,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Janet_Fitch"
+ },
+ {
+  "id": 232,
+  "authorId": 236,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Margaret_Wise_Brown"
+ },
+ {
+  "id": 233,
+  "authorId": 237,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/M._L._Stedman"
+ },
+ {
+  "id": 234,
+  "authorId": 238,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Arthur_Miller"
+ },
+ {
+  "id": 235,
+  "authorId": 239,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Randy_Pausch"
+ },
+ {
+  "id": 236,
+  "authorId": 240,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Rhonda_Byrne"
+ },
+ {
+  "id": 237,
+  "authorId": 241,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jerry_Spinelli"
+ },
+ {
+  "id": 238,
+  "authorId": 242,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Spencer_Johnson_(writer)"
+ },
+ {
+  "id": 239,
+  "authorId": 243,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Ken_Blanchard"
+ },
+ {
+  "id": 240,
+  "authorId": 244,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/David_Levithan"
+ },
+ {
+  "id": 241,
+  "authorId": 245,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Scott_O'Dell"
+ },
+ {
+  "id": 242,
+  "authorId": 246,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Toni_Morrison"
+ },
+ {
+  "id": 243,
+  "authorId": 247,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Hunter_S._Thompson"
+ },
+ {
+  "id": 244,
+  "authorId": 248,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Alyson_Noël"
+ },
+ {
+  "id": 245,
+  "authorId": 249,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/R._J._Palacio"
+ },
+ {
+  "id": 246,
+  "authorId": 251,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jessica_Bird"
+ },
+ {
+  "id": 247,
+  "authorId": 252,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/John_Irving"
+ },
+ {
+  "id": 248,
+  "authorId": 253,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Deborah_Harkness"
+ },
+ {
+  "id": 249,
+  "authorId": 254,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Christina_Baker_Kline"
+ },
+ {
+  "id": 250,
+  "authorId": 255,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jack_London"
+ },
+ {
+  "id": 251,
+  "authorId": 256,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Philip_K._Dick"
+ },
+ {
+  "id": 252,
+  "authorId": 257,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Lisa_Genova"
+ },
+ {
+  "id": 253,
+  "authorId": 258,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/David_Nicholls_(writer)"
+ },
+ {
+  "id": 254,
+  "authorId": 259,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Gary_Paulsen"
+ },
+ {
+  "id": 255,
+  "authorId": 260,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Robert_A._Heinlein"
+ },
+ {
+  "id": 256,
+  "authorId": 262,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/David_McCullough"
+ },
+ {
+  "id": 257,
+  "authorId": 263,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Maria_Semple"
+ },
+ {
+  "id": 258,
+  "authorId": 264,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Malala_Yousafzai"
+ },
+ {
+  "id": 259,
+  "authorId": 265,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Diane_Setterfield"
+ },
+ {
+  "id": 260,
+  "authorId": 266,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Brandon_Sanderson"
+ },
+ {
+  "id": 261,
+  "authorId": 267,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Billie_Letts"
+ },
+ {
+  "id": 262,
+  "authorId": 268,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/A._A._Milne"
+ },
+ {
+  "id": 263,
+  "authorId": 269,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Fannie_Flagg"
+ },
+ {
+  "id": 264,
+  "authorId": 270,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Dean_Koontz"
+ },
+ {
+  "id": 265,
+  "authorId": 271,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Milan_Kundera"
+ },
+ {
+  "id": 266,
+  "authorId": 272,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jim_Butcher"
+ },
+ {
+  "id": 267,
+  "authorId": 273,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Sarah_Dessen"
+ },
+ {
+  "id": 268,
+  "authorId": 274,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Susan_Cain"
+ },
+ {
+  "id": 269,
+  "authorId": 275,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Arthur_Conan_Doyle"
+ },
+ {
+  "id": 270,
+  "authorId": 276,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Umberto_Eco"
+ },
+ {
+  "id": 271,
+  "authorId": 277,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Chinua_Achebe"
+ },
+ {
+  "id": 272,
+  "authorId": 278,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jeanne_DuPrau"
+ },
+ {
+  "id": 273,
+  "authorId": 279,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Simone_Elkeles"
+ },
+ {
+  "id": 274,
+  "authorId": 280,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Laini_Taylor"
+ },
+ {
+  "id": 275,
+  "authorId": 281,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Laura_Numeroff"
+ },
+ {
+  "id": 276,
+  "authorId": 282,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jamie_Ford"
+ },
+ {
+  "id": 277,
+  "authorId": 283,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Beatrice_Sparks"
+ },
+ {
+  "id": 278,
+  "authorId": 284,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Edgar_Allan_Poe"
+ },
+ {
+  "id": 279,
+  "authorId": 285,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Laura_Ingalls_Wilder"
+ },
+ {
+  "id": 280,
+  "authorId": 286,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Tennessee_Williams"
+ },
+ {
+  "id": 281,
+  "authorId": 287,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Meg_Cabot"
+ },
+ {
+  "id": 282,
+  "authorId": 288,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Ann_Patchett"
+ },
+ {
+  "id": 283,
+  "authorId": 289,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Paula_McLain"
+ },
+ {
+  "id": 284,
+  "authorId": 290,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Elizabeth_Kostova"
+ },
+ {
+  "id": 285,
+  "authorId": 291,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Colleen_Hoover"
+ },
+ {
+  "id": 286,
+  "authorId": 292,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Tana_French"
+ },
+ {
+  "id": 287,
+  "authorId": 293,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Charles_Frazier"
+ },
+ {
+  "id": 288,
+  "authorId": 294,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/James_Frey"
+ },
+ {
+  "id": 289,
+  "authorId": 295,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jhumpa_Lahiri"
+ },
+ {
+  "id": 290,
+  "authorId": 297,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Haruki_Murakami"
+ },
+ {
+  "id": 291,
+  "authorId": 298,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/William_Gibson"
+ },
+ {
+  "id": 292,
+  "authorId": 299,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Fredrik_Backman"
+ },
+ {
+  "id": 293,
+  "authorId": 300,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Anna_Sewell"
+ },
+ {
+  "id": 294,
+  "authorId": 301,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Pearl_S._Buck"
+ },
+ {
+  "id": 295,
+  "authorId": 302,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/William_Landay"
+ },
+ {
+  "id": 296,
+  "authorId": 303,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Zora_Neale_Hurston"
+ },
+ {
+  "id": 297,
+  "authorId": 304,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/S._J._Watson"
+ },
+ {
+  "id": 298,
+  "authorId": 305,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Alexander_McCall_Smith"
+ },
+ {
+  "id": 299,
+  "authorId": 306,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Eric_Schlosser"
+ },
+ {
+  "id": 300,
+  "authorId": 307,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Norton_Juster"
+ },
+ {
+  "id": 301,
+  "authorId": 308,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Daniel_Defoe"
+ },
+ {
+  "id": 302,
+  "authorId": 309,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Patrick_Süskind"
+ },
+ {
+  "id": 303,
+  "authorId": 310,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Daphne_du_Maurier"
+ },
+ {
+  "id": 304,
+  "authorId": 311,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Tahereh_Mafi"
+ },
+ {
+  "id": 305,
+  "authorId": 312,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jean_M._Auel"
+ },
+ {
+  "id": 306,
+  "authorId": 313,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Neal_Stephenson"
+ },
+ {
+  "id": 307,
+  "authorId": 314,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Terry_Goodkind"
+ },
+ {
+  "id": 308,
+  "authorId": 315,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Natalie_Babbitt"
+ },
+ {
+  "id": 309,
+  "authorId": 316,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/P._D._Eastman"
+ },
+ {
+  "id": 310,
+  "authorId": 317,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Libba_Bray"
+ },
+ {
+  "id": 311,
+  "authorId": 318,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Margery_Williams"
+ },
+ {
+  "id": 312,
+  "authorId": 319,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Thomas_Hardy"
+ },
+ {
+  "id": 313,
+  "authorId": 320,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jared_Diamond"
+ },
+ {
+  "id": 314,
+  "authorId": 321,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Corrie_ten_Boom"
+ },
+ {
+  "id": 315,
+  "authorId": 322,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Viktor_Frankl"
+ },
+ {
+  "id": 316,
+  "authorId": 323,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Arthur_C._Clarke"
+ },
+ {
+  "id": 317,
+  "authorId": 324,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/John_Kennedy_Toole"
+ },
+ {
+  "id": 318,
+  "authorId": 325,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Rick_Warren"
+ },
+ {
+  "id": 319,
+  "authorId": 326,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/J._M._Barrie"
+ },
+ {
+  "id": 320,
+  "authorId": 327,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jonathan_Swift"
+ },
+ {
+  "id": 321,
+  "authorId": 328,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Tim_O'Brien_(author)"
+ },
+ {
+  "id": 322,
+  "authorId": 330,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Chris_Van_Allsburg"
+ },
+ {
+  "id": 323,
+  "authorId": 331,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/John_Berendt"
+ },
+ {
+  "id": 324,
+  "authorId": 332,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Patricia_Cornwell"
+ },
+ {
+  "id": 325,
+  "authorId": 333,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Sun_Tzu"
+ },
+ {
+  "id": 326,
+  "authorId": 334,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Bret_Easton_Ellis"
+ },
+ {
+  "id": 327,
+  "authorId": 335,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Gary_Chapman_(author)"
+ },
+ {
+  "id": 328,
+  "authorId": 336,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Stephen_Hawking"
+ },
+ {
+  "id": 329,
+  "authorId": 337,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Arundhati_Roy"
+ },
+ {
+  "id": 330,
+  "authorId": 338,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jennifer_L._Armentrout"
+ },
+ {
+  "id": 331,
+  "authorId": 339,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Ernst_Gombrich"
+ },
+ {
+  "id": 332,
+  "authorId": 340,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Robert_Kirkman"
+ },
+ {
+  "id": 333,
+  "authorId": 341,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Lee_Child"
+ },
+ {
+  "id": 334,
+  "authorId": 342,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Richard_Dawkins"
+ },
+ {
+  "id": 335,
+  "authorId": 343,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Beatrix_Potter"
+ },
+ {
+  "id": 336,
+  "authorId": 344,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Tim_LaHaye"
+ },
+ {
+  "id": 337,
+  "authorId": 345,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jerry_B._Jenkins"
+ },
+ {
+  "id": 338,
+  "authorId": 346,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Ned_Vizzini"
+ },
+ {
+  "id": 339,
+  "authorId": 347,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Don_Freeman"
+ },
+ {
+  "id": 340,
+  "authorId": 348,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Sherman_Alexie"
+ },
+ {
+  "id": 341,
+  "authorId": 349,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Emily_St._John_Mandel"
+ },
+ {
+  "id": 342,
+  "authorId": 350,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Junot_Díaz"
+ },
+ {
+  "id": 343,
+  "authorId": 351,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Robert_Munsch"
+ },
+ {
+  "id": 344,
+  "authorId": 352,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Pat_Conroy"
+ },
+ {
+  "id": 345,
+  "authorId": 354,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Gustave_Flaubert"
+ },
+ {
+  "id": 346,
+  "authorId": 355,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Julie_Kagawa"
+ },
+ {
+  "id": 347,
+  "authorId": 356,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Marion_Zimmer_Bradley"
+ },
+ {
+  "id": 348,
+  "authorId": 357,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Francine_Rivers"
+ },
+ {
+  "id": 349,
+  "authorId": 358,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Kenneth_Branagh"
+ },
+ {
+  "id": 350,
+  "authorId": 359,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Ludwig_Bemelmans"
+ },
+ {
+  "id": 351,
+  "authorId": 360,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Sara_Shepard"
+ },
+ {
+  "id": 352,
+  "authorId": 361,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Charles_Duhigg"
+ },
+ {
+  "id": 353,
+  "authorId": 363,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/John_Knowles"
+ },
+ {
+  "id": 354,
+  "authorId": 364,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/John_Berger"
+ },
+ {
+  "id": 355,
+  "authorId": 365,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Chuck_Dixon"
+ },
+ {
+  "id": 356,
+  "authorId": 366,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Ursula_K._Le_Guin"
+ },
+ {
+  "id": 357,
+  "authorId": 367,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Kate_DiCamillo"
+ },
+ {
+  "id": 358,
+  "authorId": 368,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Robert_Kiyosaki"
+ },
+ {
+  "id": 359,
+  "authorId": 369,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Niccolò_Machiavelli"
+ },
+ {
+  "id": 360,
+  "authorId": 370,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Barbara_Ehrenreich"
+ },
+ {
+  "id": 361,
+  "authorId": 371,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/David_Mitchell_(author)"
+ },
+ {
+  "id": 362,
+  "authorId": 372,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Judy_Blume"
+ },
+ {
+  "id": 363,
+  "authorId": 373,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Voltaire"
+ },
+ {
+  "id": 364,
+  "authorId": 374,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Ally_Carter"
+ },
+ {
+  "id": 365,
+  "authorId": 375,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jeff_Lindsay"
+ },
+ {
+  "id": 366,
+  "authorId": 376,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Alex_Flinn"
+ },
+ {
+  "id": 367,
+  "authorId": 377,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Banksy"
+ },
+ {
+  "id": 368,
+  "authorId": 378,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Michael_Connelly"
+ },
+ {
+  "id": 369,
+  "authorId": 379,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Geoffrey_Chaucer"
+ },
+ {
+  "id": 370,
+  "authorId": 380,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Lev_Grossman"
+ },
+ {
+  "id": 371,
+  "authorId": 381,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Michael_Chabon"
+ },
+ {
+  "id": 372,
+  "authorId": 382,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Judith_Viorst"
+ },
+ {
+  "id": 373,
+  "authorId": 383,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Dave_Eggers"
+ },
+ {
+  "id": 374,
+  "authorId": 384,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Frank_Miller"
+ },
+ {
+  "id": 375,
+  "authorId": 385,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Susanna_Kaysen"
+ },
+ {
+  "id": 376,
+  "authorId": 387,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Johanna_Spyri"
+ },
+ {
+  "id": 377,
+  "authorId": 388,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Neal_Shusterman"
+ },
+ {
+  "id": 378,
+  "authorId": 389,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Kahlil_Gibran"
+ },
+ {
+  "id": 379,
+  "authorId": 390,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jon_Scieszka"
+ },
+ {
+  "id": 380,
+  "authorId": 391,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Gaston_Leroux"
+ },
+ {
+  "id": 381,
+  "authorId": 392,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jandy_Nelson"
+ },
+ {
+  "id": 382,
+  "authorId": 393,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Vanessa_Diffenbaugh"
+ },
+ {
+  "id": 383,
+  "authorId": 394,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Tsugumi_Ohba"
+ },
+ {
+  "id": 384,
+  "authorId": 395,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Takeshi_Obata"
+ },
+ {
+  "id": 385,
+  "authorId": 396,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Robert_M._Pirsig"
+ },
+ {
+  "id": 386,
+  "authorId": 397,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Abbi_Glines"
+ },
+ {
+  "id": 387,
+  "authorId": 398,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Kate_Atkinson_(writer)"
+ },
+ {
+  "id": 388,
+  "authorId": 399,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Kate_Morton"
+ },
+ {
+  "id": 389,
+  "authorId": 400,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Harriet_Beecher_Stowe"
+ },
+ {
+  "id": 390,
+  "authorId": 401,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Howard_Zinn"
+ },
+ {
+  "id": 391,
+  "authorId": 402,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Garth_Nix"
+ },
+ {
+  "id": 392,
+  "authorId": 403,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Daniel_Kahneman"
+ },
+ {
+  "id": 393,
+  "authorId": 404,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jenny_Han"
+ },
+ {
+  "id": 394,
+  "authorId": 406,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Kody_Keplinger"
+ },
+ {
+  "id": 395,
+  "authorId": 407,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Virginia_Woolf"
+ },
+ {
+  "id": 396,
+  "authorId": 408,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Robert_C._O'Brien_(author)"
+ },
+ {
+  "id": 397,
+  "authorId": 409,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Sheryl_Sandberg"
+ },
+ {
+  "id": 398,
+  "authorId": 410,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Leigh_Bardugo"
+ },
+ {
+  "id": 399,
+  "authorId": 411,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Miguel_de_Cervantes"
+ },
+ {
+  "id": 400,
+  "authorId": 412,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Nick_Hornby"
+ },
+ {
+  "id": 401,
+  "authorId": 414,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/E._L._Konigsburg"
+ },
+ {
+  "id": 402,
+  "authorId": 415,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Anthony_Bourdain"
+ },
+ {
+  "id": 403,
+  "authorId": 416,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Tammara_Webber"
+ },
+ {
+  "id": 404,
+  "authorId": 417,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Richard_Bach"
+ },
+ {
+  "id": 405,
+  "authorId": 418,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Susanna_Clarke"
+ },
+ {
+  "id": 406,
+  "authorId": 419,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Michael_Pollan"
+ },
+ {
+  "id": 407,
+  "authorId": 420,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Chris_Bohjalian"
+ },
+ {
+  "id": 408,
+  "authorId": 421,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Robin_Hobb"
+ },
+ {
+  "id": 409,
+  "authorId": 422,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Nicola_Yoon"
+ },
+ {
+  "id": 410,
+  "authorId": 423,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Kelley_Armstrong"
+ },
+ {
+  "id": 411,
+  "authorId": 424,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Brian_Selznick"
+ },
+ {
+  "id": 412,
+  "authorId": 425,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jennifer_Niven"
+ },
+ {
+  "id": 413,
+  "authorId": 426,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/David_Guterson"
+ },
+ {
+  "id": 414,
+  "authorId": 427,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Brian_K._Vaughan"
+ },
+ {
+  "id": 415,
+  "authorId": 428,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Mikhail_Bulgakov"
+ },
+ {
+  "id": 416,
+  "authorId": 429,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Melissa_Marr"
+ },
+ {
+  "id": 417,
+  "authorId": 430,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Stephen_King"
+ },
+ {
+  "id": 418,
+  "authorId": 431,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Sharon_Creech"
+ },
+ {
+  "id": 419,
+  "authorId": 432,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Patricia_Briggs"
+ },
+ {
+  "id": 420,
+  "authorId": 433,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Barack_Obama"
+ },
+ {
+  "id": 421,
+  "authorId": 434,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Piper_Kerman"
+ },
+ {
+  "id": 422,
+  "authorId": 435,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Chelsea_Handler"
+ },
+ {
+  "id": 423,
+  "authorId": 436,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Justin_Cronin"
+ },
+ {
+  "id": 424,
+  "authorId": 437,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Bryan_Lee_O'Malley"
+ },
+ {
+  "id": 425,
+  "authorId": 438,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Bill_Martin_Jr."
+ },
+ {
+  "id": 426,
+  "authorId": 439,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Kate_Chopin"
+ },
+ {
+  "id": 427,
+  "authorId": 440,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Malcolm_X"
+ },
+ {
+  "id": 428,
+  "authorId": 441,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Alex_Haley"
+ },
+ {
+  "id": 429,
+  "authorId": 442,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/William_Faulkner"
+ },
+ {
+  "id": 430,
+  "authorId": 443,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Kenneth_Grahame"
+ },
+ {
+  "id": 431,
+  "authorId": 444,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/William_Peter_Blatty"
+ },
+ {
+  "id": 432,
+  "authorId": 445,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Diana_Wynne_Jones"
+ },
+ {
+  "id": 433,
+  "authorId": 446,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Ralph_Ellison"
+ },
+ {
+  "id": 434,
+  "authorId": 447,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Astrid_Lindgren"
+ },
+ {
+  "id": 435,
+  "authorId": 448,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Mary_Roach"
+ },
+ {
+  "id": 436,
+  "authorId": 449,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Dan_Simmons"
+ },
+ {
+  "id": 437,
+  "authorId": 450,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Julie_Powell"
+ },
+ {
+  "id": 438,
+  "authorId": 451,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jules_Verne"
+ },
+ {
+  "id": 439,
+  "authorId": 452,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jeffery_Deaver"
+ },
+ {
+  "id": 440,
+  "authorId": 453,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jennifer_Egan"
+ },
+ {
+  "id": 441,
+  "authorId": 454,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Tite_Kubo"
+ },
+ {
+  "id": 442,
+  "authorId": 455,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Isabel_Allende"
+ },
+ {
+  "id": 443,
+  "authorId": 457,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Bernhard_Schlink"
+ },
+ {
+  "id": 444,
+  "authorId": 459,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Sophocles"
+ },
+ {
+  "id": 445,
+  "authorId": 460,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jonathan_Franzen"
+ },
+ {
+  "id": 446,
+  "authorId": 461,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Allie_Brosh"
+ },
+ {
+  "id": 447,
+  "authorId": 462,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Scott_Lynch"
+ },
+ {
+  "id": 448,
+  "authorId": 463,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Christopher_Moore_(author)"
+ },
+ {
+  "id": 449,
+  "authorId": 464,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jenny_Lawson"
+ },
+ {
+  "id": 450,
+  "authorId": 465,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Natsuki_Takaya"
+ },
+ {
+  "id": 451,
+  "authorId": 466,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Bill_Watterson"
+ },
+ {
+  "id": 452,
+  "authorId": 467,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/J.A._Redmerski"
+ },
+ {
+  "id": 453,
+  "authorId": 468,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Ellen_Raskin"
+ },
+ {
+  "id": 454,
+  "authorId": 469,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Marjane_Satrapi"
+ },
+ {
+  "id": 455,
+  "authorId": 470,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Chris_Cleave"
+ },
+ {
+  "id": 456,
+  "authorId": 471,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Paul_Kalanithi"
+ },
+ {
+  "id": 457,
+  "authorId": 472,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Melissa_de_la_Cruz"
+ },
+ {
+  "id": 458,
+  "authorId": 475,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Ishmael_Beah"
+ },
+ {
+  "id": 459,
+  "authorId": 476,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jess_Walter"
+ },
+ {
+  "id": 460,
+  "authorId": 477,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Sue_Grafton"
+ },
+ {
+  "id": 461,
+  "authorId": 478,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Gabrielle_Zevin"
+ },
+ {
+  "id": 462,
+  "authorId": 479,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Aravind_Adiga"
+ },
+ {
+  "id": 463,
+  "authorId": 480,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Melissa_Bank"
+ },
+ {
+  "id": 464,
+  "authorId": 481,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/John_Gray_(American_author)"
+ },
+ {
+  "id": 465,
+  "authorId": 482,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Bisco_Hatori"
+ },
+ {
+  "id": 466,
+  "authorId": 483,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Dennis_Lehane"
+ },
+ {
+  "id": 467,
+  "authorId": 484,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Daniel_James_Brown"
+ },
+ {
+  "id": 468,
+  "authorId": 485,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Chimamanda_Ngozi_Adichie"
+ },
+ {
+  "id": 469,
+  "authorId": 486,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Louise_Rennison"
+ },
+ {
+  "id": 470,
+  "authorId": 487,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Christina_Lauren"
+ },
+ {
+  "id": 471,
+  "authorId": 488,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Larry_McMurtry"
+ },
+ {
+  "id": 472,
+  "authorId": 489,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Matthew_Quick"
+ },
+ {
+  "id": 473,
+  "authorId": 490,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Karen_Marie_Moning"
+ },
+ {
+  "id": 474,
+  "authorId": 491,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Robin_Sloan"
+ },
+ {
+  "id": 475,
+  "authorId": 492,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Plato"
+ },
+ {
+  "id": 476,
+  "authorId": 493,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/E._M._Forster"
+ },
+ {
+  "id": 477,
+  "authorId": 494,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Rachel_Hawkins_(writer)"
+ },
+ {
+  "id": 478,
+  "authorId": 495,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jostein_Gaarder"
+ },
+ {
+  "id": 479,
+  "authorId": 496,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Christopher_McDougall"
+ },
+ {
+  "id": 480,
+  "authorId": 497,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Brent_Weeks"
+ },
+ {
+  "id": 481,
+  "authorId": 498,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Michael_Ende"
+ },
+ {
+  "id": 482,
+  "authorId": 499,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/V._C._Andrews"
+ },
+ {
+  "id": 483,
+  "authorId": 500,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Benjamin_Alire_Sáenz"
+ },
+ {
+  "id": 484,
+  "authorId": 501,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Celeste_Ng"
+ },
+ {
+  "id": 485,
+  "authorId": 502,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/John_D._Rateliff"
+ },
+ {
+  "id": 486,
+  "authorId": 503,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Thomas_Keneally"
+ },
+ {
+  "id": 487,
+  "authorId": 504,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Henry_David_Thoreau"
+ },
+ {
+  "id": 488,
+  "authorId": 505,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Helen_Keller"
+ },
+ {
+  "id": 489,
+  "authorId": 506,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Crockett_Johnson"
+ },
+ {
+  "id": 490,
+  "authorId": 507,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jeaniene_Frost"
+ },
+ {
+  "id": 491,
+  "authorId": 508,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Patti_Smith"
+ },
+ {
+  "id": 492,
+  "authorId": 509,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Francis_Chan"
+ },
+ {
+  "id": 493,
+  "authorId": 510,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Seth_Grahame-Smith"
+ },
+ {
+  "id": 494,
+  "authorId": 511,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jennifer_L._Armentrout"
+ },
+ {
+  "id": 495,
+  "authorId": 512,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Eckhart_Tolle"
+ },
+ {
+  "id": 496,
+  "authorId": 513,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Elizabeth_George_Speare"
+ },
+ {
+  "id": 497,
+  "authorId": 514,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/H._A._Rey"
+ },
+ {
+  "id": 498,
+  "authorId": 515,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Marie_Kondo"
+ },
+ {
+  "id": 499,
+  "authorId": 516,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Pierce_Brown"
+ },
+ {
+  "id": 500,
+  "authorId": 517,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Sam_McBratney"
+ },
+ {
+  "id": 501,
+  "authorId": 518,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Judi_Barrett"
+ },
+ {
+  "id": 502,
+  "authorId": 519,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Masashi_Kishimoto"
+ },
+ {
+  "id": 503,
+  "authorId": 520,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Patrick_Ness"
+ },
+ {
+  "id": 504,
+  "authorId": 521,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/James_Clavell"
+ },
+ {
+  "id": 505,
+  "authorId": 522,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Geraldine_Brooks_(writer)"
+ },
+ {
+  "id": 506,
+  "authorId": 523,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Laurell_K._Hamilton"
+ },
+ {
+  "id": 507,
+  "authorId": 524,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Ellen_Hopkins"
+ },
+ {
+  "id": 508,
+  "authorId": 525,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Nora_Roberts"
+ },
+ {
+  "id": 509,
+  "authorId": 526,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Annie_Proulx"
+ },
+ {
+  "id": 510,
+  "authorId": 527,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Hilary_Mantel"
+ },
+ {
+  "id": 511,
+  "authorId": 528,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Doris_Kearns_Goodwin"
+ },
+ {
+  "id": 512,
+  "authorId": 530,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jacquelyn_Mitchard"
+ },
+ {
+  "id": 513,
+  "authorId": 531,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Edith_Wharton"
+ },
+ {
+  "id": 514,
+  "authorId": 532,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Peter_Benchley"
+ },
+ {
+  "id": 515,
+  "authorId": 533,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Justin_Halpern"
+ },
+ {
+  "id": 516,
+  "authorId": 534,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Oliver_Sacks"
+ },
+ {
+  "id": 517,
+  "authorId": 535,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Irma_S._Rombauer"
+ },
+ {
+  "id": 518,
+  "authorId": 537,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Huntley_Fitzpatrick"
+ },
+ {
+  "id": 519,
+  "authorId": 538,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Muriel_Barbery"
+ },
+ {
+  "id": 520,
+  "authorId": 539,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jane_Green_(author)"
+ },
+ {
+  "id": 521,
+  "authorId": 540,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Lionel_Shriver"
+ },
+ {
+  "id": 522,
+  "authorId": 541,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Bill_Willingham"
+ },
+ {
+  "id": 523,
+  "authorId": 543,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Kathy_Reichs"
+ },
+ {
+  "id": 524,
+  "authorId": 545,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Alan_Bradley_(writer)"
+ },
+ {
+  "id": 525,
+  "authorId": 546,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Mike_Carey_(writer)"
+ },
+ {
+  "id": 526,
+  "authorId": 547,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Brandon_Mull"
+ },
+ {
+  "id": 527,
+  "authorId": 548,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Rohinton_Mistry"
+ },
+ {
+  "id": 528,
+  "authorId": 549,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Samuel_Beckett"
+ },
+ {
+  "id": 529,
+  "authorId": 550,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Richard_Matheson"
+ },
+ {
+  "id": 530,
+  "authorId": 551,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/José_Saramago"
+ },
+ {
+  "id": 531,
+  "authorId": 552,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Jonathan_Tropper"
+ },
+ {
+  "id": 532,
+  "authorId": 553,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Raina_Telgemeier"
+ },
+ {
+  "id": 533,
+  "authorId": 554,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Nicole_Krauss"
+ },
+ {
+  "id": 534,
+  "authorId": 555,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Sylvia_Nasar"
+ },
+ {
+  "id": 535,
+  "authorId": 556,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Helen_Simonson"
+ },
+ {
+  "id": 536,
+  "authorId": 557,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/John_Scalzi"
+ },
+ {
+  "id": 537,
+  "authorId": 559,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Joe_Abercrombie"
+ },
+ {
+  "id": 538,
+  "authorId": 560,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Upton_Sinclair"
+ },
+ {
+  "id": 539,
+  "authorId": 561,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Michael_Cunningham"
+ },
+ {
+  "id": 540,
+  "authorId": 562,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Don_Miguel_Ruiz"
+ },
+ {
+  "id": 541,
+  "authorId": 563,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Caleb_Carr"
+ },
+ {
+  "id": 542,
+  "authorId": 564,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Maria_V._Snyder"
+ },
+ {
+  "id": 543,
+  "authorId": 565,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/John_Milton"
+ },
+ {
+  "id": 544,
+  "authorId": 566,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/George_Eliot"
+ },
+ {
+  "id": 545,
+  "authorId": 567,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Marcus_Pfister"
+ },
+ {
+  "id": 546,
+  "authorId": 568,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Anne_McCaffrey"
+ },
+ {
+  "id": 547,
+  "authorId": 569,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Elizabeth_Gaskell"
+ },
+ {
+  "id": 548,
+  "authorId": 570,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Gregory_David_Roberts"
+ },
+ {
+  "id": 549,
+  "authorId": 571,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Julian_Barnes"
+ },
+ {
+  "id": 550,
+  "authorId": 572,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Azar_Nafisi"
+ },
+ {
+  "id": 551,
+  "authorId": 573,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Joan_Didion"
+ },
+ {
+  "id": 552,
+  "authorId": 574,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Margaret_Peterson_Haddix"
+ },
+ {
+  "id": 553,
+  "authorId": 575,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Gretchen_Rubin"
+ },
+ {
+  "id": 554,
+  "authorId": 576,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Susan_Beth_Pfeffer"
+ },
+ {
+  "id": 555,
+  "authorId": 577,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Aziz_Ansari"
+ },
+ {
+  "id": 556,
+  "authorId": 578,
+  "site": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Beth_Revis"
+ }
+]

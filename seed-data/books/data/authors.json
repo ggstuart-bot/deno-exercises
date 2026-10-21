@@ -1,0 +1,2314 @@
+[
+ {
+  "id": 1,
+  "name": "Suzanne Collins"
+ },
+ {
+  "id": 2,
+  "name": "J.K. Rowling"
+ },
+ {
+  "id": 3,
+  "name": "Stephenie Meyer"
+ },
+ {
+  "id": 4,
+  "name": "Harper Lee"
+ },
+ {
+  "id": 5,
+  "name": "F. Scott Fitzgerald"
+ },
+ {
+  "id": 6,
+  "name": "John Green"
+ },
+ {
+  "id": 7,
+  "name": "J.R.R. Tolkien"
+ },
+ {
+  "id": 8,
+  "name": "J.D. Salinger"
+ },
+ {
+  "id": 9,
+  "name": "Jane Austen"
+ },
+ {
+  "id": 10,
+  "name": "Dan Brown"
+ },
+ {
+  "id": 11,
+  "name": "Anne Frank"
+ },
+ {
+  "id": 12,
+  "name": "George Orwell"
+ },
+ {
+  "id": 13,
+  "name": "Veronica Roth"
+ },
+ {
+  "id": 14,
+  "name": "Khaled Hosseini"
+ },
+ {
+  "id": 15,
+  "name": "Stieg Larsson"
+ },
+ {
+  "id": 16,
+  "name": "William Shakespeare"
+ },
+ {
+  "id": 17,
+  "name": "Alice Sebold"
+ },
+ {
+  "id": 18,
+  "name": "William Golding"
+ },
+ {
+  "id": 19,
+  "name": "C.S. Lewis"
+ },
+ {
+  "id": 20,
+  "name": "Kathryn Stockett"
+ },
+ {
+  "id": 21,
+  "name": "John Steinbeck"
+ },
+ {
+  "id": 22,
+  "name": "Rick Riordan"
+ },
+ {
+  "id": 23,
+  "name": "E.L. James"
+ },
+ {
+  "id": 24,
+  "name": "George R.R. Martin"
+ },
+ {
+  "id": 25,
+  "name": "Arthur Golden"
+ },
+ {
+  "id": 26,
+  "name": "Paulo Coelho"
+ },
+ {
+  "id": 27,
+  "name": "Lois Lowry"
+ },
+ {
+  "id": 28,
+  "name": "Louisa May Alcott"
+ },
+ {
+  "id": 29,
+  "name": "Charlotte Brontë"
+ },
+ {
+  "id": 30,
+  "name": "Elizabeth Gilbert"
+ },
+ {
+  "id": 31,
+  "name": "Markus Zusak"
+ },
+ {
+  "id": 32,
+  "name": "Cassandra Clare"
+ },
+ {
+  "id": 33,
+  "name": "Christopher Paolini"
+ },
+ {
+  "id": 34,
+  "name": "Sara Gruen"
+ },
+ {
+  "id": 35,
+  "name": "E.B. White"
+ },
+ {
+  "id": 36,
+  "name": "Nicholas Sparks"
+ },
+ {
+  "id": 37,
+  "name": "Aldous Huxley"
+ },
+ {
+  "id": 38,
+  "name": "Shel Silverstein"
+ },
+ {
+  "id": 39,
+  "name": "Paula Hawkins"
+ },
+ {
+  "id": 40,
+  "name": "Yann Martel"
+ },
+ {
+  "id": 41,
+  "name": "Philip Pullman"
+ },
+ {
+  "id": 42,
+  "name": "Mark Twain"
+ },
+ {
+  "id": 43,
+  "name": "Douglas Adams"
+ },
+ {
+  "id": 44,
+  "name": "Sue Monk Kidd"
+ },
+ {
+  "id": 45,
+  "name": "Emily Brontë"
+ },
+ {
+  "id": 46,
+  "name": "Stephen Chbosky"
+ },
+ {
+  "id": 47,
+  "name": "Margaret Mitchell"
+ },
+ {
+  "id": 48,
+  "name": "Mark Haddon"
+ },
+ {
+  "id": 49,
+  "name": "Jodi Picoult"
+ },
+ {
+  "id": 50,
+  "name": "Kurt Vonnegut Jr."
+ },
+ {
+  "id": 51,
+  "name": "Orson Scott Card"
+ },
+ {
+  "id": 52,
+  "name": "Mary Wollstonecraft Shelley"
+ },
+ {
+  "id": 53,
+  "name": "Stephen King"
+ },
+ {
+  "id": 54,
+  "name": "Louis Sachar"
+ },
+ {
+  "id": 55,
+  "name": "Audrey Niffenegger"
+ },
+ {
+  "id": 56,
+  "name": "Antoine de Saint-Exupéry"
+ },
+ {
+  "id": 57,
+  "name": "Helen Fielding"
+ },
+ {
+  "id": 58,
+  "name": "James Dashner"
+ },
+ {
+  "id": 59,
+  "name": "Elie Wiesel"
+ },
+ {
+  "id": 60,
+  "name": "Homer"
+ },
+ {
+  "id": 61,
+  "name": "Lauren Weisberger"
+ },
+ {
+  "id": 62,
+  "name": "S.E. Hinton"
+ },
+ {
+  "id": 63,
+  "name": "Jon Krakauer"
+ },
+ {
+  "id": 64,
+  "name": "Frances Hodgson Burnett"
+ },
+ {
+  "id": 65,
+  "name": "Charles Dickens"
+ },
+ {
+  "id": 66,
+  "name": "William Goldman"
+ },
+ {
+  "id": 67,
+  "name": "Jeannette Walls"
+ },
+ {
+  "id": 68,
+  "name": "Maurice Sendak"
+ },
+ {
+  "id": 69,
+  "name": "Bram Stoker"
+ },
+ {
+  "id": 70,
+  "name": "Madeleine L'Engle"
+ },
+ {
+  "id": 71,
+  "name": "Ransom Riggs"
+ },
+ {
+  "id": 72,
+  "name": "Margaret Atwood"
+ },
+ {
+  "id": 73,
+  "name": "John Grisham"
+ },
+ {
+  "id": 74,
+  "name": "Oscar Wilde"
+ },
+ {
+  "id": 75,
+  "name": "Jojo Moyes"
+ },
+ {
+  "id": 76,
+  "name": "Ray Bradbury"
+ },
+ {
+  "id": 77,
+  "name": "Joseph Heller"
+ },
+ {
+  "id": 78,
+  "name": "Walter Isaacson"
+ },
+ {
+  "id": 79,
+  "name": "Mitch Albom"
+ },
+ {
+  "id": 80,
+  "name": "Alexandre Dumas"
+ },
+ {
+  "id": 81,
+  "name": "Barbara Kingsolver"
+ },
+ {
+  "id": 82,
+  "name": "Sophie Kinsella"
+ },
+ {
+  "id": 83,
+  "name": "Ann Brashares"
+ },
+ {
+  "id": 84,
+  "name": "Steven D. Levitt"
+ },
+ {
+  "id": 85,
+  "name": "Stephen J. Dubner"
+ },
+ {
+  "id": 86,
+  "name": "Ernest Hemingway"
+ },
+ {
+  "id": 87,
+  "name": "Diana Gabaldon"
+ },
+ {
+  "id": 88,
+  "name": "Amy Tan"
+ },
+ {
+  "id": 89,
+  "name": "Rainbow Rowell"
+ },
+ {
+  "id": 90,
+  "name": "Victor Hugo"
+ },
+ {
+  "id": 91,
+  "name": "Gillian Flynn"
+ },
+ {
+  "id": 92,
+  "name": "Ally Condie"
+ },
+ {
+  "id": 93,
+  "name": "Emma Donoghue"
+ },
+ {
+  "id": 94,
+  "name": "Nathaniel Hawthorne"
+ },
+ {
+  "id": 95,
+  "name": "Gregory Maguire"
+ },
+ {
+  "id": 96,
+  "name": "Tina Fey"
+ },
+ {
+  "id": 97,
+  "name": "Kiera Cass"
+ },
+ {
+  "id": 98,
+  "name": "Cormac McCarthy"
+ },
+ {
+  "id": 99,
+  "name": "Gayle Forman"
+ },
+ {
+  "id": 100,
+  "name": "L.M. Montgomery"
+ },
+ {
+  "id": 101,
+  "name": "Kim Edwards"
+ },
+ {
+  "id": 102,
+  "name": "David Sedaris"
+ },
+ {
+  "id": 103,
+  "name": "Ken Kesey"
+ },
+ {
+  "id": 104,
+  "name": "Gabriel García Márquez"
+ },
+ {
+  "id": 105,
+  "name": "Malcolm Gladwell"
+ },
+ {
+  "id": 106,
+  "name": "Jeffrey Eugenides"
+ },
+ {
+  "id": 107,
+  "name": "Laura Hillenbrand"
+ },
+ {
+  "id": 108,
+  "name": "Frank Herbert"
+ },
+ {
+  "id": 109,
+  "name": "Anthony Doerr"
+ },
+ {
+  "id": 110,
+  "name": "Vladimir Nabokov"
+ },
+ {
+  "id": 111,
+  "name": "Tracy Chevalier"
+ },
+ {
+  "id": 112,
+  "name": "Rebecca Wells"
+ },
+ {
+  "id": 113,
+  "name": "Jay Asher"
+ },
+ {
+  "id": 114,
+  "name": "Ken Follett"
+ },
+ {
+  "id": 115,
+  "name": "Dr. Seuss"
+ },
+ {
+  "id": 116,
+  "name": "Roald Dahl"
+ },
+ {
+  "id": 117,
+  "name": "Scott Westerfeld"
+ },
+ {
+  "id": 118,
+  "name": "Becca Fitzpatrick"
+ },
+ {
+  "id": 119,
+  "name": "Michael Crichton"
+ },
+ {
+  "id": 120,
+  "name": "Kami Garcia"
+ },
+ {
+  "id": 121,
+  "name": "Margaret Stohl"
+ },
+ {
+  "id": 122,
+  "name": "Anthony Burgess"
+ },
+ {
+  "id": 123,
+  "name": "Erin Morgenstern"
+ },
+ {
+  "id": 124,
+  "name": "Marissa Meyer"
+ },
+ {
+  "id": 125,
+  "name": "Anita Diamant"
+ },
+ {
+  "id": 126,
+  "name": "Andy Weir"
+ },
+ {
+  "id": 127,
+  "name": "Charlaine Harris"
+ },
+ {
+  "id": 128,
+  "name": "Albert Camus"
+ },
+ {
+  "id": 129,
+  "name": "William Paul Young"
+ },
+ {
+  "id": 130,
+  "name": "Jamie McGuire"
+ },
+ {
+  "id": 131,
+  "name": "Agatha Christie"
+ },
+ {
+  "id": 132,
+  "name": "Emily Giffin"
+ },
+ {
+  "id": 133,
+  "name": "Sylvia Plath"
+ },
+ {
+  "id": 134,
+  "name": "Patrick Rothfuss"
+ },
+ {
+  "id": 135,
+  "name": "Alan Moore"
+ },
+ {
+  "id": 136,
+  "name": "Dave Gibbons"
+ },
+ {
+  "id": 137,
+  "name": "Donna Tartt"
+ },
+ {
+  "id": 138,
+  "name": "Lauren Kate"
+ },
+ {
+  "id": 139,
+  "name": "Mary Ann Shaffer"
+ },
+ {
+  "id": 140,
+  "name": "Annie Barrows"
+ },
+ {
+  "id": 141,
+  "name": "Frank McCourt"
+ },
+ {
+  "id": 142,
+  "name": "Janet Evanovich"
+ },
+ {
+  "id": 143,
+  "name": "Eoin Colfer"
+ },
+ {
+  "id": 144,
+  "name": "Truman Capote"
+ },
+ {
+  "id": 145,
+  "name": "Philippa Gregory"
+ },
+ {
+  "id": 146,
+  "name": "Fyodor Dostoyevsky"
+ },
+ {
+  "id": 147,
+  "name": "Cheryl Strayed"
+ },
+ {
+  "id": 148,
+  "name": "Neil Gaiman"
+ },
+ {
+  "id": 149,
+  "name": "Rebecca Skloot"
+ },
+ {
+  "id": 150,
+  "name": "Alice Walker"
+ },
+ {
+  "id": 151,
+  "name": "Anne Rice"
+ },
+ {
+  "id": 152,
+  "name": "Hermann Hesse"
+ },
+ {
+  "id": 153,
+  "name": "John Grogan"
+ },
+ {
+  "id": 154,
+  "name": "Chuck Palahniuk"
+ },
+ {
+  "id": 155,
+  "name": "Franz Kafka"
+ },
+ {
+  "id": 156,
+  "name": "Laurie Halse Anderson"
+ },
+ {
+  "id": 157,
+  "name": "P.C. Cast"
+ },
+ {
+  "id": 158,
+  "name": "Kristin Cast"
+ },
+ {
+  "id": 159,
+  "name": "Herman Melville"
+ },
+ {
+  "id": 160,
+  "name": "Maggie Stiefvater"
+ },
+ {
+  "id": 161,
+  "name": "Thomas Harris"
+ },
+ {
+  "id": 162,
+  "name": "Ernest Cline"
+ },
+ {
+  "id": 163,
+  "name": "Ian McEwan"
+ },
+ {
+  "id": 164,
+  "name": "Jane Carruth"
+ },
+ {
+  "id": 165,
+  "name": "Lewis Carroll"
+ },
+ {
+  "id": 166,
+  "name": "Gail Carson Levine"
+ },
+ {
+  "id": 167,
+  "name": "Katherine Paterson"
+ },
+ {
+  "id": 168,
+  "name": "Garth Stein"
+ },
+ {
+  "id": 169,
+  "name": "Robert Ludlum"
+ },
+ {
+  "id": 170,
+  "name": "Emma McLaughlin"
+ },
+ {
+  "id": 171,
+  "name": "Nicola Kraus"
+ },
+ {
+  "id": 172,
+  "name": "Stephen R. Covey"
+ },
+ {
+  "id": 173,
+  "name": "Daniel Keyes"
+ },
+ {
+  "id": 174,
+  "name": "Max Brooks"
+ },
+ {
+  "id": 175,
+  "name": "Tatiana de Rosnay"
+ },
+ {
+  "id": 176,
+  "name": "Dave Pelzer"
+ },
+ {
+  "id": 177,
+  "name": "James Patterson"
+ },
+ {
+  "id": 178,
+  "name": "Erik Larson"
+ },
+ {
+  "id": 179,
+  "name": "Liane Moriarty"
+ },
+ {
+  "id": 180,
+  "name": "Marie Lu"
+ },
+ {
+  "id": 181,
+  "name": "Terry Pratchett"
+ },
+ {
+  "id": 182,
+  "name": "Robert Galbraith"
+ },
+ {
+  "id": 183,
+  "name": "Leo Tolstoy"
+ },
+ {
+  "id": 184,
+  "name": "Eric Carle"
+ },
+ {
+  "id": 185,
+  "name": "Jonathan Safran Foer"
+ },
+ {
+  "id": 186,
+  "name": "Kazuo Ishiguro"
+ },
+ {
+  "id": 187,
+  "name": "Augusten Burroughs"
+ },
+ {
+  "id": 188,
+  "name": "Richard Adams"
+ },
+ {
+  "id": 189,
+  "name": "Betty Smith"
+ },
+ {
+  "id": 190,
+  "name": "Mark Cotta Vaz"
+ },
+ {
+  "id": 191,
+  "name": "Mindy Kaling"
+ },
+ {
+  "id": 192,
+  "name": "John Boyne"
+ },
+ {
+  "id": 193,
+  "name": "Cornelia Funke"
+ },
+ {
+  "id": 194,
+  "name": "Greg Mortenson"
+ },
+ {
+  "id": 195,
+  "name": "Ayn Rand"
+ },
+ {
+  "id": 196,
+  "name": "Dale Carnegie"
+ },
+ {
+  "id": 197,
+  "name": "Kristin Cashore"
+ },
+ {
+  "id": 198,
+  "name": "Lisa See"
+ },
+ {
+  "id": 199,
+  "name": "Isaac Asimov"
+ },
+ {
+  "id": 200,
+  "name": "Frances Mayes"
+ },
+ {
+  "id": 201,
+  "name": "H.G. Wells"
+ },
+ {
+  "id": 202,
+  "name": "Lemony Snicket"
+ },
+ {
+  "id": 203,
+  "name": "Sarah J. Maas"
+ },
+ {
+  "id": 204,
+  "name": "E. Lockhart"
+ },
+ {
+  "id": 205,
+  "name": "Maya Angelou"
+ },
+ {
+  "id": 206,
+  "name": "John Tiffany"
+ },
+ {
+  "id": 207,
+  "name": "Jack Thorne"
+ },
+ {
+  "id": 208,
+  "name": "Tom Clancy"
+ },
+ {
+  "id": 209,
+  "name": "Wilson Rawls"
+ },
+ {
+  "id": 210,
+  "name": "Robert Louis Stevenson"
+ },
+ {
+  "id": 211,
+  "name": "Richelle Mead"
+ },
+ {
+  "id": 212,
+  "name": "Carlos Ruiz Zafón"
+ },
+ {
+  "id": 213,
+  "name": "Laura Esquivel"
+ },
+ {
+  "id": 214,
+  "name": "Cecelia Ahern"
+ },
+ {
+  "id": 215,
+  "name": "Robert Jordan"
+ },
+ {
+  "id": 216,
+  "name": "Rick Yancey"
+ },
+ {
+  "id": 217,
+  "name": "Wally Lamb"
+ },
+ {
+  "id": 218,
+  "name": "Stephanie Perkins"
+ },
+ {
+  "id": 219,
+  "name": "Abraham Verghese"
+ },
+ {
+  "id": 220,
+  "name": "Lauren Oliver"
+ },
+ {
+  "id": 221,
+  "name": "Mario Puzo"
+ },
+ {
+  "id": 222,
+  "name": "Colleen McCullough"
+ },
+ {
+  "id": 223,
+  "name": "Joseph Conrad"
+ },
+ {
+  "id": 224,
+  "name": "Jeff Kinney"
+ },
+ {
+  "id": 225,
+  "name": "Kristin Hannah"
+ },
+ {
+  "id": 226,
+  "name": "Pittacus Lore"
+ },
+ {
+  "id": 227,
+  "name": "Sylvia Day"
+ },
+ {
+  "id": 228,
+  "name": "Graeme Simsion"
+ },
+ {
+  "id": 229,
+  "name": "Amy Poehler"
+ },
+ {
+  "id": 230,
+  "name": "Bill Bryson"
+ },
+ {
+  "id": 231,
+  "name": "Erich Maria Remarque"
+ },
+ {
+  "id": 232,
+  "name": "Jennifer Weiner"
+ },
+ {
+  "id": 233,
+  "name": "L. Frank Baum"
+ },
+ {
+  "id": 234,
+  "name": "Jack Kerouac"
+ },
+ {
+  "id": 235,
+  "name": "Janet Fitch"
+ },
+ {
+  "id": 236,
+  "name": "Margaret Wise Brown"
+ },
+ {
+  "id": 237,
+  "name": "M.L. Stedman"
+ },
+ {
+  "id": 238,
+  "name": "Arthur Miller"
+ },
+ {
+  "id": 239,
+  "name": "Randy Pausch"
+ },
+ {
+  "id": 240,
+  "name": "Rhonda Byrne"
+ },
+ {
+  "id": 241,
+  "name": "Jerry Spinelli"
+ },
+ {
+  "id": 242,
+  "name": "Spencer Johnson"
+ },
+ {
+  "id": 243,
+  "name": "Kenneth H. Blanchard"
+ },
+ {
+  "id": 244,
+  "name": "David Levithan"
+ },
+ {
+  "id": 245,
+  "name": "Scott O'Dell"
+ },
+ {
+  "id": 246,
+  "name": "Toni Morrison"
+ },
+ {
+  "id": 247,
+  "name": "Hunter S. Thompson"
+ },
+ {
+  "id": 248,
+  "name": "Alyson Noel"
+ },
+ {
+  "id": 249,
+  "name": "R.J. Palacio"
+ },
+ {
+  "id": 250,
+  "name": "Todd Burpo"
+ },
+ {
+  "id": 251,
+  "name": "J.R. Ward"
+ },
+ {
+  "id": 252,
+  "name": "John Irving"
+ },
+ {
+  "id": 253,
+  "name": "Deborah Harkness"
+ },
+ {
+  "id": 254,
+  "name": "Christina Baker Kline"
+ },
+ {
+  "id": 255,
+  "name": "Jack London"
+ },
+ {
+  "id": 256,
+  "name": "Philip K. Dick"
+ },
+ {
+  "id": 257,
+  "name": "Lisa Genova"
+ },
+ {
+  "id": 258,
+  "name": "David Nicholls"
+ },
+ {
+  "id": 259,
+  "name": "Gary Paulsen"
+ },
+ {
+  "id": 260,
+  "name": "Robert A. Heinlein"
+ },
+ {
+  "id": 261,
+  "name": "Betty Edwards"
+ },
+ {
+  "id": 262,
+  "name": "David McCullough"
+ },
+ {
+  "id": 263,
+  "name": "Maria Semple"
+ },
+ {
+  "id": 264,
+  "name": "Malala Yousafzai"
+ },
+ {
+  "id": 265,
+  "name": "Diane Setterfield"
+ },
+ {
+  "id": 266,
+  "name": "Brandon Sanderson"
+ },
+ {
+  "id": 267,
+  "name": "Billie Letts"
+ },
+ {
+  "id": 268,
+  "name": "A.A. Milne"
+ },
+ {
+  "id": 269,
+  "name": "Fannie Flagg"
+ },
+ {
+  "id": 270,
+  "name": "Dean Koontz"
+ },
+ {
+  "id": 271,
+  "name": "Milan Kundera"
+ },
+ {
+  "id": 272,
+  "name": "Jim Butcher"
+ },
+ {
+  "id": 273,
+  "name": "Sarah Dessen"
+ },
+ {
+  "id": 274,
+  "name": "Susan Cain"
+ },
+ {
+  "id": 275,
+  "name": "Arthur Conan Doyle"
+ },
+ {
+  "id": 276,
+  "name": "Umberto Eco"
+ },
+ {
+  "id": 277,
+  "name": "Chinua Achebe"
+ },
+ {
+  "id": 278,
+  "name": "Jeanne DuPrau"
+ },
+ {
+  "id": 279,
+  "name": "Simone Elkeles"
+ },
+ {
+  "id": 280,
+  "name": "Laini Taylor"
+ },
+ {
+  "id": 281,
+  "name": "Laura Joffe Numeroff"
+ },
+ {
+  "id": 282,
+  "name": "Jamie Ford"
+ },
+ {
+  "id": 283,
+  "name": "Beatrice Sparks"
+ },
+ {
+  "id": 284,
+  "name": "Edgar Allan Poe"
+ },
+ {
+  "id": 285,
+  "name": "Laura Ingalls Wilder"
+ },
+ {
+  "id": 286,
+  "name": "Tennessee Williams"
+ },
+ {
+  "id": 287,
+  "name": "Meg Cabot"
+ },
+ {
+  "id": 288,
+  "name": "Ann Patchett"
+ },
+ {
+  "id": 289,
+  "name": "Paula McLain"
+ },
+ {
+  "id": 290,
+  "name": "Elizabeth Kostova"
+ },
+ {
+  "id": 291,
+  "name": "Colleen Hoover"
+ },
+ {
+  "id": 292,
+  "name": "Tana French"
+ },
+ {
+  "id": 293,
+  "name": "Charles Frazier"
+ },
+ {
+  "id": 294,
+  "name": "James Frey"
+ },
+ {
+  "id": 295,
+  "name": "Jhumpa Lahiri"
+ },
+ {
+  "id": 296,
+  "name": "Art Spiegelman"
+ },
+ {
+  "id": 297,
+  "name": "Haruki Murakami"
+ },
+ {
+  "id": 298,
+  "name": "William Gibson"
+ },
+ {
+  "id": 299,
+  "name": "Fredrik Backman"
+ },
+ {
+  "id": 300,
+  "name": "Anna Sewell"
+ },
+ {
+  "id": 301,
+  "name": "Pearl S. Buck"
+ },
+ {
+  "id": 302,
+  "name": "William Landay"
+ },
+ {
+  "id": 303,
+  "name": "Zora Neale Hurston"
+ },
+ {
+  "id": 304,
+  "name": "S.J. Watson"
+ },
+ {
+  "id": 305,
+  "name": "Alexander McCall Smith"
+ },
+ {
+  "id": 306,
+  "name": "Eric Schlosser"
+ },
+ {
+  "id": 307,
+  "name": "Norton Juster"
+ },
+ {
+  "id": 308,
+  "name": "Daniel Defoe"
+ },
+ {
+  "id": 309,
+  "name": "Patrick Süskind"
+ },
+ {
+  "id": 310,
+  "name": "Daphne du Maurier"
+ },
+ {
+  "id": 311,
+  "name": "Tahereh Mafi"
+ },
+ {
+  "id": 312,
+  "name": "Jean M. Auel"
+ },
+ {
+  "id": 313,
+  "name": "Neal Stephenson"
+ },
+ {
+  "id": 314,
+  "name": "Terry Goodkind"
+ },
+ {
+  "id": 315,
+  "name": "Natalie Babbitt"
+ },
+ {
+  "id": 316,
+  "name": "P.D. Eastman"
+ },
+ {
+  "id": 317,
+  "name": "Libba Bray"
+ },
+ {
+  "id": 318,
+  "name": "Margery Williams Bianco"
+ },
+ {
+  "id": 319,
+  "name": "Thomas Hardy"
+ },
+ {
+  "id": 320,
+  "name": "Jared Diamond"
+ },
+ {
+  "id": 321,
+  "name": "Corrie ten Boom"
+ },
+ {
+  "id": 322,
+  "name": "Viktor E. Frankl"
+ },
+ {
+  "id": 323,
+  "name": "Arthur C. Clarke"
+ },
+ {
+  "id": 324,
+  "name": "John Kennedy Toole"
+ },
+ {
+  "id": 325,
+  "name": "Rick Warren"
+ },
+ {
+  "id": 326,
+  "name": "J.M. Barrie"
+ },
+ {
+  "id": 327,
+  "name": "Jonathan Swift"
+ },
+ {
+  "id": 328,
+  "name": "Tim O'Brien"
+ },
+ {
+  "id": 329,
+  "name": "Kathleen Grissom"
+ },
+ {
+  "id": 330,
+  "name": "Chris Van Allsburg"
+ },
+ {
+  "id": 331,
+  "name": "John Berendt"
+ },
+ {
+  "id": 332,
+  "name": "Patricia Cornwell"
+ },
+ {
+  "id": 333,
+  "name": "Sun Tzu"
+ },
+ {
+  "id": 334,
+  "name": "Bret Easton Ellis"
+ },
+ {
+  "id": 335,
+  "name": "Gary Chapman"
+ },
+ {
+  "id": 336,
+  "name": "Stephen Hawking"
+ },
+ {
+  "id": 337,
+  "name": "Arundhati Roy"
+ },
+ {
+  "id": 338,
+  "name": "Jennifer L. Armentrout"
+ },
+ {
+  "id": 339,
+  "name": "E.H. Gombrich"
+ },
+ {
+  "id": 340,
+  "name": "Robert Kirkman"
+ },
+ {
+  "id": 341,
+  "name": "Lee Child"
+ },
+ {
+  "id": 342,
+  "name": "Richard Dawkins"
+ },
+ {
+  "id": 343,
+  "name": "Beatrix Potter"
+ },
+ {
+  "id": 344,
+  "name": "Tim LaHaye"
+ },
+ {
+  "id": 345,
+  "name": "Jerry B. Jenkins"
+ },
+ {
+  "id": 346,
+  "name": "Ned Vizzini"
+ },
+ {
+  "id": 347,
+  "name": "Don Freeman"
+ },
+ {
+  "id": 348,
+  "name": "Sherman Alexie"
+ },
+ {
+  "id": 349,
+  "name": "Emily St. John Mandel"
+ },
+ {
+  "id": 350,
+  "name": "Junot Díaz"
+ },
+ {
+  "id": 351,
+  "name": "Robert Munsch"
+ },
+ {
+  "id": 352,
+  "name": "Pat Conroy"
+ },
+ {
+  "id": 353,
+  "name": "Anonymous"
+ },
+ {
+  "id": 354,
+  "name": "Gustave Flaubert"
+ },
+ {
+  "id": 355,
+  "name": "Julie Kagawa"
+ },
+ {
+  "id": 356,
+  "name": "Marion Zimmer Bradley"
+ },
+ {
+  "id": 357,
+  "name": "Francine Rivers"
+ },
+ {
+  "id": 358,
+  "name": "Kenneth Branagh"
+ },
+ {
+  "id": 359,
+  "name": "Ludwig Bemelmans"
+ },
+ {
+  "id": 360,
+  "name": "Sara Shepard"
+ },
+ {
+  "id": 361,
+  "name": "Charles Duhigg"
+ },
+ {
+  "id": 362,
+  "name": "Unknown"
+ },
+ {
+  "id": 363,
+  "name": "John Knowles"
+ },
+ {
+  "id": 364,
+  "name": "John Berger"
+ },
+ {
+  "id": 365,
+  "name": "Chuck Dixon"
+ },
+ {
+  "id": 366,
+  "name": "Ursula K. Le Guin"
+ },
+ {
+  "id": 367,
+  "name": "Kate DiCamillo"
+ },
+ {
+  "id": 368,
+  "name": "Robert T. Kiyosaki"
+ },
+ {
+  "id": 369,
+  "name": "Niccolò Machiavelli"
+ },
+ {
+  "id": 370,
+  "name": "Barbara Ehrenreich"
+ },
+ {
+  "id": 371,
+  "name": "David Mitchell"
+ },
+ {
+  "id": 372,
+  "name": "Judy Blume"
+ },
+ {
+  "id": 373,
+  "name": "Voltaire"
+ },
+ {
+  "id": 374,
+  "name": "Ally Carter"
+ },
+ {
+  "id": 375,
+  "name": "Jeff Lindsay"
+ },
+ {
+  "id": 376,
+  "name": "Alex Flinn"
+ },
+ {
+  "id": 377,
+  "name": "Banksy"
+ },
+ {
+  "id": 378,
+  "name": "Michael Connelly"
+ },
+ {
+  "id": 379,
+  "name": "Geoffrey Chaucer"
+ },
+ {
+  "id": 380,
+  "name": "Lev Grossman"
+ },
+ {
+  "id": 381,
+  "name": "Michael Chabon"
+ },
+ {
+  "id": 382,
+  "name": "Judith Viorst"
+ },
+ {
+  "id": 383,
+  "name": "Dave Eggers"
+ },
+ {
+  "id": 384,
+  "name": "Frank Miller"
+ },
+ {
+  "id": 385,
+  "name": "Susanna Kaysen"
+ },
+ {
+  "id": 386,
+  "name": "Michael Grant"
+ },
+ {
+  "id": 387,
+  "name": "Johanna Spyri"
+ },
+ {
+  "id": 388,
+  "name": "Neal Shusterman"
+ },
+ {
+  "id": 389,
+  "name": "Kahlil Gibran"
+ },
+ {
+  "id": 390,
+  "name": "Jon Scieszka"
+ },
+ {
+  "id": 391,
+  "name": "Gaston Leroux"
+ },
+ {
+  "id": 392,
+  "name": "Jandy Nelson"
+ },
+ {
+  "id": 393,
+  "name": "Vanessa Diffenbaugh"
+ },
+ {
+  "id": 394,
+  "name": "Tsugumi Ohba"
+ },
+ {
+  "id": 395,
+  "name": "Takeshi Obata"
+ },
+ {
+  "id": 396,
+  "name": "Robert M. Pirsig"
+ },
+ {
+  "id": 397,
+  "name": "Abbi Glines"
+ },
+ {
+  "id": 398,
+  "name": "Kate Atkinson"
+ },
+ {
+  "id": 399,
+  "name": "Kate Morton"
+ },
+ {
+  "id": 400,
+  "name": "Harriet Beecher Stowe"
+ },
+ {
+  "id": 401,
+  "name": "Howard Zinn"
+ },
+ {
+  "id": 402,
+  "name": "Garth Nix"
+ },
+ {
+  "id": 403,
+  "name": "Daniel Kahneman"
+ },
+ {
+  "id": 404,
+  "name": "Jenny Han"
+ },
+ {
+  "id": 405,
+  "name": "Samantha Young"
+ },
+ {
+  "id": 406,
+  "name": "Kody Keplinger"
+ },
+ {
+  "id": 407,
+  "name": "Virginia Woolf"
+ },
+ {
+  "id": 408,
+  "name": "Robert C. O'Brien"
+ },
+ {
+  "id": 409,
+  "name": "Sheryl Sandberg"
+ },
+ {
+  "id": 410,
+  "name": "Leigh Bardugo"
+ },
+ {
+  "id": 411,
+  "name": "Miguel de Cervantes Saavedra"
+ },
+ {
+  "id": 412,
+  "name": "Nick Hornby"
+ },
+ {
+  "id": 413,
+  "name": "Alice Clayton"
+ },
+ {
+  "id": 414,
+  "name": "E.L. Konigsburg"
+ },
+ {
+  "id": 415,
+  "name": "Anthony Bourdain"
+ },
+ {
+  "id": 416,
+  "name": "Tammara Webber"
+ },
+ {
+  "id": 417,
+  "name": "Richard Bach"
+ },
+ {
+  "id": 418,
+  "name": "Susanna Clarke"
+ },
+ {
+  "id": 419,
+  "name": "Michael Pollan"
+ },
+ {
+  "id": 420,
+  "name": "Chris Bohjalian"
+ },
+ {
+  "id": 421,
+  "name": "Robin Hobb"
+ },
+ {
+  "id": 422,
+  "name": "Nicola Yoon"
+ },
+ {
+  "id": 423,
+  "name": "Kelley Armstrong"
+ },
+ {
+  "id": 424,
+  "name": "Brian Selznick"
+ },
+ {
+  "id": 425,
+  "name": "Jennifer Niven"
+ },
+ {
+  "id": 426,
+  "name": "David Guterson"
+ },
+ {
+  "id": 427,
+  "name": "Brian K. Vaughan"
+ },
+ {
+  "id": 428,
+  "name": "Mikhail Bulgakov"
+ },
+ {
+  "id": 429,
+  "name": "Melissa Marr"
+ },
+ {
+  "id": 430,
+  "name": "Richard Bachman"
+ },
+ {
+  "id": 431,
+  "name": "Sharon Creech"
+ },
+ {
+  "id": 432,
+  "name": "Patricia Briggs"
+ },
+ {
+  "id": 433,
+  "name": "Barack Obama"
+ },
+ {
+  "id": 434,
+  "name": "Piper Kerman"
+ },
+ {
+  "id": 435,
+  "name": "Chelsea Handler"
+ },
+ {
+  "id": 436,
+  "name": "Justin Cronin"
+ },
+ {
+  "id": 437,
+  "name": "Bryan Lee O'Malley"
+ },
+ {
+  "id": 438,
+  "name": "Bill Martin Jr."
+ },
+ {
+  "id": 439,
+  "name": "Kate Chopin"
+ },
+ {
+  "id": 440,
+  "name": "Malcolm X"
+ },
+ {
+  "id": 441,
+  "name": "Alex Haley"
+ },
+ {
+  "id": 442,
+  "name": "William Faulkner"
+ },
+ {
+  "id": 443,
+  "name": "Kenneth Grahame"
+ },
+ {
+  "id": 444,
+  "name": "William Peter Blatty"
+ },
+ {
+  "id": 445,
+  "name": "Diana Wynne Jones"
+ },
+ {
+  "id": 446,
+  "name": "Ralph Ellison"
+ },
+ {
+  "id": 447,
+  "name": "Astrid Lindgren"
+ },
+ {
+  "id": 448,
+  "name": "Mary Roach"
+ },
+ {
+  "id": 449,
+  "name": "Dan Simmons"
+ },
+ {
+  "id": 450,
+  "name": "Julie Powell"
+ },
+ {
+  "id": 451,
+  "name": "Jules Verne"
+ },
+ {
+  "id": 452,
+  "name": "Jeffery Deaver"
+ },
+ {
+  "id": 453,
+  "name": "Jennifer Egan"
+ },
+ {
+  "id": 454,
+  "name": "Tite Kubo"
+ },
+ {
+  "id": 455,
+  "name": "Isabel Allende"
+ },
+ {
+  "id": 456,
+  "name": "Kate Egan"
+ },
+ {
+  "id": 457,
+  "name": "Bernhard Schlink"
+ },
+ {
+  "id": 458,
+  "name": "Sylvain Reynard"
+ },
+ {
+  "id": 459,
+  "name": "Sophocles"
+ },
+ {
+  "id": 460,
+  "name": "Jonathan Franzen"
+ },
+ {
+  "id": 461,
+  "name": "Allie Brosh"
+ },
+ {
+  "id": 462,
+  "name": "Scott Lynch"
+ },
+ {
+  "id": 463,
+  "name": "Christopher Moore"
+ },
+ {
+  "id": 464,
+  "name": "Jenny Lawson"
+ },
+ {
+  "id": 465,
+  "name": "Natsuki Takaya"
+ },
+ {
+  "id": 466,
+  "name": "Bill Watterson"
+ },
+ {
+  "id": 467,
+  "name": "J.A. Redmerski"
+ },
+ {
+  "id": 468,
+  "name": "Ellen Raskin"
+ },
+ {
+  "id": 469,
+  "name": "Marjane Satrapi"
+ },
+ {
+  "id": 470,
+  "name": "Chris Cleave"
+ },
+ {
+  "id": 471,
+  "name": "Paul Kalanithi"
+ },
+ {
+  "id": 472,
+  "name": "Melissa de la Cruz"
+ },
+ {
+  "id": 473,
+  "name": "Jacob Grimm"
+ },
+ {
+  "id": 474,
+  "name": "Wilhelm Grimm"
+ },
+ {
+  "id": 475,
+  "name": "Ishmael Beah"
+ },
+ {
+  "id": 476,
+  "name": "Jess Walter"
+ },
+ {
+  "id": 477,
+  "name": "Sue Grafton"
+ },
+ {
+  "id": 478,
+  "name": "Gabrielle Zevin"
+ },
+ {
+  "id": 479,
+  "name": "Aravind Adiga"
+ },
+ {
+  "id": 480,
+  "name": "Melissa Bank"
+ },
+ {
+  "id": 481,
+  "name": "John Gray"
+ },
+ {
+  "id": 482,
+  "name": "Bisco Hatori"
+ },
+ {
+  "id": 483,
+  "name": "Dennis Lehane"
+ },
+ {
+  "id": 484,
+  "name": "Daniel James Brown"
+ },
+ {
+  "id": 485,
+  "name": "Chimamanda Ngozi Adichie"
+ },
+ {
+  "id": 486,
+  "name": "Louise Rennison"
+ },
+ {
+  "id": 487,
+  "name": "Christina Lauren"
+ },
+ {
+  "id": 488,
+  "name": "Larry McMurtry"
+ },
+ {
+  "id": 489,
+  "name": "Matthew Quick"
+ },
+ {
+  "id": 490,
+  "name": "Karen Marie Moning"
+ },
+ {
+  "id": 491,
+  "name": "Robin Sloan"
+ },
+ {
+  "id": 492,
+  "name": "Plato"
+ },
+ {
+  "id": 493,
+  "name": "E.M. Forster"
+ },
+ {
+  "id": 494,
+  "name": "Rachel Hawkins"
+ },
+ {
+  "id": 495,
+  "name": "Jostein Gaarder"
+ },
+ {
+  "id": 496,
+  "name": "Christopher McDougall"
+ },
+ {
+  "id": 497,
+  "name": "Brent Weeks"
+ },
+ {
+  "id": 498,
+  "name": "Michael Ende"
+ },
+ {
+  "id": 499,
+  "name": "V.C. Andrews"
+ },
+ {
+  "id": 500,
+  "name": "Benjamin Alire Sáenz"
+ },
+ {
+  "id": 501,
+  "name": "Celeste Ng"
+ },
+ {
+  "id": 502,
+  "name": "John D. Rateliff"
+ },
+ {
+  "id": 503,
+  "name": "Thomas Keneally"
+ },
+ {
+  "id": 504,
+  "name": "Henry David Thoreau"
+ },
+ {
+  "id": 505,
+  "name": "Helen Keller"
+ },
+ {
+  "id": 506,
+  "name": "Crockett Johnson"
+ },
+ {
+  "id": 507,
+  "name": "Jeaniene Frost"
+ },
+ {
+  "id": 508,
+  "name": "Patti Smith"
+ },
+ {
+  "id": 509,
+  "name": "Francis Chan"
+ },
+ {
+  "id": 510,
+  "name": "Seth Grahame-Smith"
+ },
+ {
+  "id": 511,
+  "name": "J. Lynn"
+ },
+ {
+  "id": 512,
+  "name": "Eckhart Tolle"
+ },
+ {
+  "id": 513,
+  "name": "Elizabeth George Speare"
+ },
+ {
+  "id": 514,
+  "name": "H.A. Rey"
+ },
+ {
+  "id": 515,
+  "name": "Marie Kondō"
+ },
+ {
+  "id": 516,
+  "name": "Pierce Brown"
+ },
+ {
+  "id": 517,
+  "name": "Sam McBratney"
+ },
+ {
+  "id": 518,
+  "name": "Judi Barrett"
+ },
+ {
+  "id": 519,
+  "name": "Masashi Kishimoto"
+ },
+ {
+  "id": 520,
+  "name": "Patrick Ness"
+ },
+ {
+  "id": 521,
+  "name": "James Clavell"
+ },
+ {
+  "id": 522,
+  "name": "Geraldine Brooks"
+ },
+ {
+  "id": 523,
+  "name": "Laurell K. Hamilton"
+ },
+ {
+  "id": 524,
+  "name": "Ellen Hopkins"
+ },
+ {
+  "id": 525,
+  "name": "Nora Roberts"
+ },
+ {
+  "id": 526,
+  "name": "Annie Proulx"
+ },
+ {
+  "id": 527,
+  "name": "Hilary Mantel"
+ },
+ {
+  "id": 528,
+  "name": "Doris Kearns Goodwin"
+ },
+ {
+  "id": 529,
+  "name": "Phaidon Press"
+ },
+ {
+  "id": 530,
+  "name": "Jacquelyn Mitchard"
+ },
+ {
+  "id": 531,
+  "name": "Edith Wharton"
+ },
+ {
+  "id": 532,
+  "name": "Peter Benchley"
+ },
+ {
+  "id": 533,
+  "name": "Justin Halpern"
+ },
+ {
+  "id": 534,
+  "name": "Oliver Sacks"
+ },
+ {
+  "id": 535,
+  "name": "Irma S. Rombauer"
+ },
+ {
+  "id": 536,
+  "name": "Jon Stone"
+ },
+ {
+  "id": 537,
+  "name": "Huntley Fitzpatrick"
+ },
+ {
+  "id": 538,
+  "name": "Muriel Barbery"
+ },
+ {
+  "id": 539,
+  "name": "Jane Green"
+ },
+ {
+  "id": 540,
+  "name": "Lionel Shriver"
+ },
+ {
+  "id": 541,
+  "name": "Bill Willingham"
+ },
+ {
+  "id": 542,
+  "name": "Mary Kubica"
+ },
+ {
+  "id": 543,
+  "name": "Kathy Reichs"
+ },
+ {
+  "id": 544,
+  "name": "Cynthia Hand"
+ },
+ {
+  "id": 545,
+  "name": "Alan Bradley"
+ },
+ {
+  "id": 546,
+  "name": "M.R. Carey"
+ },
+ {
+  "id": 547,
+  "name": "Brandon Mull"
+ },
+ {
+  "id": 548,
+  "name": "Rohinton Mistry"
+ },
+ {
+  "id": 549,
+  "name": "Samuel Beckett"
+ },
+ {
+  "id": 550,
+  "name": "Richard Matheson"
+ },
+ {
+  "id": 551,
+  "name": "José Saramago"
+ },
+ {
+  "id": 552,
+  "name": "Jonathan Tropper"
+ },
+ {
+  "id": 553,
+  "name": "Raina Telgemeier"
+ },
+ {
+  "id": 554,
+  "name": "Nicole Krauss"
+ },
+ {
+  "id": 555,
+  "name": "Sylvia Nasar"
+ },
+ {
+  "id": 556,
+  "name": "Helen Simonson"
+ },
+ {
+  "id": 557,
+  "name": "John Scalzi"
+ },
+ {
+  "id": 558,
+  "name": "Jessica Sorensen"
+ },
+ {
+  "id": 559,
+  "name": "Joe Abercrombie"
+ },
+ {
+  "id": 560,
+  "name": "Upton Sinclair"
+ },
+ {
+  "id": 561,
+  "name": "Michael Cunningham"
+ },
+ {
+  "id": 562,
+  "name": "Miguel Ruiz"
+ },
+ {
+  "id": 563,
+  "name": "Caleb Carr"
+ },
+ {
+  "id": 564,
+  "name": "Maria V. Snyder"
+ },
+ {
+  "id": 565,
+  "name": "John Milton"
+ },
+ {
+  "id": 566,
+  "name": "George Eliot"
+ },
+ {
+  "id": 567,
+  "name": "Marcus Pfister"
+ },
+ {
+  "id": 568,
+  "name": "Anne McCaffrey"
+ },
+ {
+  "id": 569,
+  "name": "Elizabeth Gaskell"
+ },
+ {
+  "id": 570,
+  "name": "Gregory David Roberts"
+ },
+ {
+  "id": 571,
+  "name": "Julian Barnes"
+ },
+ {
+  "id": 572,
+  "name": "Azar Nafisi"
+ },
+ {
+  "id": 573,
+  "name": "Joan Didion"
+ },
+ {
+  "id": 574,
+  "name": "Margaret Peterson Haddix"
+ },
+ {
+  "id": 575,
+  "name": "Gretchen Rubin"
+ },
+ {
+  "id": 576,
+  "name": "Susan Beth Pfeffer"
+ },
+ {
+  "id": 577,
+  "name": "Aziz Ansari"
+ },
+ {
+  "id": 578,
+  "name": "Beth Revis"
+ }
+]

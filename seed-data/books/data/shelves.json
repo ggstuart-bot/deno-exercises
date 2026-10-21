@@ -1,0 +1,618 @@
+[
+ {
+  "id": 1,
+  "title": "Favourites",
+  "ownerId": 2,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 2,
+  "title": "To read",
+  "ownerId": 2,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 3,
+  "title": "Favourites",
+  "ownerId": 3,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 4,
+  "title": "To read",
+  "ownerId": 3,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 5,
+  "title": "Favourites",
+  "ownerId": 4,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 6,
+  "title": "To read",
+  "ownerId": 4,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 7,
+  "title": "Favourites",
+  "ownerId": 5,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 8,
+  "title": "To read",
+  "ownerId": 5,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 9,
+  "title": "Favourites",
+  "ownerId": 6,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 10,
+  "title": "To read",
+  "ownerId": 6,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 11,
+  "title": "Favourites",
+  "ownerId": 7,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 12,
+  "title": "To read",
+  "ownerId": 7,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 13,
+  "title": "Favourites",
+  "ownerId": 8,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 14,
+  "title": "To read",
+  "ownerId": 8,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 15,
+  "title": "Favourites",
+  "ownerId": 9,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 16,
+  "title": "To read",
+  "ownerId": 9,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 17,
+  "title": "Favourites",
+  "ownerId": 10,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 18,
+  "title": "To read",
+  "ownerId": 10,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 19,
+  "title": "Favourites",
+  "ownerId": 11,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 20,
+  "title": "To read",
+  "ownerId": 11,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 21,
+  "title": "Favourites",
+  "ownerId": 12,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 22,
+  "title": "To read",
+  "ownerId": 12,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 23,
+  "title": "Favourites",
+  "ownerId": 13,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 24,
+  "title": "To read",
+  "ownerId": 13,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 25,
+  "title": "Favourites",
+  "ownerId": 14,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 26,
+  "title": "To read",
+  "ownerId": 14,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 27,
+  "title": "Favourites",
+  "ownerId": 15,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 28,
+  "title": "To read",
+  "ownerId": 15,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 29,
+  "title": "Favourites",
+  "ownerId": 16,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 30,
+  "title": "To read",
+  "ownerId": 16,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 31,
+  "title": "Favourites",
+  "ownerId": 17,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 32,
+  "title": "To read",
+  "ownerId": 17,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 33,
+  "title": "Favourites",
+  "ownerId": 18,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 34,
+  "title": "To read",
+  "ownerId": 18,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 35,
+  "title": "Favourites",
+  "ownerId": 19,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 36,
+  "title": "To read",
+  "ownerId": 19,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 37,
+  "title": "Favourites",
+  "ownerId": 20,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 38,
+  "title": "To read",
+  "ownerId": 20,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 39,
+  "title": "Favourites",
+  "ownerId": 21,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 40,
+  "title": "To read",
+  "ownerId": 21,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 41,
+  "title": "Favourites",
+  "ownerId": 22,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 42,
+  "title": "To read",
+  "ownerId": 22,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 43,
+  "title": "Favourites",
+  "ownerId": 23,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 44,
+  "title": "To read",
+  "ownerId": 23,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 45,
+  "title": "Favourites",
+  "ownerId": 24,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 46,
+  "title": "To read",
+  "ownerId": 24,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 47,
+  "title": "Favourites",
+  "ownerId": 25,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 48,
+  "title": "To read",
+  "ownerId": 25,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 49,
+  "title": "Favourites",
+  "ownerId": 26,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 50,
+  "title": "To read",
+  "ownerId": 26,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 51,
+  "title": "Favourites",
+  "ownerId": 27,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 52,
+  "title": "To read",
+  "ownerId": 27,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 53,
+  "title": "Favourites",
+  "ownerId": 28,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 54,
+  "title": "To read",
+  "ownerId": 28,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 55,
+  "title": "Favourites",
+  "ownerId": 29,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 56,
+  "title": "To read",
+  "ownerId": 29,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 57,
+  "title": "Favourites",
+  "ownerId": 30,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 58,
+  "title": "To read",
+  "ownerId": 30,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 59,
+  "title": "Favourites",
+  "ownerId": 31,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 60,
+  "title": "To read",
+  "ownerId": 31,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 61,
+  "title": "Favourites",
+  "ownerId": 32,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 62,
+  "title": "To read",
+  "ownerId": 32,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 63,
+  "title": "Favourites",
+  "ownerId": 33,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 64,
+  "title": "To read",
+  "ownerId": 33,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 65,
+  "title": "Favourites",
+  "ownerId": 34,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 66,
+  "title": "To read",
+  "ownerId": 34,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 67,
+  "title": "Favourites",
+  "ownerId": 35,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 68,
+  "title": "To read",
+  "ownerId": 35,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 69,
+  "title": "Favourites",
+  "ownerId": 36,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 70,
+  "title": "To read",
+  "ownerId": 36,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 71,
+  "title": "Favourites",
+  "ownerId": 37,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 72,
+  "title": "To read",
+  "ownerId": 37,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 73,
+  "title": "Favourites",
+  "ownerId": 38,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 74,
+  "title": "To read",
+  "ownerId": 38,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 75,
+  "title": "Favourites",
+  "ownerId": 39,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 76,
+  "title": "To read",
+  "ownerId": 39,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 77,
+  "title": "Favourites",
+  "ownerId": 40,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 78,
+  "title": "To read",
+  "ownerId": 40,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 79,
+  "title": "Favourites",
+  "ownerId": 41,
+  "isPublic": 1,
+  "isFeatured": 0
+ },
+ {
+  "id": 80,
+  "title": "To read",
+  "ownerId": 41,
+  "isPublic": 0,
+  "isFeatured": 0
+ },
+ {
+  "id": 81,
+  "title": "Fantasy worlds",
+  "ownerId": 1,
+  "isPublic": 1,
+  "isFeatured": 1
+ },
+ {
+  "id": 82,
+  "title": "Science fiction",
+  "ownerId": 1,
+  "isPublic": 1,
+  "isFeatured": 1
+ },
+ {
+  "id": 83,
+  "title": "Classics",
+  "ownerId": 1,
+  "isPublic": 1,
+  "isFeatured": 1
+ },
+ {
+  "id": 84,
+  "title": "Mysteries & thrillers",
+  "ownerId": 1,
+  "isPublic": 1,
+  "isFeatured": 1
+ },
+ {
+  "id": 85,
+  "title": "Graphic novels",
+  "ownerId": 1,
+  "isPublic": 1,
+  "isFeatured": 1
+ },
+ {
+  "id": 86,
+  "title": "Non-fiction",
+  "ownerId": 1,
+  "isPublic": 1,
+  "isFeatured": 1
+ },
+ {
+  "id": 87,
+  "title": "Horror",
+  "ownerId": 1,
+  "isPublic": 1,
+  "isFeatured": 1
+ },
+ {
+  "id": 88,
+  "title": "Children's favourites",
+  "ownerId": 1,
+  "isPublic": 1,
+  "isFeatured": 1
+ }
+]

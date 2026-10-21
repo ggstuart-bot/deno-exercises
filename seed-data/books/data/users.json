@@ -1,0 +1,248 @@
+[
+ {
+  "id": 1,
+  "username": "librarian",
+  "isAdmin": 1,
+  "isPublic": 1
+ },
+ {
+  "id": 2,
+  "username": "alex",
+  "isAdmin": 0,
+  "isPublic": 0
+ },
+ {
+  "id": 3,
+  "username": "amira",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 4,
+  "username": "ben",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 5,
+  "username": "chloe",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 6,
+  "username": "dan",
+  "isAdmin": 0,
+  "isPublic": 0
+ },
+ {
+  "id": 7,
+  "username": "priya",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 8,
+  "username": "ella",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 9,
+  "username": "finn",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 10,
+  "username": "grace",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 11,
+  "username": "harry",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 12,
+  "username": "isla",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 13,
+  "username": "jack",
+  "isAdmin": 0,
+  "isPublic": 0
+ },
+ {
+  "id": 14,
+  "username": "kiran",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 15,
+  "username": "leah",
+  "isAdmin": 0,
+  "isPublic": 0
+ },
+ {
+  "id": 16,
+  "username": "max",
+  "isAdmin": 0,
+  "isPublic": 0
+ },
+ {
+  "id": 17,
+  "username": "nadia",
+  "isAdmin": 0,
+  "isPublic": 0
+ },
+ {
+  "id": 18,
+  "username": "oscar",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 19,
+  "username": "poppy",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 20,
+  "username": "quinn",
+  "isAdmin": 0,
+  "isPublic": 0
+ },
+ {
+  "id": 21,
+  "username": "rosa",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 22,
+  "username": "sam",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 23,
+  "username": "tara",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 24,
+  "username": "umar",
+  "isAdmin": 0,
+  "isPublic": 0
+ },
+ {
+  "id": 25,
+  "username": "vera",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 26,
+  "username": "will",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 27,
+  "username": "xena",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 28,
+  "username": "yusuf",
+  "isAdmin": 0,
+  "isPublic": 0
+ },
+ {
+  "id": 29,
+  "username": "zara",
+  "isAdmin": 0,
+  "isPublic": 0
+ },
+ {
+  "id": 30,
+  "username": "aidan",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 31,
+  "username": "bea",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 32,
+  "username": "callum",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 33,
+  "username": "daisy",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 34,
+  "username": "eli",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 35,
+  "username": "freya",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 36,
+  "username": "george",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 37,
+  "username": "hana",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 38,
+  "username": "ivan",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 39,
+  "username": "jade",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 40,
+  "username": "kai",
+  "isAdmin": 0,
+  "isPublic": 1
+ },
+ {
+  "id": 41,
+  "username": "lily",
+  "isAdmin": 0,
+  "isPublic": 1
+ }
+]
