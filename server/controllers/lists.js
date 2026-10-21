@@ -10,7 +10,7 @@ import { readOnlyListView } from "../views/readOnlyList.js";
 export function createListController(ctx) {
     const { validated, user } = ctx;
     const list = createList({ title: validated.title, ownerId: user.id });
-    ctx.flash = `List '${list.title}' created`;
+    ctx.flash = `Shelf '${list.title}' created`;
     return redirect(`/lists/${list.id}`, ctx);
 }
 
@@ -27,7 +27,7 @@ export function listController(ctx) {
 export function editListController(ctx) {
     const { validated, data: { list: { id } } } = ctx;
     const list = updateListTitle(id, validated.title);
-    ctx.flash = `List renamed to '${list.title}'`;
+    ctx.flash = `Shelf renamed to '${list.title}'`;
     return redirect(`/lists/${list.id}`, ctx);
 }
 
@@ -36,15 +36,15 @@ function listVisibilityController(isPublic) {
         const { data: { list: { id } } } = ctx;
         const list = updateListIsPublic(id, isPublic);
         ctx.flash = isPublic
-            ? `List '${list.title}' is now public`
-            : `List '${list.title}' is now private`;
+            ? `Shelf '${list.title}' is now public`
+            : `Shelf '${list.title}' is now private`;
         return redirect(`/lists/${list.id}`, ctx);
     };
 }
 
 export function privateProfileController(ctx) {
     const { data: { list } } = ctx;
-    ctx.flash = "Publish your profile to share lists";
+    ctx.flash = "Publish your profile to share shelves";
     return redirect(`/lists/${list.id}`, ctx);
 }
 
@@ -54,6 +54,6 @@ export const unpublishListController = listVisibilityController(0);
 export function deleteListController(ctx) {
     const { data: { list: { id } } } = ctx;
     const list = deleteList(id);
-    ctx.flash = `List '${list.title}' deleted`;
+    ctx.flash = `Shelf '${list.title}' deleted`;
     return redirect("/", ctx);
 }

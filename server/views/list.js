@@ -15,10 +15,10 @@ export function listView(ctx) {
 ${books.map((book) => bookToHTML(list, book))}
         </ul>`
             : html`<p>No books yet, <a href="/books">find some books</a> to add</p>`}
-        <p><a href="/">Back to your lists</a></p>
+        <p><a href="/">Back to my shelves</a></p>
     </section>
     <aside>
-        <h3>Rename list</h3>
+        <h3>Rename shelf</h3>
         <form method="POST" action="/lists/${list.id}/edit">
             <label for="title">Title</label>
             <input id="title" name="title" value="${values?.title ?? list.title}">
@@ -27,10 +27,10 @@ ${books.map((book) => bookToHTML(list, book))}
         </form>
         <h3>Visibility</h3>
         ${visibilityControls(user, list)}
-        <h3>Delete list</h3>
+        <h3>Delete shelf</h3>
         <p>The books stay in the catalogue</p>
         <form method="POST" action="/lists/${list.id}/delete">
-            <button>delete list</button>
+            <button>delete shelf</button>
         </form>
     </aside>
     `;
@@ -38,19 +38,19 @@ ${books.map((book) => bookToHTML(list, book))}
 
 function visibilityControls(user, list) {
     if (list.isPublic) {
-        return html`<p>Anyone signed in can see this list</p>
+        return html`<p>Anyone signed in can see this shelf</p>
         <form method="POST" action="/lists/${list.id}/unpublish">
             <button>make private</button>
         </form>`;
     }
     if (canPublishList(user, list)) {
-        return html`<p>Only you can see this list</p>
+        return html`<p>Only you can see this shelf</p>
         <form method="POST" action="/lists/${list.id}/publish">
             <button>make public</button>
         </form>`;
     }
-    return html`<p>Only you can see this list</p>
-        <p><a href="/profile">Publish your profile</a> to share lists</p>`;
+    return html`<p>Only you can see this shelf</p>
+        <p><a href="/profile">Publish your profile</a> to share shelves</p>`;
 }
 
 function bookToHTML(list, book) {

@@ -9,7 +9,7 @@ export function readOnlyListView(ctx) {
     <section class="list">
         <header>
             <h2>${list.title}</h2>
-            <p>A public list by <a href="/users/${owner.id}">${avatarImage(owner)}${owner.username}</a></p>
+            <p>A public shelf by <a href="/users/${owner.id}">${avatarImage(owner)}${owner.username}</a></p>
         </header>
         <ul>
 ${books.map(bookToHTML)}

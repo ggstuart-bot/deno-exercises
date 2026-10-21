@@ -12,12 +12,12 @@ export function userDetailView(ctx) {
         ${avatarImage(targetUser, `Avatar for '${targetUser.username}'`)}
         <h2>${targetUser.username}</h2>
         ${targetUser.isAdmin ? html`<p><span class="admin">admin</span></p>` : ""}
-        <h3>Public lists</h3>
+        <h3>Public shelves</h3>
         ${publicLists.length
             ? html`<ul>
 ${publicLists.map(listToHTML)}
         </ul>`
-            : html`<p>No public lists</p>`}
+            : html`<p>No public shelves</p>`}
     </section>
     <aside>
         ${canChangeAvatar(currentUser, targetUser) ? avatarForm(targetUser, errors) : ""}
@@ -42,11 +42,11 @@ function visibilityForm(user) {
     return user.isPublic
         ? html`
         <h3>Profile is public</h3>
-        <p>Anyone signed in can see your profile and public lists</p>
+        <p>Anyone signed in can see your profile and public shelves</p>
         <form method="POST" action="/users/${user.id}/unpublish">
             <button>make profile private</button>
         </form>
-        <p>This also makes all of your lists private</p>`
+        <p>This also makes all of your shelves private</p>`
         : html`
         <h3>Profile is private</h3>
         <p>Only you can see your profile</p>

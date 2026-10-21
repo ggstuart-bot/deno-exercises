@@ -13,8 +13,8 @@ export function bookDetailView(ctx) {
         <p><a href="/books">Back to all books</a></p>
     </section>
     <aside>
-        <h3>Add to a list</h3>
-        ${user ? addToListForms(book, lists) : html`<p><a href="/signin">Sign in</a> to add this book to a list</p>`}
+        <h3>Add to a shelf</h3>
+        ${user ? addToListForms(book, lists) : html`<p><a href="/signin">Sign in</a> to add this book to a shelf</p>`}
     </aside>
     `;
 }
@@ -24,5 +24,5 @@ function addToListForms(book, lists) {
         ? lists.map((list) => html`<form method="POST" action="/lists/${list.id}/books/${book.id}/add">
             <button>add to '${list.title}'</button>
         </form>`)
-        : html`<p>You don't have any lists yet</p>`;
+        : html`<p>You don't have any shelves yet</p>`;
 }

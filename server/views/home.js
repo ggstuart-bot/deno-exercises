@@ -7,21 +7,21 @@ export function homeView(ctx) {
 
     return html`
     <section>
-        <h2>Your lists</h2>
+        <h2>My shelves</h2>
         ${lists.length
             ? html`<ul>
 ${lists.map(listToHTML)}
         </ul>`
-            : html`<p>You don't have any lists yet</p>`}
-        <h2>Public lists</h2>
+            : html`<p>You don't have any shelves yet</p>`}
+        <h2>Public shelves</h2>
         ${publicLists.length
             ? html`<ul>
 ${publicLists.map(publicListToHTML)}
         </ul>`
-            : html`<p>Nobody else has shared a list yet</p>`}
+            : html`<p>Nobody else has shared a shelf yet</p>`}
     </section>
     <aside>
-        <h3>New list</h3>
+        <h3>New shelf</h3>
         <form method="POST" action="/lists">
             <label for="title">Title</label>
             <input id="title" name="title" value="${values?.title ?? ""}">
