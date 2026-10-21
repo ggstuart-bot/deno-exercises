@@ -5,4 +5,4 @@
   (https://creativecommons.org/licenses/by-sa/4.0/). Changes: the 1,000 most-rated books;
   titles, authors and years cleaned; multiple authors joined into one field.
   This derived data is shared under CC BY-SA 4.0.
-- Cover images (coverUrl) belong to their publishers; they are linked, not copied.
+- Cover images (thumbnailUrl, coverUrl) belong to their publishers; they are linked, not copied.

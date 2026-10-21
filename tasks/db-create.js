@@ -42,6 +42,7 @@ db.exec(`
         title TEXT NOT NULL,
         author TEXT NOT NULL,
         year INTEGER,
+        thumbnailUrl TEXT,
         coverUrl TEXT
     )
 `);

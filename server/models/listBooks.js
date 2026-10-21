@@ -2,7 +2,7 @@ import { db } from "./db.js";
 
 export function getBooksByListId(listId) {
     return db.prepare(`
-        SELECT books.id, title, author, year, coverUrl
+        SELECT books.id, title, author, year, thumbnailUrl, coverUrl
         FROM listBooks JOIN books ON books.id = listBooks.bookId
         WHERE listId=:listId
     `).all({ listId });
