@@ -8,6 +8,12 @@ export function createBook({ title, author, year, coverUrl }) {
     `).get({ title, author, year, coverUrl });
 }
 
+export function getAllBooks() {
+    return db.prepare(
+        `SELECT id, title, author, year, coverUrl FROM books`
+    ).all();
+}
+
 export function getBookById(id) {
     return db.prepare(
         `SELECT id, title, author, year, coverUrl FROM books WHERE id=:id`
