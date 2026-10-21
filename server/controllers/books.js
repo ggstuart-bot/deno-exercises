@@ -1,4 +1,5 @@
 import { countBooks, PAGE_SIZE, searchBooks } from "../models/books.js";
+import { getListsByOwnerId } from "../models/lists.js";
 import { render } from "../tools/render.js";
 import { booksView } from "../views/books.js";
 import { bookDetailView } from "../views/bookDetail.js";
@@ -16,5 +17,9 @@ export function booksController(ctx) {
 }
 
 export function bookController(ctx) {
+    const { user } = ctx;
+    if (user) {
+        ctx.data.lists = getListsByOwnerId(user.id);
+    }
     return render(bookDetailView, ctx);
 }

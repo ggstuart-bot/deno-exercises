@@ -16,7 +16,7 @@ export function getBookById(id) {
     ).get({ id });
 }
 
-export function searchBooks(q, page = 1) {
+export function searchBooks(q, page) {
     return db.prepare(`
         SELECT id, title, author, year, coverUrl FROM books
         WHERE title LIKE :pattern OR author LIKE :pattern
