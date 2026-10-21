@@ -67,7 +67,7 @@ app.post("/shelves/:shelfId/books/:bookId/add", mustBeSignedIn, withShelf, withB
 app.post("/shelves/:shelfId/books/:bookId/delete", mustBeSignedIn, withShelf, withBook, mayUseShelf, removeBookController);
 app.get("/users", mustBeSignedIn, mustBeAdmin, usersController);
 app.get("/users/:userId", mustBeSignedIn, withTargetUser, mayViewUser, userController);
-app.get("/users/:userId/avatar", mustBeSignedIn, withTargetUser, mayViewUser, avatarController);
+app.get("/users/:userId/avatar", withTargetUser, mayViewUser, avatarController);
 app.post("/users/:userId/avatar", mustBeSignedIn, withTargetUser, mayChangeAvatar, validateAvatar, uploadAvatarController);
 app.post("/users/:userId/publish", mustBeSignedIn, withTargetUser, mayPublishProfile, publishProfileController);
 app.post("/users/:userId/unpublish", mustBeSignedIn, withTargetUser, mayPublishProfile, unpublishProfileController);

@@ -2,26 +2,21 @@ import { html } from "../tools/html.js";
 import { avatarImage } from "./avatar.js";
 
 export function homeView(ctx) {
-    const { user, data: { publicShelves } } = ctx;
-    if (!user) return guestHome();
+    const { data: { publicShelves } } = ctx;
 
     return html`
     <section>
+        <h2>Find a book</h2>
+        <form class="inline" method="GET" action="/books">
+            <input name="q" aria-label="Search books" placeholder="search by title or author">
+            <button>search</button>
+        </form>
         <h2>Public shelves</h2>
         ${publicShelves.length
             ? html`<ul>
 ${publicShelves.map(publicShelfToHTML)}
         </ul>`
-            : html`<p>Nobody else has shared a shelf yet</p>`}
-    </section>
-    `;
-}
-
-function guestHome() {
-    return html`
-    <section>
-        <h2>Home</h2>
-        <p>This is the home page</p>
+            : html`<p>Nobody has shared a shelf yet</p>`}
     </section>
     `;
 }
