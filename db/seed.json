@@ -5,7 +5,7 @@
             "password": "testUser1!",
             "avatar": "testUser1.webp",
             "isPublic": 1,
-            "lists": [
+            "shelves": [
                 {
                     "title": "classics",
                     "isPublic": 1,
@@ -40,7 +40,7 @@
             "username": "testUser2",
             "password": "testUser2!",
             "avatar": "testUser2.webp",
-            "lists": [
+            "shelves": [
                 {
                     "title": "sci-fi",
                     "books": [
@@ -68,7 +68,7 @@
             "isAdmin": 1,
             "avatar": "adminUser.webp",
             "isPublic": 1,
-            "lists": [
+            "shelves": [
                 {
                     "title": "crime",
                     "isPublic": 1,

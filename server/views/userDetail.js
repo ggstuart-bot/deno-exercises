@@ -5,19 +5,19 @@ import { avatarImage } from "./avatar.js";
 import { AVATAR_TYPES } from "../schema/avatar.js";
 
 export function userDetailView(ctx) {
-    const { data: { targetUser, publicLists, errors }, user: currentUser } = ctx;
+    const { data: { targetUser, publicShelves, errors }, user: currentUser } = ctx;
 
     return html`
     <section>
         ${avatarImage(targetUser, `Avatar for '${targetUser.username}'`)}
         <h2>${targetUser.username}</h2>
         ${targetUser.isAdmin ? html`<p><span class="admin">admin</span></p>` : ""}
-        <h3>Public lists</h3>
-        ${publicLists.length
+        <h3>Public shelves</h3>
+        ${publicShelves.length
             ? html`<ul>
-${publicLists.map(listToHTML)}
+${publicShelves.map(shelfToHTML)}
         </ul>`
-            : html`<p>No public lists</p>`}
+            : html`<p>No public shelves</p>`}
     </section>
     <aside>
         ${canChangeAvatar(currentUser, targetUser) ? avatarForm(targetUser, errors) : ""}
@@ -42,11 +42,11 @@ function visibilityForm(user) {
     return user.isPublic
         ? html`
         <h3>Profile is public</h3>
-        <p>Anyone signed in can see your profile and public lists</p>
+        <p>Anyone signed in can see your profile and public shelves</p>
         <form method="POST" action="/users/${user.id}/unpublish">
             <button>make profile private</button>
         </form>
-        <p>This also makes all of your lists private</p>`
+        <p>This also makes all of your shelves private</p>`
         : html`
         <h3>Profile is private</h3>
         <p>Only you can see your profile</p>
@@ -55,9 +55,9 @@ function visibilityForm(user) {
         </form>`;
 }
 
-function listToHTML(list) {
+function shelfToHTML(shelf) {
     return html`            <li>
-                <a href="/lists/${list.id}">${list.title}</a>
-                <span>${list.bookCount} ${list.bookCount === 1 ? "book" : "books"}</span>
+                <a href="/shelves/${shelf.id}">${shelf.title}</a>
+                <span>${shelf.bookCount} ${shelf.bookCount === 1 ? "book" : "books"}</span>
             </li>`;
 }
