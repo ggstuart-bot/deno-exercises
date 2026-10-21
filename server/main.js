@@ -58,7 +58,7 @@ app.get("/profile", mustBeSignedIn, profileController);
 
 app.get("/shelves", mustBeSignedIn, myShelvesController);
 app.post("/shelves", mustBeSignedIn, validateNewShelf, createShelfController);
-app.get("/shelves/:shelfId", mustBeSignedIn, withShelf, mayViewShelf, shelfController);
+app.get("/shelves/:shelfId", withShelf, mayViewShelf, shelfController);
 app.post("/shelves/:shelfId/edit", mustBeSignedIn, withShelf, mayUseShelf, validateEditShelf, editShelfController);
 app.post("/shelves/:shelfId/publish", mustBeSignedIn, withShelf, mayUseShelf, mayPublishShelf, publishShelfController);
 app.post("/shelves/:shelfId/unpublish", mustBeSignedIn, withShelf, mayUseShelf, unpublishShelfController);
