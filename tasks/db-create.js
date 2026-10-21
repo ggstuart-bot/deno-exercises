@@ -3,6 +3,7 @@ import { db } from "../server/models/db.js";
 db.exec("DROP TABLE IF EXISTS sessions");
 db.exec("DROP TABLE IF EXISTS items");
 db.exec("DROP TABLE IF EXISTS lists");
+db.exec("DROP TABLE IF EXISTS books");
 db.exec("DROP TABLE IF EXISTS users");
 db.exec("DROP TABLE IF EXISTS files");
 
@@ -40,6 +41,16 @@ db.exec(`
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         label TEXT NOT NULL,
         listId INTEGER NOT NULL REFERENCES lists(id) ON DELETE CASCADE
+    )
+`);
+
+db.exec(`
+    CREATE TABLE books (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title TEXT NOT NULL,
+        author TEXT NOT NULL,
+        year INTEGER,
+        coverUrl TEXT
     )
 `);
 

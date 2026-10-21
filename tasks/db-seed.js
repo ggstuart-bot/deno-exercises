@@ -1,10 +1,16 @@
 import { createItem } from "../server/models/items.js";
 import seed from "../db/seed.json" with { type: "json" };
+import books from "../db/books.json" with { type: "json" };
 import { createUser, updateAvatarId } from "../server/models/users.js";
 import { createFile } from "../server/models/files.js";
 import { createList } from "../server/models/lists.js";
+import { createBook } from "../server/models/books.js";
 
 const { defaultList } = seed;
+
+for (const book of books) {
+    createBook(book);
+}
 
 for (const user of seed.users) {
     const { id } = await createUser(user);
