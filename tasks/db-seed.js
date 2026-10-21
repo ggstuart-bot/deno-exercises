@@ -1,15 +1,17 @@
-import { createItem } from "../server/models/items.js";
 import seed from "../db/seed.json" with { type: "json" };
 import books from "../db/books.json" with { type: "json" };
 import { createUser, updateAvatarId } from "../server/models/users.js";
 import { createFile } from "../server/models/files.js";
 import { createList } from "../server/models/lists.js";
 import { createBook } from "../server/models/books.js";
+import { addBookToList } from "../server/models/listBooks.js";
 
 const { defaultList } = seed;
 
+const bookIds = {};
 for (const book of books) {
-    createBook(book);
+    const { id } = createBook(book);
+    bookIds[book.title] = id;
 }
 
 for (const user of seed.users) {
@@ -19,7 +21,7 @@ for (const user of seed.users) {
     updateAvatarId(id, await createFile(file));
 
     const list = createList({ title: defaultList.title, ownerId: id, isPublic: user.listIsPublic ?? 0 });
-    for (const item of defaultList.items) {
-        createItem({ label: item.label, listId: list.id });
+    for (const title of defaultList.books) {
+        addBookToList(list.id, bookIds[title]);
     }
 }

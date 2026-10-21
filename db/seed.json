@@ -1,10 +1,11 @@
 {
     "defaultList": {
-        "title": "shopping",
-        "items": [
-            { "label": "apples" },
-            { "label": "bananas" },
-            { "label": "cherries" }
+        "title": "classics",
+        "books": [
+            "Pride and Prejudice",
+            "Jane Eyre",
+            "The Great Gatsby",
+            "To Kill a Mockingbird"
         ]
     },
     "users": [

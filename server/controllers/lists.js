@@ -1,5 +1,5 @@
 import { createList, deleteList, updateListIsPublic, updateListTitle } from "../models/lists.js";
-import { getItemsByListId } from "../models/items.js";
+import { getBooksByListId } from "../models/listBooks.js";
 import { getUserById } from "../models/users.js";
 import { canUseList } from "../tools/permissions.js";
 import { redirect } from "../tools/redirect.js";
@@ -16,7 +16,7 @@ export function createListController(ctx) {
 
 export function listController(ctx) {
     const { user, data: { list } } = ctx;
-    ctx.data.items = getItemsByListId(list.id);
+    ctx.data.books = getBooksByListId(list.id);
     if (canUseList(user, list)) {
         return render(listView, ctx);
     }

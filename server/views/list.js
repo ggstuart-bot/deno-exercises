@@ -1,22 +1,17 @@
 import { html } from "../tools/html.js";
-import { LABEL_MAX, LABEL_MIN } from "../schema/item.js";
 import { canPublishList } from "../tools/permissions.js";
+import { bookDetails } from "./book.js";
 
 export function listView(ctx) {
-    const { user, data: { list, items, errors, values } } = ctx;
+    const { user, data: { list, books, errors, values } } = ctx;
 
     return html`
     <section class="list">
         <header>
             <h2>${list.title}</h2>
         </header>
-        <form class="inline" method="POST" action="/lists/${list.id}/items">
-            <input name="label" aria-label="New item" placeholder="new item" value="${values?.label ?? ""}">
-            <button>add</button>
-            <span class="error">${errors?.label ?? ""}</span>
-        </form>
         <ul>
-${items.map((item) => itemToHTML(list, item))}
+${books.map((book) => bookToHTML(list, book))}
         </ul>
         <p><a href="/">Back to your lists</a></p>
     </section>
@@ -31,7 +26,7 @@ ${items.map((item) => itemToHTML(list, item))}
         <h3>Visibility</h3>
         ${visibilityControls(user, list)}
         <h3>Delete list</h3>
-        <p>This also deletes all of its items</p>
+        <p>The books stay in the catalogue</p>
         <form method="POST" action="/lists/${list.id}/delete">
             <button>delete list</button>
         </form>
@@ -56,14 +51,11 @@ function visibilityControls(user, list) {
         <p><a href="/profile">Publish your profile</a> to share lists</p>`;
 }
 
-function itemToHTML(list, item) {
-    const itemUrl = `/lists/${list.id}/items/${item.id}`;
+function bookToHTML(list, book) {
     return html`            <li>
-                <form class="item" method="POST" action="${itemUrl}/edit">
-                    <input name="label" value="${item.label}" aria-label="Item label"
-                        required minlength="${LABEL_MIN}" maxlength="${LABEL_MAX}">
-                    <button class="save">save</button>
-                    <button class="delete" formaction="${itemUrl}/delete" formnovalidate>delete</button>
+                ${bookDetails(book)}
+                <form method="POST" action="/lists/${list.id}/books/${book.id}/delete">
+                    <button>remove</button>
                 </form>
             </li>`;
 }

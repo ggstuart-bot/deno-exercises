@@ -44,7 +44,7 @@ function guestHome() {
 function listToHTML(list) {
     return html`            <li>
                 <a href="/lists/${list.id}">${list.title}</a>
-                <span>${list.itemCount} ${list.itemCount === 1 ? "item" : "items"}</span>
+                <span>${list.bookCount} ${list.bookCount === 1 ? "book" : "books"}</span>
             </li>`;
 }
 
@@ -53,7 +53,7 @@ function publicListToHTML(list) {
                 <a href="/lists/${list.id}">${list.title}</a>
                 <span>
                     <a href="/users/${list.ownerId}">${avatarImage({ id: list.ownerId, avatarId: list.avatarId })}${list.username}</a>
-                    ${list.itemCount} ${list.itemCount === 1 ? "item" : "items"}
+                    ${list.bookCount} ${list.bookCount === 1 ? "book" : "books"}
                 </span>
             </li>`;
 }
