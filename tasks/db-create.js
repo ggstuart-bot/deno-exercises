@@ -21,7 +21,8 @@ db.exec(`
         username TEXT UNIQUE NOT NULL,
         hashedPassword TEXT NOT NULL,
         isAdmin INTEGER DEFAULT 0,
-        avatarId INTEGER REFERENCES files(id) ON DELETE SET NULL
+        avatarId INTEGER REFERENCES files(id) ON DELETE SET NULL,
+        isPublic INTEGER NOT NULL DEFAULT 0
     )
 `);
 
@@ -29,7 +30,8 @@ db.exec(`
     CREATE TABLE lists (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         title TEXT NOT NULL,
-        ownerId INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE
+        ownerId INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+        isPublic INTEGER NOT NULL DEFAULT 0
     )
 `);
 

@@ -12,7 +12,7 @@ for (const user of seed.users) {
     const file = new File([await Deno.readFile(path)], user.avatar, { type: "image/webp" });
     updateAvatarId(id, await createFile(file));
 
-    const list = createList({ title: defaultList.title, ownerId: id });
+    const list = createList({ title: defaultList.title, ownerId: id, isPublic: user.listIsPublic ?? 0 });
     for (const item of defaultList.items) {
         createItem({ label: item.label, listId: list.id });
     }

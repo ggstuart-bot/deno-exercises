@@ -1,8 +1,9 @@
 import { html } from "../tools/html.js";
 import { LABEL_MAX, LABEL_MIN } from "../schema/item.js";
+import { canPublishList } from "../tools/permissions.js";
 
 export function listView(ctx) {
-    const { data: { list, items, errors, values } } = ctx;
+    const { user, data: { list, items, errors, values } } = ctx;
 
     return html`
     <section>
@@ -25,6 +26,8 @@ ${items.map((item) => itemToHTML(list, item))}
             <span class="error">${errors?.title ?? ""}</span>
             <button>rename</button>
         </form>
+        <h3>Visibility</h3>
+        ${visibilityControls(user, list)}
         <h3>Delete list</h3>
         <p>This also deletes all of its items</p>
         <form method="POST" action="/lists/${list.id}/delete">
@@ -32,6 +35,23 @@ ${items.map((item) => itemToHTML(list, item))}
         </form>
     </aside>
     `;
+}
+
+function visibilityControls(user, list) {
+    if (list.isPublic) {
+        return html`<p>Anyone signed in can see this list</p>
+        <form method="POST" action="/lists/${list.id}/unpublish">
+            <button>make private</button>
+        </form>`;
+    }
+    if (canPublishList(user, list)) {
+        return html`<p>Only you can see this list</p>
+        <form method="POST" action="/lists/${list.id}/publish">
+            <button>make public</button>
+        </form>`;
+    }
+    return html`<p>Only you can see this list</p>
+        <p><a href="/profile">Publish your profile</a> to share lists</p>`;
 }
 
 function itemToHTML(list, item) {

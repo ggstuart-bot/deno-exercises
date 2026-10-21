@@ -1,7 +1,8 @@
 import { html } from "../tools/html.js";
+import { avatarImage } from "./avatar.js";
 
 export function homeView(ctx) {
-    const { user, data: { lists, errors, values } } = ctx;
+    const { user, data: { lists, publicLists, errors, values } } = ctx;
     if (!user) return guestHome();
 
     return html`
@@ -12,6 +13,12 @@ export function homeView(ctx) {
 ${lists.map(listToHTML)}
         </ul>`
             : html`<p>You don't have any lists yet</p>`}
+        <h2>Public lists</h2>
+        ${publicLists.length
+            ? html`<ul>
+${publicLists.map(publicListToHTML)}
+        </ul>`
+            : html`<p>Nobody else has shared a list yet</p>`}
     </section>
     <aside>
         <h3>New list</h3>
@@ -38,5 +45,15 @@ function listToHTML(list) {
     return html`            <li>
                 <a href="/lists/${list.id}">${list.title}</a>
                 <span>${list.itemCount} ${list.itemCount === 1 ? "item" : "items"}</span>
+            </li>`;
+}
+
+function publicListToHTML(list) {
+    return html`            <li>
+                <a href="/lists/${list.id}">${list.title}</a>
+                <span>
+                    <a href="/users/${list.ownerId}">${avatarImage({ id: list.ownerId, avatarId: list.avatarId })}${list.username}</a>
+                    ${list.itemCount} ${list.itemCount === 1 ? "item" : "items"}
+                </span>
             </li>`;
 }

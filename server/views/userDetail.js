@@ -1,11 +1,11 @@
 import { html } from "../tools/html.js";
-import { canChangeAdmin, canChangeAvatar } from "../tools/permissions.js";
+import { canChangeAdmin, canChangeAvatar, canPublishProfile } from "../tools/permissions.js";
 import { adminButton } from "./users.js";
 import { avatarImage } from "./avatar.js";
 import { AVATAR_TYPES } from "../schema/avatar.js";
 
 export function userDetailView(ctx) {
-    const { data: { targetUser, errors }, user: currentUser } = ctx;
+    const { data: { targetUser, publicLists, errors }, user: currentUser } = ctx;
 
     return html`
     <section>
@@ -14,6 +14,13 @@ export function userDetailView(ctx) {
         ${targetUser.isAdmin ? html`<p><span class="admin">admin</span></p>` : ""}
         ${canChangeAdmin(currentUser, targetUser) ? adminButton(targetUser) : ""}
         ${canChangeAvatar(currentUser, targetUser) ? avatarForm(targetUser, errors) : ""}
+        ${canPublishProfile(currentUser, targetUser) ? visibilityForm(targetUser) : ""}
+        <h3>Public lists</h3>
+        ${publicLists.length
+            ? html`<ul>
+${publicLists.map(listToHTML)}
+        </ul>`
+            : html`<p>No public lists</p>`}
     </section>
     `;
 }
@@ -25,4 +32,24 @@ function avatarForm(user, errors) {
             <span class="error">${errors?.avatar ?? ""}</span>
             <button>upload avatar</button>
         </form>`;
+}
+
+function visibilityForm(user) {
+    return user.isPublic
+        ? html`<p>Anyone signed in can see your profile and public lists</p>
+        <form method="POST" action="/users/${user.id}/unpublish">
+            <button>make profile private</button>
+        </form>
+        <p>This also makes all of your lists private</p>`
+        : html`<p>Only you can see your profile</p>
+        <form method="POST" action="/users/${user.id}/publish">
+            <button>make profile public</button>
+        </form>`;
+}
+
+function listToHTML(list) {
+    return html`            <li>
+                <a href="/lists/${list.id}">${list.title}</a>
+                <span>${list.itemCount} ${list.itemCount === 1 ? "item" : "items"}</span>
+            </li>`;
 }
