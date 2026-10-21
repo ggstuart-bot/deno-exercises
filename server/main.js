@@ -2,7 +2,7 @@ import { aboutController } from "./controllers/about.js";
 import { homeController } from "./controllers/home.js";
 import { bookController, booksController } from "./controllers/books.js";
 import { addBookController, removeBookController } from "./controllers/shelfBooks.js";
-import { createShelfController, deleteShelfController, editShelfController, shelfController, privateProfileController, publishShelfController, unpublishShelfController } from "./controllers/shelves.js";
+import { createShelfController, deleteShelfController, editShelfController, myShelvesController, shelfController, privateProfileController, publishShelfController, unpublishShelfController } from "./controllers/shelves.js";
 import { staticController } from "./controllers/static.js";
 import { notFoundController } from "./controllers/notFound.js";
 import { layout } from "./layout.js";
@@ -21,7 +21,7 @@ import { requireAdmin, requireGuest, requirePermission, requireUser } from "./mi
 import { withBook, withShelf, withTargetUser } from "./middleware/resources.js";
 import { canChangeAdmin, canChangeAvatar, canPublishShelf, canPublishProfile, canUseShelf, canViewShelf, canViewUser } from "./tools/permissions.js";
 
-const validateNewShelf = withValidation(shelfSchema, homeController);
+const validateNewShelf = withValidation(shelfSchema, myShelvesController);
 const validateEditShelf = withValidation(shelfSchema, shelfController);
 const validateNewUser = withValidation(userSchema, signupFormController);
 const validateSignin = withValidation(signinSchema, signinFormController);
@@ -56,8 +56,9 @@ app.post("/signin", mustBeSignedOut, validateSignin, signinController);
 app.post("/signout", signoutController);
 app.get("/profile", mustBeSignedIn, profileController);
 
+app.get("/shelves", mustBeSignedIn, myShelvesController);
 app.post("/shelves", mustBeSignedIn, validateNewShelf, createShelfController);
-app.get("/shelves/:shelfId", mustBeSignedIn, withShelf, mayViewShelf, shelfController);
+app.get("/shelves/:shelfId", withShelf, mayViewShelf, shelfController);
 app.post("/shelves/:shelfId/edit", mustBeSignedIn, withShelf, mayUseShelf, validateEditShelf, editShelfController);
 app.post("/shelves/:shelfId/publish", mustBeSignedIn, withShelf, mayUseShelf, mayPublishShelf, publishShelfController);
 app.post("/shelves/:shelfId/unpublish", mustBeSignedIn, withShelf, mayUseShelf, unpublishShelfController);
@@ -66,7 +67,7 @@ app.post("/shelves/:shelfId/books/:bookId/add", mustBeSignedIn, withShelf, withB
 app.post("/shelves/:shelfId/books/:bookId/delete", mustBeSignedIn, withShelf, withBook, mayUseShelf, removeBookController);
 app.get("/users", mustBeSignedIn, mustBeAdmin, usersController);
 app.get("/users/:userId", mustBeSignedIn, withTargetUser, mayViewUser, userController);
-app.get("/users/:userId/avatar", mustBeSignedIn, withTargetUser, mayViewUser, avatarController);
+app.get("/users/:userId/avatar", withTargetUser, mayViewUser, avatarController);
 app.post("/users/:userId/avatar", mustBeSignedIn, withTargetUser, mayChangeAvatar, validateAvatar, uploadAvatarController);
 app.post("/users/:userId/publish", mustBeSignedIn, withTargetUser, mayPublishProfile, publishProfileController);
 app.post("/users/:userId/unpublish", mustBeSignedIn, withTargetUser, mayPublishProfile, unpublishProfileController);

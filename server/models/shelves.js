@@ -22,14 +22,14 @@ export function getShelvesByOwnerId(ownerId) {
     `).all({ ownerId });
 }
 
-// Other people's public shelves, with the owner's username for display
-export function getPublicShelves(excludeUserId) {
+// All public shelves, with the owner's username for display
+export function getPublicShelves() {
     return db.prepare(`
         SELECT shelves.id, title, ownerId, username, avatarId,
             (SELECT count(*) FROM shelfBooks WHERE shelfId = shelves.id) AS bookCount
         FROM shelves JOIN users ON users.id = shelves.ownerId
-        WHERE shelves.isPublic = 1 AND ownerId != :excludeUserId
-    `).all({ excludeUserId });
+        WHERE shelves.isPublic = 1
+    `).all();
 }
 
 export function getPublicShelvesByOwnerId(ownerId) {

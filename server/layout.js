@@ -61,7 +61,8 @@ function adminLinks(user) {
 
 function authLinks(user) {
     return user
-        ? html`<a href="/profile">${avatarImage(user)}profile</a>
+        ? html`<a href="/shelves">my shelves</a>
+            <a href="/profile">${avatarImage(user)}profile</a>
             <form method="POST" action="/signout">
                 <button>sign out</button>
             </form>`
