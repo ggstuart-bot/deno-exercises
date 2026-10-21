@@ -1,8 +1,9 @@
 import { html } from "../tools/html.js";
 import { avatarImage } from "./avatar.js";
+import { bookDetails } from "./book.js";
 
 export function readOnlyListView(ctx) {
-    const { data: { list, items, owner } } = ctx;
+    const { data: { list, books, owner } } = ctx;
 
     return html`
     <section class="list">
@@ -11,13 +12,13 @@ export function readOnlyListView(ctx) {
             <p>A public list by <a href="/users/${owner.id}">${avatarImage(owner)}${owner.username}</a></p>
         </header>
         <ul>
-${items.map(itemToHTML)}
+${books.map(bookToHTML)}
         </ul>
         <p><a href="/">Back to home</a></p>
     </section>
     `;
 }
 
-function itemToHTML(item) {
-    return html`            <li>${item.label}</li>`;
+function bookToHTML(book) {
+    return html`            <li>${bookDetails(book)}</li>`;
 }

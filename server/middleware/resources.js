@@ -1,6 +1,6 @@
 import { getUserById } from "../models/users.js";
 import { getListById } from "../models/lists.js";
-import { getItemById } from "../models/items.js";
+import { getBookById } from "../models/books.js";
 import { NotFoundError } from "../tools/errors.js";
 
 export function withTargetUser(ctx, next) {
@@ -23,14 +23,12 @@ export function withList(ctx, next) {
     return next(ctx);
 }
 
-// Use after withList. Items are owned through their list, so the item must
-// belong to the list in the URL, otherwise any item could be reached via any list.
-export function withItem(ctx, next) {
-    const { params: { itemId }, data: { list } } = ctx;
-    const item = getItemById(Number(itemId));
-    if (!item || item.listId !== list.id) {
-        throw new NotFoundError(`Item ${itemId} not found in list ${list.id}`);
+export function withBook(ctx, next) {
+    const { params: { bookId } } = ctx;
+    const book = getBookById(Number(bookId));
+    if (!book) {
+        throw new NotFoundError(`Book ${bookId} not found`);
     }
-    ctx.data.item = item;
+    ctx.data.book = book;
     return next(ctx);
 }

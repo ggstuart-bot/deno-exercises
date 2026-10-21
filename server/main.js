@@ -1,11 +1,6 @@
 import { aboutController } from "./controllers/about.js";
 import { homeController } from "./controllers/home.js";
-import {
-    createItemController,
-    deleteItemController,
-    editItemController,
-    invalidEditItemController,
-} from "./controllers/items.js";
+import { addBookController, removeBookController } from "./controllers/listBooks.js";
 import { createListController, deleteListController, editListController, listController, privateProfileController, publishListController, unpublishListController } from "./controllers/lists.js";
 import { staticController } from "./controllers/static.js";
 import { notFoundController } from "./controllers/notFound.js";
@@ -14,7 +9,6 @@ import { NotFoundError } from "./tools/errors.js";
 import { Router } from "./tools/router.js";
 import { withLogs } from "./middleware/logging.js";
 import { withValidation } from "./middleware/validation.js";
-import { itemSchema } from "./schema/item.js";
 import { listSchema } from "./schema/list.js";
 import { avatarController, createUserController, uploadAvatarController, demoteController, profileController, promoteController, publishProfileController, unpublishProfileController, selfChangeController, signupFormController, userController, usersController } from "./controllers/users.js";
 import { userSchema } from "./schema/user.js";
@@ -23,13 +17,11 @@ import { alreadySignedInRedirectController, forbiddenController, signinControlle
 import { signinSchema } from "./schema/signin.js";
 import { withSession } from "./middleware/session.js";
 import { requireAdmin, requireGuest, requirePermission, requireUser } from "./middleware/access.js";
-import { withItem, withList, withTargetUser } from "./middleware/resources.js";
+import { withBook, withList, withTargetUser } from "./middleware/resources.js";
 import { canChangeAdmin, canChangeAvatar, canPublishList, canPublishProfile, canUseList, canViewList, canViewUser } from "./tools/permissions.js";
 
 const validateNewList = withValidation(listSchema, homeController);
 const validateEditList = withValidation(listSchema, listController);
-const validateNewItem = withValidation(itemSchema, listController);
-const validateEditItem = withValidation(itemSchema, invalidEditItemController);
 const validateNewUser = withValidation(userSchema, signupFormController);
 const validateSignin = withValidation(signinSchema, signinFormController);
 const validateAvatar = withValidation(avatarSchema, userController);
@@ -67,9 +59,8 @@ app.post("/lists/:listId/edit", mustBeSignedIn, withList, mayUseList, validateEd
 app.post("/lists/:listId/publish", mustBeSignedIn, withList, mayUseList, mayPublishList, publishListController);
 app.post("/lists/:listId/unpublish", mustBeSignedIn, withList, mayUseList, unpublishListController);
 app.post("/lists/:listId/delete", mustBeSignedIn, withList, mayUseList, deleteListController);
-app.post("/lists/:listId/items", mustBeSignedIn, withList, mayUseList, validateNewItem, createItemController);
-app.post("/lists/:listId/items/:itemId/edit", mustBeSignedIn, withList, withItem, mayUseList, validateEditItem, editItemController);
-app.post("/lists/:listId/items/:itemId/delete", mustBeSignedIn, withList, withItem, mayUseList, deleteItemController);
+app.post("/lists/:listId/books/:bookId/add", mustBeSignedIn, withList, withBook, mayUseList, addBookController);
+app.post("/lists/:listId/books/:bookId/delete", mustBeSignedIn, withList, withBook, mayUseList, removeBookController);
 app.get("/users", mustBeSignedIn, mustBeAdmin, usersController);
 app.get("/users/:userId", mustBeSignedIn, withTargetUser, mayViewUser, userController);
 app.get("/users/:userId/avatar", mustBeSignedIn, withTargetUser, mayViewUser, avatarController);
