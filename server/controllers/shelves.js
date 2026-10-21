@@ -1,11 +1,18 @@
-import { createShelf, deleteShelf, updateShelfIsPublic, updateShelfTitle } from "../models/shelves.js";
+import { createShelf, deleteShelf, getShelvesByOwnerId, updateShelfIsPublic, updateShelfTitle } from "../models/shelves.js";
 import { getBooksByShelfId } from "../models/shelfBooks.js";
 import { getUserById } from "../models/users.js";
 import { canUseShelf } from "../tools/permissions.js";
 import { redirect } from "../tools/redirect.js";
 import { render } from "../tools/render.js";
+import { myShelvesView } from "../views/myShelves.js";
 import { shelfView } from "../views/shelf.js";
 import { readOnlyShelfView } from "../views/readOnlyShelf.js";
+
+export function myShelvesController(ctx) {
+    const { user } = ctx;
+    ctx.data.shelves = getShelvesByOwnerId(user.id);
+    return render(myShelvesView, ctx);
+}
 
 export function createShelfController(ctx) {
     const { validated, user } = ctx;
@@ -55,5 +62,5 @@ export function deleteShelfController(ctx) {
     const { data: { shelf: { id } } } = ctx;
     const shelf = deleteShelf(id);
     ctx.flash = `Shelf '${shelf.title}' deleted`;
-    return redirect("/", ctx);
+    return redirect("/shelves", ctx);
 }
