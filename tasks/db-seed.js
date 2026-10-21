@@ -6,8 +6,6 @@ import { createList } from "../server/models/lists.js";
 import { createBook } from "../server/models/books.js";
 import { addBookToList } from "../server/models/listBooks.js";
 
-const { defaultList } = seed;
-
 const bookIds = {};
 for (const book of books) {
     const { id } = createBook(book);
@@ -15,13 +13,19 @@ for (const book of books) {
 }
 
 for (const user of seed.users) {
-    const { id } = await createUser(user);
+    const { id: userId } = await createUser(user);
     const path = new URL(`../db/seed-avatars/${user.avatar}`, import.meta.url);
     const file = new File([await Deno.readFile(path)], user.avatar, { type: "image/webp" });
-    updateAvatarId(id, await createFile(file));
+    updateAvatarId(userId, await createFile(file));
 
-    const list = createList({ title: defaultList.title, ownerId: id, isPublic: user.listIsPublic ?? 0 });
-    for (const title of defaultList.books) {
-        addBookToList(list.id, bookIds[title]);
+    for (const list of user.lists) {
+        const { id: listId } = createList({ title: list.title, ownerId: userId, isPublic: list.isPublic });
+        for (const title of list.books) {
+            const bookId = bookIds[title];
+            if (!bookId) {
+                throw new Error(`Book '${title}' not found in books.json`);
+            }
+            addBookToList(listId, bookId);
+        }
     }
 }
