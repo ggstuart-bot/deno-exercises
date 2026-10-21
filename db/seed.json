@@ -1,31 +1,85 @@
 {
-    "defaultList": {
-        "title": "classics",
-        "books": [
-            "Pride and Prejudice",
-            "Jane Eyre",
-            "The Great Gatsby",
-            "To Kill a Mockingbird"
-        ]
-    },
     "users": [
         {
             "username": "testUser1",
             "password": "testUser1!",
             "avatar": "testUser1.webp",
             "isPublic": 1,
-            "listIsPublic": 1
+            "lists": [
+                {
+                    "title": "classics",
+                    "isPublic": 1,
+                    "books": [
+                        "Pride and Prejudice",
+                        "Jane Eyre",
+                        "The Great Gatsby",
+                        "To Kill a Mockingbird"
+                    ]
+                },
+                {
+                    "title": "fantasy",
+                    "isPublic": 1,
+                    "books": [
+                        "The Hobbit",
+                        "A Game of Thrones",
+                        "The Name of the Wind",
+                        "The Way of Kings"
+                    ]
+                },
+                {
+                    "title": "to read",
+                    "books": [
+                        "The Book Thief",
+                        "The Kite Runner",
+                        "Life of Pi"
+                    ]
+                }
+            ]
         },
         {
             "username": "testUser2",
             "password": "testUser2!",
-            "avatar": "testUser2.webp"
+            "avatar": "testUser2.webp",
+            "lists": [
+                {
+                    "title": "sci-fi",
+                    "books": [
+                        "Dune",
+                        "Ender's Game",
+                        "The Hitchhiker's Guide to the Galaxy",
+                        "Fahrenheit 451",
+                        "1984"
+                    ]
+                },
+                {
+                    "title": "children's favourites",
+                    "books": [
+                        "Charlotte's Web",
+                        "Matilda",
+                        "Where the Wild Things Are",
+                        "The Lion, the Witch, and the Wardrobe"
+                    ]
+                }
+            ]
         },
         {
             "username": "adminUser",
             "password": "adminUser1!",
             "isAdmin": 1,
-            "avatar": "adminUser.webp"
+            "avatar": "adminUser.webp",
+            "isPublic": 1,
+            "lists": [
+                {
+                    "title": "crime",
+                    "isPublic": 1,
+                    "books": [
+                        "The Girl with the Dragon Tattoo",
+                        "Gone Girl",
+                        "The Da Vinci Code",
+                        "And Then There Were None"
+                    ]
+                }
+            ]
         }
     ]
 }
