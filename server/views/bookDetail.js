@@ -1,11 +1,12 @@
 import { html } from "../tools/html.js";
+import { DEFAULT_COVER } from "./book.js";
 
 export function bookDetailView(ctx) {
     const { user, data: { book, lists } } = ctx;
 
     return html`
     <section class="book">
-        ${book.coverUrl ? html`<img class="cover" src="${book.coverUrl}" alt="Cover of '${book.title}'">` : ""}
+        <img class="cover" src="${book.coverUrl ?? DEFAULT_COVER}" alt="Cover of '${book.title}'">
         <h2>${book.title}</h2>
         <p>by ${book.author}</p>
         ${book.year ? html`<p>Published ${book.year}</p>` : ""}
