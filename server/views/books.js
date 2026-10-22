@@ -11,7 +11,7 @@ export function booksView(ctx) {
             ${q ? html`<p><a href="/books">show all books</a></p>` : ""}
         </header>
         <search>
-            <form class="inline" method="GET" action="/books">
+            <form method="GET" action="/books">
                 <label for="q">Search by title or author</label>
                 <input id="q" type="search" name="q" value="${q}">
                 <button>search</button>

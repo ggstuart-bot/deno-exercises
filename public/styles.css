@@ -516,9 +516,9 @@ form.secondary {
     }
 }
 
-/* Inline forms put the input and button side by side.
+/* A search form puts the input and button side by side.
    The label takes a whole row to itself */
-form.inline {
+search > form {
     grid-template-columns: 1fr auto;
 
     label {
