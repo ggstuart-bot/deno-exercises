@@ -21,8 +21,9 @@ export function myShelvesView(ctx) {
         <h2>New shelf</h2>
         <form class="secondary" method="POST" action="/shelves">
             <label for="title">Title</label>
-            <input id="title" name="title" value="${values?.title ?? ""}">
-            <span class="error">${errors?.title ?? ""}</span>
+            <input id="title" name="title" value="${values?.title ?? ""}"
+                aria-describedby="title-error" aria-invalid="${Boolean(errors?.title)}">
+            <span id="title-error" class="error">${errors?.title ?? ""}</span>
             <button>create</button>
         </form>
     </aside>

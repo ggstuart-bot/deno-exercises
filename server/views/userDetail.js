@@ -33,8 +33,9 @@ function avatarForm(user, errors) {
         <h2>Change avatar</h2>
         <form class="secondary" method="POST" action="/users/${user.id}/avatar" enctype="multipart/form-data">
             <label for="avatar">Avatar</label>
-            <input id="avatar" type="file" name="avatar" accept="${AVATAR_TYPES.join(",")}" required>
-            <span class="error">${errors?.avatar ?? ""}</span>
+            <input id="avatar" type="file" name="avatar" accept="${AVATAR_TYPES.join(",")}" required
+                aria-describedby="avatar-error" aria-invalid="${Boolean(errors?.avatar)}">
+            <span id="avatar-error" class="error">${errors?.avatar ?? ""}</span>
             <button>upload avatar</button>
         </form>`;
 }

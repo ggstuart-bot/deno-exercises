@@ -21,8 +21,9 @@ ${books.map((book) => bookCard(book, removeForm(shelf, book)))}
         <h2>Rename shelf</h2>
         <form class="secondary" method="POST" action="/shelves/${shelf.id}/edit">
             <label for="title">Title</label>
-            <input id="title" name="title" value="${values?.title ?? shelf.title}">
-            <span class="error">${errors?.title ?? ""}</span>
+            <input id="title" name="title" value="${values?.title ?? shelf.title}"
+                aria-describedby="title-error" aria-invalid="${Boolean(errors?.title)}">
+            <span id="title-error" class="error">${errors?.title ?? ""}</span>
             <button>rename</button>
         </form>
         <h2>Visibility</h2>

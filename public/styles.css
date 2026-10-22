@@ -473,9 +473,16 @@ form {
     gap: 0.25rem;
     text-align: start;
 
-    span.error {
+    /* Errors keep the text colour, so they pass 4.5:1 on any panel,
+       with an orangered bar to mark them out. An empty one takes no space */
+    .error {
+        padding-inline-start: 0.5em;
+        border-inline-start: 0.25em solid var(--highlight);
         font-size: 0.8em;
-        color: var(--highlight);
+
+        &:empty {
+            display: none;
+        }
     }
 }
 
