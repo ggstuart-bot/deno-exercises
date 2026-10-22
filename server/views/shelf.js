@@ -36,7 +36,8 @@ ${books.map((book) => bookCard(book, removeForm(shelf, book)))}
     `;
 }
 
-function visibilityControls(user, shelf) {
+// Also used as the card footer on My shelves
+export function visibilityControls(user, shelf) {
     if (shelf.isPublic) {
         return html`<p>Anyone signed in can see this shelf</p>
         <form method="POST" action="/shelves/${shelf.id}/unpublish">
