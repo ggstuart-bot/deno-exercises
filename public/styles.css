@@ -59,10 +59,18 @@ h2 {
     font-size: 1.17em;
 }
 
-a,
+/* Images never spill out of their container */
+img {
+    max-inline-size: 100%;
+}
+
 input,
 button {
     font: inherit;
+}
+
+/* Lets an input shrink in a narrow grid or flex row */
+input {
     min-inline-size: 0;
 }
 
@@ -111,7 +119,7 @@ body {
         justify-content: space-between;
         align-items: center;
         gap: 1rem;
-        padding: 0.5rem 1rem;
+        padding: 1.5rem 1rem;
     }
 
     > main {
@@ -193,7 +201,6 @@ body > header.secondary {
     background-image: linear-gradient(var(--overlay), var(--overlay)), url(/assets/banner.webp);
     background-position: center;
     background-size: cover;
-    padding-block: 1.5rem;
 
     > * {
         padding: 0.5rem;
@@ -215,18 +222,15 @@ body > header {
     }
 }
 
-/* The logo and site name, as one link */
+/* The logo and site name, as one link. Underlined on hover like other
+   links, so it's clearly a link. Focus uses the normal ring */
 .brand {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: inherit;
     font-size: 1.4em;
     font-weight: 200;
-    text-decoration: none;
 
-    /* Underlined on hover like other links, so it's clearly a link.
-       Focus uses the normal ring */
     &:hover {
         text-decoration: underline;
     }
@@ -283,7 +287,6 @@ body > header nav :is(a, button) {
 /* Avatars and book images */
 .avatar {
     --size: 8rem;
-    display: inline-block;
     inline-size: var(--size);
     block-size: var(--size);
     border-radius: 50%;
@@ -307,10 +310,6 @@ a:has(> .avatar) {
     gap: 0.5ch;
 }
 
-.cover {
-    max-inline-size: 100%;
-}
-
 .admin {
     padding: 0.25ch 0.5ch;
     border: 1px solid currentColor;
@@ -320,7 +319,6 @@ a:has(> .avatar) {
 
 /* Striped lists. Mixing in the text colour works on light and dark pages */
 .striped {
-    display: grid;
     padding: 0;
     list-style: none;
 }
@@ -340,10 +338,6 @@ a:has(> .avatar) {
         display: flex;
         align-items: center;
         gap: 1ch;
-    }
-
-    form {
-        display: inline;
     }
 }
 
@@ -427,10 +421,8 @@ a:has(> .avatar) {
     margin-block: 0.5rem;
     margin-inline-start: 0.5rem;
 
+    /* The width and height attributes size the images */
     img {
-        inline-size: 4rem;
-        block-size: auto;
-        aspect-ratio: 2 / 3;
         object-fit: cover;
         border-inline-end: 2px solid var(--bg);
     }
@@ -455,7 +447,7 @@ body > header nav a[aria-current="page"] {
    The gap spaces its children, so they lose their own top and bottom margins */
 section.list {
     display: grid;
-    place-content: start stretch;
+    align-content: start;
     gap: 1rem;
     margin-block: 0.5rem;
 
@@ -527,12 +519,11 @@ form.secondary {
 }
 
 /* Inline forms put the input and button side by side.
-   A label or error takes a whole row to itself */
+   The label takes a whole row to itself */
 form.inline {
     grid-template-columns: 1fr auto;
 
-    label,
-    .error {
+    label {
         grid-column: 1 / -1;
     }
 }

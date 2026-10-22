@@ -6,7 +6,7 @@ export function bookDetailView(ctx) {
 
     return html`
     <section class="book">
-        <img class="cover" src="${book.coverUrl ?? DEFAULT_COVER}" alt="Cover of '${book.title}'">
+        <img src="${book.coverUrl ?? DEFAULT_COVER}" alt="Cover of '${book.title}'">
         <h1>${book.title}</h1>
         <p>by ${book.author}</p>
         ${book.year ? html`<p>Published ${book.year}</p>` : ""}
