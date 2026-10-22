@@ -148,7 +148,9 @@ main:has(> aside) {
    A light see-through layer of --bg tints the whole header, so the books
    still show. The logo and the nav each sit on a stronger panel that also
    blurs the image behind it (backdrop-filter), so the text stays readable.
-   A one-colour gradient is how you put a colour on top of a background image */
+   A one-colour gradient is how you put a colour on top of a background image.
+   Banner photo: Tima Miroshnichenko, https://www.pexels.com/photo/books-on-brown-wooden-shelf-9572370/
+   (Pexels License, free to use), cropped to 2560x720 */
 body > header.secondary {
     --overlay: color-mix(in oklab, var(--bg) 40%, transparent);
     background-image: linear-gradient(var(--overlay), var(--overlay)), url(/assets/banner.webp);
