@@ -38,9 +38,12 @@ body,
 
 /* ========== Base elements ========== */
 
+/* One text size for the whole page. Everything else is sized in em
+   from it, so headings, buttons and cards all follow */
 body {
     margin: 0;
     font-family: system-ui;
+    font-size: 1.125rem;
     font-weight: 300;
 }
 
@@ -135,7 +138,6 @@ body {
        first child, so every page starts at the same height */
     > main {
         display: grid;
-        font-size: 1.4em;
 
         > * {
             padding: 1rem;
@@ -330,7 +332,7 @@ a:has(> .avatar) {
     padding: 0.25ch 0.5ch;
     border: 1px solid currentColor;
     border-radius: 1em;
-    font-size: 0.6em;
+    font-size: 0.75em;
 }
 
 /* Striped lists. Mixing in the text colour works on light and dark pages */
@@ -366,7 +368,6 @@ a:has(> .avatar) {
     border-radius: 0.5rem;
     overflow: clip;
     background: var(--tint);
-    font-size: 1rem;
 
     > img {
         inline-size: 100%;
