@@ -74,8 +74,10 @@ input {
     min-inline-size: 0;
 }
 
-/* One focus ring for links, buttons and inputs */
-:is(a, input, button):focus-visible {
+/* One focus ring for links, buttons and inputs.
+   A card shows it round the whole card instead of its title link */
+:is(a, input, button):focus-visible,
+.card:has(:is(h2, h3) a:focus-visible) {
     outline: 2px solid var(--focus);
     outline-offset: 2px;
 }
@@ -102,6 +104,12 @@ a {
     text-decoration-color: var(--highlight);
     text-decoration-thickness: 0.1em;
     text-underline-offset: 0.2em;
+}
+
+/* The current page, in the header nav or a pagination row */
+[aria-current="page"] {
+    font-weight: 600;
+    text-decoration: none;
 }
 
 
@@ -159,31 +167,30 @@ main:has(> aside) {
     }
 }
 
-/* As many equal columns as fit, with no media queries.
-   Usually a <ul>, so the bullets and padding go */
+/* Lists used for layout lose their bullets and indent */
+:is(.grid, .row, .striped) {
+    padding: 0;
+    list-style: none;
+}
+
+/* As many equal columns as fit, with no media queries */
 .grid {
     --column: 10rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(var(--column), 1fr));
     gap: 1rem;
-    padding: 0;
-    list-style: none;
 
     &.wide {
         --column: 20rem;
     }
 }
 
-
-/* Items side by side in a row, wrapping if they don't fit.
-   Usually a <ul>, so the bullets and padding go */
+/* Items side by side in a row, wrapping if they don't fit */
 .row {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 1rem;
-    padding: 0;
-    list-style: none;
 }
 
 
@@ -208,9 +215,7 @@ body > header.secondary {
         background: color-mix(in oklab, var(--bg) 75%, transparent);
         backdrop-filter: blur(8px);
     }
-}
 
-body > header {
     a {
         text-decoration: none;
     }
@@ -256,6 +261,13 @@ body > header nav :is(a, button) {
     &:has(img) {
         padding-inline-start: 0;
     }
+}
+
+/* The current page's pill is filled in: the text and panel colours swap.
+   The a in the selector makes it win over the button rule's :hover */
+body > header nav a[aria-current="page"] {
+    background: contrast-color(var(--bg));
+    color: var(--bg);
 }
 
 /* Flash message, slides in from the right.
@@ -318,11 +330,6 @@ a:has(> .avatar) {
 }
 
 /* Striped lists. Mixing in the text colour works on light and dark pages */
-.striped {
-    padding: 0;
-    list-style: none;
-}
-
 .striped > li {
     display: flex;
     justify-content: space-between;
@@ -396,7 +403,7 @@ a:has(> .avatar) {
         z-index: 1;
     }
 
-    /* The ring goes round the whole card instead of the title.
+    /* The card shows the focus ring (see base), not the title.
        Links in the footer keep their own ring */
     :is(h2, h3) a:focus-visible {
         outline: none;
@@ -405,21 +412,15 @@ a:has(> .avatar) {
     &:hover {
         background: var(--tint-strong);
     }
-
-    /* The same ring as everything else, round the whole card */
-    &:has(:is(h2, h3) a:focus-visible) {
-        outline: 2px solid var(--focus);
-        outline-offset: 2px;
-    }
 }
 
-/* A fanned row of small covers, e.g. on a shelf card */
+/* A fanned row of small covers on a shelf card, or a note if it's empty.
+   Padding rather than margin, so .card p { margin: 0 } can't undo it */
 .covers {
     display: flex;
     align-items: center;
     block-size: 6rem;
-    margin-block: 0.5rem;
-    margin-inline-start: 0.5rem;
+    padding: 0.5rem 0 0.5rem 0.5rem;
 
     /* The width and height attributes size the images */
     img {
@@ -434,13 +435,6 @@ a:has(> .avatar) {
 
 p.covers {
     font-style: italic;
-}
-
-/* The current page's pill is filled in: the text and panel colours swap.
-   The a in the selector makes it win over the button rule's :hover */
-body > header nav a[aria-current="page"] {
-    background: contrast-color(var(--bg));
-    color: var(--bg);
 }
 
 /* A list section with a heading, an optional form and a list.
@@ -526,10 +520,4 @@ form.inline {
     label {
         grid-column: 1 / -1;
     }
-}
-
-/* The current page in a pagination row */
-[aria-current="page"] {
-    font-weight: 600;
-    text-decoration: none;
 }
