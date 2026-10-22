@@ -130,11 +130,20 @@ body {
         padding: 1.5rem 1rem;
     }
 
+    /* main holds a section and sometimes an aside. Each has its own padding,
+       so the aside's shading reaches the edges, and nothing sits above its
+       first child, so every page starts at the same height */
     > main {
         display: grid;
-        gap: 1rem;
-        padding: 0.5rem 1rem;
         font-size: 1.4em;
+
+        > * {
+            padding: 1rem;
+        }
+
+        > * > :first-child {
+            margin-block-start: 0;
+        }
     }
 
     > footer {
@@ -150,19 +159,13 @@ body {
     }
 }
 
-/* Pages with an aside get a second column on wide screens */
-main:has(> aside) {
-    padding: 0;
+/* The aside is shaded, and becomes a second column on wide screens */
+main > aside {
+    background: color-mix(in srgb, currentColor 5%, transparent);
+}
 
-    > * {
-        padding-inline: 1rem;
-    }
-
-    > aside {
-        background: color-mix(in srgb, currentColor 5%, transparent);
-    }
-
-    @media (width > 800px) {
+@media (width > 800px) {
+    main:has(> aside) {
         grid-template-columns: 1fr auto;
     }
 }
@@ -443,7 +446,6 @@ section.list {
     display: grid;
     align-content: start;
     gap: 1rem;
-    margin-block: 0.5rem;
 
     > * {
         margin-block: 0;
