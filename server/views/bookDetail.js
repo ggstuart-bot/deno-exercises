@@ -5,7 +5,7 @@ export function bookDetailView(ctx) {
     const { user, data: { book, shelves } } = ctx;
 
     return html`
-    <section class="book">
+    <section>
         <header>
             <h1>${book.title}</h1>
             <p>by ${book.author}</p>
