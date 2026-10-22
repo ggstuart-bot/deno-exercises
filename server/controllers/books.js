@@ -13,7 +13,7 @@ export function booksController(ctx) {
     ctx.data.page = page;
     ctx.data.books = searchBooks(q, page);
     ctx.data.hasNext = page * PAGE_SIZE < countBooks(q);
-    ctx.data.title = "Books";
+    ctx.data.title = q ? `Books matching "${q}"` : "Books";
     return render(booksView, ctx);
 }
 
