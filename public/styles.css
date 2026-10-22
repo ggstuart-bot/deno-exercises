@@ -464,39 +464,40 @@ section.center {
     }
 }
 
-/* Forms */
+/* Forms are a one-column grid: each label, input, error and button
+   sits on its own row in source order, so labels go above their inputs.
+   Grid rather than flow, so that gap spaces the rows evenly */
 form {
     display: grid;
     place-self: start;
-    gap: 0.5ch;
+    gap: 0.25rem;
+    text-align: start;
 
-    span.error {
-        grid-column: span 2;
-        text-align: end;
+    /* Errors keep the text colour, so they pass 4.5:1 on any panel,
+       with an orangered bar to mark them out. An empty one takes no space */
+    .error {
+        padding-inline-start: 0.5em;
+        border-inline-start: 0.25em solid var(--highlight);
         font-size: 0.8em;
-        color: var(--highlight);
+
+        &:empty {
+            display: none;
+        }
     }
 }
 
-/* Forms with labels are dark panels with labels beside the inputs */
-form:has(label) {
-    grid-template-columns: auto 1fr;
-    padding: 2rem;
-    --focus: white;
-    background: linear-gradient(45deg, #555, #222);
-    color: white;
+/* A form with fields is a .secondary panel */
+form.secondary {
+    padding: 1.5rem;
 
-    label {
-        text-align: end;
-
-        &::after {
-            content: ":";
-        }
+    /* A little more space above each field after the first, and the button */
+    label:not(:first-of-type),
+    button {
+        margin-block-start: 0.5rem;
     }
 
     button {
-        grid-column: -2;
-        place-self: end;
+        justify-self: start;
     }
 }
 
