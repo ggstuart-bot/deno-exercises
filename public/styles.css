@@ -20,7 +20,8 @@
 
 /* Set --bg and the text colour follows it */
 body,
-.secondary {
+.secondary,
+#flash {
     background: var(--bg);
     color: contrast-color(var(--bg));
 }
@@ -232,14 +233,15 @@ body > header nav :is(a, button) {
     }
 }
 
-/* Flash message, slides in from the right */
+/* Flash message, slides in from the right.
+   Its --bg is the highlight, and contrast-color() picks the text colour */
 #flash {
+    --bg: var(--highlight);
     position: fixed;
     inset-inline-end: 0;
     inset-block-start: 4em;
-    padding-inline: 2rem;
-    background: var(--highlight);
-    color: white;
+    margin: 0;
+    padding: 0.5em 2rem;
     font-weight: 400;
     translate: calc(100% - 1rem);
     transition: translate 200ms;
