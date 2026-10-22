@@ -1,4 +1,5 @@
 import { html } from "../tools/html.js";
+import { shelfCard } from "./shelfCard.js";
 
 export function myShelvesView(ctx) {
     const { data: { shelves, errors, values } } = ctx;
@@ -7,8 +8,8 @@ export function myShelvesView(ctx) {
     <section>
         <h2>My shelves</h2>
         ${shelves.length
-            ? html`<ul class="striped">
-${shelves.map(shelfToHTML)}
+            ? html`<ul class="grid wide">
+${shelves.map((shelf) => shelfCard(shelf))}
         </ul>`
             : html`<p>You don't have any shelves yet</p>`}
     </section>
@@ -22,11 +23,4 @@ ${shelves.map(shelfToHTML)}
         </form>
     </aside>
     `;
-}
-
-function shelfToHTML(shelf) {
-    return html`            <li>
-                <a href="/shelves/${shelf.id}">${shelf.title}</a>
-                <span>${shelf.bookCount} ${shelf.bookCount === 1 ? "book" : "books"}</span>
-            </li>`;
 }

@@ -1,4 +1,5 @@
 import { html } from "../tools/html.js";
+import { shelfCard } from "./shelfCard.js";
 import { canChangeAdmin, canChangeAvatar, canPublishProfile } from "../tools/permissions.js";
 import { adminButton } from "./users.js";
 import { avatarImage } from "./avatar.js";
@@ -14,8 +15,8 @@ export function userDetailView(ctx) {
         ${targetUser.isAdmin ? html`<p><span class="admin">admin</span></p>` : ""}
         <h3>Public shelves</h3>
         ${publicShelves.length
-            ? html`<ul class="striped">
-${publicShelves.map(shelfToHTML)}
+            ? html`<ul class="grid wide">
+${publicShelves.map((shelf) => shelfCard(shelf))}
         </ul>`
             : html`<p>No public shelves</p>`}
     </section>
@@ -53,11 +54,4 @@ function visibilityForm(user) {
         <form method="POST" action="/users/${user.id}/publish">
             <button>make profile public</button>
         </form>`;
-}
-
-function shelfToHTML(shelf) {
-    return html`            <li>
-                <a href="/shelves/${shelf.id}">${shelf.title}</a>
-                <span>${shelf.bookCount} ${shelf.bookCount === 1 ? "book" : "books"}</span>
-            </li>`;
 }

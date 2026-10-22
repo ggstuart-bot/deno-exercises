@@ -114,11 +114,16 @@ main:has(> aside) {
 /* As many equal columns as fit, with no media queries.
    Usually a <ul>, so the bullets and padding go */
 .grid {
+    --column: 10rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(var(--column), 1fr));
     gap: 1rem;
     padding: 0;
     list-style: none;
+
+    &.wide {
+        --column: 14rem;
+    }
 }
 
 
@@ -309,6 +314,30 @@ a:has(> .avatar) {
         outline: 2px solid var(--highlight);
         outline-offset: 2px;
     }
+}
+
+/* A fanned row of small covers, e.g. on a shelf card */
+.covers {
+    display: flex;
+    align-items: center;
+    block-size: 6rem;
+    margin: 0;
+
+    img {
+        inline-size: 4rem;
+        block-size: auto;
+        aspect-ratio: 2 / 3;
+        object-fit: cover;
+        border-inline-end: 2px solid var(--bg);
+    }
+
+    img + img {
+        margin-inline-start: -2rem;
+    }
+}
+
+p.covers {
+    font-style: italic;
 }
 
 /* A list section with a heading, an optional form and a list */
