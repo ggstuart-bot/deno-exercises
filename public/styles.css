@@ -8,6 +8,9 @@
     /* The accent colour is --highlight, not --primary */
     --highlight: orangered;
     --bg: var(--primary);
+    /* Focus rings. Plain orangered is under 3:1 on the light grey cards,
+       so light mode uses a darker mix of it */
+    --focus: light-dark(color-mix(in oklab, var(--highlight), black 30%), var(--highlight));
     /* Shading made from the text colour, so it works on light and dark
        backgrounds. currentColor is worked out where var() is used,
        not here, so it matches the text colour of that element */
@@ -22,9 +25,12 @@ body,
     color: contrast-color(var(--bg));
 }
 
-/* Stands out from the page, e.g. the site header and footer */
+/* Stands out from the page, e.g. the site header and footer.
+   Orangered is only about 2:1 on it, so focus rings use the text colour.
+   (Not currentColor: an input's currentColor is its own field text) */
 .secondary {
     --bg: var(--secondary);
+    --focus: contrast-color(var(--bg));
     background-image: linear-gradient(var(--bg), color-mix(in srgb, var(--bg), white 20%));
 }
 
@@ -57,10 +63,12 @@ input,
 button {
     font: inherit;
     min-inline-size: 0;
+}
 
-    &:focus-visible {
-        outline-color: var(--highlight);
-    }
+/* One focus ring for links, buttons and inputs */
+:is(a, input, button):focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
 }
 
 /* Buttons are a tint of the text colour with a thin border, so they read
@@ -207,11 +215,6 @@ body > header {
     svg {
         inline-size: 2.4rem;
         block-size: 2.4rem;
-    }
-
-    &:focus-visible {
-        outline: 2px solid currentColor;
-        outline-offset: 4px;
     }
 }
 
@@ -386,8 +389,9 @@ a:has(> .avatar) {
         background: var(--tint-strong);
     }
 
+    /* The same ring as everything else, round the whole card */
     &:has(:is(h2, h3) a:focus-visible) {
-        outline: 2px solid var(--highlight);
+        outline: 2px solid var(--focus);
         outline-offset: 2px;
     }
 }
@@ -476,6 +480,7 @@ form {
 form:has(label) {
     grid-template-columns: auto 1fr;
     padding: 2rem;
+    --focus: white;
     background: linear-gradient(45deg, #555, #222);
     color: white;
 
