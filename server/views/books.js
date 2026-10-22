@@ -2,12 +2,13 @@ import { html } from "../tools/html.js";
 import { bookCard } from "./book.js";
 
 export function booksView(ctx) {
-    const { data: { books, q, page, hasNext } } = ctx;
+    const { data: { title, books, q, page, hasNext } } = ctx;
 
     return html`
     <section class="list">
         <header>
-            <h1>Books</h1>
+            <h1>${title}</h1>
+            ${q ? html`<p><a href="/books">show all books</a></p>` : ""}
         </header>
         <search>
             <form class="inline" method="GET" action="/books">
@@ -20,7 +21,7 @@ export function booksView(ctx) {
             ? html`<ul class="grid">
 ${books.map((book) => bookCard(book))}
         </ul>`
-            : html`<p>No books found</p>`}
+            : html`<p>${q ? `No books match "${q}"` : "No books found"}</p>`}
         ${pagination(q, page, hasNext)}
     </section>
     `;
@@ -38,6 +39,8 @@ function pagination(q, page, hasNext) {
         </nav>`;
 }
 
+// Only keep q in the link if there's a search
 function pageUrl(q, page) {
-    return `/books?${new URLSearchParams({ q, page })}`;
+    const params = q ? { q, page } : { page };
+    return `/books?${new URLSearchParams(params)}`;
 }
