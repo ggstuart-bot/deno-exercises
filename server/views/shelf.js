@@ -40,7 +40,7 @@ ${books.map((book) => bookCard(book, removeForm(shelf, book)))}
 // Who can see the shelf, then the button, or a link if the profile is private
 function visibilityControls(user, shelf) {
     if (shelf.isPublic) {
-        return html`<p>Anyone signed in can see this shelf</p>
+        return html`<p>Anyone can see this shelf</p>
         ${visibilityButton(user, shelf)}`;
     }
     if (canPublishShelf(user, shelf)) {

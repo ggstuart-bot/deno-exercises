@@ -12,7 +12,7 @@ export function myShelvesView(ctx) {
         <h1>My shelves</h1>
         <p>Bookshelves help you organise your books</p>
         <h2>Public shelves</h2>
-        ${shelfList(user, publicShelves, "Anyone signed in can see these shelves", "No public shelves yet")}
+        ${shelfList(user, publicShelves, "Anyone can see these shelves", "No public shelves yet")}
         <h2>Private shelves</h2>
         ${shelfList(user, privateShelves, "Only you can see these shelves", "No private shelves yet")}
         ${user.isPublic ? "" : html`<p><a href="/profile">Publish your profile</a> to share shelves</p>`}
