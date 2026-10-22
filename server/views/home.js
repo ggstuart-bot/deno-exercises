@@ -8,10 +8,13 @@ export function homeView(ctx) {
     return html`
     <section>
         <h1>Find a book</h1>
-        <form class="inline" method="GET" action="/books">
-            <input name="q" aria-label="Search books" placeholder="search by title or author">
-            <button>search</button>
-        </form>
+        <search>
+            <form class="inline" method="GET" action="/books">
+                <label for="q">Search by title or author</label>
+                <input id="q" type="search" name="q">
+                <button>search</button>
+            </form>
+        </search>
         <h2>Public shelves</h2>
         ${publicShelves.length
             ? html`<ul class="grid wide">
