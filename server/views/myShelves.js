@@ -9,8 +9,10 @@ export function myShelvesView(ctx) {
 
     return html`
     <section>
-        <h1>My shelves</h1>
-        <p>Bookshelves help you organise your books</p>
+        <header>
+            <h1>My shelves</h1>
+            <p>Bookshelves help you organise your books</p>
+        </header>
         <h2>Public shelves</h2>
         ${shelfList(user, publicShelves, "Anyone can see these shelves", "No public shelves yet")}
         <h2>Private shelves</h2>

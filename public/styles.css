@@ -445,9 +445,10 @@ p.covers {
     font-style: italic;
 }
 
-/* A list section with a heading, an optional form and a list.
-   The gap spaces its children, so they lose their own top and bottom margins */
-section.list {
+/* Every page's section: a header with the h1 and an optional intro,
+   then the content. It's a grid, so the gap spaces its children
+   and they lose their own top and bottom margins */
+main > section {
     display: grid;
     align-content: start;
     gap: 1rem;
@@ -457,15 +458,11 @@ section.list {
     }
 
     > header {
-        h1,
-        p {
-            margin: 0;
-        }
+        display: grid;
+        gap: 0.5rem;
 
-        p {
-            display: flex;
-            gap: 1ch;
-            font-size: 0.8em;
+        > * {
+            margin: 0;
         }
     }
 }

@@ -4,8 +4,10 @@ export function signinView(ctx) {
     const { data: { errors, values } } = ctx;    
     return html`
     <section class="center">
-        <h1>Sign in</h1>
-        <p>Don't have an account? <a href="/signup">sign up</a> to gain access.</p>
+        <header>
+            <h1>Sign in</h1>
+            <p>Don't have an account? <a href="/signup">sign up</a> to gain access.</p>
+        </header>
         <form class="secondary" method="POST">
             <span id="credentials-error" class="error">${errors?.credentials ?? ""}</span>
             <label for="username">Username</label>

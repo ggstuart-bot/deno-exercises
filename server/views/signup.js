@@ -4,8 +4,10 @@ export function signupView(ctx) {
     const { data: { errors, values } } = ctx;
     return html`
     <section class="center">
-        <h1>Sign up</h1>
-        <p>Already have an account? <a href="/signin">sign in</a> to gain access.</p>
+        <header>
+            <h1>Sign up</h1>
+            <p>Already have an account? <a href="/signin">sign in</a> to gain access.</p>
+        </header>
         <form class="secondary" method="POST">
             <label for="username">Username</label>
             <input id="username" name="username" autocomplete="username" value="${values?.username ?? ""}"

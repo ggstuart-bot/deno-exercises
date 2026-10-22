@@ -5,7 +5,7 @@ export function booksView(ctx) {
     const { data: { title, books, q, page, hasNext } } = ctx;
 
     return html`
-    <section class="list">
+    <section>
         <header>
             <h1>${title}</h1>
             ${q ? html`<p><a href="/books">show all books</a></p>` : ""}

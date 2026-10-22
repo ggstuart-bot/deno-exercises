@@ -6,7 +6,7 @@ export function shelfView(ctx) {
     const { user, data: { shelf, books, errors, values } } = ctx;
 
     return html`
-    <section class="list">
+    <section>
         <header>
             <h1>${shelf.title}</h1>
         </header>
