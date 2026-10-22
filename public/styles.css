@@ -264,6 +264,11 @@ body > header nav :is(a, button) {
     &:has(img) {
         padding-inline-start: 0;
     }
+
+    /* The avatar pokes out a little, so the pill stays one line high */
+    .avatar {
+        margin-block: -0.25em;
+    }
 }
 
 /* The current page's pill is filled in: the text and panel colours swap.
@@ -299,7 +304,7 @@ body > header nav a[aria-current="page"] {
     }
 }
 
-/* Avatars and book images */
+/* A round avatar. Big on its own (a profile), small inside a link */
 .avatar {
     --size: 8rem;
     inline-size: var(--size);
@@ -310,19 +315,15 @@ body > header nav a[aria-current="page"] {
     background: #ccc;
 }
 
-nav .avatar {
-    --size: 1.4em;
-    margin-block: -0.2em;
-}
-
-li .avatar {
-    --size: 2em;
-}
-
+/* A link with a small avatar before the name */
 a:has(> .avatar) {
     display: inline-flex;
     align-items: center;
     gap: 0.5ch;
+
+    > .avatar {
+        --size: 1.5em;
+    }
 }
 
 .admin {
@@ -463,10 +464,6 @@ section.list {
             display: flex;
             gap: 1ch;
             font-size: 0.8em;
-        }
-
-        .avatar {
-            --size: 1.2em;
         }
     }
 }
