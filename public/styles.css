@@ -169,6 +169,7 @@ body > header {
 
     nav {
         display: flex;
+        flex-wrap: wrap;
         gap: 0.5ch;
     }
 }
