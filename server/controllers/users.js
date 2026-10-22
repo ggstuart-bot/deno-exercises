@@ -1,5 +1,6 @@
 import { createUser, getUsers, updateAvatarId, updateIsAdmin, updateUserIsPublic } from "../models/users.js";
 import { getPublicShelvesByOwnerId, unpublishShelvesByOwnerId } from "../models/shelves.js";
+import { addThumbnails } from "../models/shelfBooks.js";
 import { createFile, deleteFile, getFile } from "../models/files.js";
 import { NotFoundError } from "../tools/errors.js";
 import { redirect } from "../tools/redirect.js";
@@ -26,7 +27,7 @@ export function usersController(ctx) {
 
 export function userController(ctx) {
     const { data: { targetUser } } = ctx;
-    ctx.data.publicShelves = getPublicShelvesByOwnerId(targetUser.id);
+    ctx.data.publicShelves = addThumbnails(getPublicShelvesByOwnerId(targetUser.id));
     return render(userDetailView, ctx);
 }
 
