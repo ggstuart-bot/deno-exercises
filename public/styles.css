@@ -225,6 +225,12 @@ body > header {
     font-weight: 200;
     text-decoration: none;
 
+    /* Underlined on hover like other links, so it's clearly a link.
+       Focus uses the normal ring */
+    &:hover {
+        text-decoration: underline;
+    }
+
     svg {
         inline-size: 2.4rem;
         block-size: 2.4rem;
@@ -234,6 +240,9 @@ body > header {
 /* Header links and the sign out button look like buttons (see base),
    made into pills */
 body > header nav :is(a, button) {
+    /* Stronger shading than elsewhere, so the pills stand out over the banner */
+    --tint: color-mix(in srgb, currentColor 15%, transparent);
+    --tint-strong: color-mix(in srgb, currentColor 25%, transparent);
     padding: 0.25em 0.5em;
     border-radius: 1em;
     font-size: 1.2em;
