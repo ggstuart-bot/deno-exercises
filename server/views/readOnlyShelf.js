@@ -1,6 +1,6 @@
 import { html } from "../tools/html.js";
 import { avatarImage } from "./avatar.js";
-import { bookSummary } from "./book.js";
+import { bookCard } from "./book.js";
 
 export function readOnlyShelfView(ctx) {
     const { data: { shelf, books, owner } } = ctx;
@@ -11,14 +11,10 @@ export function readOnlyShelfView(ctx) {
             <h2>${shelf.title}</h2>
             <p>A public shelf by <a href="/users/${owner.id}">${avatarImage(owner)}${owner.username}</a></p>
         </header>
-        <ul>
-${books.map(bookToHTML)}
+        <ul class="grid">
+${books.map((book) => bookCard(book))}
         </ul>
         <p><a href="/">Back to home</a></p>
     </section>
     `;
-}
-
-function bookToHTML(book) {
-    return html`            <li>${bookSummary(book)}</li>`;
 }

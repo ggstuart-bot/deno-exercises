@@ -14,7 +14,7 @@ export function userDetailView(ctx) {
         ${targetUser.isAdmin ? html`<p><span class="admin">admin</span></p>` : ""}
         <h3>Public shelves</h3>
         ${publicShelves.length
-            ? html`<ul>
+            ? html`<ul class="striped">
 ${publicShelves.map(shelfToHTML)}
         </ul>`
             : html`<p>No public shelves</p>`}
