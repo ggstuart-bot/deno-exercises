@@ -192,16 +192,14 @@ body > header nav :is(a, button) {
     padding: 0.25em 0.5em;
     border: 0.5px solid currentColor;
     border-radius: 1em;
-    background: transparent;
+    background: var(--tint);
     color: inherit;
     font-size: 1.2em;
     line-height: 1;
     text-wrap: nowrap;
-    backdrop-filter: brightness(0.8);
-    transition: backdrop-filter 300ms;
 
     &:hover {
-        backdrop-filter: brightness(0.6);
+        background: var(--tint-strong);
     }
 
     &:has(img) {
