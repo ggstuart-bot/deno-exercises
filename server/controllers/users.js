@@ -10,6 +10,7 @@ import { usersView } from "../views/users.js";
 import { userDetailView } from "../views/userDetail.js";
 
 export function signupFormController(ctx) { 
+    ctx.data.title = "Sign up";
     return render(signupView, ctx);
 }
 
@@ -22,12 +23,14 @@ export async function createUserController(ctx) {
 
 export function usersController(ctx) {
     ctx.data.users = getUsers();
+    ctx.data.title = "Users";
     return render(usersView, ctx);
 }
 
 export function userController(ctx) {
     const { data: { targetUser } } = ctx;
     ctx.data.publicShelves = addThumbnails(getPublicShelvesByOwnerId(targetUser.id));
+    ctx.data.title = targetUser.username;
     return render(userDetailView, ctx);
 }
 

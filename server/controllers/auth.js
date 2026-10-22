@@ -7,6 +7,7 @@ import { signinView } from "../views/signin.js";
 import { forbiddenView } from "../views/forbidden.js";
 
 export function signinFormController(ctx) {
+    ctx.data.title = "Sign in";
     return render(signinView, ctx);
 }
 
@@ -17,6 +18,7 @@ export async function signinController(ctx) {
         ctx.data.values = { username };
         ctx.data.errors = { credentials: `Invalid credentials` };
         ctx.status = 401;
+        ctx.data.title = "Sign in";
         return render(signinView, ctx);
     }
     signin(user.id, ctx);
@@ -43,5 +45,6 @@ export function alreadySignedInRedirectController(ctx) {
 
 export function forbiddenController(ctx) {
     ctx.status = 403;
+    ctx.data.title = "Forbidden";
     return render(forbiddenView, ctx);
 }

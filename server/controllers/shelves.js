@@ -11,6 +11,7 @@ import { readOnlyShelfView } from "../views/readOnlyShelf.js";
 export function myShelvesController(ctx) {
     const { user } = ctx;
     ctx.data.shelves = addThumbnails(getShelvesByOwnerId(user.id));
+    ctx.data.title = "My shelves";
     return render(myShelvesView, ctx);
 }
 
@@ -25,9 +26,11 @@ export function shelfController(ctx) {
     const { user, data: { shelf } } = ctx;
     ctx.data.books = getBooksByShelfId(shelf.id);
     if (canUseShelf(user, shelf)) {
+        ctx.data.title = shelf.title;
         return render(shelfView, ctx);
     }
     ctx.data.owner = getUserById(shelf.ownerId);
+    ctx.data.title = shelf.title;
     return render(readOnlyShelfView, ctx);
 }
 
