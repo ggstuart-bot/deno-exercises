@@ -144,15 +144,22 @@ main:has(> aside) {
 
 /* ========== Components ========== */
 
-/* Site header, with a banner image under a see-through layer of --bg
-   so the text stays readable. header.secondary wins over .secondary */
+/* Site header, with a sharp banner image. header.secondary wins over .secondary.
+   The logo and the nav each sit on a see-through layer of --bg that
+   blurs the image behind it (backdrop-filter), so the text stays readable
+   and the image stays sharp around them */
 body > header.secondary {
-    background-image:
-        linear-gradient(color-mix(in oklab, var(--bg) 60%, transparent), color-mix(in oklab, var(--bg) 60%, transparent)),
-        url(/assets/banner.webp);
+    background-image: url(/assets/banner.webp);
     background-position: center;
     background-size: cover;
     padding-block: 1.5rem;
+
+    > * {
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        background: color-mix(in oklab, var(--bg) 60%, transparent);
+        backdrop-filter: blur(4px);
+    }
 }
 
 body > header {
