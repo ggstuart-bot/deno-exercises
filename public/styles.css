@@ -267,7 +267,7 @@ a:has(> .avatar) {
     background: color-mix(in srgb, currentColor 10%, transparent);
     font-size: 1rem;
 
-    img {
+    > img {
         inline-size: 100%;
         block-size: auto;
         aspect-ratio: 2 / 3;
