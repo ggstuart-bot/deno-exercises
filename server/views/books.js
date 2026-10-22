@@ -1,5 +1,5 @@
 import { html } from "../tools/html.js";
-import { bookSummary } from "./book.js";
+import { bookCard } from "./book.js";
 
 export function booksView(ctx) {
     const { data: { books, q, page, hasNext } } = ctx;
@@ -14,8 +14,8 @@ export function booksView(ctx) {
             <button>search</button>
         </form>
         ${books.length
-            ? html`<ul class="striped">
-${books.map(bookToHTML)}
+            ? html`<ul class="grid">
+${books.map((book) => bookCard(book))}
         </ul>`
             : html`<p>No books found</p>`}
         <p>
@@ -29,8 +29,4 @@ ${books.map(bookToHTML)}
 
 function pageUrl(q, page) {
     return `/books?${new URLSearchParams({ q, page })}`;
-}
-
-function bookToHTML(book) {
-    return html`            <li>${bookSummary(book)}</li>`;
 }

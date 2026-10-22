@@ -1,6 +1,6 @@
 import { html } from "../tools/html.js";
 import { canPublishShelf } from "../tools/permissions.js";
-import { bookSummary } from "./book.js";
+import { bookCard } from "./book.js";
 
 export function shelfView(ctx) {
     const { user, data: { shelf, books, errors, values } } = ctx;
@@ -11,8 +11,8 @@ export function shelfView(ctx) {
             <h2>${shelf.title}</h2>
         </header>
         ${books.length
-            ? html`<ul class="striped">
-${books.map((book) => bookToHTML(shelf, book))}
+            ? html`<ul class="grid">
+${books.map((book) => bookCard(book, removeForm(shelf, book)))}
         </ul>`
             : html`<p>No books yet, <a href="/books">find some books</a> to add</p>`}
         <p><a href="/shelves">Back to my shelves</a></p>
@@ -53,11 +53,8 @@ function visibilityControls(user, shelf) {
         <p><a href="/profile">Publish your profile</a> to share shelves</p>`;
 }
 
-function bookToHTML(shelf, book) {
-    return html`            <li>
-                ${bookSummary(book)}
-                <form method="POST" action="/shelves/${shelf.id}/books/${book.id}/delete">
+function removeForm(shelf, book) {
+    return html`<form method="POST" action="/shelves/${shelf.id}/books/${book.id}/delete">
                     <button>remove</button>
-                </form>
-            </li>`;
+                </form>`;
 }

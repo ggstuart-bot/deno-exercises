@@ -111,6 +111,16 @@ main:has(> aside) {
     }
 }
 
+/* As many equal columns as fit, with no media queries.
+   Usually a <ul>, so the bullets and padding go */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
 
 /* ========== Components ========== */
 
@@ -206,11 +216,6 @@ a:has(> .avatar) {
     gap: 0.5ch;
 }
 
-.thumbnail {
-    block-size: 3em;
-    vertical-align: middle;
-}
-
 .cover {
     max-inline-size: 100%;
 }
@@ -248,6 +253,61 @@ a:has(> .avatar) {
 
     form {
         display: inline;
+    }
+}
+
+/* Book cards. The title link stretches over the whole card,
+   so anywhere on the card opens the book */
+.card {
+    position: relative;
+    display: grid;
+    align-content: start;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    background: color-mix(in srgb, currentColor 10%, transparent);
+    font-size: 1rem;
+
+    img {
+        inline-size: 100%;
+        block-size: auto;
+        aspect-ratio: 2 / 3;
+        object-fit: cover;
+    }
+
+    h3,
+    p {
+        margin: 0;
+    }
+
+    h3 {
+        font-size: 1.1em;
+        font-weight: 400;
+    }
+
+    h3 a::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+    }
+
+    /* Keep buttons above the stretched link so they can still be clicked */
+    footer {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* The ring goes round the whole card instead of the title */
+    a:focus-visible {
+        outline: none;
+    }
+
+    &:hover {
+        background: color-mix(in srgb, currentColor 20%, transparent);
+    }
+
+    &:has(a:focus-visible) {
+        outline: 2px solid var(--highlight);
+        outline-offset: 2px;
     }
 }
 
