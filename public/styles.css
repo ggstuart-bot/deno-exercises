@@ -296,14 +296,13 @@ a:has(> .avatar) {
     }
 }
 
-/* Book cards. The title link stretches over the whole card,
-   so anywhere on the card opens the book */
+/* Book and shelf cards: the picture first, then a <div> with the text.
+   The picture goes right to the edge, so the padding is on the <div>.
+   The title link stretches over the whole card, so anywhere on it opens the book or shelf */
 .card {
     position: relative;
     display: grid;
     align-content: start;
-    gap: 0.25rem;
-    padding: 0.5rem;
     background: color-mix(in srgb, currentColor 10%, transparent);
     font-size: 1rem;
 
@@ -312,6 +311,14 @@ a:has(> .avatar) {
         block-size: auto;
         aspect-ratio: 2 / 3;
         object-fit: cover;
+    }
+
+    /* The text is always the last thing in the card */
+    > div:last-child {
+        display: grid;
+        align-content: start;
+        gap: 0.25rem;
+        padding: 0.5rem;
     }
 
     /* The title is an h2 or h3, depending on the page */

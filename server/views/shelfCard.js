@@ -9,9 +9,11 @@ export function shelfCard(shelf, footer = "") {
                 ${shelf.thumbnails.length
                     ? html`<div class="covers">${shelf.thumbnails.map(coverImage)}</div>`
                     : html`<p class="covers">No books yet</p>`}
-                <h3><a href="/shelves/${shelf.id}">${shelf.title}</a></h3>
-                <p>${shelf.bookCount} ${shelf.bookCount === 1 ? "book" : "books"}</p>
-                ${footer ? html`<footer>${footer}</footer>` : ""}
+                <div>
+                    <h3><a href="/shelves/${shelf.id}">${shelf.title}</a></h3>
+                    <p>${shelf.bookCount} ${shelf.bookCount === 1 ? "book" : "books"}</p>
+                    ${footer ? html`<footer>${footer}</footer>` : ""}
+                </div>
             </li>`;
 }
 
