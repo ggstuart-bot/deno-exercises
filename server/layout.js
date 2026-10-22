@@ -1,10 +1,10 @@
-export function layout(content) {
+export function layout(content, ctx) {
     return `
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Bookshelves</title>
+    <title>${ctx.data.title ? `${ctx.data.title} | ` : ""}Bookshelves</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -15,6 +15,9 @@ export function layout(content) {
     ${content}
     </main>
     <footer>
+        <p>
+            <a href="/about">about</a>
+        </p>
         <p>
             &copy; Bookshelves developers
         </p>
