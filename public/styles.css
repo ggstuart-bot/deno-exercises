@@ -174,7 +174,7 @@ main > aside {
 }
 
 /* Lists used for layout lose their bullets and indent */
-:is(.grid, .row, .striped) {
+:is(.grid, .row) {
     padding: 0;
     list-style: none;
 }
@@ -337,26 +337,7 @@ a:has(> .avatar) {
     font-size: 0.75em;
 }
 
-/* Striped lists. Mixing in the text colour works on light and dark pages */
-.striped > li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.25rem 0.5rem;
-    background: var(--tint-strong);
-
-    &:nth-child(even) {
-        background: var(--tint);
-    }
-
-    > span {
-        display: flex;
-        align-items: center;
-        gap: 1ch;
-    }
-}
-
-/* Book and shelf cards: the picture first, then a <div> with the text.
+/* Book, shelf and user cards: the picture first, then a <div> with the text.
    The picture goes right to the edge, so the padding is on the <div>.
    The layout is flex wrap: the text sits beside the picture if there's
    room and wraps underneath if not. A book cover is full width, so its
@@ -371,11 +352,17 @@ a:has(> .avatar) {
     overflow: clip;
     background: var(--tint);
 
-    > img {
+    > img:not(.avatar) {
         inline-size: 100%;
         block-size: auto;
         aspect-ratio: 2 / 3;
         object-fit: cover;
+    }
+
+    /* A user card's picture is their avatar, centred and not stretched */
+    > .avatar {
+        --size: 6rem;
+        margin: 1rem auto 0;
     }
 
     /* The text is always the last thing in the card */
