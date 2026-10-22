@@ -1,0 +1,8 @@
+{
+    "tasks": {
+        "serve": "deno -A tasks/server.js"
+    },
+    "fmt": {
+        "indentWidth": 4
+    }
+}
