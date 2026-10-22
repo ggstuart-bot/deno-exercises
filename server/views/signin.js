@@ -6,7 +6,7 @@ export function signinView(ctx) {
     <section class="center">
         <h1>Sign in</h1>
         <p>Don't have an account? <a href="/signup">sign up</a> to gain access.</p>
-        <form method="POST">
+        <form class="secondary" method="POST">
             <span class="error">${errors?.credentials ?? ""}</span>
             <label for="username">Username</label>
             <input id="username" name="username" value="${values?.username}">

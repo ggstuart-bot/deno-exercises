@@ -31,7 +31,7 @@ ${publicShelves.map((shelf) => shelfCard(shelf))}
 function avatarForm(user, errors) {
     return html`
         <h2>Change avatar</h2>
-        <form method="POST" action="/users/${user.id}/avatar" enctype="multipart/form-data">
+        <form class="secondary" method="POST" action="/users/${user.id}/avatar" enctype="multipart/form-data">
             <label for="avatar">Avatar</label>
             <input id="avatar" type="file" name="avatar" accept="${AVATAR_TYPES.join(",")}" required>
             <span class="error">${errors?.avatar ?? ""}</span>

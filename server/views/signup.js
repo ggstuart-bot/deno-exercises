@@ -6,7 +6,7 @@ export function signupView(ctx) {
     <section class="center">
         <h1>Sign up</h1>
         <p>Already have an account? <a href="/signin">sign in</a> to gain access.</p>
-        <form method="POST">
+        <form class="secondary" method="POST">
             <label for="username">Username</label>
             <input id="username" name="username" value="${values?.username ?? ""}">
             <span class="error">${errors?.username ?? ""}</span>

@@ -19,7 +19,7 @@ ${books.map((book) => bookCard(book, removeForm(shelf, book)))}
     </section>
     <aside>
         <h2>Rename shelf</h2>
-        <form method="POST" action="/shelves/${shelf.id}/edit">
+        <form class="secondary" method="POST" action="/shelves/${shelf.id}/edit">
             <label for="title">Title</label>
             <input id="title" name="title" value="${values?.title ?? shelf.title}">
             <span class="error">${errors?.title ?? ""}</span>
