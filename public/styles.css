@@ -63,6 +63,22 @@ button {
     }
 }
 
+/* Buttons are a tint of the text colour with a thin border, so they read
+   on any background: the page, .secondary, light or dark.
+   The links in the header nav share the look */
+button,
+body > header nav a {
+    padding: 0.25em 0.75em;
+    border: 1px solid currentColor;
+    border-radius: 0.25em;
+    background: var(--tint);
+    color: inherit;
+
+    &:hover {
+        background: var(--tint-strong);
+    }
+}
+
 /* Links keep the text colour and use the highlight for the underline */
 a {
     color: inherit;
@@ -199,20 +215,14 @@ body > header {
     }
 }
 
-/* Header links (and the sign out button) look like pills */
+/* Header links and the sign out button look like buttons (see base),
+   made into pills */
 body > header nav :is(a, button) {
     padding: 0.25em 0.5em;
-    border: 0.5px solid currentColor;
     border-radius: 1em;
-    background: var(--tint);
-    color: inherit;
     font-size: 1.2em;
     line-height: 1;
     text-wrap: nowrap;
-
-    &:hover {
-        background: var(--tint-strong);
-    }
 
     &:has(img) {
         padding-inline-start: 0;

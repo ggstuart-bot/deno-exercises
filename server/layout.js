@@ -7,8 +7,8 @@ export function layout(content, ctx) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>${ctx.data.title ? `${ctx.data.title} | ` : ""}Bookshelves</title>
     <meta charset="utf-8">
+    <title>${ctx.data.title ? `${ctx.data.title} | ` : ""}Bookshelves</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/assets/styles.css">
     <link rel="icon" href="/assets/icon.svg">
@@ -23,12 +23,11 @@ export function layout(content, ctx) {
         </nav>
     </header>
     ${flashMessage(ctx.data.flash)}
-    <main>        
+    <main>
     ${content}
     </main>
     <footer class="secondary">
         ${userMessage(ctx.user)}
-        
         <p>
             <a href="/about">about</a>
         </p>
@@ -47,7 +46,6 @@ function flashMessage(flash) {
     </aside>`
         : "";
 }
-
 
 function userMessage(user) {
     return user
