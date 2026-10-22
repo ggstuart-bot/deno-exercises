@@ -8,7 +8,7 @@ export function readOnlyShelfView(ctx) {
     return html`
     <section class="list">
         <header>
-            <h2>${shelf.title}</h2>
+            <h1>${shelf.title}</h1>
             <p>A public shelf by <a href="/users/${owner.id}">${avatarImage(owner)}${owner.username}</a></p>
         </header>
         <ul class="grid">

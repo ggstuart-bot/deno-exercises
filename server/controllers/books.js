@@ -13,6 +13,7 @@ export function booksController(ctx) {
     ctx.data.page = page;
     ctx.data.books = searchBooks(q, page);
     ctx.data.hasNext = page * PAGE_SIZE < countBooks(q);
+    ctx.data.title = "Books";
     return render(booksView, ctx);
 }
 
@@ -21,5 +22,6 @@ export function bookController(ctx) {
     if (user) {
         ctx.data.shelves = getShelvesByOwnerId(user.id);
     }
+    ctx.data.title = ctx.data.book.title;
     return render(bookDetailView, ctx);
 }

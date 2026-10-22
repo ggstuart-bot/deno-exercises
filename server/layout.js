@@ -7,7 +7,7 @@ export function layout(content, ctx) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bookshelves</title>
+    <title>${ctx.data.title ? `${ctx.data.title} | ` : ""}Bookshelves</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/assets/styles.css">
@@ -15,7 +15,7 @@ export function layout(content, ctx) {
 </head>
 <body>
     <header class="secondary">
-        <h1><a href="/" class="brand">${logo} Bookshelves</a></h1>
+        <a href="/" class="brand">${logo} Bookshelves</a>
         <nav>
             <a href="/books">books</a>
             ${adminLinks(ctx.user)}

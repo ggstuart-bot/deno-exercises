@@ -8,7 +8,7 @@ export function shelfView(ctx) {
     return html`
     <section class="list">
         <header>
-            <h2>${shelf.title}</h2>
+            <h1>${shelf.title}</h1>
         </header>
         ${books.length
             ? html`<ul class="grid">
@@ -18,16 +18,16 @@ ${books.map((book) => bookCard(book, removeForm(shelf, book)))}
         <p><a href="/shelves">Back to my shelves</a></p>
     </section>
     <aside>
-        <h3>Rename shelf</h3>
+        <h2>Rename shelf</h2>
         <form method="POST" action="/shelves/${shelf.id}/edit">
             <label for="title">Title</label>
             <input id="title" name="title" value="${values?.title ?? shelf.title}">
             <span class="error">${errors?.title ?? ""}</span>
             <button>rename</button>
         </form>
-        <h3>Visibility</h3>
+        <h2>Visibility</h2>
         ${visibilityControls(user, shelf)}
-        <h3>Delete shelf</h3>
+        <h2>Delete shelf</h2>
         <p>The books stay in the catalogue</p>
         <form method="POST" action="/shelves/${shelf.id}/delete">
             <button>delete shelf</button>

@@ -7,7 +7,7 @@ export function booksView(ctx) {
     return html`
     <section class="list">
         <header>
-            <h2>Books</h2>
+            <h1>Books</h1>
         </header>
         <form class="inline" method="GET" action="/books">
             <input name="q" aria-label="Search books" placeholder="search by title or author" value="${q}">

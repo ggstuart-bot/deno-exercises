@@ -32,9 +32,19 @@ body {
     font-weight: 300;
 }
 
+h1,
 h2,
 h3 {
     font-weight: 200;
+}
+
+/* One h1 per page. Sizes step down so the old look stays much the same */
+h1 {
+    font-size: 1.5em;
+}
+
+h2 {
+    font-size: 1.17em;
 }
 
 a,
@@ -145,12 +155,6 @@ body > header {
         text-decoration: none;
     }
 
-    h1 {
-        margin: 0;
-        font-size: 1.4em;
-        font-weight: 200;
-    }
-
     nav {
         display: flex;
         gap: 0.5ch;
@@ -163,6 +167,8 @@ body > header {
     align-items: center;
     gap: 0.5rem;
     color: inherit;
+    font-size: 1.4em;
+    font-weight: 200;
     text-decoration: none;
 
     svg {
@@ -308,17 +314,20 @@ a:has(> .avatar) {
         object-fit: cover;
     }
 
+    /* The title is an h2 or h3, depending on the page */
+    h2,
     h3,
     p {
         margin: 0;
     }
 
+    h2,
     h3 {
         font-size: 1.1em;
         font-weight: 400;
     }
 
-    h3 a::after {
+    :is(h2, h3) a::after {
         content: "";
         position: absolute;
         inset: 0;
@@ -376,7 +385,7 @@ section.list {
     margin-block: 0.5rem;
 
     > header {
-        h2,
+        h1,
         p {
             margin: 0;
         }

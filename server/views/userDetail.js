@@ -11,9 +11,9 @@ export function userDetailView(ctx) {
     return html`
     <section>
         ${avatarImage(targetUser, `Avatar for '${targetUser.username}'`)}
-        <h2>${targetUser.username}</h2>
+        <h1>${targetUser.username}</h1>
         ${targetUser.isAdmin ? html`<p><span class="admin">admin</span></p>` : ""}
-        <h3>Public shelves</h3>
+        <h2>Public shelves</h2>
         ${publicShelves.length
             ? html`<ul class="grid wide">
 ${publicShelves.map((shelf) => shelfCard(shelf))}
@@ -22,7 +22,7 @@ ${publicShelves.map((shelf) => shelfCard(shelf))}
     </section>
     <aside>
         ${canChangeAvatar(currentUser, targetUser) ? avatarForm(targetUser, errors) : ""}
-        ${canChangeAdmin(currentUser, targetUser) ? html`<h3>Admin status</h3>${adminButton(targetUser)}` : ""}
+        ${canChangeAdmin(currentUser, targetUser) ? html`<h2>Admin status</h2>${adminButton(targetUser)}` : ""}
         ${canPublishProfile(currentUser, targetUser) ? visibilityForm(targetUser) : ""}
     </aside>
     `;
@@ -30,7 +30,7 @@ ${publicShelves.map((shelf) => shelfCard(shelf))}
 
 function avatarForm(user, errors) {
     return html`
-        <h3>Change avatar</h3>
+        <h2>Change avatar</h2>
         <form method="POST" action="/users/${user.id}/avatar" enctype="multipart/form-data">
             <label for="avatar">Avatar</label>
             <input id="avatar" type="file" name="avatar" accept="${AVATAR_TYPES.join(",")}" required>
@@ -42,14 +42,14 @@ function avatarForm(user, errors) {
 function visibilityForm(user) {
     return user.isPublic
         ? html`
-        <h3>Profile is public</h3>
+        <h2>Profile is public</h2>
         <p>Anyone signed in can see your profile and public shelves</p>
         <form method="POST" action="/users/${user.id}/unpublish">
             <button>make profile private</button>
         </form>
         <p>This also makes all of your shelves private</p>`
         : html`
-        <h3>Profile is private</h3>
+        <h2>Profile is private</h2>
         <p>Only you can see your profile</p>
         <form method="POST" action="/users/${user.id}/publish">
             <button>make profile public</button>
