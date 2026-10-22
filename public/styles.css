@@ -328,7 +328,7 @@ a:has(> .avatar) {
 .admin {
     padding: 0.25ch 0.5ch;
     border: 1px solid currentColor;
-    border-radius: 2em;
+    border-radius: 1em;
     font-size: 0.6em;
 }
 
@@ -362,6 +362,8 @@ a:has(> .avatar) {
     display: flex;
     flex-wrap: wrap;
     align-content: start;
+    border-radius: 0.5rem;
+    overflow: clip;
     background: var(--tint);
     font-size: 1rem;
 
@@ -502,6 +504,7 @@ form {
 /* A form with fields is a .secondary panel */
 form.secondary {
     padding: 1.5rem;
+    border-radius: 0.5rem;
 
     /* A little more space above each field after the first, and the button */
     label:not(:first-of-type),
