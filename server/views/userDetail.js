@@ -14,7 +14,7 @@ export function userDetailView(ctx) {
     <section>
         <header>
             <h1>${targetUser.username}</h1>
-            ${targetUser.isAdmin ? html`<p><span class="admin">admin</span></p>` : ""}
+            ${targetUser.isAdmin ? html`<p><span class="badge">admin</span></p>` : ""}
         </header>
         ${avatarImage(targetUser, `Avatar for '${targetUser.username}'`)}
         <h2>Public shelves</h2>

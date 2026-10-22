@@ -21,7 +21,7 @@ function userToHTML(user, currentUser) {
     return html`            <li>
                 <span>
                     <a href="/users/${user.id}">${avatarImage(user)}${user.username}</a>
-                    ${user.isAdmin ? html`<span class="admin">admin</span>` : ""}
+                    ${user.isAdmin ? html`<span class="badge">admin</span>` : ""}
                 </span>
                 ${canChangeAdmin(currentUser, user) ? adminButton(user) : ""}
             </li>`;

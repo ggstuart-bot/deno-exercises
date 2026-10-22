@@ -329,7 +329,8 @@ a:has(> .avatar) {
     }
 }
 
-.admin {
+/* A small outlined label for a short status, e.g. admin, public or private */
+.badge {
     padding: 0.25ch 0.5ch;
     border: 1px solid currentColor;
     border-radius: 1em;
