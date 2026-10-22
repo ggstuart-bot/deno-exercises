@@ -16,7 +16,7 @@ export function userDetailView(ctx) {
         <h2>Public shelves</h2>
         ${publicShelves.length
             ? html`<ul class="grid wide">
-${publicShelves.map((shelf) => shelfCard(shelf, "", 3))}
+${publicShelves.map((shelf) => shelfCard(shelf))}
         </ul>`
             : html`<p>No public shelves</p>`}
     </section>

@@ -15,7 +15,7 @@ export function homeView(ctx) {
         <h2>Public shelves</h2>
         ${publicShelves.length
             ? html`<ul class="grid wide">
-${publicShelves.map((shelf) => shelfCard(shelf, ownerLink(shelf), 3))}
+${publicShelves.map((shelf) => shelfCard(shelf, ownerLink(shelf)))}
         </ul>`
             : html`<p>Nobody has shared a shelf yet</p>`}
     </section>

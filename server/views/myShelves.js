@@ -29,7 +29,7 @@ export function myShelvesView(ctx) {
 function shelfList(shelves, emptyMessage) {
     return shelves.length
         ? html`<ul class="grid wide">
-${shelves.map((shelf) => shelfCard(shelf, "", 3))}
+${shelves.map((shelf) => shelfCard(shelf))}
         </ul>`
         : html`<p>${emptyMessage}</p>`;
 }
