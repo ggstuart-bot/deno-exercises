@@ -435,6 +435,13 @@ p.covers {
     font-style: italic;
 }
 
+/* The current page's pill is filled in: the text and panel colours swap.
+   The a in the selector makes it win over the button rule's :hover */
+body > header nav a[aria-current="page"] {
+    background: contrast-color(var(--bg));
+    color: var(--bg);
+}
+
 /* A list section with a heading, an optional form and a list.
    The gap spaces its children, so they lose their own top and bottom margins */
 section.list {

@@ -17,8 +17,8 @@ export function layout(content, ctx) {
     <header class="secondary">
         <a href="/" class="brand">${logo} Bookshelves</a>
         <nav>
-            ${adminLinks(ctx.user)}
-            ${authLinks(ctx.user)}
+            ${adminLinks(ctx.user, ctx.url.pathname)}
+            ${authLinks(ctx.user, ctx.url.pathname)}
         </nav>
     </header>
     ${flashMessage(ctx.data.flash)}
@@ -50,18 +50,23 @@ function userMessage(user) {
         : "";
 }
 
-function adminLinks(user) {
+function adminLinks(user, path) {
     return user?.isAdmin
-        ? html`<a href="/users">users</a>`
+        ? navLink("/users", "users", path)
         : "";
 }
 
-function authLinks(user) {
+function authLinks(user, path) {
     return user
-        ? html`<a href="/shelves">my shelves</a>
-            <a href="/profile">${avatarImage(user)}profile</a>
+        ? html`${navLink("/shelves", "my shelves", path)}
+            ${navLink(`/users/${user.id}`, html`${avatarImage(user)}profile`, path)}
             <form method="POST" action="/signout">
                 <button>sign out</button>
             </form>`
-        : html`<a href="/signin">sign in</a>`
+        : navLink("/signin", "sign in", path);
+}
+
+// A header link, marked as the current page when it matches the path exactly
+function navLink(href, content, path) {
+    return html`<a href="${href}" aria-current="${href === path ? "page" : "false"}">${content}</a>`;
 }
