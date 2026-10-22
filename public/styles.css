@@ -167,6 +167,18 @@ main:has(> aside) {
 }
 
 
+/* Items side by side in a row, wrapping if they don't fit.
+   Usually a <ul>, so the bullets and padding go */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+
 /* ========== Components ========== */
 
 /* Site header, with a sharp banner image. header.secondary wins over .secondary.
@@ -510,4 +522,10 @@ form.inline {
     .error {
         grid-column: 1 / -1;
     }
+}
+
+/* The current page in a pagination row */
+[aria-current="page"] {
+    font-weight: 600;
+    text-decoration: none;
 }
