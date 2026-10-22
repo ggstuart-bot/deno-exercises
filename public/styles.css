@@ -1,5 +1,27 @@
 /* ========== Custom properties ========== */
 
+/* Core colours, defined once. light-dark() picks a value from the OS setting */
+:root {
+    color-scheme: light dark;
+    --base: light-dark(#f5f5f5, #333);
+    --contrast: light-dark(#222, #111);
+    --highlight: orangered;
+    --bg: var(--base);
+}
+
+/* Set --bg and the text colour follows it */
+body,
+.contrast {
+    background: var(--bg);
+    color: contrast-color(var(--bg));
+}
+
+/* Stands out from the page, e.g. the site header and footer */
+.contrast {
+    --bg: var(--contrast);
+    background-image: linear-gradient(var(--bg), color-mix(in srgb, var(--bg), white 20%));
+}
+
 
 /* ========== Base elements ========== */
 
@@ -21,12 +43,16 @@ button {
     min-inline-size: 0;
 
     &:focus-visible {
-        outline-color: orangered;
+        outline-color: var(--highlight);
     }
 }
 
-main a {
-    color: orangered;
+/* Links keep the text colour and use the highlight for the underline */
+a {
+    color: inherit;
+    text-decoration-color: var(--highlight);
+    text-decoration-thickness: 0.1em;
+    text-underline-offset: 0.2em;
 }
 
 
@@ -52,7 +78,6 @@ body {
         gap: 1rem;
         padding: 0.5rem 1rem;
         font-size: 1.4em;
-        background: linear-gradient(#ddd, #eee);
     }
 
     > footer {
@@ -77,8 +102,7 @@ main:has(> aside) {
     }
 
     > aside {
-        background: white;
-        color: black;
+        background: color-mix(in srgb, currentColor 5%, transparent);
     }
 
     @media (width > 800px) {
@@ -89,18 +113,7 @@ main:has(> aside) {
 
 /* ========== Components ========== */
 
-/* Site header and footer */
-body > header,
-body > footer {
-    background: linear-gradient(#222, #555);
-    color: white;
-
-    a {
-        color: inherit;
-        line-height: 1;
-    }
-}
-
+/* Site header */
 body > header {
     a {
         text-decoration: none;
@@ -121,7 +134,7 @@ body > header {
 /* Header links (and the sign out button) look like pills */
 body > header nav :is(a, button) {
     padding: 0.25em 0.5em;
-    border: 0.5px solid white;
+    border: 0.5px solid currentColor;
     border-radius: 1em;
     background: transparent;
     color: inherit;
@@ -146,7 +159,7 @@ body > header nav :is(a, button) {
     inset-inline-end: 0;
     inset-block-start: 4em;
     padding-inline: 2rem;
-    background: orangered;
+    background: var(--highlight);
     color: white;
     font-weight: 400;
     translate: calc(100% - 1rem);
@@ -205,15 +218,14 @@ a:has(> .avatar) {
     padding: 0.25ch 0.5ch;
     border: 1px solid currentColor;
     border-radius: 2em;
-    color: #444;
     font-size: 0.6em;
 }
 
-/* Striped lists (for now, every list in main) */
+/* Striped lists (for now, every list in main).
+   Mixing in the text colour works on light and dark pages */
 main ul {
     display: grid;
     padding: 0;
-    background: linear-gradient(90deg, #999, #bbb);
     list-style: none;
 }
 
@@ -222,10 +234,10 @@ main li {
     justify-content: space-between;
     align-items: center;
     padding: 0.25rem 0.5rem;
-    backdrop-filter: brightness(1.1);
+    background: color-mix(in srgb, currentColor 20%, transparent);
 
     &:nth-child(even) {
-        backdrop-filter: brightness(1.2);
+        background: color-mix(in srgb, currentColor 10%, transparent);
     }
 
     > span {
@@ -290,7 +302,7 @@ form {
         grid-column: span 2;
         text-align: end;
         font-size: 0.8em;
-        color: orangered;
+        color: var(--highlight);
     }
 }
 

@@ -13,7 +13,7 @@ export function layout(content, ctx) {
     <link rel="icon" href="/assets/icon.svg">
 </head>
 <body>
-    <header>
+    <header class="contrast">
         <h1><a href="/">Bookshelves</a></h1>
         <nav>
             <a href="/books">books</a>
@@ -25,7 +25,7 @@ export function layout(content, ctx) {
     <main>        
     ${content}
     </main>
-    <footer>
+    <footer class="contrast">
         ${userMessage(ctx.user)}
         
         <p>
