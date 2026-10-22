@@ -7,7 +7,7 @@ export function usersView(ctx) {
 
     return html`
     <section>
-        <h2>Users</h2>
+        <h1>Users</h1>
         <ul class="striped">
 ${users.map((user) => userToHTML(user, currentUser))}
         </ul>

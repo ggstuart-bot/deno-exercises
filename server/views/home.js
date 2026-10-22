@@ -7,7 +7,7 @@ export function homeView(ctx) {
 
     return html`
     <section>
-        <h2>Find a book</h2>
+        <h1>Find a book</h1>
         <form class="inline" method="GET" action="/books">
             <input name="q" aria-label="Search books" placeholder="search by title or author">
             <button>search</button>
@@ -15,7 +15,7 @@ export function homeView(ctx) {
         <h2>Public shelves</h2>
         ${publicShelves.length
             ? html`<ul class="grid wide">
-${publicShelves.map((shelf) => shelfCard(shelf, ownerLink(shelf)))}
+${publicShelves.map((shelf) => shelfCard(shelf, ownerLink(shelf), 3))}
         </ul>`
             : html`<p>Nobody has shared a shelf yet</p>`}
     </section>

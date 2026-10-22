@@ -6,7 +6,7 @@ export function myShelvesView(ctx) {
 
     return html`
     <section>
-        <h2>My shelves</h2>
+        <h1>My shelves</h1>
         ${shelves.length
             ? html`<ul class="grid wide">
 ${shelves.map((shelf) => shelfCard(shelf))}
@@ -14,7 +14,7 @@ ${shelves.map((shelf) => shelfCard(shelf))}
             : html`<p>You don't have any shelves yet</p>`}
     </section>
     <aside>
-        <h3>New shelf</h3>
+        <h2>New shelf</h2>
         <form method="POST" action="/shelves">
             <label for="title">Title</label>
             <input id="title" name="title" value="${values?.title ?? ""}">
