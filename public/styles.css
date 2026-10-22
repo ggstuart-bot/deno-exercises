@@ -367,12 +367,16 @@ a:has(> .avatar) {
     }
 }
 
-/* A fanned row of small covers, e.g. on a shelf card */
+/* A fanned row of small covers, e.g. on a shelf card.
+   They stand on a plank, like the shelf in the logo */
 .covers {
     display: flex;
-    align-items: center;
+    align-items: end;
     block-size: 6rem;
-    margin: 0;
+    margin-block: 0.5rem;
+    margin-inline-start: 0.5rem;
+    padding-inline: 0.25rem;
+    border-block-end: 0.2rem solid currentColor;
 
     img {
         inline-size: 4rem;
