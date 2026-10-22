@@ -132,7 +132,7 @@ main:has(> aside) {
     list-style: none;
 
     &.wide {
-        --column: 14rem;
+        --column: 20rem;
     }
 }
 
@@ -298,10 +298,14 @@ a:has(> .avatar) {
 
 /* Book and shelf cards: the picture first, then a <div> with the text.
    The picture goes right to the edge, so the padding is on the <div>.
+   The layout is flex wrap: the text sits beside the picture if there's
+   room and wraps underneath if not. A book cover is full width, so its
+   text always wraps underneath.
    The title link stretches over the whole card, so anywhere on it opens the book or shelf */
 .card {
     position: relative;
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     align-content: start;
     background: color-mix(in srgb, currentColor 10%, transparent);
     font-size: 1rem;
@@ -315,6 +319,7 @@ a:has(> .avatar) {
 
     /* The text is always the last thing in the card */
     > div:last-child {
+        flex: 1 1 10rem;
         display: grid;
         align-content: start;
         gap: 0.25rem;
