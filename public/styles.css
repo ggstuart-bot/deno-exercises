@@ -222,15 +222,14 @@ a:has(> .avatar) {
     font-size: 0.6em;
 }
 
-/* Striped lists (for now, every list in main).
-   Mixing in the text colour works on light and dark pages */
-main ul {
+/* Striped lists. Mixing in the text colour works on light and dark pages */
+.striped {
     display: grid;
     padding: 0;
     list-style: none;
 }
 
-main li {
+.striped > li {
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -7,7 +7,7 @@ export function myShelvesView(ctx) {
     <section>
         <h2>My shelves</h2>
         ${shelves.length
-            ? html`<ul>
+            ? html`<ul class="striped">
 ${shelves.map(shelfToHTML)}
         </ul>`
             : html`<p>You don't have any shelves yet</p>`}

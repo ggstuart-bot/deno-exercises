@@ -11,7 +11,7 @@ export function shelfView(ctx) {
             <h2>${shelf.title}</h2>
         </header>
         ${books.length
-            ? html`<ul>
+            ? html`<ul class="striped">
 ${books.map((book) => bookToHTML(shelf, book))}
         </ul>`
             : html`<p>No books yet, <a href="/books">find some books</a> to add</p>`}

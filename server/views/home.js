@@ -13,7 +13,7 @@ export function homeView(ctx) {
         </form>
         <h2>Public shelves</h2>
         ${publicShelves.length
-            ? html`<ul>
+            ? html`<ul class="striped">
 ${publicShelves.map(publicShelfToHTML)}
         </ul>`
             : html`<p>Nobody has shared a shelf yet</p>`}

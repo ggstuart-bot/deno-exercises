@@ -14,7 +14,7 @@ export function booksView(ctx) {
             <button>search</button>
         </form>
         ${books.length
-            ? html`<ul>
+            ? html`<ul class="striped">
 ${books.map(bookToHTML)}
         </ul>`
             : html`<p>No books found</p>`}

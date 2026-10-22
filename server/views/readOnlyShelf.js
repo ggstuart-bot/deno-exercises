@@ -11,7 +11,7 @@ export function readOnlyShelfView(ctx) {
             <h2>${shelf.title}</h2>
             <p>A public shelf by <a href="/users/${owner.id}">${avatarImage(owner)}${owner.username}</a></p>
         </header>
-        <ul>
+        <ul class="striped">
 ${books.map(bookToHTML)}
         </ul>
         <p><a href="/">Back to home</a></p>
