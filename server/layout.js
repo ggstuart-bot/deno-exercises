@@ -15,7 +15,7 @@ export function layout(content, ctx) {
 </head>
 <body>
     <header class="secondary">
-        <h1><a href="/" class="brand">${logo} Bookshelves</a></h1>
+        <a href="/" class="brand">${logo} Bookshelves</a>
         <nav>
             <a href="/books">books</a>
             ${adminLinks(ctx.user)}

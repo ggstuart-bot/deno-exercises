@@ -145,12 +145,6 @@ body > header {
         text-decoration: none;
     }
 
-    h1 {
-        margin: 0;
-        font-size: 1.4em;
-        font-weight: 200;
-    }
-
     nav {
         display: flex;
         gap: 0.5ch;
@@ -163,6 +157,8 @@ body > header {
     align-items: center;
     gap: 0.5rem;
     color: inherit;
+    font-size: 1.4em;
+    font-weight: 200;
     text-decoration: none;
 
     svg {
