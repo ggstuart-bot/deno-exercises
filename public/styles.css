@@ -435,11 +435,17 @@ p.covers {
     font-style: italic;
 }
 
-/* A list section with a heading, an optional form and a list */
+/* A list section with a heading, an optional form and a list.
+   The gap spaces its children, so they lose their own top and bottom margins */
 section.list {
     display: grid;
     place-content: start stretch;
+    gap: 1rem;
     margin-block: 0.5rem;
+
+    > * {
+        margin-block: 0;
+    }
 
     > header {
         h1,
@@ -456,15 +462,6 @@ section.list {
         .avatar {
             --size: 1.2em;
         }
-    }
-
-    > header + search {
-        place-self: stretch;
-        padding-block-end: 0.5rem;
-    }
-
-    ul {
-        margin-block-start: 0;
     }
 }
 
