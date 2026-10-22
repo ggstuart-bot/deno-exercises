@@ -1,6 +1,6 @@
 import { html } from "../tools/html.js";
 import { shelfCard } from "./shelfCard.js";
-import { visibilityControls } from "./shelf.js";
+import { visibilityButton } from "./shelf.js";
 
 export function myShelvesView(ctx) {
     const { user, data: { shelves, errors, values } } = ctx;
@@ -11,8 +11,11 @@ export function myShelvesView(ctx) {
     <section>
         <h1>My shelves</h1>
         <h2>Public shelves</h2>
+        <p>Anyone signed in can see these shelves</p>
         ${shelfList(user, publicShelves, "No public shelves yet")}
         <h2>Private shelves</h2>
+        <p>Only you can see these shelves</p>
+        ${user.isPublic ? "" : html`<p><a href="/profile">Publish your profile</a> to share them</p>`}
         ${shelfList(user, privateShelves, "No private shelves yet")}
     </section>
     <aside>
@@ -27,11 +30,11 @@ export function myShelvesView(ctx) {
     `;
 }
 
-// Each card has buttons to make the shelf public or private
+// Each card has a button to make the shelf public or private
 function shelfList(user, shelves, emptyMessage) {
     return shelves.length
         ? html`<ul class="grid wide">
-${shelves.map((shelf) => shelfCard(shelf, visibilityControls(user, shelf)))}
+${shelves.map((shelf) => shelfCard(shelf, visibilityButton(user, shelf)))}
         </ul>`
         : html`<p>${emptyMessage}</p>`;
 }

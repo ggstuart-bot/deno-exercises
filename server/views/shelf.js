@@ -36,22 +36,33 @@ ${books.map((book) => bookCard(book, removeForm(shelf, book)))}
     `;
 }
 
-// Also used as the card footer on My shelves
-export function visibilityControls(user, shelf) {
+// Who can see the shelf, then the button, or a link if the profile is private
+function visibilityControls(user, shelf) {
     if (shelf.isPublic) {
         return html`<p>Anyone signed in can see this shelf</p>
-        <form method="POST" action="/shelves/${shelf.id}/unpublish">
+        ${visibilityButton(user, shelf)}`;
+    }
+    if (canPublishShelf(user, shelf)) {
+        return html`<p>Only you can see this shelf</p>
+        ${visibilityButton(user, shelf)}`;
+    }
+    return html`<p>Only you can see this shelf</p>
+        <p><a href="/profile">Publish your profile</a> to share shelves</p>`;
+}
+
+// Just the button. Also used on the cards in My shelves
+export function visibilityButton(user, shelf) {
+    if (shelf.isPublic) {
+        return html`<form method="POST" action="/shelves/${shelf.id}/unpublish">
             <button>make private</button>
         </form>`;
     }
     if (canPublishShelf(user, shelf)) {
-        return html`<p>Only you can see this shelf</p>
-        <form method="POST" action="/shelves/${shelf.id}/publish">
+        return html`<form method="POST" action="/shelves/${shelf.id}/publish">
             <button>make public</button>
         </form>`;
     }
-    return html`<p>Only you can see this shelf</p>
-        <p><a href="/profile">Publish your profile</a> to share shelves</p>`;
+    return "";
 }
 
 function removeForm(shelf, book) {
