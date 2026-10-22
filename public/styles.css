@@ -339,8 +339,9 @@ a:has(> .avatar) {
         z-index: 1;
     }
 
-    /* The ring goes round the whole card instead of the title */
-    a:focus-visible {
+    /* The ring goes round the whole card instead of the title.
+       Links in the footer keep their own ring */
+    :is(h2, h3) a:focus-visible {
         outline: none;
     }
 
@@ -348,7 +349,7 @@ a:has(> .avatar) {
         background: color-mix(in srgb, currentColor 20%, transparent);
     }
 
-    &:has(a:focus-visible) {
+    &:has(:is(h2, h3) a:focus-visible) {
         outline: 2px solid var(--highlight);
         outline-offset: 2px;
     }

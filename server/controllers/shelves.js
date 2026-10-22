@@ -48,14 +48,14 @@ function shelfVisibilityController(isPublic) {
         ctx.flash = isPublic
             ? `Shelf '${shelf.title}' is now public`
             : `Shelf '${shelf.title}' is now private`;
-        return redirect(`/shelves/${shelf.id}`, ctx);
+        // Back to My shelves, where the shelf has moved to its new section
+        return redirect("/shelves", ctx);
     };
 }
 
 export function privateProfileController(ctx) {
-    const { data: { shelf } } = ctx;
     ctx.flash = "Publish your profile to share shelves";
-    return redirect(`/shelves/${shelf.id}`, ctx);
+    return redirect("/shelves", ctx);
 }
 
 export const publishShelfController = shelfVisibilityController(1);
