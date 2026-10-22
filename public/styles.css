@@ -174,7 +174,7 @@ main > aside {
 }
 
 /* Lists used for layout lose their bullets and indent */
-:is(.grid, .row, .striped) {
+:is(.grid, .row) {
     padding: 0;
     list-style: none;
 }
@@ -329,33 +329,15 @@ a:has(> .avatar) {
     }
 }
 
-.admin {
+/* A small outlined label for a short status, e.g. admin, public or private */
+.badge {
     padding: 0.25ch 0.5ch;
     border: 1px solid currentColor;
     border-radius: 1em;
     font-size: 0.75em;
 }
 
-/* Striped lists. Mixing in the text colour works on light and dark pages */
-.striped > li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.25rem 0.5rem;
-    background: var(--tint-strong);
-
-    &:nth-child(even) {
-        background: var(--tint);
-    }
-
-    > span {
-        display: flex;
-        align-items: center;
-        gap: 1ch;
-    }
-}
-
-/* Book and shelf cards: the picture first, then a <div> with the text.
+/* Book, shelf and user cards: the picture first, then a <div> with the text.
    The picture goes right to the edge, so the padding is on the <div>.
    The layout is flex wrap: the text sits beside the picture if there's
    room and wraps underneath if not. A book cover is full width, so its
@@ -370,11 +352,17 @@ a:has(> .avatar) {
     overflow: clip;
     background: var(--tint);
 
-    > img {
+    > img:not(.avatar) {
         inline-size: 100%;
         block-size: auto;
         aspect-ratio: 2 / 3;
         object-fit: cover;
+    }
+
+    /* A user card's picture is their avatar, centred and not stretched */
+    > .avatar {
+        --size: 6rem;
+        margin: 1rem auto 0;
     }
 
     /* The text is always the last thing in the card */
@@ -445,9 +433,10 @@ p.covers {
     font-style: italic;
 }
 
-/* A list section with a heading, an optional form and a list.
-   The gap spaces its children, so they lose their own top and bottom margins */
-section.list {
+/* Every page's section: a header with the h1 and an optional intro,
+   then the content. It's a grid, so the gap spaces its children
+   and they lose their own top and bottom margins */
+main > section {
     display: grid;
     align-content: start;
     gap: 1rem;
@@ -457,15 +446,11 @@ section.list {
     }
 
     > header {
-        h1,
-        p {
-            margin: 0;
-        }
+        display: grid;
+        gap: 0.5rem;
 
-        p {
-            display: flex;
-            gap: 1ch;
-            font-size: 0.8em;
+        > * {
+            margin: 0;
         }
     }
 }
@@ -516,9 +501,9 @@ form.secondary {
     }
 }
 
-/* Inline forms put the input and button side by side.
+/* A search form puts the input and button side by side.
    The label takes a whole row to itself */
-form.inline {
+search > form {
     grid-template-columns: 1fr auto;
 
     label {

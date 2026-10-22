@@ -12,9 +12,11 @@ export function userDetailView(ctx) {
 
     return html`
     <section>
+        <header>
+            <h1>${targetUser.username}</h1>
+            ${targetUser.isAdmin ? html`<p><span class="badge">admin</span></p>` : ""}
+        </header>
         ${avatarImage(targetUser, `Avatar for '${targetUser.username}'`)}
-        <h1>${targetUser.username}</h1>
-        ${targetUser.isAdmin ? html`<p><span class="admin">admin</span></p>` : ""}
         <h2>Public shelves</h2>
         ${publicShelves.length
             ? html`<ul class="grid wide">

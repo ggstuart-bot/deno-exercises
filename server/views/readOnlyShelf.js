@@ -6,7 +6,7 @@ export function readOnlyShelfView(ctx) {
     const { data: { shelf, books, owner } } = ctx;
 
     return html`
-    <section class="list">
+    <section>
         <header>
             <h1>${shelf.title}</h1>
             <p>A public shelf by <a href="/users/${owner.id}">${avatarImage(owner)}${owner.username}</a></p>

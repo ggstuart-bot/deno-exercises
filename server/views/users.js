@@ -1,28 +1,20 @@
 import { html } from "../tools/html.js";
 import { canChangeAdmin } from "../tools/permissions.js";
-import { avatarImage } from "./avatar.js";
+import { userCard } from "./userCard.js";
 
 export function usersView(ctx) {
     const { data: { users }, user: currentUser } = ctx;
 
     return html`
     <section>
-        <h1>Users</h1>
-        <ul class="striped">
-${users.map((user) => userToHTML(user, currentUser))}
+        <header>
+            <h1>Users</h1>
+        </header>
+        <ul class="grid">
+${users.map((user) => userCard(user, canChangeAdmin(currentUser, user) ? adminButton(user) : ""))}
         </ul>
     </section>
     `;
-}
-
-function userToHTML(user, currentUser) {
-    return html`            <li>
-                <span>
-                    <a href="/users/${user.id}">${avatarImage(user)}${user.username}</a>
-                    ${user.isAdmin ? html`<span class="admin">admin</span>` : ""}
-                </span>
-                ${canChangeAdmin(currentUser, user) ? adminButton(user) : ""}
-            </li>`;
 }
 
 export function adminButton(user) {

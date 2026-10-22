@@ -5,13 +5,13 @@ export function booksView(ctx) {
     const { data: { title, books, q, page, hasNext } } = ctx;
 
     return html`
-    <section class="list">
+    <section>
         <header>
             <h1>${title}</h1>
             ${q ? html`<p><a href="/books">show all books</a></p>` : ""}
         </header>
         <search>
-            <form class="inline" method="GET" action="/books">
+            <form method="GET" action="/books">
                 <label for="q">Search by title or author</label>
                 <input id="q" type="search" name="q" value="${q}">
                 <button>search</button>

@@ -7,9 +7,11 @@ export function homeView(ctx) {
 
     return html`
     <section>
-        <h1>Find a book</h1>
+        <header>
+            <h1>Find a book</h1>
+        </header>
         <search>
-            <form class="inline" method="GET" action="/books">
+            <form method="GET" action="/books">
                 <label for="q">Search by title or author</label>
                 <input id="q" type="search" name="q">
                 <button>search</button>
