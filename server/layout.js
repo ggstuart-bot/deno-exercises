@@ -1,5 +1,6 @@
 import { html } from "./tools/html.js";
 import { avatarImage } from "./views/avatar.js";
+import { logo } from "./views/logo.js";
 
 export function layout(content, ctx) {
     return html`
@@ -14,7 +15,7 @@ export function layout(content, ctx) {
 </head>
 <body>
     <header class="secondary">
-        <h1><a href="/">Bookshelves</a></h1>
+        <h1><a href="/" class="brand">${logo} Bookshelves</a></h1>
         <nav>
             <a href="/books">books</a>
             ${adminLinks(ctx.user)}
