@@ -8,6 +8,11 @@
     /* The accent colour is --highlight, not --primary */
     --highlight: orangered;
     --bg: var(--primary);
+    /* Shading made from the text colour, so it works on light and dark
+       backgrounds. currentColor is worked out where var() is used,
+       not here, so it matches the text colour of that element */
+    --tint: color-mix(in srgb, currentColor 10%, transparent);
+    --tint-strong: color-mix(in srgb, currentColor 20%, transparent);
 }
 
 /* Set --bg and the text colour follows it */
@@ -139,15 +144,26 @@ main:has(> aside) {
 
 /* ========== Components ========== */
 
-/* Site header, with a banner image under a see-through layer of --bg
-   so the text stays readable. header.secondary wins over .secondary */
+/* Site header, with a sharp banner image. header.secondary wins over .secondary.
+   A light see-through layer of --bg tints the whole header, so the books
+   still show. The logo and the nav each sit on a stronger panel that also
+   blurs the image behind it (backdrop-filter), so the text stays readable.
+   A one-colour gradient is how you put a colour on top of a background image.
+   Banner photo: Tima Miroshnichenko, https://www.pexels.com/photo/books-on-brown-wooden-shelf-9572370/
+   (Pexels License, free to use), cropped to 2560x720 */
 body > header.secondary {
-    background-image:
-        linear-gradient(color-mix(in oklab, var(--bg) 60%, transparent), color-mix(in oklab, var(--bg) 60%, transparent)),
-        url(/assets/banner.webp);
+    --overlay: color-mix(in oklab, var(--bg) 40%, transparent);
+    background-image: linear-gradient(var(--overlay), var(--overlay)), url(/assets/banner.webp);
     background-position: center;
     background-size: cover;
     padding-block: 1.5rem;
+
+    > * {
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        background: color-mix(in oklab, var(--bg) 75%, transparent);
+        backdrop-filter: blur(8px);
+    }
 }
 
 body > header {
@@ -157,6 +173,7 @@ body > header {
 
     nav {
         display: flex;
+        flex-wrap: wrap;
         gap: 0.5ch;
     }
 }
@@ -187,16 +204,14 @@ body > header nav :is(a, button) {
     padding: 0.25em 0.5em;
     border: 0.5px solid currentColor;
     border-radius: 1em;
-    background: transparent;
+    background: var(--tint);
     color: inherit;
     font-size: 1.2em;
     line-height: 1;
     text-wrap: nowrap;
-    backdrop-filter: brightness(0.8);
-    transition: backdrop-filter 300ms;
 
     &:hover {
-        backdrop-filter: brightness(0.6);
+        background: var(--tint-strong);
     }
 
     &:has(img) {
@@ -279,10 +294,10 @@ a:has(> .avatar) {
     justify-content: space-between;
     align-items: center;
     padding: 0.25rem 0.5rem;
-    background: color-mix(in srgb, currentColor 20%, transparent);
+    background: var(--tint-strong);
 
     &:nth-child(even) {
-        background: color-mix(in srgb, currentColor 10%, transparent);
+        background: var(--tint);
     }
 
     > span {
@@ -307,7 +322,7 @@ a:has(> .avatar) {
     display: flex;
     flex-wrap: wrap;
     align-content: start;
-    background: color-mix(in srgb, currentColor 10%, transparent);
+    background: var(--tint);
     font-size: 1rem;
 
     > img {
@@ -358,7 +373,7 @@ a:has(> .avatar) {
     }
 
     &:hover {
-        background: color-mix(in srgb, currentColor 20%, transparent);
+        background: var(--tint-strong);
     }
 
     &:has(:is(h2, h3) a:focus-visible) {
@@ -367,16 +382,13 @@ a:has(> .avatar) {
     }
 }
 
-/* A fanned row of small covers, e.g. on a shelf card.
-   They stand on a plank, like the shelf in the logo */
+/* A fanned row of small covers, e.g. on a shelf card */
 .covers {
     display: flex;
-    align-items: end;
+    align-items: center;
     block-size: 6rem;
     margin-block: 0.5rem;
     margin-inline-start: 0.5rem;
-    padding-inline: 0.25rem;
-    border-block-end: 0.2rem solid currentColor;
 
     img {
         inline-size: 4rem;
