@@ -44,7 +44,7 @@ function visibilityForm(user) {
     return user.isPublic
         ? html`
         <h2>Profile is public</h2>
-        <p>Anyone signed in can see your profile and public shelves</p>
+        <p>Anyone can see your profile and public shelves</p>
         <form method="POST" action="/users/${user.id}/unpublish">
             <button>make profile private</button>
         </form>
