@@ -8,6 +8,11 @@
     /* The accent colour is --highlight, not --primary */
     --highlight: orangered;
     --bg: var(--primary);
+    /* Shading made from the text colour, so it works on light and dark
+       backgrounds. currentColor is worked out where var() is used,
+       not here, so it matches the text colour of that element */
+    --tint: color-mix(in srgb, currentColor 10%, transparent);
+    --tint-strong: color-mix(in srgb, currentColor 20%, transparent);
 }
 
 /* Set --bg and the text colour follows it */
@@ -279,10 +284,10 @@ a:has(> .avatar) {
     justify-content: space-between;
     align-items: center;
     padding: 0.25rem 0.5rem;
-    background: color-mix(in srgb, currentColor 20%, transparent);
+    background: var(--tint-strong);
 
     &:nth-child(even) {
-        background: color-mix(in srgb, currentColor 10%, transparent);
+        background: var(--tint);
     }
 
     > span {
@@ -307,7 +312,7 @@ a:has(> .avatar) {
     display: flex;
     flex-wrap: wrap;
     align-content: start;
-    background: color-mix(in srgb, currentColor 10%, transparent);
+    background: var(--tint);
     font-size: 1rem;
 
     > img {
@@ -358,7 +363,7 @@ a:has(> .avatar) {
     }
 
     &:hover {
-        background: color-mix(in srgb, currentColor 20%, transparent);
+        background: var(--tint-strong);
     }
 
     &:has(:is(h2, h3) a:focus-visible) {
