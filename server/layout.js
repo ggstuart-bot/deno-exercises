@@ -8,11 +8,12 @@ export function layout(content, ctx) {
 <head>
     <title>Bookshelves</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/assets/styles.css">
     <link rel="icon" href="/assets/icon.svg">
 </head>
 <body>
-    <header>
+    <header class="contrast">
         <h1><a href="/">Bookshelves</a></h1>
         <nav>
             <a href="/books">books</a>
@@ -24,7 +25,7 @@ export function layout(content, ctx) {
     <main>        
     ${content}
     </main>
-    <footer>
+    <footer class="contrast">
         ${userMessage(ctx.user)}
         
         <p>

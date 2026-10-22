@@ -1,286 +1,173 @@
-body {
-    display: grid;
-    min-height: 100dvh;
-    grid-template-rows: auto 1fr auto;
-    font-family: system-ui;
-    font-weight: 300;
-    margin: 0;
+/* ========== Custom properties ========== */
 
-    .avatar {
-        --size: 8rem;
-        display: inline-block;
-        width: var(--size);
-        height: var(--size);
-        border-radius: 50%;
-        object-fit: cover;
-        vertical-align: middle;
-        background: #ccc;
-    }
-
-    .thumbnail {
-        height: 3em;
-        vertical-align: middle;
-    }
-
-    .cover {
-        max-width: 100%;
-    }
-
-    a:has(> .avatar) {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5ch;
-    }
-
-    nav .avatar {
-        --size: 1.4em;
-        margin-block: -0.2em;
-    }
-
-    li .avatar {
-        --size: 2em;
-    }
-
-    h2,
-    h3 {
-        font-weight: 200;
-    }
-
-    header,
-    main,
-    footer {
-        padding: 0.5rem 1rem;
-    }
-
-    header,
-    footer {
-        background: linear-gradient(#222, #555);
-        color: white;
-        form button,
-        a {
-            color: inherit;
-            line-height: 1;
-            border: none;
-            background: transparent;
-        }
-    }
-
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 1rem;
-        flex-wrap: wrap;
-
-        a {
-            text-decoration: none;
-
-        }
-
-        h1 {
-            font-size: 1.4em;
-            font-weight: 200;
-            margin: 0;
-        }
-
-        nav {
-            display: flex;
-            gap: 0.5ch;
-
-            form button,
-            a {
-                font-size: 1.2em;
-                padding: 0.25em 0.5em;
-                border-radius: 1em;
-                border: 0.5px solid white;
-                transition: backdrop-filter 300ms;
-                text-wrap: nowrap;
-                
-                backdrop-filter: brightness(0.8);
-                &:hover {
-                    backdrop-filter: brightness(0.6);
-                }
-
-                &:has(img) {
-                    padding-left: 0;
-                }
-            }
-
-
-        }
-    }
-
-    aside#flash {
-        position: fixed;
-        right: 0;
-        top: 4em;
-        padding-inline: 2rem;
-        background: orangered;
-        color: white;
-        font-weight: 400;
-        translate: calc(100% - 1rem);
-        transition: translate 200ms;
-        animation: flash 2s;
-        &:hover {
-            translate: none;
-        }
-    }
-
-    main {
-        display: grid;
-        gap: 1rem;
-        background: linear-gradient(#ddd, #eee);
-        font-size: 1.4em;
-
-        a {
-            color: orangered;
-        }
-
-        &:has(aside) {
-            padding: 0;
-            > * {
-                padding-inline: 1rem;
-            }
-            @media (width > 800px) {
-                grid-template-columns: 1fr auto;
-            }
-            aside {
-                background: white;
-                color: black;
-            }
-        }
-
-        .admin {
-            font-size: 0.6em;
-            color: #444;
-            border: 1px solid currentColor;
-            border-radius: 2em;
-            padding: 0.25ch 0.5ch;
-        }
-        ul {
-            display: grid;
-            list-style: none;
-            background: linear-gradient(90deg, #999, #bbb);
-            padding: 0;
-            li {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                > span {
-                    display: flex;
-                    align-items: center;
-                    gap: 1ch;
-                }
-                backdrop-filter: brightness(1.1);
-                &:nth-child(even) {
-                    backdrop-filter: brightness(1.2);
-                }
-                padding: 0.25rem 0.5rem;
-                form {
-                    display: inline;
-                }
-            }
-        }
-
-        section.list {
-            display: grid;
-            place-content: start stretch;
-            margin-block: 0.5rem;
-            header {
-                h2, p { margin: 0;}
-                p {
-                    font-size: 0.8em;
-                    display: flex;
-                    gap: 1ch;
-                }
-                .avatar {
-                    background: green;
-                    --size: 1.2em;
-                }
-            }
-            header + form {
-                background: #555;
-                place-self: stretch;
-                padding: 0 1rem 0.5rem 1rem;
-            }
-            ul {
-                margin-top: 0;
-            }
-        }
-
-        section.center {
-            text-align: center;
-            form {
-                place-self: center;
-            }
-        }
-    }
-
-    footer {
-        display: flex;
-        gap: 2rem;
-        flex-wrap: wrap;
-        font-weight: 200;
-        & > :last-child {
-            margin-left: auto;
-        }
-    }
+/* Core colours, defined once. light-dark() picks a value from the OS setting */
+:root {
+    color-scheme: light dark;
+    --base: light-dark(#f5f5f5, #333);
+    --contrast: light-dark(#222, #111);
+    --highlight: orangered;
+    --bg: var(--base);
 }
 
-form {
-    display: grid;
-    place-self: start;
-    gap: 0.5ch;
+/* Set --bg and the text colour follows it */
+body,
+.contrast {
+    background: var(--bg);
+    color: contrast-color(var(--bg));
+}
 
-    span.error {
-        grid-column: span 2;
-        text-align: right;
-        font-size: 0.8em;
-        color: orangered;
-    }
+/* Stands out from the page, e.g. the site header and footer */
+.contrast {
+    --bg: var(--contrast);
+    background-image: linear-gradient(var(--bg), color-mix(in srgb, var(--bg), white 20%));
+}
 
-    &:has(label) {
-        grid-template-columns: auto 1fr;
 
-        padding: 2rem;
-        background: linear-gradient(45deg, #555, #222);
-        color: white;
+/* ========== Base elements ========== */
 
-        label {
-            text-align: right;
-            &::after {
-                content: ":";
-            }
-        }
+body {
+    margin: 0;
+    font-family: system-ui;
+    font-weight: 300;
+}
 
-        button {
-            grid-column: -2;
-            place-self: end;
-        }
-    }
-
-    &.inline {
-        grid-auto-flow: column;
-        grid-template-columns: 1fr auto;
-    
-        * {
-            grid-row: 1;
-        }
-    
-        span.error {
-            grid-column: 1 / -1;
-            grid-row: 2;
-        }
-    }
+h2,
+h3 {
+    font-weight: 200;
 }
 
 a,
 input,
 button {
     font: inherit;
-    min-width: 0;
+    min-inline-size: 0;
+
     &:focus-visible {
-        outline-color: orangered;
+        outline-color: var(--highlight);
+    }
+}
+
+/* Links keep the text colour and use the highlight for the underline */
+a {
+    color: inherit;
+    text-decoration-color: var(--highlight);
+    text-decoration-thickness: 0.1em;
+    text-underline-offset: 0.2em;
+}
+
+
+/* ========== Layouts ========== */
+
+/* The page shell: one row each for header, main and footer */
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-block-size: 100dvh;
+
+    > header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    > main {
+        display: grid;
+        gap: 1rem;
+        padding: 0.5rem 1rem;
+        font-size: 1.4em;
+    }
+
+    > footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding: 0.5rem 1rem;
+        font-weight: 200;
+
+        > :last-child {
+            margin-inline-start: auto;
+        }
+    }
+}
+
+/* Pages with an aside get a second column on wide screens */
+main:has(> aside) {
+    padding: 0;
+
+    > * {
+        padding-inline: 1rem;
+    }
+
+    > aside {
+        background: color-mix(in srgb, currentColor 5%, transparent);
+    }
+
+    @media (width > 800px) {
+        grid-template-columns: 1fr auto;
+    }
+}
+
+
+/* ========== Components ========== */
+
+/* Site header */
+body > header {
+    a {
+        text-decoration: none;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 1.4em;
+        font-weight: 200;
+    }
+
+    nav {
+        display: flex;
+        gap: 0.5ch;
+    }
+}
+
+/* Header links (and the sign out button) look like pills */
+body > header nav :is(a, button) {
+    padding: 0.25em 0.5em;
+    border: 0.5px solid currentColor;
+    border-radius: 1em;
+    background: transparent;
+    color: inherit;
+    font-size: 1.2em;
+    line-height: 1;
+    text-wrap: nowrap;
+    backdrop-filter: brightness(0.8);
+    transition: backdrop-filter 300ms;
+
+    &:hover {
+        backdrop-filter: brightness(0.6);
+    }
+
+    &:has(img) {
+        padding-inline-start: 0;
+    }
+}
+
+/* Flash message, slides in from the right */
+#flash {
+    position: fixed;
+    inset-inline-end: 0;
+    inset-block-start: 4em;
+    padding-inline: 2rem;
+    background: var(--highlight);
+    color: white;
+    font-weight: 400;
+    translate: calc(100% - 1rem);
+    transition: translate 200ms;
+    animation: flash 2s;
+
+    &:hover {
+        translate: none;
     }
 }
 
@@ -288,5 +175,169 @@ button {
     10%,
     90% {
         translate: none;
+    }
+}
+
+/* Avatars and book images */
+.avatar {
+    --size: 8rem;
+    display: inline-block;
+    inline-size: var(--size);
+    block-size: var(--size);
+    border-radius: 50%;
+    object-fit: cover;
+    vertical-align: middle;
+    background: #ccc;
+}
+
+nav .avatar {
+    --size: 1.4em;
+    margin-block: -0.2em;
+}
+
+li .avatar {
+    --size: 2em;
+}
+
+a:has(> .avatar) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5ch;
+}
+
+.thumbnail {
+    block-size: 3em;
+    vertical-align: middle;
+}
+
+.cover {
+    max-inline-size: 100%;
+}
+
+.admin {
+    padding: 0.25ch 0.5ch;
+    border: 1px solid currentColor;
+    border-radius: 2em;
+    font-size: 0.6em;
+}
+
+/* Striped lists (for now, every list in main).
+   Mixing in the text colour works on light and dark pages */
+main ul {
+    display: grid;
+    padding: 0;
+    list-style: none;
+}
+
+main li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+    background: color-mix(in srgb, currentColor 20%, transparent);
+
+    &:nth-child(even) {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+    }
+
+    > span {
+        display: flex;
+        align-items: center;
+        gap: 1ch;
+    }
+
+    form {
+        display: inline;
+    }
+}
+
+/* A list section with a heading, an optional form and a list */
+section.list {
+    display: grid;
+    place-content: start stretch;
+    margin-block: 0.5rem;
+
+    > header {
+        h2,
+        p {
+            margin: 0;
+        }
+
+        p {
+            display: flex;
+            gap: 1ch;
+            font-size: 0.8em;
+        }
+
+        .avatar {
+            --size: 1.2em;
+        }
+    }
+
+    > header + form {
+        place-self: stretch;
+        padding-block-end: 0.5rem;
+    }
+
+    ul {
+        margin-block-start: 0;
+    }
+}
+
+section.center {
+    text-align: center;
+
+    form {
+        place-self: center;
+    }
+}
+
+/* Forms */
+form {
+    display: grid;
+    place-self: start;
+    gap: 0.5ch;
+
+    span.error {
+        grid-column: span 2;
+        text-align: end;
+        font-size: 0.8em;
+        color: var(--highlight);
+    }
+}
+
+/* Forms with labels are dark panels with labels beside the inputs */
+form:has(label) {
+    grid-template-columns: auto 1fr;
+    padding: 2rem;
+    background: linear-gradient(45deg, #555, #222);
+    color: white;
+
+    label {
+        text-align: end;
+
+        &::after {
+            content: ":";
+        }
+    }
+
+    button {
+        grid-column: -2;
+        place-self: end;
+    }
+}
+
+/* Inline forms put the input and button on one row */
+form.inline {
+    grid-auto-flow: column;
+    grid-template-columns: 1fr auto;
+
+    > * {
+        grid-row: 1;
+    }
+
+    span.error {
+        grid-column: 1 / -1;
+        grid-row: 2;
     }
 }
