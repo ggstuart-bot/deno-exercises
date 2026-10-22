@@ -59,15 +59,25 @@ h2 {
     font-size: 1.17em;
 }
 
-a,
+/* Images never spill out of their container */
+img {
+    max-inline-size: 100%;
+}
+
 input,
 button {
     font: inherit;
+}
+
+/* Lets an input shrink in a narrow grid or flex row */
+input {
     min-inline-size: 0;
 }
 
-/* One focus ring for links, buttons and inputs */
-:is(a, input, button):focus-visible {
+/* One focus ring for links, buttons and inputs.
+   A card shows it round the whole card instead of its title link */
+:is(a, input, button):focus-visible,
+.card:has(:is(h2, h3) a:focus-visible) {
     outline: 2px solid var(--focus);
     outline-offset: 2px;
 }
@@ -96,6 +106,12 @@ a {
     text-underline-offset: 0.2em;
 }
 
+/* The current page, in the header nav or a pagination row */
+[aria-current="page"] {
+    font-weight: 600;
+    text-decoration: none;
+}
+
 
 /* ========== Layouts ========== */
 
@@ -111,14 +127,23 @@ body {
         justify-content: space-between;
         align-items: center;
         gap: 1rem;
-        padding: 0.5rem 1rem;
+        padding: 1.5rem 1rem;
     }
 
+    /* main holds a section and sometimes an aside. Each has its own padding,
+       so the aside's shading reaches the edges, and nothing sits above its
+       first child, so every page starts at the same height */
     > main {
         display: grid;
-        gap: 1rem;
-        padding: 0.5rem 1rem;
         font-size: 1.4em;
+
+        > * {
+            padding: 1rem;
+        }
+
+        > * > :first-child {
+            margin-block-start: 0;
+        }
     }
 
     > footer {
@@ -134,48 +159,41 @@ body {
     }
 }
 
-/* Pages with an aside get a second column on wide screens */
-main:has(> aside) {
-    padding: 0;
+/* The aside is shaded, and becomes a second column on wide screens */
+main > aside {
+    background: var(--tint);
+}
 
-    > * {
-        padding-inline: 1rem;
-    }
-
-    > aside {
-        background: color-mix(in srgb, currentColor 5%, transparent);
-    }
-
-    @media (width > 800px) {
+@media (width > 800px) {
+    main:has(> aside) {
         grid-template-columns: 1fr auto;
     }
 }
 
-/* As many equal columns as fit, with no media queries.
-   Usually a <ul>, so the bullets and padding go */
+/* Lists used for layout lose their bullets and indent */
+:is(.grid, .row, .striped) {
+    padding: 0;
+    list-style: none;
+}
+
+/* As many equal columns as fit, with no media queries */
 .grid {
     --column: 10rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(var(--column), 1fr));
     gap: 1rem;
-    padding: 0;
-    list-style: none;
 
     &.wide {
         --column: 20rem;
     }
 }
 
-
-/* Items side by side in a row, wrapping if they don't fit.
-   Usually a <ul>, so the bullets and padding go */
+/* Items side by side in a row, wrapping if they don't fit */
 .row {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 1rem;
-    padding: 0;
-    list-style: none;
 }
 
 
@@ -193,7 +211,6 @@ body > header.secondary {
     background-image: linear-gradient(var(--overlay), var(--overlay)), url(/assets/banner.webp);
     background-position: center;
     background-size: cover;
-    padding-block: 1.5rem;
 
     > * {
         padding: 0.5rem;
@@ -201,9 +218,7 @@ body > header.secondary {
         background: color-mix(in oklab, var(--bg) 75%, transparent);
         backdrop-filter: blur(8px);
     }
-}
 
-body > header {
     a {
         text-decoration: none;
     }
@@ -215,18 +230,15 @@ body > header {
     }
 }
 
-/* The logo and site name, as one link */
+/* The logo and site name, as one link. Underlined on hover like other
+   links, so it's clearly a link. Focus uses the normal ring */
 .brand {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: inherit;
     font-size: 1.4em;
     font-weight: 200;
-    text-decoration: none;
 
-    /* Underlined on hover like other links, so it's clearly a link.
-       Focus uses the normal ring */
     &:hover {
         text-decoration: underline;
     }
@@ -252,6 +264,18 @@ body > header nav :is(a, button) {
     &:has(img) {
         padding-inline-start: 0;
     }
+
+    /* The avatar pokes out a little, so the pill stays one line high */
+    .avatar {
+        margin-block: -0.25em;
+    }
+}
+
+/* The current page's pill is filled in: the text and panel colours swap.
+   The a in the selector makes it win over the button rule's :hover */
+body > header nav a[aria-current="page"] {
+    background: contrast-color(var(--bg));
+    color: var(--bg);
 }
 
 /* Flash message, slides in from the right.
@@ -280,51 +304,36 @@ body > header nav :is(a, button) {
     }
 }
 
-/* Avatars and book images */
+/* A round avatar. Big on its own (a profile), small inside a link */
 .avatar {
     --size: 8rem;
-    display: inline-block;
     inline-size: var(--size);
     block-size: var(--size);
     border-radius: 50%;
     object-fit: cover;
     vertical-align: middle;
-    background: #ccc;
+    background: var(--tint-strong);
 }
 
-nav .avatar {
-    --size: 1.4em;
-    margin-block: -0.2em;
-}
-
-li .avatar {
-    --size: 2em;
-}
-
+/* A link with a small avatar before the name */
 a:has(> .avatar) {
     display: inline-flex;
     align-items: center;
     gap: 0.5ch;
-}
 
-.cover {
-    max-inline-size: 100%;
+    > .avatar {
+        --size: 1.5em;
+    }
 }
 
 .admin {
     padding: 0.25ch 0.5ch;
     border: 1px solid currentColor;
-    border-radius: 2em;
+    border-radius: 1em;
     font-size: 0.6em;
 }
 
 /* Striped lists. Mixing in the text colour works on light and dark pages */
-.striped {
-    display: grid;
-    padding: 0;
-    list-style: none;
-}
-
 .striped > li {
     display: flex;
     justify-content: space-between;
@@ -341,10 +350,6 @@ a:has(> .avatar) {
         align-items: center;
         gap: 1ch;
     }
-
-    form {
-        display: inline;
-    }
 }
 
 /* Book and shelf cards: the picture first, then a <div> with the text.
@@ -358,6 +363,8 @@ a:has(> .avatar) {
     display: flex;
     flex-wrap: wrap;
     align-content: start;
+    border-radius: 0.5rem;
+    overflow: clip;
     background: var(--tint);
     font-size: 1rem;
 
@@ -402,7 +409,7 @@ a:has(> .avatar) {
         z-index: 1;
     }
 
-    /* The ring goes round the whole card instead of the title.
+    /* The card shows the focus ring (see base), not the title.
        Links in the footer keep their own ring */
     :is(h2, h3) a:focus-visible {
         outline: none;
@@ -411,26 +418,18 @@ a:has(> .avatar) {
     &:hover {
         background: var(--tint-strong);
     }
-
-    /* The same ring as everything else, round the whole card */
-    &:has(:is(h2, h3) a:focus-visible) {
-        outline: 2px solid var(--focus);
-        outline-offset: 2px;
-    }
 }
 
-/* A fanned row of small covers, e.g. on a shelf card */
+/* A fanned row of small covers on a shelf card, or a note if it's empty.
+   Padding rather than margin, so .card p { margin: 0 } can't undo it */
 .covers {
     display: flex;
     align-items: center;
     block-size: 6rem;
-    margin-block: 0.5rem;
-    margin-inline-start: 0.5rem;
+    padding: 0.5rem 0 0.5rem 0.5rem;
 
+    /* The width and height attributes size the images */
     img {
-        inline-size: 4rem;
-        block-size: auto;
-        aspect-ratio: 2 / 3;
         object-fit: cover;
         border-inline-end: 2px solid var(--bg);
     }
@@ -444,20 +443,12 @@ p.covers {
     font-style: italic;
 }
 
-/* The current page's pill is filled in: the text and panel colours swap.
-   The a in the selector makes it win over the button rule's :hover */
-body > header nav a[aria-current="page"] {
-    background: contrast-color(var(--bg));
-    color: var(--bg);
-}
-
 /* A list section with a heading, an optional form and a list.
    The gap spaces its children, so they lose their own top and bottom margins */
 section.list {
     display: grid;
-    place-content: start stretch;
+    align-content: start;
     gap: 1rem;
-    margin-block: 0.5rem;
 
     > * {
         margin-block: 0;
@@ -473,10 +464,6 @@ section.list {
             display: flex;
             gap: 1ch;
             font-size: 0.8em;
-        }
-
-        .avatar {
-            --size: 1.2em;
         }
     }
 }
@@ -514,6 +501,7 @@ form {
 /* A form with fields is a .secondary panel */
 form.secondary {
     padding: 1.5rem;
+    border-radius: 0.5rem;
 
     /* A little more space above each field after the first, and the button */
     label:not(:first-of-type),
@@ -527,18 +515,11 @@ form.secondary {
 }
 
 /* Inline forms put the input and button side by side.
-   A label or error takes a whole row to itself */
+   The label takes a whole row to itself */
 form.inline {
     grid-template-columns: 1fr auto;
 
-    label,
-    .error {
+    label {
         grid-column: 1 / -1;
     }
-}
-
-/* The current page in a pagination row */
-[aria-current="page"] {
-    font-weight: 600;
-    text-decoration: none;
 }
