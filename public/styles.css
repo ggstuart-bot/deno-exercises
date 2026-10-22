@@ -446,7 +446,7 @@ section.list {
         }
     }
 
-    > header + form {
+    > header + search {
         place-self: stretch;
         padding-block-end: 0.5rem;
     }
@@ -501,17 +501,13 @@ form.secondary {
     }
 }
 
-/* Inline forms put the input and button on one row */
+/* Inline forms put the input and button side by side.
+   A label or error takes a whole row to itself */
 form.inline {
-    grid-auto-flow: column;
     grid-template-columns: 1fr auto;
 
-    > * {
-        grid-row: 1;
-    }
-
-    span.error {
+    label,
+    .error {
         grid-column: 1 / -1;
-        grid-row: 2;
     }
 }
