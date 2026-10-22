@@ -161,7 +161,7 @@ body {
 
 /* The aside is shaded, and becomes a second column on wide screens */
 main > aside {
-    background: color-mix(in srgb, currentColor 5%, transparent);
+    background: var(--tint);
 }
 
 @media (width > 800px) {
@@ -312,7 +312,7 @@ body > header nav a[aria-current="page"] {
     border-radius: 50%;
     object-fit: cover;
     vertical-align: middle;
-    background: #ccc;
+    background: var(--tint-strong);
 }
 
 /* A link with a small avatar before the name */
