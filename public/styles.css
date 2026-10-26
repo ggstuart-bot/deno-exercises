@@ -39,3 +39,39 @@ body > * {
     padding: 0.5rem 1rem;
 }
 
+/* ===== Ex4 · Layout: a grid for the page, flex for the header and nav =====
+   Three rows: header and footer take what they need, main takes the rest */
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-block-size: 100vh;
+
+    > header, > footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+/* The logo and site name sit side by side */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5em;
+    svg {
+        block-size: 1em;
+    }
+}
+
+/* Links in a nav sit in a centred row */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
