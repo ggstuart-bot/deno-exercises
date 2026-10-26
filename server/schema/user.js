@@ -9,5 +9,5 @@ export const userSchema = {
     password: {
         displayName: "Password",
         validators: [required, minLength(8), hasDigit, hasSymbol],
-    }
+    },
 };

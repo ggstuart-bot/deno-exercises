@@ -8,27 +8,39 @@ export function myShelvesView(ctx) {
     const privateShelves = shelves.filter((shelf) => !shelf.isPublic);
 
     return html`
-    <section>
-        <header>
-            <h1>My shelves</h1>
-            <p>Bookshelves help you organise your books</p>
-        </header>
-        <h2>Public shelves</h2>
-        ${shelfList(user, publicShelves, "Anyone can see these shelves", "No public shelves yet")}
-        <h2>Private shelves</h2>
-        ${shelfList(user, privateShelves, "Only you can see these shelves", "No private shelves yet")}
-        ${user.isPublic ? "" : html`<p><a href="/profile">Publish your profile</a> to share shelves</p>`}
-    </section>
-    <aside>
-        <h2>New shelf</h2>
-        <form class="secondary" method="POST" action="/shelves">
-            <label for="title">Title</label>
-            <input id="title" name="title" value="${values?.title ?? ""}"
-                aria-describedby="title-error" aria-invalid="${Boolean(errors?.title)}">
-            <span id="title-error" class="error">${errors?.title ?? ""}</span>
-            <button>create</button>
-        </form>
-    </aside>
+        <section>
+            <header>
+                <h1>My shelves</h1>
+                <p>Bookshelves help you organise your books</p>
+            </header>
+            <h2>Public shelves</h2>
+            ${shelfList(
+                user,
+                publicShelves,
+                "Anyone can see these shelves",
+                "No public shelves yet",
+            )}
+            <h2>Private shelves</h2>
+            ${shelfList(
+                user,
+                privateShelves,
+                "Only you can see these shelves",
+                "No private shelves yet",
+            )}
+            ${user.isPublic
+                ? ""
+                : html`<p><a href="/profile">Publish your profile</a> to share shelves</p>`}
+        </section>
+        <aside>
+            <h2>New shelf</h2>
+            <form class="secondary" method="POST" action="/shelves">
+                <label for="title">Title</label>
+                <input id="title" name="title" value="${values?.title ?? ""}"
+                    aria-describedby="title-error" aria-invalid="${Boolean(errors?.title)}">
+                <span id="title-error" class="error">${errors?.title ?? ""}</span>
+                <button>create</button>
+            </form>
+        </aside>
     `;
 }
 
@@ -36,9 +48,11 @@ export function myShelvesView(ctx) {
 // Each card has a button to make the shelf public or private
 function shelfList(user, shelves, intro, emptyMessage) {
     return shelves.length
-        ? html`<p>${intro}</p>
-        <ul class="grid">
-${shelves.map((shelf) => shelfCard(shelf, visibilityButton(user, shelf)))}
-        </ul>`
+        ? html`
+            <p>${intro}</p>
+            <ul class="grid">
+            ${shelves.map((shelf) => shelfCard(shelf, visibilityButton(user, shelf)))}
+                    </ul>
+        `
         : html`<p>${emptyMessage}</p>`;
 }

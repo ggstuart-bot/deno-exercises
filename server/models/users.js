@@ -1,37 +1,37 @@
 import { hashPassword } from "../tools/hash.js";
 import { db } from "./db.js";
 
-export function getUsers() { 
+export function getUsers() {
     return db.prepare(`SELECT id, username, isAdmin, avatarId, isPublic FROM users;`).all();
 }
 
 export function getUserByUsername(username) {
     return db.prepare(
-        `SELECT * FROM users WHERE username=:username`
+        `SELECT * FROM users WHERE username=:username`,
     ).get({ username });
 }
 
 export function getUserById(id) {
     return db.prepare(
-        `SELECT id, username, isAdmin, avatarId, isPublic FROM users WHERE id=:id`
+        `SELECT id, username, isAdmin, avatarId, isPublic FROM users WHERE id=:id`,
     ).get({ id });
 }
 
 export function updateIsAdmin(id, isAdmin) {
     return db.prepare(
-        `UPDATE users SET isAdmin=:isAdmin WHERE id=:id`
+        `UPDATE users SET isAdmin=:isAdmin WHERE id=:id`,
     ).run({ id, isAdmin });
 }
 
 export function updateUserIsPublic(id, isPublic) {
     return db.prepare(
-        `UPDATE users SET isPublic=:isPublic WHERE id=:id`
+        `UPDATE users SET isPublic=:isPublic WHERE id=:id`,
     ).run({ id, isPublic });
 }
 
 export function updateAvatarId(id, avatarId) {
     return db.prepare(
-        `UPDATE users SET avatarId=:avatarId WHERE id=:id`
+        `UPDATE users SET avatarId=:avatarId WHERE id=:id`,
     ).run({ id, avatarId });
 }
 
@@ -49,6 +49,6 @@ export function usernameExists(username) {
         db.prepare(`
             SELECT 1 FROM users
             WHERE username=:username
-        `).get({ username })
+        `).get({ username }),
     );
 }

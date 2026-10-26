@@ -10,7 +10,7 @@ export function createShelf({ title, ownerId, isPublic = 0 }) {
 
 export function getShelfById(id) {
     return db.prepare(
-        `SELECT id, title, ownerId, isPublic FROM shelves WHERE id=:id`
+        `SELECT id, title, ownerId, isPublic FROM shelves WHERE id=:id`,
     ).get({ id });
 }
 
@@ -42,24 +42,24 @@ export function getPublicShelvesByOwnerId(ownerId) {
 
 export function updateShelfTitle(id, title) {
     return db.prepare(
-        `UPDATE shelves SET title=:title WHERE id=:id RETURNING id, title, ownerId`
+        `UPDATE shelves SET title=:title WHERE id=:id RETURNING id, title, ownerId`,
     ).get({ id, title });
 }
 
 export function updateShelfIsPublic(id, isPublic) {
     return db.prepare(
-        `UPDATE shelves SET isPublic=:isPublic WHERE id=:id RETURNING id, title, ownerId, isPublic`
+        `UPDATE shelves SET isPublic=:isPublic WHERE id=:id RETURNING id, title, ownerId, isPublic`,
     ).get({ id, isPublic });
 }
 
 export function unpublishShelvesByOwnerId(ownerId) {
     return db.prepare(
-        `UPDATE shelves SET isPublic=0 WHERE ownerId=:ownerId`
+        `UPDATE shelves SET isPublic=0 WHERE ownerId=:ownerId`,
     ).run({ ownerId });
 }
 
 export function deleteShelf(id) {
     return db.prepare(
-        `DELETE FROM shelves WHERE id=:id RETURNING id, title, ownerId`
+        `DELETE FROM shelves WHERE id=:id RETURNING id, title, ownerId`,
     ).get({ id });
 }

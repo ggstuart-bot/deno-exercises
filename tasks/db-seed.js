@@ -19,7 +19,11 @@ for (const user of seed.users) {
     updateAvatarId(userId, await createFile(file));
 
     for (const shelf of user.shelves) {
-        const { id: shelfId } = createShelf({ title: shelf.title, ownerId: userId, isPublic: shelf.isPublic });
+        const { id: shelfId } = createShelf({
+            title: shelf.title,
+            ownerId: userId,
+            isPublic: shelf.isPublic,
+        });
         for (const title of shelf.books) {
             const bookId = bookIds[title];
             if (!bookId) {

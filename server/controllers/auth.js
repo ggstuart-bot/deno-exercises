@@ -26,7 +26,7 @@ export async function signinController(ctx) {
     return redirect("/", ctx);
 }
 
-export function signoutController(ctx) { 
+export function signoutController(ctx) {
     signout(ctx);
     ctx.flash = "Signed out";
     return redirect("/", ctx);

@@ -48,11 +48,11 @@ export function hasSymbol(name, value) {
 }
 
 export function unique(exists) {
-    return (name, value) => { 
+    return (name, value) => {
         if (exists(value)) {
             throw new ValidationError(`${name} already taken.`);
         }
-    }
+    };
 }
 
 export function isFile(name, value) {

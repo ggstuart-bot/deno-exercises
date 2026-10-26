@@ -2,7 +2,16 @@ import { aboutController } from "./controllers/about.js";
 import { homeController } from "./controllers/home.js";
 import { bookController, booksController } from "./controllers/books.js";
 import { addBookController, removeBookController } from "./controllers/shelfBooks.js";
-import { createShelfController, deleteShelfController, editShelfController, myShelvesController, shelfController, privateProfileController, publishShelfController, unpublishShelfController } from "./controllers/shelves.js";
+import {
+    createShelfController,
+    deleteShelfController,
+    editShelfController,
+    myShelvesController,
+    privateProfileController,
+    publishShelfController,
+    shelfController,
+    unpublishShelfController,
+} from "./controllers/shelves.js";
 import { staticController } from "./controllers/static.js";
 import { notFoundController } from "./controllers/notFound.js";
 import { layout } from "./layout.js";
@@ -11,15 +20,43 @@ import { Router } from "./tools/router.js";
 import { withLogs } from "./middleware/logging.js";
 import { withValidation } from "./middleware/validation.js";
 import { shelfSchema } from "./schema/shelf.js";
-import { avatarController, createUserController, uploadAvatarController, demoteController, profileController, promoteController, publishProfileController, unpublishProfileController, selfChangeController, signupFormController, userController, usersController } from "./controllers/users.js";
+import {
+    avatarController,
+    createUserController,
+    demoteController,
+    profileController,
+    promoteController,
+    publishProfileController,
+    selfChangeController,
+    signupFormController,
+    unpublishProfileController,
+    uploadAvatarController,
+    userController,
+    usersController,
+} from "./controllers/users.js";
 import { userSchema } from "./schema/user.js";
 import { avatarSchema } from "./schema/avatar.js";
-import { alreadySignedInRedirectController, forbiddenController, signinController, signinFormController, signinRedirectController, signoutController } from "./controllers/auth.js";
+import {
+    alreadySignedInRedirectController,
+    forbiddenController,
+    signinController,
+    signinFormController,
+    signinRedirectController,
+    signoutController,
+} from "./controllers/auth.js";
 import { signinSchema } from "./schema/signin.js";
 import { withSession } from "./middleware/session.js";
 import { requireAdmin, requireGuest, requirePermission, requireUser } from "./middleware/access.js";
 import { withBook, withShelf, withTargetUser } from "./middleware/resources.js";
-import { canChangeAdmin, canChangeAvatar, canPublishShelf, canPublishProfile, canUseShelf, canViewShelf, canViewUser } from "./tools/permissions.js";
+import {
+    canChangeAdmin,
+    canChangeAvatar,
+    canPublishProfile,
+    canPublishShelf,
+    canUseShelf,
+    canViewShelf,
+    canViewUser,
+} from "./tools/permissions.js";
 
 const validateNewShelf = withValidation(shelfSchema, myShelvesController);
 const validateEditShelf = withValidation(shelfSchema, shelfController);
@@ -59,20 +96,87 @@ app.get("/profile", mustBeSignedIn, profileController);
 app.get("/shelves", mustBeSignedIn, myShelvesController);
 app.post("/shelves", mustBeSignedIn, validateNewShelf, createShelfController);
 app.get("/shelves/:shelfId", withShelf, mayViewShelf, shelfController);
-app.post("/shelves/:shelfId/edit", mustBeSignedIn, withShelf, mayUseShelf, validateEditShelf, editShelfController);
-app.post("/shelves/:shelfId/publish", mustBeSignedIn, withShelf, mayUseShelf, mayPublishShelf, publishShelfController);
-app.post("/shelves/:shelfId/unpublish", mustBeSignedIn, withShelf, mayUseShelf, unpublishShelfController);
+app.post(
+    "/shelves/:shelfId/edit",
+    mustBeSignedIn,
+    withShelf,
+    mayUseShelf,
+    validateEditShelf,
+    editShelfController,
+);
+app.post(
+    "/shelves/:shelfId/publish",
+    mustBeSignedIn,
+    withShelf,
+    mayUseShelf,
+    mayPublishShelf,
+    publishShelfController,
+);
+app.post(
+    "/shelves/:shelfId/unpublish",
+    mustBeSignedIn,
+    withShelf,
+    mayUseShelf,
+    unpublishShelfController,
+);
 app.post("/shelves/:shelfId/delete", mustBeSignedIn, withShelf, mayUseShelf, deleteShelfController);
-app.post("/shelves/:shelfId/books/:bookId/add", mustBeSignedIn, withShelf, withBook, mayUseShelf, addBookController);
-app.post("/shelves/:shelfId/books/:bookId/delete", mustBeSignedIn, withShelf, withBook, mayUseShelf, removeBookController);
+app.post(
+    "/shelves/:shelfId/books/:bookId/add",
+    mustBeSignedIn,
+    withShelf,
+    withBook,
+    mayUseShelf,
+    addBookController,
+);
+app.post(
+    "/shelves/:shelfId/books/:bookId/delete",
+    mustBeSignedIn,
+    withShelf,
+    withBook,
+    mayUseShelf,
+    removeBookController,
+);
 app.get("/users", mustBeSignedIn, mustBeAdmin, usersController);
 app.get("/users/:userId", withTargetUser, mayViewUser, userController);
 app.get("/users/:userId/avatar", withTargetUser, mayViewUser, avatarController);
-app.post("/users/:userId/avatar", mustBeSignedIn, withTargetUser, mayChangeAvatar, validateAvatar, uploadAvatarController);
-app.post("/users/:userId/publish", mustBeSignedIn, withTargetUser, mayPublishProfile, publishProfileController);
-app.post("/users/:userId/unpublish", mustBeSignedIn, withTargetUser, mayPublishProfile, unpublishProfileController);
-app.post("/users/:userId/promote", mustBeSignedIn, mustBeAdmin, withTargetUser, mayChangeAdmin, promoteController);
-app.post("/users/:userId/demote", mustBeSignedIn, mustBeAdmin, withTargetUser, mayChangeAdmin, demoteController);
+app.post(
+    "/users/:userId/avatar",
+    mustBeSignedIn,
+    withTargetUser,
+    mayChangeAvatar,
+    validateAvatar,
+    uploadAvatarController,
+);
+app.post(
+    "/users/:userId/publish",
+    mustBeSignedIn,
+    withTargetUser,
+    mayPublishProfile,
+    publishProfileController,
+);
+app.post(
+    "/users/:userId/unpublish",
+    mustBeSignedIn,
+    withTargetUser,
+    mayPublishProfile,
+    unpublishProfileController,
+);
+app.post(
+    "/users/:userId/promote",
+    mustBeSignedIn,
+    mustBeAdmin,
+    withTargetUser,
+    mayChangeAdmin,
+    promoteController,
+);
+app.post(
+    "/users/:userId/demote",
+    mustBeSignedIn,
+    mustBeAdmin,
+    withTargetUser,
+    mayChangeAdmin,
+    demoteController,
+);
 
 export async function server(request) {
     const url = new URL(request.url);

@@ -1,4 +1,10 @@
-import { createShelf, deleteShelf, getShelvesByOwnerId, updateShelfIsPublic, updateShelfTitle } from "../models/shelves.js";
+import {
+    createShelf,
+    deleteShelf,
+    getShelvesByOwnerId,
+    updateShelfIsPublic,
+    updateShelfTitle,
+} from "../models/shelves.js";
 import { addThumbnails, getBooksByShelfId } from "../models/shelfBooks.js";
 import { getUserById } from "../models/users.js";
 import { canUseShelf } from "../tools/permissions.js";
