@@ -130,3 +130,43 @@ img {
     }
 }
 
+/* ===== Ex7 · GET forms: pill buttons and the search form =====
+   Buttons and nav links share one look. The current page is filled in */
+button, nav a {
+    padding: 0.25em 0.75em;
+    border: 1px solid;
+    border-radius: 1em;
+    background: none;
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline var(--highlight) 2px;
+    }
+    &[aria-current="page"] {
+        background: var(--highlight);
+        color: black;
+    }
+}
+
+button, input {
+    font: inherit;
+}
+
+/* A form is a one-column grid: each label, input and button on its own row */
+form {
+    display: grid;
+    gap: 0.5rem;
+    max-inline-size: 30rem;
+    button {
+        justify-self: start;
+    }
+}
+
+/* The search box and its button share a row, under the label */
+search > form {
+    grid-template-columns: 1fr auto;
+    label {
+        grid-column: 1 / -1;
+    }
+}
+
