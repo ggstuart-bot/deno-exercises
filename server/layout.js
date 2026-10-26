@@ -40,7 +40,7 @@ export function layout(content, ctx) {
 
 function flashMessage(flash) {
     return flash
-        ? html`<p id="flash" role="status">${flash}</p>`
+        ? html`<p id="flash" role="status" tabindex="0">${flash}</p>`
         : "";
 }
 
