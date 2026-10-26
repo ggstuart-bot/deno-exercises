@@ -1,32 +1,9 @@
-/* ========== Custom properties ========== */
-
-/* Core colours, defined once. light-dark() picks a value from the OS setting */
+/* ===== Ex3 · A first stylesheet: colours, type and the box model =====
+   The accent is a custom property, so it is set once and used everywhere */
 :root {
-    color-scheme: light dark;
-    --primary: light-dark(white, black);
-    --secondary: #333;
+    color-scheme: light dark; /* light or dark page colours, from the OS setting */
     --highlight: darkred;
-    --primary-tint: light-dark(#f9f9f9, #222);
-    --bg: var(--primary);
 }
-
-/* Set --bg and the text colour follows it */
-body,
-.secondary,
-#flash {
-    background: var(--bg);
-    color: contrast-color(var(--bg));
-}
-
-.secondary {
-    --bg: var(--secondary);
-}
-
-#flash {
-    --bg: var(--highlight);
-}
-
-/* ========== Base elements ========== */
 
 body {
     margin: 0;
@@ -34,393 +11,276 @@ body {
     font-weight: 300;
 }
 
-a,
-button,
-input {
-    color: inherit;
-    font: inherit;
+h1, h2, h3 {
+    font-weight: 400;
 }
 
-/* links have underlines and can contain avatars */
+/* Links keep the text colour, with an accent underline */
 a {
-    text-decoration: underline var(--highlight) solid 2px;
-    &:hover {
-        text-decoration-color: currentColor;
-    }
-    .avatar {
-        --size: 1.5em;
-        margin-inline-end: 0.5ch;
-    }
+    color: inherit;
+    text-decoration-color: var(--highlight);
+    text-decoration-thickness: 2px;
 }
 
-h1,
-h2,
-h3 {
-    font-weight: 400;
-}
-
-img {
-    max-inline-size: 100%;
-}
-
-input {
-    min-inline-size: 0;
-    border-radius: 0.25em;
-}
-
-input,
-button,
-nav a {
-    padding: 0.25em 0.5em;
-    border: 1px solid currentColor;
-    text-decoration: none;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1ch;
-}
-
-/* substantial things that are clickable */
-button,
-nav a {
-    border-radius: 1em;
-    background: transparent;
-    backdrop-filter: brightness(1.2);   
-    &:hover {
-        backdrop-filter: brightness(1.4);
-    }
-    &[aria-current="page"] {
-        backdrop-filter: brightness(1.6);
-    }
-    cursor: pointer;
-}
-
-:focus-visible {
-    outline: 2px solid var(--highlight);
-    outline-offset: 2px;
-}
-
-
-/* ========== Layouts ========== */
-
-/* The page shell: one row each for header (with nav), main and footer */
-body {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    min-block-size: 100dvh;
-
-    > header {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        gap: 1rem;
-        padding: 0.5rem 1rem;
-
-        nav {
-            flex-wrap: wrap;
-        }
-    }
-
-    > main {
-        display: grid;
-        
-        > * {
-            padding-inline: 1rem;
-            padding-bottom: 1rem;
-        }
-    }
-
-    > footer {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        padding: 0 1rem;
-
-        > :last-child {
-            margin-inline-start: auto;
-        }
-    }
-}
-
-main > aside {
-    /* backdrop-filter: brightness(0.9); */
-}
-
-@media (width > 800px) {
-    main:has(> aside) {
-        grid-template-columns: 1fr auto;
-        aside {
-            border-left: 0.5px solid currentColor;
-        }
-    }
-}
-
-/* Lists used for layout lose their bullets and indent */
-:is(.grid, .row) {
-    padding: 0;
-    list-style: none;
-}
-
-/* As many equal columns as fit, with no media queries */
-.grid {
-    --column: 15ch;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(var(--column), 1fr));
-    gap: 1rem;
-
-    &.wide {
-        --column: 270px;
-    }
-}
-
-.flex-between {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* ========== Components ========== */
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.4em;
-    svg {
-        block-size: 1em;
-    }
-}
-
-/* Header links and the sign out button look like buttons made into pills */
-body > header nav {
-    :is(a, button) {
-        padding: 0.25em 0.5em;
-        border-radius: 1em;
-        font-size: 1.2em;
-        line-height: 1;
-        text-wrap: nowrap;
-        &:has(.avatar) {
-            display: inline-flex;
-            padding: 0 0.5em 0 0;
-            align-items: center;
-            .avatar {
-                --size: 1.5em;
-            }
-        }
-    }
-}
-
-/* Flash message, slides in from the right.
-   Its --bg is the highlight, and contrast-color() picks the text colour */
-#flash {
-    position: fixed;
-    inset-inline-end: 0;
-    inset-block-end: 4em;
-    margin: 0;
-    padding: 0.5em 2rem;
-    font-weight: 400;
-    translate: calc(100% - 1rem);
-    transition: translate 200ms;
-    animation: flash 2s;
-
-    &:hover {
-        translate: none;
-    }
-}
-
-@keyframes flash {
-    10%,
-    90% {
-        translate: none;
-    }
-}
-
-/* A round avatar. Big on its own (a profile), small inside a link */
-.avatar {
-    --size: 8rem;
-    inline-size: var(--size);
-    block-size: var(--size);
-    border-radius: 50%;
-    object-fit: cover;
-    vertical-align: middle;
-    background: currentColor;
-}
-
-
-
-/* A small outlined label for a short status, e.g. admin, public or private */
-.badge {
-    padding: 0.25ch 0.5ch;
-    border: 1px solid currentColor;
-    border-radius: 1em;
-    font-size: 0.75em;
+.badge,
+#flash,
+nav a[aria-current="page"] {
     background: var(--highlight);
     color: contrast-color(var(--highlight));
 }
 
 
-.card {
+/* Anything you can tab to gets an accent outline */
+:focus-visible {
+    outline: 2px solid var(--highlight);
+    outline-offset: 2px;
+}
+
+/* The header and footer are dark panels with light text */
+.secondary {
+    background: #333;
+    color: white;
+}
+
+/* Padding keeps everything off the edges of the window */
+body > * {
+    padding: 0.5rem 1rem;
+}
+
+/* ===== Ex4 · Layout: a grid for the page, flex for the header and nav =====
+   Three rows: header and footer take what they need, main takes the rest */
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-block-size: 100vh;
+
+    > header, > footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+/* The logo and site name sit side by side */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5em;
+    svg {
+        block-size: 1em;
+    }
+}
+
+/* Links in a nav sit in a centred row */
+nav {
     display: flex;
     flex-wrap: wrap;
-    align-content: start;
-    border-radius: 0.5rem;
-    border: 1px solid currentColor;
-    overflow: clip;
-    background: var(--primary-tint);
-    /* backdrop-filter: brightness(0.9); */
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
 
-    > img:not(.avatar) {
-        inline-size: 100%;
+/* ===== Ex5 · Books list: a grid of cards =====
+   auto-fill makes as many columns as fit, each at least 15rem wide */
+img {
+    max-inline-size: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+/* A card is a bordered box: picture first, text last */
+.card {
+    display: flex;
+    border: 1px solid;
+    border-radius: 0.5rem;
+    overflow: clip;
+
+    /* A book cover fills the left of the card */
+    &.book > img {
+        inline-size: 40%;
         block-size: auto;
         aspect-ratio: 2 / 3;
         object-fit: cover;
     }
 
-    /* A user card's picture is their avatar, centred and not stretched */
-    > .avatar {
-        --size: 6rem;
-        margin: 1rem auto 0;
-    }
-
-    /* The text is always the last thing in the card */
+    /* The text is spread from the top of the card to the bottom */
     > div:last-child {
+        flex: 1;
         display: grid;
-        gap: 0.25rem;
+        align-content: space-between;
+        gap: 0.5rem;
         padding: 0.5rem;
     }
 
-    h2,
-    h3,
-    p {
+    h2, h3, p {
         margin: 0;
+        font-size: 1em;
     }
+}
 
+/* ===== Ex6 · Book page: a row that wraps on small screens ===== */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 1rem;
+    > img {
+        inline-size: 15rem;
+    }
+}
+
+/* ===== Ex7 · GET forms: pill buttons and the search form =====
+   Buttons and nav links share one look. The current page is filled in */
+button, nav a {
+    padding: 0.25em 0.75em;
+    border: 1px solid;
+    border-radius: 1em;
+    background: none;
+    color: inherit;
+    text-decoration: none;
     &:hover {
-        backdrop-filter: brightness(light-dark(0.8, 1.2));
+        text-decoration: underline var(--highlight) 2px;
     }
 }
 
-.card.book {
-    display: grid;
-    grid-row: span 2;
-    grid-column: span 2;
-    grid-template-rows: subgrid;
-    grid-template-columns: subgrid;
-    div:last-child {
-        padding: 0.5rem 0;
-        display: grid;
-        grid-row: span 2;
-        grid-template-rows: subgrid;
-        h2 {
-            font-size: 1.1em;
-        }
-        p {
-            align-self: end;
-        }
-    }
-    img {
-        grid-row: span 2;
-        border-right: 1px solid currentColor;
-    }
+input {
+    min-width: 0;
 }
 
-.card.user {
-    display: grid;
-    grid-template-rows: auto auto;
-    place-items: center;
-    div {
-        display: grid;
-        gap: 1ch;
-    }
-    footer {
-        padding-block: 0.5rem;
-    }
+button, input {
+    font: inherit;
 }
 
-.card.shelf {
-    display: grid;
-    grid-template-rows: auto auto;
-
-    .covers {
-        display: grid;
-        place-content: center;
-        place-items: center;
-        grid-auto-flow: column;
-        grid-auto-columns: auto;
-        background: currentColor;
-        gap: 2px;
-        img {
-            object-fit: cover;
-            border-inline: 1px solid var(--bg);
-        }
-        border-bottom: 1px solid currentColor;
-        img + img {
-            /* margin-inline-start: -2rem; */
-        }
-    }
-}
-
-
-p.covers {
-    font-style: italic;
-    margin: 1em;
-}
-
-section.center {
-    text-align: center;
-
-    form {
-        place-self: center;
-    }
-}
-
-
+/* A form is a one-column grid: each label, input and button on its own row */
 form {
     display: grid;
-    place-self: start;
-    gap: 0.25rem;
-    text-align: start;
+    gap: 0.5rem;
+    max-inline-size: 30rem;
+    button {
+        justify-self: start;
+    }
+}
 
+/* The search box and its button share a row, under the label */
+search > form {
+    grid-template-columns: 1fr auto;
+    label {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ===== Ex9 · POST forms: a padded panel and error messages =====
+   An error has an accent bar, and takes no space when it is empty */
+form.secondary {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
     .error {
         padding-inline-start: 0.5em;
         border-inline-start: 0.25em solid var(--highlight);
         font-size: 0.8em;
-
         &:empty {
             display: none;
         }
     }
 }
 
-/* A form with fields is a .secondary panel */
-form.secondary {
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-
-    input {
-        /* background: var(--bg); */
+/* ===== Ex10 · Flash message: fixed in a corner, then it slides away =====
+   Fixed, so the page never moves. Hover or focus brings it back */
+#flash {
+    position: fixed;
+    inset-block-end: 4rem;
+    inset-inline-end: 0;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    @media (prefers-reduced-motion: no-preference) {
+        animation: slide-away 0.5s 3s forwards;
     }
-
-    label,
-    button {
-        margin-block-start: 0.5rem;
-    }
-
-    button {
-        justify-self: start;
+    &:hover, &:focus {
+        animation: none;
     }
 }
 
-/* A search form puts the input and button side by side.
-   The label takes a whole row to itself */
-search > form {
-    grid-template-columns: 1fr auto;
-
-    label {
-        grid-column: 1 / -1;
+/* After 3 seconds it slides right, leaving a sliver showing */
+@keyframes slide-away {
+    to {
+        translate: calc(100% - 1rem);
     }
+}
+
+/* ===== Ex11 · Shelves: a side column, and shelf cards =====
+   On wide screens main becomes a two-column grid, so an aside sits beside the section */
+@media (width > 50rem) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        > aside {
+            margin-inline-start: 1rem;
+            padding-inline-start: 1rem;
+            border-inline-start: 1px solid;
+        }
+    }
+}
+
+/* A shelf card stacks a strip of covers above the text */
+.card.shelf {
+    flex-direction: column;
+    .row {
+        justify-content: space-between;
+    }
+}
+
+.covers {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    padding: 0.5rem;
+    border-block-end: 1px solid;
+    /* min-inline-size: 0 lets the covers shrink to fit the card */
+    img {
+        min-inline-size: 0;
+        object-fit: cover;
+    }
+}
+
+/* ===== Ex13 · Users: round avatars and user cards =====
+   A square picture with 50% rounded corners is a circle */
+.avatar {
+    inline-size: 8rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+    vertical-align: middle;
+    background: gray;
+}
+
+/* Inside a link, an avatar is one line of text tall */
+a .avatar {
+    inline-size: 1lh;
+    margin-inline-end: 0.5ch;
+}
+
+/* A user card is centred, with a smaller avatar on top */
+.card.user {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    > .avatar {
+        inline-size: 6rem;
+        margin-block-start: 1rem;
+    }
+}
+
+/* A short status label, e.g. admin, public or private */
+.badge {
+    padding: 0 0.5em;
+    border-radius: 1em;
 }

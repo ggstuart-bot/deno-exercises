@@ -19,7 +19,7 @@ export function userDetailView(ctx) {
         ${avatarImage(targetUser, `Avatar for '${targetUser.username}'`)}
         <h2>Public shelves</h2>
         ${publicShelves.length
-            ? html`<ul class="grid wide">
+            ? html`<ul class="grid">
 ${publicShelves.map((shelf) => shelfCard(shelf))}
         </ul>`
             : html`<p>No public shelves</p>`}
@@ -54,18 +54,4 @@ function visibilityForm(user) {
     </form>    
     `
 
-    // return user.isPublic
-    //     ? html`
-    //     <h2>Profile is public</h2>
-    //     <p>Anyone can see your profile and public shelves</p>
-    //     <form method="POST" action="/users/${user.id}/unpublish">
-    //         <button>make profile private</button>
-    //     </form>
-    //     <p>This also makes all of your shelves private</p>`
-    //     : html`
-    //     <h2>Profile is private</h2>
-    //     <p>Only you can see your profile</p>
-    //     <form method="POST" action="/users/${user.id}/publish">
-    //         <button>make profile public</button>
-    //     </form>`;
 }

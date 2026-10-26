@@ -37,7 +37,7 @@ export function myShelvesView(ctx) {
 function shelfList(user, shelves, intro, emptyMessage) {
     return shelves.length
         ? html`<p>${intro}</p>
-        <ul class="grid wide">
+        <ul class="grid">
 ${shelves.map((shelf) => shelfCard(shelf, visibilityButton(user, shelf)))}
         </ul>`
         : html`<p>${emptyMessage}</p>`;
