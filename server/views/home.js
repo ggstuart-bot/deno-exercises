@@ -1,6 +1,7 @@
 import { html } from "../tools/html.js";
 import { avatarImage } from "./avatar.js";
 import { shelfCard } from "./shelfCard.js";
+import { searchForm } from "./searchForm.js";
 
 export function homeView(ctx) {
     const { data: { publicShelves } } = ctx;
@@ -10,13 +11,7 @@ export function homeView(ctx) {
             <header>
                 <h1>Find a book</h1>
             </header>
-            <search>
-                <form method="GET" action="/books">
-                    <label for="q">Search by title or author</label>
-                    <input id="q" type="search" name="q">
-                    <button>search</button>
-                </form>
-            </search>
+            ${searchForm()}
             <h2>Public shelves</h2>
             ${publicShelves.length
                 ? html`<ul class="grid">
