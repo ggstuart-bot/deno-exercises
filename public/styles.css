@@ -119,3 +119,14 @@ img {
     }
 }
 
+/* ===== Ex6 · Book page: a row that wraps on small screens ===== */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 1rem;
+    > img {
+        inline-size: 15rem;
+    }
+}
+
