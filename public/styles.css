@@ -2,7 +2,7 @@
    The accent is a custom property, so it is set once and used everywhere */
 :root {
     color-scheme: light dark; /* light or dark page colours, from the OS setting */
-    --highlight: orangered;
+    --highlight: darkred;
 }
 
 body {
@@ -21,6 +21,14 @@ a {
     text-decoration-color: var(--highlight);
     text-decoration-thickness: 2px;
 }
+
+.badge,
+#flash,
+nav a[aria-current="page"] {
+    background: var(--highlight);
+    color: contrast-color(var(--highlight));
+}
+
 
 /* Anything you can tab to gets an accent outline */
 :focus-visible {
@@ -142,10 +150,10 @@ button, nav a {
     &:hover {
         text-decoration: underline var(--highlight) 2px;
     }
-    &[aria-current="page"] {
-        background: var(--highlight);
-        color: black;
-    }
+}
+
+input {
+    min-width: 0;
 }
 
 button, input {
@@ -193,8 +201,6 @@ form.secondary {
     inset-inline-end: 0;
     margin: 0;
     padding: 0.5rem 1rem;
-    background: var(--highlight);
-    color: black;
     @media (prefers-reduced-motion: no-preference) {
         animation: slide-away 0.5s 3s forwards;
     }
@@ -277,6 +283,4 @@ a .avatar {
 .badge {
     padding: 0 0.5em;
     border-radius: 1em;
-    background: var(--highlight);
-    color: black;
 }
