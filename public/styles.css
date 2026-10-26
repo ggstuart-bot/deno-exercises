@@ -1,7 +1,8 @@
 /* The accent is a custom property, so it is set once and used everywhere */
 :root {
     color-scheme: light dark; /* light or dark page colours, from the OS setting */
-    --highlight: darkred;
+    --hue: 20; /* change the hue (0 to 360) to pick any accent colour */
+    --highlight: oklch(62% 0.2 var(--hue));
 }
 
 body {
@@ -25,7 +26,7 @@ a {
 #flash,
 nav a[aria-current="page"] {
     background: var(--highlight);
-    color: contrast-color(var(--highlight));
+    color: black;
 }
 
 
