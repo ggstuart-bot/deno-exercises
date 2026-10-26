@@ -75,3 +75,47 @@ nav {
     gap: 0.5rem;
 }
 
+/* ===== Ex5 · Books list: a grid of cards =====
+   auto-fill makes as many columns as fit, each at least 15rem wide */
+img {
+    max-inline-size: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+/* A card is a bordered box: picture first, text last */
+.card {
+    display: flex;
+    border: 1px solid;
+    border-radius: 0.5rem;
+    overflow: clip;
+
+    /* A book cover fills the left of the card */
+    &.book > img {
+        inline-size: 40%;
+        block-size: auto;
+        aspect-ratio: 2 / 3;
+        object-fit: cover;
+    }
+
+    /* The text is spread from the top of the card to the bottom */
+    > div:last-child {
+        flex: 1;
+        display: grid;
+        align-content: space-between;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    h2, h3, p {
+        margin: 0;
+        font-size: 1em;
+    }
+}
+
