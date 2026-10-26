@@ -17,6 +17,7 @@ export function layout(content, ctx) {
             <header class="secondary">
                 <a href="/" class="brand">${logo} Bookshelves</a>
                 <nav>
+                    ${navLink("/books", "books", ctx.url.pathname)}
                     ${adminLinks(ctx.user, ctx.url.pathname)}
                     ${authLinks(ctx.user, ctx.url.pathname)}
                 </nav>
