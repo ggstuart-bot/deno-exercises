@@ -5,16 +5,18 @@ import { DEFAULT_COVER } from "./book.js";
 // Pass extra content (e.g. the owner) to show it in the card footer.
 // Shelf lists always sit under an <h2>, so the title is an <h3>
 export function shelfCard(shelf, footer = "") {
-    return html`<li class="card">
-                ${shelf.thumbnails.length
-                    ? html`<div class="covers">${shelf.thumbnails.map(coverImage)}</div>`
-                    : html`<p class="covers">No books yet</p>`}
-                <div>
-                    <h3><a href="/shelves/${shelf.id}">${shelf.title}</a></h3>
-                    <p>${shelf.bookCount} ${shelf.bookCount === 1 ? "book" : "books"}</p>
-                    ${footer ? html`<footer>${footer}</footer>` : ""}
-                </div>
-            </li>`;
+    return html`<li class="card shelf">
+    ${shelf.thumbnails.length
+        ? html`<div class="covers">${shelf.thumbnails.map(coverImage)}</div>`
+        : html`<p class="covers">No books yet</p>`}
+        <div>
+            <div class="flex-between">
+                <h3><a href="/shelves/${shelf.id}">${shelf.title}</a></h3>
+                <p>${shelf.bookCount} ${shelf.bookCount === 1 ? "book" : "books"}</p>
+            </div>
+            ${footer ? html`<footer>${footer}</footer>` : ""}
+        </div>
+    </li>`;
 }
 
 function coverImage(book) {

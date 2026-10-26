@@ -31,11 +31,9 @@ ${books.map((book) => bookCard(book))}
 function pagination(q, page, hasNext) {
     if (page === 1 && !hasNext) return "";
     return html`<nav aria-label="Pagination">
-            <ul class="row">
-                ${page > 1 ? html`<li><a href="${pageUrl(q, page - 1)}" rel="prev">previous</a></li>` : ""}
-                <li><a href="${pageUrl(q, page)}" aria-current="page">page ${page}</a></li>
-                ${hasNext ? html`<li><a href="${pageUrl(q, page + 1)}" rel="next">next</a></li>` : ""}
-            </ul>
+            ${page > 1 ? html`<a href="${pageUrl(q, page - 1)}" rel="prev">previous</a>` : ""}
+            <a href="${pageUrl(q, page)}" aria-current="page">page ${page}</a>
+            ${hasNext ? html`<a href="${pageUrl(q, page + 1)}" rel="next">next</a>` : ""}
         </nav>`;
 }
 

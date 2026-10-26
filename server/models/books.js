@@ -1,6 +1,6 @@
 import { db } from "./db.js";
 
-export const PAGE_SIZE = 20;
+export const PAGE_SIZE = 16;
 
 export function createBook({ title, author, year, thumbnailUrl, coverUrl }) {
     return db.prepare(`

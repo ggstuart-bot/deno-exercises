@@ -3,19 +3,11 @@
 /* Core colours, defined once. light-dark() picks a value from the OS setting */
 :root {
     color-scheme: light dark;
-    --primary: light-dark(#f5f5f5, #181818);
-    --secondary: color-mix(in oklab, var(--highlight) 30%, light-dark(#222, #111));
-    /* The accent colour is --highlight, not --primary */
-    --highlight: orangered;
+    --primary: light-dark(white, black);
+    --secondary: #333;
+    --highlight: darkred;
+    --primary-tint: light-dark(#f9f9f9, #222);
     --bg: var(--primary);
-    /* Focus rings. Plain orangered is under 3:1 on the light grey cards,
-       so light mode uses a darker mix of it */
-    --focus: light-dark(color-mix(in oklab, var(--highlight), black 30%), var(--highlight));
-    /* Shading made from the text colour, so it works on light and dark
-       backgrounds. currentColor is worked out where var() is used,
-       not here, so it matches the text colour of that element */
-    --tint: color-mix(in srgb, currentColor 10%, transparent);
-    --tint-strong: color-mix(in srgb, currentColor 20%, transparent);
 }
 
 /* Set --bg and the text colour follows it */
@@ -26,100 +18,95 @@ body,
     color: contrast-color(var(--bg));
 }
 
-/* Stands out from the page, e.g. the site header and footer.
-   Orangered is only about 2:1 on it, so focus rings use the text colour.
-   (Not currentColor: an input's currentColor is its own field text) */
 .secondary {
     --bg: var(--secondary);
-    --focus: contrast-color(var(--bg));
-    background-image: linear-gradient(var(--bg), color-mix(in srgb, var(--bg), white 20%));
 }
 
+#flash {
+    --bg: var(--highlight);
+}
 
 /* ========== Base elements ========== */
 
-/* One text size for the whole page. Everything else is sized in em
-   from it, so headings, buttons and cards all follow */
 body {
     margin: 0;
     font-family: system-ui;
-    font-size: 1.125rem;
     font-weight: 300;
+}
+
+a,
+button,
+input {
+    color: inherit;
+    font: inherit;
+}
+
+/* links have underlines and can contain avatars */
+a {
+    text-decoration: underline var(--highlight) solid 2px;
+    &:hover {
+        text-decoration-color: currentColor;
+    }
+    .avatar {
+        --size: 1.5em;
+        margin-inline-end: 0.5ch;
+    }
 }
 
 h1,
 h2,
 h3 {
-    font-weight: 200;
+    font-weight: 400;
 }
 
-/* One h1 per page. Set here so every h1 and h2 is the same size,
-   wherever it sits */
-h1 {
-    font-size: 2em;
-}
-
-h2 {
-    font-size: 1.5em;
-}
-
-/* Images never spill out of their container */
 img {
     max-inline-size: 100%;
 }
 
-input,
-button {
-    font: inherit;
-}
-
-/* Lets an input shrink in a narrow grid or flex row */
 input {
     min-inline-size: 0;
-}
-
-/* One focus ring for links, buttons and inputs.
-   A card shows it round the whole card instead of its title link */
-:is(a, input, button):focus-visible,
-.card:has(:is(h2, h3) a:focus-visible) {
-    outline: 2px solid var(--focus);
-    outline-offset: 2px;
-}
-
-/* Buttons are a tint of the text colour with a thin border, so they read
-   on any background: the page, .secondary, light or dark.
-   The links in the header nav share the look */
-button,
-body > header nav a {
-    padding: 0.25em 0.75em;
-    border: 1px solid currentColor;
     border-radius: 0.25em;
-    background: var(--tint);
-    color: inherit;
-
-    &:hover {
-        background: var(--tint-strong);
-    }
 }
 
-/* Links keep the text colour and use the highlight for the underline */
-a {
-    color: inherit;
-    text-decoration-color: var(--highlight);
-    text-decoration-thickness: 0.1em;
-    text-underline-offset: 0.2em;
-}
-
-/* The current page, in the header nav or a pagination row */
-[aria-current="page"] {
-    font-weight: 600;
+input,
+button,
+nav a {
+    padding: 0.25em 0.5em;
+    border: 1px solid currentColor;
     text-decoration: none;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1ch;
+}
+
+/* substantial things that are clickable */
+button,
+nav a {
+    border-radius: 1em;
+    background: transparent;
+    backdrop-filter: brightness(1.2);   
+    &:hover {
+        backdrop-filter: brightness(1.4);
+    }
+    &[aria-current="page"] {
+        backdrop-filter: brightness(1.6);
+    }
+    cursor: pointer;
+}
+
+:focus-visible {
+    outline: 2px solid var(--highlight);
+    outline-offset: 2px;
 }
 
 
 /* ========== Layouts ========== */
 
-/* The page shell: one row each for header, main and footer */
+/* The page shell: one row each for header (with nav), main and footer */
 body {
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -131,21 +118,19 @@ body {
         justify-content: space-between;
         align-items: center;
         gap: 1rem;
-        padding: 1.5rem 1rem;
+        padding: 0.5rem 1rem;
+
+        nav {
+            flex-wrap: wrap;
+        }
     }
 
-    /* main holds a section and sometimes an aside. Each has its own padding,
-       so the aside's shading reaches the edges, and nothing sits above its
-       first child, so every page starts at the same height */
     > main {
         display: grid;
-
+        
         > * {
-            padding: 1rem;
-        }
-
-        > * > :first-child {
-            margin-block-start: 0;
+            padding-inline: 1rem;
+            padding-bottom: 1rem;
         }
     }
 
@@ -153,8 +138,7 @@ body {
         display: flex;
         flex-wrap: wrap;
         gap: 2rem;
-        padding: 0.5rem 1rem;
-        font-weight: 200;
+        padding: 0 1rem;
 
         > :last-child {
             margin-inline-start: auto;
@@ -162,14 +146,16 @@ body {
     }
 }
 
-/* The aside is shaded, and becomes a second column on wide screens */
 main > aside {
-    background: var(--tint);
+    /* backdrop-filter: brightness(0.9); */
 }
 
 @media (width > 800px) {
     main:has(> aside) {
         grid-template-columns: 1fr auto;
+        aside {
+            border-left: 0.5px solid currentColor;
+        }
     }
 }
 
@@ -181,113 +167,59 @@ main > aside {
 
 /* As many equal columns as fit, with no media queries */
 .grid {
-    --column: 10rem;
+    --column: 15ch;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(var(--column), 1fr));
     gap: 1rem;
 
     &.wide {
-        --column: 20rem;
+        --column: 270px;
     }
 }
 
-/* Items side by side in a row, wrapping if they don't fit */
-.row {
+.flex-between {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
 }
-
 
 /* ========== Components ========== */
 
-/* Site header, with a sharp banner image. header.secondary wins over .secondary.
-   A light see-through layer of --bg tints the whole header, so the books
-   still show. The logo and the nav each sit on a stronger panel that also
-   blurs the image behind it (backdrop-filter), so the text stays readable.
-   A one-colour gradient is how you put a colour on top of a background image.
-   Banner photo: Tima Miroshnichenko, https://www.pexels.com/photo/books-on-brown-wooden-shelf-9572370/
-   (Pexels License, free to use), cropped to 2560x720 */
-body > header.secondary {
-    --overlay: color-mix(in oklab, var(--bg) 40%, transparent);
-    background-image: linear-gradient(var(--overlay), var(--overlay)), url(/assets/banner.webp);
-    background-position: center;
-    background-size: cover;
-
-    > * {
-        padding: 0.5rem;
-        border-radius: 0.5rem;
-        background: color-mix(in oklab, var(--bg) 75%, transparent);
-        backdrop-filter: blur(8px);
-    }
-
-    a {
-        text-decoration: none;
-    }
-
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5ch;
-    }
-}
-
-/* The logo and site name, as one link. Underlined on hover like other
-   links, so it's clearly a link. Focus uses the normal ring */
 .brand {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     font-size: 1.4em;
-    font-weight: 200;
-
-    &:hover {
-        text-decoration: underline;
-    }
-
     svg {
-        inline-size: 2.4rem;
-        block-size: 2.4rem;
+        block-size: 1em;
     }
 }
 
-/* Header links and the sign out button look like buttons (see base),
-   made into pills */
-body > header nav :is(a, button) {
-    /* Stronger shading than elsewhere, so the pills stand out over the banner */
-    --tint: color-mix(in srgb, currentColor 15%, transparent);
-    --tint-strong: color-mix(in srgb, currentColor 25%, transparent);
-    padding: 0.25em 0.5em;
-    border-radius: 1em;
-    font-size: 1.2em;
-    line-height: 1;
-    text-wrap: nowrap;
-
-    &:has(img) {
-        padding-inline-start: 0;
+/* Header links and the sign out button look like buttons made into pills */
+body > header nav {
+    :is(a, button) {
+        padding: 0.25em 0.5em;
+        border-radius: 1em;
+        font-size: 1.2em;
+        line-height: 1;
+        text-wrap: nowrap;
+        &:has(.avatar) {
+            display: inline-flex;
+            padding: 0 0.5em 0 0;
+            align-items: center;
+            .avatar {
+                --size: 1.5em;
+            }
+        }
     }
-
-    /* The avatar pokes out a little, so the pill stays one line high */
-    .avatar {
-        margin-block: -0.25em;
-    }
-}
-
-/* The current page's pill is filled in: the text and panel colours swap.
-   The a in the selector makes it win over the button rule's :hover */
-body > header nav a[aria-current="page"] {
-    background: contrast-color(var(--bg));
-    color: var(--bg);
 }
 
 /* Flash message, slides in from the right.
    Its --bg is the highlight, and contrast-color() picks the text colour */
 #flash {
-    --bg: var(--highlight);
     position: fixed;
     inset-inline-end: 0;
-    inset-block-start: 4em;
+    inset-block-end: 4em;
     margin: 0;
     padding: 0.5em 2rem;
     font-weight: 400;
@@ -315,19 +247,10 @@ body > header nav a[aria-current="page"] {
     border-radius: 50%;
     object-fit: cover;
     vertical-align: middle;
-    background: var(--tint-strong);
+    background: currentColor;
 }
 
-/* A link with a small avatar before the name */
-a:has(> .avatar) {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5ch;
 
-    > .avatar {
-        --size: 1.5em;
-    }
-}
 
 /* A small outlined label for a short status, e.g. admin, public or private */
 .badge {
@@ -335,22 +258,20 @@ a:has(> .avatar) {
     border: 1px solid currentColor;
     border-radius: 1em;
     font-size: 0.75em;
+    background: var(--highlight);
+    color: contrast-color(var(--highlight));
 }
 
-/* Book, shelf and user cards: the picture first, then a <div> with the text.
-   The picture goes right to the edge, so the padding is on the <div>.
-   The layout is flex wrap: the text sits beside the picture if there's
-   room and wraps underneath if not. A book cover is full width, so its
-   text always wraps underneath.
-   The title link stretches over the whole card, so anywhere on it opens the book or shelf */
+
 .card {
-    position: relative;
     display: flex;
     flex-wrap: wrap;
     align-content: start;
     border-radius: 0.5rem;
+    border: 1px solid currentColor;
     overflow: clip;
-    background: var(--tint);
+    background: var(--primary-tint);
+    /* backdrop-filter: brightness(0.9); */
 
     > img:not(.avatar) {
         inline-size: 100%;
@@ -367,92 +288,86 @@ a:has(> .avatar) {
 
     /* The text is always the last thing in the card */
     > div:last-child {
-        flex: 1 1 10rem;
         display: grid;
-        align-content: start;
         gap: 0.25rem;
         padding: 0.5rem;
     }
 
-    /* The title is an h2 or h3, depending on the page */
     h2,
     h3,
     p {
         margin: 0;
     }
 
-    h2,
-    h3 {
-        font-size: 1.1em;
-        font-weight: 400;
-    }
-
-    :is(h2, h3) a::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-    }
-
-    /* Keep buttons above the stretched link so they can still be clicked */
-    footer {
-        position: relative;
-        z-index: 1;
-    }
-
-    /* The card shows the focus ring (see base), not the title.
-       Links in the footer keep their own ring */
-    :is(h2, h3) a:focus-visible {
-        outline: none;
-    }
-
     &:hover {
-        background: var(--tint-strong);
+        backdrop-filter: brightness(light-dark(0.8, 1.2));
     }
 }
 
-/* A fanned row of small covers on a shelf card, or a note if it's empty.
-   Padding rather than margin, so .card p { margin: 0 } can't undo it */
-.covers {
-    display: flex;
-    align-items: center;
-    block-size: 6rem;
-    padding: 0.5rem 0 0.5rem 0.5rem;
-
-    /* The width and height attributes size the images */
+.card.book {
+    display: grid;
+    grid-row: span 2;
+    grid-column: span 2;
+    grid-template-rows: subgrid;
+    grid-template-columns: subgrid;
+    div:last-child {
+        padding: 0.5rem 0;
+        display: grid;
+        grid-row: span 2;
+        grid-template-rows: subgrid;
+        h2 {
+            font-size: 1.1em;
+        }
+        p {
+            align-self: end;
+        }
+    }
     img {
-        object-fit: cover;
-        border-inline-end: 2px solid var(--bg);
-    }
-
-    img + img {
-        margin-inline-start: -2rem;
+        grid-row: span 2;
+        border-right: 1px solid currentColor;
     }
 }
+
+.card.user {
+    display: grid;
+    grid-template-rows: auto auto;
+    place-items: center;
+    div {
+        display: grid;
+        gap: 1ch;
+    }
+    footer {
+        padding-block: 0.5rem;
+    }
+}
+
+.card.shelf {
+    display: grid;
+    grid-template-rows: auto auto;
+
+    .covers {
+        display: grid;
+        place-content: center;
+        place-items: center;
+        grid-auto-flow: column;
+        grid-auto-columns: auto;
+        background: currentColor;
+        gap: 2px;
+        img {
+            object-fit: cover;
+            border-inline: 1px solid var(--bg);
+        }
+        border-bottom: 1px solid currentColor;
+        img + img {
+            /* margin-inline-start: -2rem; */
+        }
+    }
+}
+
 
 p.covers {
     font-style: italic;
-}
-
-/* Every page's section: a header with the h1 and an optional intro,
-   then the content. It's a grid, so the gap spaces its children
-   and they lose their own top and bottom margins */
-main > section {
-    display: grid;
-    align-content: start;
-    gap: 1rem;
-
-    > * {
-        margin-block: 0;
-    }
-
-    > header {
-        display: grid;
-        gap: 0.5rem;
-
-        > * {
-            margin: 0;
-        }
-    }
+    margin: 1em;
 }
 
 section.center {
@@ -463,17 +378,13 @@ section.center {
     }
 }
 
-/* Forms are a one-column grid: each label, input, error and button
-   sits on its own row in source order, so labels go above their inputs.
-   Grid rather than flow, so that gap spaces the rows evenly */
+
 form {
     display: grid;
     place-self: start;
     gap: 0.25rem;
     text-align: start;
 
-    /* Errors keep the text colour, so they pass 4.5:1 on any panel,
-       with an orangered bar to mark them out. An empty one takes no space */
     .error {
         padding-inline-start: 0.5em;
         border-inline-start: 0.25em solid var(--highlight);
@@ -490,8 +401,11 @@ form.secondary {
     padding: 1.5rem;
     border-radius: 0.5rem;
 
-    /* A little more space above each field after the first, and the button */
-    label:not(:first-of-type),
+    input {
+        /* background: var(--bg); */
+    }
+
+    label,
     button {
         margin-block-start: 0.5rem;
     }

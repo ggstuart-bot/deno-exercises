@@ -16,7 +16,9 @@ export function bookDetailView(ctx) {
     </section>
     <aside>
         <h2>Add to a shelf</h2>
+        <div class="grid">
         ${user ? addToShelfForms(book, shelves) : html`<p><a href="/signin">Sign in</a> to add this book to a shelf</p>`}
+        </div>
     </aside>
     `;
 }
