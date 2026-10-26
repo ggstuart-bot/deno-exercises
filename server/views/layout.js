@@ -27,9 +27,6 @@ export function layout(content, ctx) {
             </main>
             <footer class="secondary">
                 ${userMessage(ctx.user)}
-                <nav>
-                    <a href="/about">about</a>
-                </nav>
                 <p>
                     &copy; Bookshelves developers
                 </p>
