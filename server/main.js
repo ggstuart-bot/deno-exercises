@@ -1,4 +1,3 @@
-import { aboutController } from "./controllers/about.js";
 import { homeController } from "./controllers/home.js";
 import { bookController, booksController } from "./controllers/books.js";
 import { addBookController, removeBookController } from "./controllers/shelfBooks.js";
@@ -81,7 +80,6 @@ app.use(withSession);
 
 app.get("/assets/*", staticController);
 app.get("/", homeController);
-app.get("/about", aboutController);
 app.get("/books", booksController);
 app.get("/books/:bookId", withBook, bookController);
 
