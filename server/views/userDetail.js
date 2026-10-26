@@ -19,7 +19,7 @@ export function userDetailView(ctx) {
         ${avatarImage(targetUser, `Avatar for '${targetUser.username}'`)}
         <h2>Public shelves</h2>
         ${publicShelves.length
-            ? html`<ul class="grid wide">
+            ? html`<ul class="grid">
 ${publicShelves.map((shelf) => shelfCard(shelf))}
         </ul>`
             : html`<p>No public shelves</p>`}

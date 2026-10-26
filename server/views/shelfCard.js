@@ -10,7 +10,7 @@ export function shelfCard(shelf, footer = "") {
         ? html`<div class="covers">${shelf.thumbnails.map(coverImage)}</div>`
         : html`<p class="covers">No books yet</p>`}
         <div>
-            <div class="flex-between">
+            <div class="row">
                 <h3><a href="/shelves/${shelf.id}">${shelf.title}</a></h3>
                 <p>${shelf.bookCount} ${shelf.bookCount === 1 ? "book" : "books"}</p>
             </div>

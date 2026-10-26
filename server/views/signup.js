@@ -3,7 +3,7 @@ import { html } from "../tools/html.js";
 export function signupView(ctx) { 
     const { data: { errors, values } } = ctx;
     return html`
-    <section class="center">
+    <section>
         <header>
             <h1>Sign up</h1>
             <p>Already have an account? <a href="/signin">sign in</a> to gain access.</p>
