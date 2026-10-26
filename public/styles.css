@@ -170,3 +170,18 @@ search > form {
     }
 }
 
+/* ===== Ex9 · POST forms: a padded panel and error messages =====
+   An error has an accent bar, and takes no space when it is empty */
+form.secondary {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    .error {
+        padding-inline-start: 0.5em;
+        border-inline-start: 0.25em solid var(--highlight);
+        font-size: 0.8em;
+        &:empty {
+            display: none;
+        }
+    }
+}
+
