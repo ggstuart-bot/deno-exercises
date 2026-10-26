@@ -243,3 +243,38 @@ form.secondary {
     }
 }
 
+/* ===== Ex13 · Users: round avatars and user cards =====
+   A square picture with 50% rounded corners is a circle */
+.avatar {
+    inline-size: 8rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+    vertical-align: middle;
+    background: gray;
+}
+
+/* Inside a link, an avatar is one line of text tall */
+a .avatar {
+    inline-size: 1lh;
+    margin-inline-end: 0.5ch;
+}
+
+/* A user card is centred, with a smaller avatar on top */
+.card.user {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    > .avatar {
+        inline-size: 6rem;
+        margin-block-start: 1rem;
+    }
+}
+
+/* A short status label, e.g. admin, public or private */
+.badge {
+    padding: 0 0.5em;
+    border-radius: 1em;
+    background: var(--highlight);
+    color: black;
+}
