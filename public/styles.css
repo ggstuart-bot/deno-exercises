@@ -210,3 +210,36 @@ form.secondary {
     }
 }
 
+/* ===== Ex11 · Shelves: a side column, and shelf cards =====
+   On wide screens main becomes a two-column grid, so an aside sits beside the section */
+@media (width > 50rem) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        > aside {
+            margin-inline-start: 1rem;
+            padding-inline-start: 1rem;
+            border-inline-start: 1px solid;
+        }
+    }
+}
+
+/* A shelf card stacks a strip of covers above the text */
+.card.shelf {
+    flex-direction: column;
+    .row {
+        justify-content: space-between;
+    }
+}
+
+.covers {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    padding: 0.5rem;
+    border-block-end: 1px solid;
+    img {
+        object-fit: cover;
+    }
+}
+
