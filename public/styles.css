@@ -1,5 +1,4 @@
-/* ===== Ex3 · A first stylesheet: colours, type and the box model =====
-   The accent is a custom property, so it is set once and used everywhere */
+/* The accent is a custom property, so it is set once and used everywhere */
 :root {
     color-scheme: light dark; /* light or dark page colours, from the OS setting */
     --highlight: darkred;
@@ -48,8 +47,7 @@ body > * {
     padding: 0.5rem 1rem;
 }
 
-/* ===== Ex4 · Layout: a grid for the page, flex for the header and nav =====
-   Three rows: header and footer take what they need, main takes the rest */
+/* Three rows: header and footer take what they need, main takes the rest */
 body {
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -85,12 +83,12 @@ nav {
     gap: 0.5rem;
 }
 
-/* ===== Ex5 · Books list: a grid of cards =====
-   auto-fill makes as many columns as fit, each at least 15rem wide */
+/* Pictures never overflow their box */
 img {
     max-inline-size: 100%;
 }
 
+/* auto-fill makes as many columns as fit, each at least 15rem wide */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
@@ -131,7 +129,6 @@ img {
     }
 }
 
-/* ===== Ex6 · Book page: a row that wraps on small screens ===== */
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -142,8 +139,7 @@ img {
     }
 }
 
-/* ===== Ex7 · GET forms: pill buttons and the search form =====
-   Buttons and nav links share one look. The current page is filled in */
+/* Buttons and nav links share one look. The current page is filled in */
 button,
 nav a {
     padding: 0.25em 0.75em;
@@ -184,8 +180,7 @@ search > form {
     }
 }
 
-/* ===== Ex9 · POST forms: a padded panel and error messages =====
-   An error has an accent bar, and takes no space when it is empty */
+/* An error has an accent bar, and takes no space when it is empty */
 form.secondary {
     padding: 1.5rem;
     border-radius: 0.5rem;
@@ -199,8 +194,7 @@ form.secondary {
     }
 }
 
-/* ===== Ex10 · Flash message: fixed in a corner, then it slides away =====
-   Fixed, so the page never moves. Hover or focus brings it back */
+/* Fixed, so the page never moves. Hover or focus brings it back */
 #flash {
     position: fixed;
     inset-block-end: 4rem;
@@ -223,8 +217,7 @@ form.secondary {
     }
 }
 
-/* ===== Ex11 · Shelves: a side column, and shelf cards =====
-   On wide screens main becomes a two-column grid, so an aside sits beside the section */
+/* On wide screens main becomes a two-column grid, so an aside sits beside the section */
 @media (width > 50rem) {
     main {
         display: grid;
@@ -258,8 +251,7 @@ form.secondary {
     }
 }
 
-/* ===== Ex13 · Users: round avatars and user cards =====
-   A square picture with 50% rounded corners is a circle */
+/* A square picture with 50% rounded corners is a circle */
 .avatar {
     inline-size: 8rem;
     aspect-ratio: 1;
