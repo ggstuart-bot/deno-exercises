@@ -189,7 +189,7 @@ form.secondary {
    Fixed, so the page never moves. Hover or focus brings it back */
 #flash {
     position: fixed;
-    inset-block-start: 4rem;
+    inset-block-end: 4rem;
     inset-inline-end: 0;
     margin: 0;
     padding: 0.5rem 1rem;
@@ -238,7 +238,9 @@ form.secondary {
     gap: 2px;
     padding: 0.5rem;
     border-block-end: 1px solid;
+    /* min-inline-size: 0 lets the covers shrink to fit the card */
     img {
+        min-inline-size: 0;
         object-fit: cover;
     }
 }
