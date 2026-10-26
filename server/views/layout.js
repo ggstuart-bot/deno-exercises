@@ -1,6 +1,6 @@
-import { html } from "./tools/html.js";
-import { avatarImage } from "./views/avatar.js";
-import { logo } from "./views/logo.js";
+import { html } from "../tools/html.js";
+import { avatarImage } from "./avatar.js";
+import { logo } from "./logo.js";
 
 export function layout(content, ctx) {
     return html`
