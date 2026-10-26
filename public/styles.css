@@ -1,0 +1,41 @@
+/* The accent is a custom property, so it is set once and used everywhere */
+:root {
+    color-scheme: light dark; /* light or dark page colours, from the OS setting */
+    --highlight: darkred;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui;
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 400;
+}
+
+/* Links keep the text colour, with an accent underline */
+a {
+    color: inherit;
+    text-decoration-color: var(--highlight);
+    text-decoration-thickness: 2px;
+}
+
+/* Anything you can tab to gets an accent outline */
+:focus-visible {
+    outline: 2px solid var(--highlight);
+    outline-offset: 2px;
+}
+
+/* The header and footer are dark panels with light text */
+.secondary {
+    background: #333;
+    color: white;
+}
+
+/* Padding keeps everything off the edges of the window */
+body > * {
+    padding: 0.5rem 1rem;
+}

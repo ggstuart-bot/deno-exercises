@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <title>Bookshelves</title>
+    <style>
+    rect {
+        fill: black;
+    }
+    @media (prefers-color-scheme: dark) {
+        rect {
+            fill: white;
+        }
+    }
+    </style>
+    <rect x="4" y="8" width="6" height="16" />
+    <rect x="12" y="4" width="6" height="20" />
+    <rect x="20" y="8" width="6" height="16" transform="rotate(12 26 24)" />
+    <rect x="2" y="26" width="28" height="4" />
+</svg>
