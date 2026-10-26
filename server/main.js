@@ -14,7 +14,6 @@ import {
 } from "./controllers/shelves.js";
 import { staticController } from "./controllers/static.js";
 import { notFoundController } from "./controllers/notFound.js";
-import { layout } from "./views/layout.js";
 import { NotFoundError } from "./tools/errors.js";
 import { Router } from "./tools/router.js";
 import { withLogs } from "./middleware/logging.js";
@@ -181,7 +180,7 @@ app.post(
 export async function server(request) {
     const url = new URL(request.url);
     const headers = new Headers();
-    const ctx = { request, url, layout, data: {}, headers };
+    const ctx = { request, url, data: {}, headers };
 
     try {
         return await app.handle(ctx);
