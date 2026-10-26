@@ -6,9 +6,11 @@ import { DEFAULT_COVER } from "./book.js";
 // Shelf lists always sit under an <h2>, so the title is an <h3>
 export function shelfCard(shelf, footer = "") {
     return html`<li class="card shelf">
-    ${shelf.thumbnails.length
-        ? html`<div class="covers">${shelf.thumbnails.map(coverImage)}</div>`
-        : html`<p class="covers">No books yet</p>`}
+    ${
+        shelf.thumbnails.length
+            ? html`<div class="covers">${shelf.thumbnails.map(coverImage)}</div>`
+            : html`<p class="covers">No books yet</p>`
+    }
         <div>
             <div class="row">
                 <h3><a href="/shelves/${shelf.id}">${shelf.title}</a></h3>
@@ -20,5 +22,7 @@ export function shelfCard(shelf, footer = "") {
 }
 
 function coverImage(book) {
-    return html`<img src="${book.thumbnailUrl ?? DEFAULT_COVER}" alt="" width="64" height="96" loading="lazy">`;
+    return html`<img src="${
+        book.thumbnailUrl ?? DEFAULT_COVER
+    }" alt="" width="64" height="96" loading="lazy">`;
 }

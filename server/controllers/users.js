@@ -1,4 +1,10 @@
-import { createUser, getUsers, updateAvatarId, updateIsAdmin, updateUserIsPublic } from "../models/users.js";
+import {
+    createUser,
+    getUsers,
+    updateAvatarId,
+    updateIsAdmin,
+    updateUserIsPublic,
+} from "../models/users.js";
 import { getPublicShelvesByOwnerId, unpublishShelvesByOwnerId } from "../models/shelves.js";
 import { addThumbnails } from "../models/shelfBooks.js";
 import { createFile, deleteFile, getFile } from "../models/files.js";
@@ -9,7 +15,7 @@ import { signupView } from "../views/signup.js";
 import { usersView } from "../views/users.js";
 import { userDetailView } from "../views/userDetail.js";
 
-export function signupFormController(ctx) { 
+export function signupFormController(ctx) {
     ctx.data.title = "Sign up";
     return render(signupView, ctx);
 }
@@ -86,9 +92,7 @@ function profileVisibilityController(isPublic) {
         if (!isPublic) {
             unpublishShelvesByOwnerId(targetUser.id);
         }
-        ctx.flash = isPublic
-            ? "Your profile is now public"
-            : "Your profile is now private";
+        ctx.flash = isPublic ? "Your profile is now public" : "Your profile is now private";
         return redirect("/profile", ctx);
     };
 }

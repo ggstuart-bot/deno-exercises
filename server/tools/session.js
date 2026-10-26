@@ -13,7 +13,7 @@ export function signin(userId, ctx) {
         path: "/",
         httpOnly: true,
         sameSite: "Lax",
-        maxAge: SESSION_LENGTH / 1000
+        maxAge: SESSION_LENGTH / 1000,
     });
 }
 

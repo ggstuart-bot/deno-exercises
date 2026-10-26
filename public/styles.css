@@ -11,7 +11,9 @@ body {
     font-weight: 300;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-weight: 400;
 }
 
@@ -28,7 +30,6 @@ nav a[aria-current="page"] {
     background: var(--highlight);
     color: contrast-color(var(--highlight));
 }
-
 
 /* Anything you can tab to gets an accent outline */
 :focus-visible {
@@ -54,7 +55,8 @@ body {
     grid-template-rows: auto 1fr auto;
     min-block-size: 100vh;
 
-    > header, > footer {
+    > header,
+     > footer {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -121,7 +123,9 @@ img {
         padding: 0.5rem;
     }
 
-    h2, h3, p {
+    h2,
+    h3,
+    p {
         margin: 0;
         font-size: 1em;
     }
@@ -140,7 +144,8 @@ img {
 
 /* ===== Ex7 · GET forms: pill buttons and the search form =====
    Buttons and nav links share one look. The current page is filled in */
-button, nav a {
+button,
+nav a {
     padding: 0.25em 0.75em;
     border: 1px solid;
     border-radius: 1em;
@@ -156,7 +161,8 @@ input {
     min-width: 0;
 }
 
-button, input {
+button,
+input {
     font: inherit;
 }
 
@@ -204,7 +210,8 @@ form.secondary {
     @media (prefers-reduced-motion: no-preference) {
         animation: slide-away 0.5s 3s forwards;
     }
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         animation: none;
     }
 }
