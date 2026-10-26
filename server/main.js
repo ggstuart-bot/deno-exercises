@@ -14,7 +14,7 @@ import {
 } from "./controllers/shelves.js";
 import { staticController } from "./controllers/static.js";
 import { notFoundController } from "./controllers/notFound.js";
-import { layout } from "./layout.js";
+import { layout } from "./views/layout.js";
 import { NotFoundError } from "./tools/errors.js";
 import { Router } from "./tools/router.js";
 import { withLogs } from "./middleware/logging.js";
