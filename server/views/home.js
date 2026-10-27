@@ -9,8 +9,10 @@ export function homeView(ctx) {
     return html`
         <section>
             <header>
-                <h1>Find a book</h1>
+                <h1>Welcome to Bookshelves</h1>
+                <p>Organise your books with bookshelves.</p>
             </header>
+            <h2>Find a book</h2>
             ${searchForm()}
             <h2>Public shelves</h2>
             ${publicShelves.length
