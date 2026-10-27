@@ -11,7 +11,7 @@ export function myShelvesView(ctx) {
         <section>
             <header>
                 <h1>My shelves</h1>
-                <p>Bookshelves help you organise your books</p>
+                <p>Make a shelf, then add books to it from any book's page.</p>
             </header>
             <h2>Public shelves</h2>
             ${shelfList(
