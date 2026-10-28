@@ -1,4 +1,5 @@
 import { html } from "../tools/html.js";
+import { cardGrid } from "./partials/cardGrid.js";
 import { shelfCard } from "./partials/shelfCard.js";
 import { visibilityButton } from "./partials/visibilityButton.js";
 
@@ -14,17 +15,15 @@ export function myShelvesView(ctx) {
                 <p>Make a shelf, then add books to it from any book's page.</p>
             </header>
             <h2>Public shelves</h2>
-            ${shelfList(
-                user,
-                publicShelves,
-                "Anyone can see these shelves",
+            <p>Anyone can see these shelves</p>
+            ${cardGrid(
+                publicShelves.map((shelf) => shelfCard(shelf, visibilityButton(user, shelf))),
                 "No public shelves yet",
             )}
             <h2>Private shelves</h2>
-            ${shelfList(
-                user,
-                privateShelves,
-                "Only you can see these shelves",
+            <p>Only you can see these shelves</p>
+            ${cardGrid(
+                privateShelves.map((shelf) => shelfCard(shelf, visibilityButton(user, shelf))),
                 "No private shelves yet",
             )}
             ${user.isPublic
@@ -42,17 +41,4 @@ export function myShelvesView(ctx) {
             </form>
         </aside>
     `;
-}
-
-// A sentence about who can see the shelves, then the cards.
-// Each card has a button to make the shelf public or private
-function shelfList(user, shelves, intro, emptyMessage) {
-    return shelves.length
-        ? html`
-            <p>${intro}</p>
-            <ul class="grid">
-            ${shelves.map((shelf) => shelfCard(shelf, visibilityButton(user, shelf)))}
-                    </ul>
-        `
-        : html`<p>${emptyMessage}</p>`;
 }
