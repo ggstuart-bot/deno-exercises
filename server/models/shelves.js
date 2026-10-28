@@ -40,13 +40,13 @@ export function getPublicShelvesByOwnerId(ownerId) {
     `).all({ ownerId });
 }
 
-export function updateShelfTitle(id, title) {
+export function updateShelfTitleById(id, title) {
     return db.prepare(
         `UPDATE shelves SET title=:title WHERE id=:id RETURNING id, title, ownerId`,
     ).get({ id, title });
 }
 
-export function updateShelfIsPublic(id, isPublic) {
+export function updateShelfIsPublicById(id, isPublic) {
     return db.prepare(
         `UPDATE shelves SET isPublic=:isPublic WHERE id=:id RETURNING id, title, ownerId, isPublic`,
     ).get({ id, isPublic });

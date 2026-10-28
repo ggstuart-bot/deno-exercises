@@ -30,7 +30,7 @@ export function getThumbnailsByShelfId(shelfId) {
     `).all({ shelfId });
 }
 
-// Adds the covers to each shelf in a list.
+// Adds each shelf's thumbnails to the shelves it's given
 // This runs one small query per shelf, which is fine for a handful of shelves
 export function addThumbnails(shelves) {
     for (const shelf of shelves) {

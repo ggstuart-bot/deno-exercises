@@ -1,9 +1,9 @@
 import {
     createUser,
     getUsers,
-    updateUserAvatarId,
-    updateUserIsAdmin,
-    updateUserIsPublic,
+    updateUserAvatarIdById,
+    updateUserIsAdminById,
+    updateUserIsPublicById,
 } from "../models/users.js";
 import { getPublicShelvesByOwnerId, unpublishShelvesByOwnerId } from "../models/shelves.js";
 import { addThumbnails } from "../models/shelfBooks.js";
@@ -52,7 +52,7 @@ export function avatarController(ctx) {
 export async function uploadAvatarController(ctx) {
     const { validated: { avatar }, data: { targetUser } } = ctx;
     const avatarId = await createFile(avatar);
-    updateUserAvatarId(targetUser.id, avatarId);
+    updateUserAvatarIdById(targetUser.id, avatarId);
     if (targetUser.avatarId) {
         deleteFileById(targetUser.avatarId);
     }
@@ -72,7 +72,7 @@ export function ownAdminStatusController(ctx) {
 function adminStatusController(isAdmin) {
     return (ctx) => {
         const { data: { targetUser } } = ctx;
-        updateUserIsAdmin(targetUser.id, isAdmin);
+        updateUserIsAdminById(targetUser.id, isAdmin);
         ctx.flash = isAdmin
             ? `'${targetUser.username}' is now an admin`
             : `'${targetUser.username}' is no longer an admin`;
@@ -88,7 +88,7 @@ export const demoteController = adminStatusController(0);
 function profileVisibilityController(isPublic) {
     return (ctx) => {
         const { data: { targetUser } } = ctx;
-        updateUserIsPublic(targetUser.id, isPublic);
+        updateUserIsPublicById(targetUser.id, isPublic);
         if (!isPublic) {
             unpublishShelvesByOwnerId(targetUser.id);
         }
