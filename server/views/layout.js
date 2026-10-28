@@ -1,6 +1,5 @@
 import { html } from "../tools/html.js";
 import { avatarImage } from "./avatar.js";
-import { logo } from "./logo.js";
 
 export function layout(content, ctx) {
     return html`
@@ -15,7 +14,7 @@ export function layout(content, ctx) {
             </head>
             <body>
             <header class="secondary">
-                <a href="/" class="brand">${logo} Bookshelves</a>
+                <a href="/" class="brand"><img src="/assets/icon.svg" alt=""> Bookshelves</a>
                 <nav>
                     ${navLink("/books", "books", ctx.url.pathname)}
                     ${adminLinks(ctx.user, ctx.url.pathname)}

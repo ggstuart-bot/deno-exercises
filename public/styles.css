@@ -54,8 +54,8 @@ body {
     grid-template-rows: auto 1fr auto;
     min-block-size: 100vh;
 
-    > header,
-     > footer {
+    & > header,
+    & > footer {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -70,8 +70,15 @@ body {
     align-items: center;
     gap: 0.5rem;
     font-size: 1.5em;
-    svg {
+    img {
         block-size: 1em;
+    }
+}
+
+/* The icon is drawn black in light mode, so invert it to show on the dark header */
+@media (prefers-color-scheme: light) {
+    .brand img {
+        filter: invert(1);
     }
 }
 
