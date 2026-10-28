@@ -1,5 +1,5 @@
-import { html } from "../tools/html.js";
-import { DEFAULT_COVER } from "./book.js";
+import { html } from "../../tools/html.js";
+import { DEFAULT_COVER } from "./bookCard.js";
 
 // A shelf as a card in a .grid list, with a fanned row of its first few covers.
 // Pass extra content (e.g. the owner) to show it in the card footer.

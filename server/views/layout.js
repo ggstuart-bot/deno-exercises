@@ -1,5 +1,5 @@
 import { html } from "../tools/html.js";
-import { avatarImage } from "./avatar.js";
+import { avatarImage } from "./partials/avatarImage.js";
 
 export function layout(content, ctx) {
     return html`

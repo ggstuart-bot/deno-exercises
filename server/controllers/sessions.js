@@ -1,5 +1,5 @@
 import { getUserByUsername } from "../models/users.js";
-import { signin, signout } from "../tools/session.js";
+import { signin, signout } from "../tools/authentication.js";
 import { verifyPassword } from "../tools/hash.js";
 import { redirect } from "../tools/redirect.js";
 import { render } from "../tools/render.js";

@@ -1,18 +1,42 @@
 import { html } from "../tools/html.js";
+import { DEFAULT_COVER } from "./partials/bookCard.js";
 
-export const DEFAULT_COVER = "/assets/default-cover.svg";
+export function bookView(ctx) {
+    const { user, data: { book, shelves } } = ctx;
 
-// A book as a card in a .grid list. Pass extra content (e.g. a form) to show it in the card footer
-export function bookCard(book, footer = "") {
     return html`
-        <li class="card book">
-            <img src="${book.coverUrl ??
-                DEFAULT_COVER}" alt="" width="200" height="300" loading="lazy">
-            <div>
-                            <h2><a href="/books/${book.id}">${book.title}</a></h2>
-                            <p>${book.author}${book.year ? ` (${book.year})` : ""}</p>
-                            ${footer ? html`<footer>${footer}</footer>` : ""}
-                        </div>
-        </li>
+        <section>
+            <header>
+                <h1>${book.title}</h1>
+                <p>by ${book.author}</p>
+            </header>
+            <div class="row">
+                <img src="${book.coverUrl ?? DEFAULT_COVER}" alt="Cover of '${book.title}'">
+                <div>
+                    ${book.year ? html`<p>Published ${book.year}</p>` : ""}
+                    <p><a href="/books">Back to all books</a></p>
+                </div>
+            </div>
+        </section>
+        <aside>
+            <h2>Add to a shelf</h2>
+            <div class="grid">
+            ${user
+                ? addToShelfForms(book, shelves)
+                : html`<p><a href="/signin">Sign in</a> to add this book to a shelf</p>`}
+            </div>
+        </aside>
     `;
+}
+
+function addToShelfForms(book, shelves) {
+    return shelves.length
+        ? shelves.map((shelf) =>
+            html`
+                <form method="POST" action="/shelves/${shelf.id}/books/${book.id}/add">
+                    <button>add to '${shelf.title}'</button>
+                </form>
+            `
+        )
+        : html`<p>You don't have any shelves yet</p>`;
 }

@@ -1,6 +1,6 @@
 import { html } from "../tools/html.js";
-import { bookCard } from "./book.js";
-import { searchForm } from "./searchForm.js";
+import { bookCard } from "./partials/bookCard.js";
+import { searchForm } from "./partials/searchForm.js";
 
 export function booksView(ctx) {
     const { data: { title, books, q, page, hasNext } } = ctx;

@@ -1,5 +1,5 @@
 import { html } from "../tools/html.js";
-import { shelfCard } from "./shelfCard.js";
+import { shelfCard } from "./partials/shelfCard.js";
 import {
     canChangeAdmin,
     canChangeAvatar,
@@ -7,7 +7,7 @@ import {
     isSelf,
 } from "../tools/permissions.js";
 import { adminButton } from "./users.js";
-import { avatarImage } from "./avatar.js";
+import { avatarImage } from "./partials/avatarImage.js";
 import { AVATAR_TYPES } from "../schema/avatar.js";
 
 export function userView(ctx) {
