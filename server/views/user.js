@@ -7,6 +7,7 @@ import {
     isSelf,
 } from "../tools/permissions.js";
 import { adminButton } from "./partials/adminButton.js";
+import { cardGrid } from "./partials/cardGrid.js";
 import { avatarImage } from "./partials/avatarImage.js";
 import { postButton } from "./partials/postButton.js";
 import { AVATAR_TYPES } from "../schema/avatar.js";
@@ -24,11 +25,7 @@ export function userView(ctx) {
             </header>
             ${avatarImage(targetUser, `Avatar for '${targetUser.username}'`)}
             <h2>Public shelves</h2>
-            ${publicShelves.length
-                ? html`<ul class="grid">
-${publicShelves.map((shelf) => shelfCard(shelf))}
-        </ul>`
-                : html`<p>No public shelves</p>`}
+            ${cardGrid(publicShelves.map((shelf) => shelfCard(shelf)), "No public shelves")}
         </section>
         ${hasControls
             ? html`<aside>

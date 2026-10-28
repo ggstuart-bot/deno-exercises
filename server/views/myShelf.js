@@ -1,6 +1,7 @@
 import { html } from "../tools/html.js";
 import { canPublishShelf } from "../tools/permissions.js";
 import { bookCard } from "./partials/bookCard.js";
+import { cardGrid } from "./partials/cardGrid.js";
 import { postButton } from "./partials/postButton.js";
 import { visibilityButton } from "./partials/visibilityButton.js";
 
@@ -12,11 +13,10 @@ export function myShelfView(ctx) {
             <header>
                 <h1>${shelf.title}</h1>
             </header>
-            ${books.length
-                ? html`<ul class="grid">
-${books.map((book) => bookCard(book, removeForm(shelf, book)))}
-        </ul>`
-                : html`<p>No books yet, <a href="/books">find some books</a> to add</p>`}
+            ${cardGrid(
+                books.map((book) => bookCard(book, removeForm(shelf, book))),
+                html`No books yet, <a href="/books">find some books</a> to add`,
+            )}
             <p><a href="/shelves">Back to my shelves</a></p>
         </section>
         <aside>

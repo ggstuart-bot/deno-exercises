@@ -1,4 +1,5 @@
 import { html } from "../tools/html.js";
+import { cardGrid } from "./partials/cardGrid.js";
 import { avatarImage } from "./partials/avatarImage.js";
 import { shelfCard } from "./partials/shelfCard.js";
 import { searchForm } from "./partials/searchForm.js";
@@ -15,11 +16,10 @@ export function homeView(ctx) {
             <h2>Find a book</h2>
             ${searchForm()}
             <h2>Public shelves</h2>
-            ${publicShelves.length
-                ? html`<ul class="grid">
-${publicShelves.map((shelf) => shelfCard(shelf, ownerLink(shelf)))}
-        </ul>`
-                : html`<p>Nobody has shared a shelf yet</p>`}
+            ${cardGrid(
+                publicShelves.map((shelf) => shelfCard(shelf, ownerLink(shelf))),
+                "Nobody has shared a shelf yet",
+            )}
         </section>
     `;
 }
