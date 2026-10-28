@@ -2,7 +2,7 @@ import { html } from "../tools/html.js";
 import { avatarImage } from "./avatar.js";
 import { bookCard } from "./book.js";
 
-export function readOnlyShelfView(ctx) {
+export function publicShelfView(ctx) {
     const { data: { shelf, books, owner } } = ctx;
 
     return html`

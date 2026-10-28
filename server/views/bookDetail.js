@@ -1,7 +1,7 @@
 import { html } from "../tools/html.js";
 import { DEFAULT_COVER } from "./book.js";
 
-export function bookDetailView(ctx) {
+export function bookView(ctx) {
     const { user, data: { book, shelves } } = ctx;
 
     return html`

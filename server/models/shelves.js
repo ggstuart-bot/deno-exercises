@@ -58,7 +58,7 @@ export function unpublishShelvesByOwnerId(ownerId) {
     ).run({ ownerId });
 }
 
-export function deleteShelf(id) {
+export function deleteShelfById(id) {
     return db.prepare(
         `DELETE FROM shelves WHERE id=:id RETURNING id, title, ownerId`,
     ).get({ id });

@@ -6,7 +6,7 @@ import {
     deleteShelfController,
     editShelfController,
     myShelvesController,
-    privateProfileController,
+    profileNotPublicController,
     publishShelfController,
     shelfController,
     unpublishShelfController,
@@ -22,10 +22,10 @@ import {
     avatarController,
     createUserController,
     demoteController,
+    ownAdminStatusController,
     profileController,
     promoteController,
     publishProfileController,
-    selfChangeController,
     signupFormController,
     unpublishProfileController,
     uploadAvatarController,
@@ -66,10 +66,10 @@ const mustBeSignedIn = requireUser(signinRedirectController);
 const mustBeSignedOut = requireGuest(alreadySignedInRedirectController);
 const mustBeAdmin = requireAdmin(forbiddenController);
 const mayViewUser = requirePermission(canViewUser, "targetUser", notFoundController);
-const mayChangeAdmin = requirePermission(canChangeAdmin, "targetUser", selfChangeController);
+const mayChangeAdmin = requirePermission(canChangeAdmin, "targetUser", ownAdminStatusController);
 const mayChangeAvatar = requirePermission(canChangeAvatar, "targetUser", notFoundController);
 const mayPublishProfile = requirePermission(canPublishProfile, "targetUser", notFoundController);
-const mayPublishShelf = requirePermission(canPublishShelf, "shelf", privateProfileController);
+const mayPublishShelf = requirePermission(canPublishShelf, "shelf", profileNotPublicController);
 const mayViewShelf = requirePermission(canViewShelf, "shelf", notFoundController);
 const mayUseShelf = requirePermission(canUseShelf, "shelf", notFoundController);
 

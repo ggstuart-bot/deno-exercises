@@ -2,7 +2,7 @@ import { countBooks, PAGE_SIZE, searchBooks } from "../models/books.js";
 import { getShelvesByOwnerId } from "../models/shelves.js";
 import { render } from "../tools/render.js";
 import { booksView } from "../views/books.js";
-import { bookDetailView } from "../views/bookDetail.js";
+import { bookView } from "../views/bookDetail.js";
 
 export function booksController(ctx) {
     const { url } = ctx;
@@ -23,5 +23,5 @@ export function bookController(ctx) {
         ctx.data.shelves = getShelvesByOwnerId(user.id);
     }
     ctx.data.title = ctx.data.book.title;
-    return render(bookDetailView, ctx);
+    return render(bookView, ctx);
 }

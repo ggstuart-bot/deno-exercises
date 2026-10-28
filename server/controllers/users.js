@@ -1,19 +1,19 @@
 import {
     createUser,
     getUsers,
-    updateAvatarId,
-    updateIsAdmin,
+    updateUserAvatarId,
+    updateUserIsAdmin,
     updateUserIsPublic,
 } from "../models/users.js";
 import { getPublicShelvesByOwnerId, unpublishShelvesByOwnerId } from "../models/shelves.js";
 import { addThumbnails } from "../models/shelfBooks.js";
-import { createFile, deleteFile, getFile } from "../models/files.js";
+import { createFile, deleteFileById, getFileById } from "../models/files.js";
 import { NotFoundError } from "../tools/errors.js";
 import { redirect } from "../tools/redirect.js";
 import { render } from "../tools/render.js";
 import { signupView } from "../views/signup.js";
 import { usersView } from "../views/users.js";
-import { userDetailView } from "../views/userDetail.js";
+import { userView } from "../views/userDetail.js";
 
 export function signupFormController(ctx) {
     ctx.data.title = "Sign up";
@@ -37,12 +37,12 @@ export function userController(ctx) {
     const { data: { targetUser } } = ctx;
     ctx.data.publicShelves = addThumbnails(getPublicShelvesByOwnerId(targetUser.id));
     ctx.data.title = targetUser.username;
-    return render(userDetailView, ctx);
+    return render(userView, ctx);
 }
 
 export function avatarController(ctx) {
     const { data: { targetUser } } = ctx;
-    const avatarFile = targetUser.avatarId && getFile(targetUser.avatarId);
+    const avatarFile = targetUser.avatarId && getFileById(targetUser.avatarId);
     if (!avatarFile) {
         throw new NotFoundError(`No avatar for user ${targetUser.id}`);
     }
@@ -52,9 +52,9 @@ export function avatarController(ctx) {
 export async function uploadAvatarController(ctx) {
     const { validated: { avatar }, data: { targetUser } } = ctx;
     const avatarId = await createFile(avatar);
-    updateAvatarId(targetUser.id, avatarId);
+    updateUserAvatarId(targetUser.id, avatarId);
     if (targetUser.avatarId) {
-        deleteFile(targetUser.avatarId);
+        deleteFileById(targetUser.avatarId);
     }
     ctx.flash = "Avatar updated";
     return redirect("/profile", ctx);
@@ -64,7 +64,7 @@ export function profileController(ctx) {
     return redirect(`/users/${ctx.user.id}`, ctx);
 }
 
-export function selfChangeController(ctx) {
+export function ownAdminStatusController(ctx) {
     ctx.flash = "You can't change your own admin status";
     return redirect("/users", ctx);
 }
@@ -72,7 +72,7 @@ export function selfChangeController(ctx) {
 function adminStatusController(isAdmin) {
     return (ctx) => {
         const { data: { targetUser } } = ctx;
-        updateIsAdmin(targetUser.id, isAdmin);
+        updateUserIsAdmin(targetUser.id, isAdmin);
         ctx.flash = isAdmin
             ? `'${targetUser.username}' is now an admin`
             : `'${targetUser.username}' is no longer an admin`;

@@ -1,6 +1,6 @@
 import seed from "../db/seed.json" with { type: "json" };
 import books from "../db/books.json" with { type: "json" };
-import { createUser, updateAvatarId } from "../server/models/users.js";
+import { createUser, updateUserAvatarId } from "../server/models/users.js";
 import { createFile } from "../server/models/files.js";
 import { createShelf } from "../server/models/shelves.js";
 import { createBook } from "../server/models/books.js";
@@ -16,7 +16,7 @@ for (const user of seed.users) {
     const { id: userId } = await createUser(user);
     const path = new URL(`../db/seed-avatars/${user.avatar}`, import.meta.url);
     const file = new File([await Deno.readFile(path)], user.avatar, { type: "image/webp" });
-    updateAvatarId(userId, await createFile(file));
+    updateUserAvatarId(userId, await createFile(file));
 
     for (const shelf of user.shelves) {
         const { id: shelfId } = createShelf({

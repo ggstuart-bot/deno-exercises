@@ -2,7 +2,7 @@ import { html } from "../tools/html.js";
 import { canPublishShelf } from "../tools/permissions.js";
 import { bookCard } from "./book.js";
 
-export function shelfView(ctx) {
+export function myShelfView(ctx) {
     const { user, data: { shelf, books, errors, values } } = ctx;
 
     return html`
