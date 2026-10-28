@@ -1,5 +1,5 @@
 import { html } from "../tools/html.js";
-import { DEFAULT_COVER } from "./book.js";
+import { DEFAULT_COVER } from "./partials/bookCard.js";
 
 export function bookView(ctx) {
     const { user, data: { book, shelves } } = ctx;

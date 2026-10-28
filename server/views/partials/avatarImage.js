@@ -1,4 +1,4 @@
-import { html } from "../tools/html.js";
+import { html } from "../../tools/html.js";
 
 const DEFAULT_AVATAR = "/assets/default-avatar.svg";
 

@@ -1,6 +1,6 @@
 import { html } from "../tools/html.js";
 import { canChangeAdmin } from "../tools/permissions.js";
-import { userCard } from "./userCard.js";
+import { userCard } from "./partials/userCard.js";
 
 export function usersView(ctx) {
     const { data: { users }, user: currentUser } = ctx;
