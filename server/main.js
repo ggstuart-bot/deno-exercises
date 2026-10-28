@@ -41,7 +41,7 @@ import {
     signinFormController,
     signinRedirectController,
     signoutController,
-} from "./controllers/auth.js";
+} from "./controllers/sessions.js";
 import { signinSchema } from "./schema/signin.js";
 import { withSession } from "./middleware/session.js";
 import { requireAdmin, requireGuest, requirePermission, requireUser } from "./middleware/access.js";
