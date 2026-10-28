@@ -1,7 +1,7 @@
 import { html } from "../../tools/html.js";
 import { canPublishShelf } from "../../tools/permissions.js";
 
-// Just the button. Also used on the cards in My shelves
+// The publish or unpublish button for a shelf
 export function visibilityButton(user, shelf) {
     if (shelf.isPublic) {
         return html`

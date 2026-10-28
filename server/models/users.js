@@ -17,19 +17,19 @@ export function getUserById(id) {
     ).get({ id });
 }
 
-export function updateUserIsAdmin(id, isAdmin) {
+export function updateUserIsAdminById(id, isAdmin) {
     return db.prepare(
         `UPDATE users SET isAdmin=:isAdmin WHERE id=:id`,
     ).run({ id, isAdmin });
 }
 
-export function updateUserIsPublic(id, isPublic) {
+export function updateUserIsPublicById(id, isPublic) {
     return db.prepare(
         `UPDATE users SET isPublic=:isPublic WHERE id=:id`,
     ).run({ id, isPublic });
 }
 
-export function updateUserAvatarId(id, avatarId) {
+export function updateUserAvatarIdById(id, avatarId) {
     return db.prepare(
         `UPDATE users SET avatarId=:avatarId WHERE id=:id`,
     ).run({ id, avatarId });
