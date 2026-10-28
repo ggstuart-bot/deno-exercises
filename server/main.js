@@ -36,12 +36,12 @@ import { userSchema } from "./schema/user.js";
 import { avatarSchema } from "./schema/avatar.js";
 import {
     alreadySignedInRedirectController,
-    forbiddenController,
     signinController,
     signinFormController,
     signinRedirectController,
     signoutController,
 } from "./controllers/sessions.js";
+import { forbiddenController } from "./controllers/forbidden.js";
 import { signinSchema } from "./schema/signin.js";
 import { withSession } from "./middleware/session.js";
 import { requireAdmin, requireGuest, requirePermission, requireUser } from "./middleware/access.js";

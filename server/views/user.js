@@ -6,7 +6,7 @@ import {
     canPublishProfile,
     isSelf,
 } from "../tools/permissions.js";
-import { adminButton } from "./users.js";
+import { adminButton } from "./partials/adminButton.js";
 import { avatarImage } from "./partials/avatarImage.js";
 import { AVATAR_TYPES } from "../schema/avatar.js";
 

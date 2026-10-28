@@ -1,6 +1,7 @@
 import { html } from "../tools/html.js";
 import { canPublishShelf } from "../tools/permissions.js";
 import { bookCard } from "./partials/bookCard.js";
+import { visibilityButton } from "./partials/visibilityButton.js";
 
 export function myShelfView(ctx) {
     const { user, data: { shelf, books, errors, values } } = ctx;
@@ -51,25 +52,6 @@ function visibilityControls(user, shelf) {
         <p>Only you can see this shelf</p>
         <p><a href="/profile">Publish your profile</a> to share shelves</p>
     `;
-}
-
-// Just the button. Also used on the cards in My shelves
-export function visibilityButton(user, shelf) {
-    if (shelf.isPublic) {
-        return html`
-            <form method="POST" action="/shelves/${shelf.id}/unpublish">
-                <button>make private</button>
-            </form>
-        `;
-    }
-    if (canPublishShelf(user, shelf)) {
-        return html`
-            <form method="POST" action="/shelves/${shelf.id}/publish">
-                <button>make public</button>
-            </form>
-        `;
-    }
-    return "";
 }
 
 function removeForm(shelf, book) {
