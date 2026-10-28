@@ -12,7 +12,8 @@ export function bookView(ctx) {
                 <p>by ${book.author}</p>
             </header>
             <div class="row">
-                <img src="${book.coverUrl ?? DEFAULT_COVER}" alt="Cover of '${book.title}'">
+                <img class="cover" src="${book.coverUrl ?? DEFAULT_COVER}" alt="Cover of '${book
+                    .title}'">
                 <div>
                     ${book.year ? html`<p>Published ${book.year}</p>` : ""}
                     <p><a href="/books">Back to all books</a></p>
