@@ -30,13 +30,12 @@ export function createShelfController(ctx) {
 
 export function shelfController(ctx) {
     const { user, data: { shelf } } = ctx;
+    ctx.data.title = shelf.title;
     ctx.data.books = getBooksByShelfId(shelf.id);
     if (canUseShelf(user, shelf)) {
-        ctx.data.title = shelf.title;
         return render(myShelfView, ctx);
     }
     ctx.data.owner = getUserById(shelf.ownerId);
-    ctx.data.title = shelf.title;
     return render(publicShelfView, ctx);
 }
 
