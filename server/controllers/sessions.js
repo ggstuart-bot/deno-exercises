@@ -17,8 +17,7 @@ export async function signinController(ctx) {
         ctx.data.values = { username };
         ctx.data.errors = { credentials: `Invalid credentials` };
         ctx.status = 401;
-        ctx.data.title = "Sign in";
-        return render(signinView, ctx);
+        return signinFormController(ctx);
     }
     signin(user.id, ctx);
     ctx.flash = `Signed in as '${username}'`;
