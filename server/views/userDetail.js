@@ -10,7 +10,7 @@ import { adminButton } from "./users.js";
 import { avatarImage } from "./avatar.js";
 import { AVATAR_TYPES } from "../schema/avatar.js";
 
-export function userDetailView(ctx) {
+export function userView(ctx) {
     const { data: { targetUser, publicShelves, errors }, user: currentUser } = ctx;
     // Only you (or an admin) get controls, so only then is there an aside
     const hasControls = isSelf(currentUser, targetUser) || canChangeAdmin(currentUser, targetUser);

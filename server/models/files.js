@@ -10,7 +10,7 @@ export async function createFile(file) {
     return id;
 }
 
-export function getFile(id) {
+export function getFileById(id) {
     const row = db.prepare(
         `SELECT name, bytes, type FROM files WHERE id=:id`,
     ).get({ id });
@@ -18,6 +18,6 @@ export function getFile(id) {
     return new File([row.bytes], row.name, { type: row.type });
 }
 
-export function deleteFile(id) {
+export function deleteFileById(id) {
     return db.prepare(`DELETE FROM files WHERE id=:id`).run({ id });
 }

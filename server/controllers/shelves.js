@@ -1,6 +1,6 @@
 import {
     createShelf,
-    deleteShelf,
+    deleteShelfById,
     getShelvesByOwnerId,
     updateShelfIsPublic,
     updateShelfTitle,
@@ -11,8 +11,8 @@ import { canUseShelf } from "../tools/permissions.js";
 import { redirect } from "../tools/redirect.js";
 import { render } from "../tools/render.js";
 import { myShelvesView } from "../views/myShelves.js";
-import { shelfView } from "../views/shelf.js";
-import { readOnlyShelfView } from "../views/readOnlyShelf.js";
+import { myShelfView } from "../views/shelf.js";
+import { publicShelfView } from "../views/readOnlyShelf.js";
 
 export function myShelvesController(ctx) {
     const { user } = ctx;
@@ -33,11 +33,11 @@ export function shelfController(ctx) {
     ctx.data.books = getBooksByShelfId(shelf.id);
     if (canUseShelf(user, shelf)) {
         ctx.data.title = shelf.title;
-        return render(shelfView, ctx);
+        return render(myShelfView, ctx);
     }
     ctx.data.owner = getUserById(shelf.ownerId);
     ctx.data.title = shelf.title;
-    return render(readOnlyShelfView, ctx);
+    return render(publicShelfView, ctx);
 }
 
 export function editShelfController(ctx) {
@@ -59,7 +59,7 @@ function shelfVisibilityController(isPublic) {
     };
 }
 
-export function privateProfileController(ctx) {
+export function profileNotPublicController(ctx) {
     ctx.flash = "Publish your profile to share shelves";
     return redirect("/shelves", ctx);
 }
@@ -69,7 +69,7 @@ export const unpublishShelfController = shelfVisibilityController(0);
 
 export function deleteShelfController(ctx) {
     const { data: { shelf: { id } } } = ctx;
-    const shelf = deleteShelf(id);
+    const shelf = deleteShelfById(id);
     ctx.flash = `Shelf '${shelf.title}' deleted`;
     return redirect("/shelves", ctx);
 }

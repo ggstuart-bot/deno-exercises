@@ -17,7 +17,7 @@ export function getUserById(id) {
     ).get({ id });
 }
 
-export function updateIsAdmin(id, isAdmin) {
+export function updateUserIsAdmin(id, isAdmin) {
     return db.prepare(
         `UPDATE users SET isAdmin=:isAdmin WHERE id=:id`,
     ).run({ id, isAdmin });
@@ -29,7 +29,7 @@ export function updateUserIsPublic(id, isPublic) {
     ).run({ id, isPublic });
 }
 
-export function updateAvatarId(id, avatarId) {
+export function updateUserAvatarId(id, avatarId) {
     return db.prepare(
         `UPDATE users SET avatarId=:avatarId WHERE id=:id`,
     ).run({ id, avatarId });
