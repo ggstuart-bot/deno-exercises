@@ -1,15 +1,7 @@
-import { html } from "../../tools/html.js";
+import { postButton } from "./postButton.js";
 
 export function adminButton(user) {
-    return user.isAdmin
-        ? html`
-            <form method="POST" action="/users/${user.id}/demote">
-                <button>remove admin</button>
-            </form>
-        `
-        : html`
-            <form method="POST" action="/users/${user.id}/promote">
-                <button>make admin</button>
-            </form>
-        `;
+    const action = user.isAdmin ? "demote" : "promote";
+    const label = user.isAdmin ? "remove admin" : "make admin";
+    return postButton(`/users/${user.id}/${action}`, label);
 }
