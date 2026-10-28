@@ -6,7 +6,7 @@ export const DEFAULT_COVER = "/assets/default-cover.svg";
 export function bookCard(book, footer = "") {
     return html`
         <li class="card book">
-            <img src="${book.coverUrl ??
+            <img class="cover" src="${book.coverUrl ??
                 DEFAULT_COVER}" alt="" width="200" height="300" loading="lazy">
             <div>
                             <h2><a href="/books/${book.id}">${book.title}</a></h2>

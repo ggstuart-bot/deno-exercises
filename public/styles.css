@@ -105,24 +105,16 @@ img {
     list-style: none;
 }
 
-/* A card is a bordered box: picture first, text last */
+/* A card is a bordered box with rounded corners. Each kind of card sets its own grid */
 .card {
-    display: flex;
+    display: grid;
     border: 1px solid;
     border-radius: 0.5rem;
     overflow: clip;
-
-    /* A book cover fills the left of the card */
-    &.book > img {
-        inline-size: 40%;
-        block-size: auto;
-        aspect-ratio: 2 / 3;
-        object-fit: cover;
-    }
+    overflow-wrap: anywhere; /* a very long word breaks, rather than squashing the cover */
 
     /* The text is spread from the top of the card to the bottom */
     > div:last-child {
-        flex: 1;
         display: grid;
         align-content: space-between;
         gap: 0.5rem;
@@ -135,6 +127,19 @@ img {
         margin: 0;
         font-size: 1em;
     }
+}
+
+/* A book cover is always 2:3, cropped to fit */
+.cover {
+    inline-size: 100%;
+    block-size: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+}
+
+/* A book card: the cover in a narrow column, the text beside it */
+.card.book {
+    grid-template-columns: 2fr 3fr;
 }
 
 .row {
@@ -238,9 +243,9 @@ form.secondary {
     }
 }
 
-/* A shelf card stacks a strip of covers above the text */
+/* A shelf card: a strip of covers on top, the text fills the rest */
 .card.shelf {
-    flex-direction: column;
+    grid-template-rows: auto 1fr;
     .row {
         justify-content: space-between;
     }
@@ -275,10 +280,10 @@ a .avatar {
     margin-inline-end: 0.5ch;
 }
 
-/* A user card is centred, with a smaller avatar on top */
+/* A user card: the avatar on top, everything centred */
 .card.user {
-    flex-direction: column;
-    align-items: center;
+    grid-template-rows: auto 1fr;
+    justify-items: center;
     text-align: center;
     > .avatar {
         inline-size: 6rem;
