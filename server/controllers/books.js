@@ -2,7 +2,7 @@ import { countBooks, PAGE_SIZE, searchBooks } from "../models/books.js";
 import { getShelvesByOwnerId } from "../models/shelves.js";
 import { render } from "../tools/render.js";
 import { booksView } from "../views/books.js";
-import { bookView } from "../views/bookDetail.js";
+import { bookView } from "../views/book.js";
 
 export function booksController(ctx) {
     const { url } = ctx;
