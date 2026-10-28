@@ -1,7 +1,7 @@
 import { html } from "../tools/html.js";
-import { avatarImage } from "./avatar.js";
-import { shelfCard } from "./shelfCard.js";
-import { searchForm } from "./searchForm.js";
+import { avatarImage } from "./partials/avatarImage.js";
+import { shelfCard } from "./partials/shelfCard.js";
+import { searchForm } from "./partials/searchForm.js";
 
 export function homeView(ctx) {
     const { data: { publicShelves } } = ctx;

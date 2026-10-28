@@ -1,6 +1,6 @@
 import { html } from "../tools/html.js";
-import { avatarImage } from "./avatar.js";
-import { bookCard } from "./book.js";
+import { avatarImage } from "./partials/avatarImage.js";
+import { bookCard } from "./partials/bookCard.js";
 
 export function publicShelfView(ctx) {
     const { data: { shelf, books, owner } } = ctx;

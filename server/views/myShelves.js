@@ -1,6 +1,6 @@
 import { html } from "../tools/html.js";
-import { shelfCard } from "./shelfCard.js";
-import { visibilityButton } from "./shelf.js";
+import { shelfCard } from "./partials/shelfCard.js";
+import { visibilityButton } from "./myShelf.js";
 
 export function myShelvesView(ctx) {
     const { user, data: { shelves, errors, values } } = ctx;

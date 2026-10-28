@@ -1,4 +1,4 @@
-import { html } from "../tools/html.js";
+import { html } from "../../tools/html.js";
 
 export const DEFAULT_COVER = "/assets/default-cover.svg";
 

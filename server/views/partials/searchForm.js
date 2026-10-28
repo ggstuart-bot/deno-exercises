@@ -1,4 +1,4 @@
-import { html } from "../tools/html.js";
+import { html } from "../../tools/html.js";
 
 // The book search form, shared by the home page and the books page.
 // Pass the current search to pre-fill the box

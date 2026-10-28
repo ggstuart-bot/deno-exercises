@@ -1,5 +1,5 @@
-import { html } from "../tools/html.js";
-import { avatarImage } from "./avatar.js";
+import { html } from "../../tools/html.js";
+import { avatarImage } from "./avatarImage.js";
 
 // A user as a card in a .grid list, with their avatar as the picture.
 // Pass extra content (e.g. the admin button) to show it in the card footer

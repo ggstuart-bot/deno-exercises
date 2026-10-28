@@ -11,8 +11,8 @@ import { canUseShelf } from "../tools/permissions.js";
 import { redirect } from "../tools/redirect.js";
 import { render } from "../tools/render.js";
 import { myShelvesView } from "../views/myShelves.js";
-import { myShelfView } from "../views/shelf.js";
-import { publicShelfView } from "../views/readOnlyShelf.js";
+import { myShelfView } from "../views/myShelf.js";
+import { publicShelfView } from "../views/publicShelf.js";
 
 export function myShelvesController(ctx) {
     const { user } = ctx;
