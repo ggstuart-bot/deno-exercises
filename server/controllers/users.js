@@ -1,7 +1,7 @@
 import {
     createUser,
     getUsers,
-    updateUserAvatarIdById,
+    updateUserAvatarById,
     updateUserIsAdminById,
     updateUserIsPublicById,
 } from "../models/users.js";
@@ -52,7 +52,7 @@ export function avatarController(ctx) {
 export async function uploadAvatarController(ctx) {
     const { validated: { avatar }, data: { targetUser } } = ctx;
     const avatarId = await createFile(avatar);
-    updateUserAvatarIdById(targetUser.id, avatarId);
+    updateUserAvatarById(targetUser.id, avatarId);
     if (targetUser.avatarId) {
         deleteFileById(targetUser.avatarId);
     }

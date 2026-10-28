@@ -29,7 +29,7 @@ export function updateUserIsPublicById(id, isPublic) {
     ).run({ id, isPublic });
 }
 
-export function updateUserAvatarIdById(id, avatarId) {
+export function updateUserAvatarById(id, avatarId) {
     return db.prepare(
         `UPDATE users SET avatarId=:avatarId WHERE id=:id`,
     ).run({ id, avatarId });
