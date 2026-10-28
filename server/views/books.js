@@ -1,5 +1,6 @@
 import { html } from "../tools/html.js";
 import { bookCard } from "./partials/bookCard.js";
+import { cardGrid } from "./partials/cardGrid.js";
 import { searchForm } from "./partials/searchForm.js";
 
 export function booksView(ctx) {
@@ -12,11 +13,10 @@ export function booksView(ctx) {
                 ${q ? html`<p><a href="/books">show all books</a></p>` : ""}
             </header>
             ${searchForm(q)}
-            ${books.length
-                ? html`<ul class="grid">
-${books.map((book) => bookCard(book))}
-        </ul>`
-                : html`<p>${q ? `No books match "${q}"` : "No books found"}</p>`}
+            ${cardGrid(
+                books.map((book) => bookCard(book)),
+                q ? `No books match "${q}"` : "No books found",
+            )}
             ${pagination(q, page, hasNext)}
         </section>
     `;
