@@ -1,6 +1,7 @@
 import { html } from "../tools/html.js";
 import { canPublishShelf } from "../tools/permissions.js";
 import { bookCard } from "./partials/bookCard.js";
+import { postButton } from "./partials/postButton.js";
 import { visibilityButton } from "./partials/visibilityButton.js";
 
 export function myShelfView(ctx) {
@@ -31,9 +32,7 @@ ${books.map((book) => bookCard(book, removeForm(shelf, book)))}
             ${visibilityControls(user, shelf)}
             <h2>Delete shelf</h2>
             <p>The books stay in the catalogue</p>
-            <form method="POST" action="/shelves/${shelf.id}/delete">
-                <button>delete shelf</button>
-            </form>
+            ${postButton(`/shelves/${shelf.id}/delete`, "delete shelf")}
         </aside>
     `;
 }
@@ -55,9 +54,5 @@ function visibilityControls(user, shelf) {
 }
 
 function removeForm(shelf, book) {
-    return html`
-        <form method="POST" action="/shelves/${shelf.id}/books/${book.id}/delete">
-            <button>remove</button>
-        </form>
-    `;
+    return postButton(`/shelves/${shelf.id}/books/${book.id}/delete`, "remove");
 }

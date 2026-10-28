@@ -1,5 +1,6 @@
 import { html } from "../tools/html.js";
 import { avatarImage } from "./partials/avatarImage.js";
+import { postButton } from "./partials/postButton.js";
 
 export function layout(content, ctx) {
     return html`
@@ -53,9 +54,7 @@ function authLinks(user, path) {
         ? html`
             ${navLink("/shelves", "my shelves", path)}
                         ${navLink(`/users/${user.id}`, html`${avatarImage(user)}profile`, path)}
-                        <form method="POST" action="/signout">
-                <button>sign out</button>
-            </form>
+                        ${postButton("/signout", "sign out")}
         `
         : navLink("/signin", "sign in", path);
 }
