@@ -47,16 +47,14 @@ export function editShelfController(ctx) {
     return redirect(`/shelves/${shelf.id}`, ctx);
 }
 
-function shelfVisibilityController(isPublic) {
-    return (ctx) => {
-        const { data: { shelf: { id } } } = ctx;
-        const shelf = updateShelfIsPublicById(id, isPublic);
-        ctx.flash = isPublic
-            ? `Shelf '${shelf.title}' is now public`
-            : `Shelf '${shelf.title}' is now private`;
-        // Back to My shelves, where the shelf has moved to its new section
-        return redirect("/shelves", ctx);
-    };
+function changeShelfVisibility(ctx, isPublic) {
+    const { data: { shelf: { id } } } = ctx;
+    const shelf = updateShelfIsPublicById(id, isPublic);
+    ctx.flash = isPublic
+        ? `Shelf '${shelf.title}' is now public`
+        : `Shelf '${shelf.title}' is now private`;
+    // Back to My shelves, where the shelf has moved to its new section
+    return redirect("/shelves", ctx);
 }
 
 export function profileNotPublicController(ctx) {
@@ -64,8 +62,13 @@ export function profileNotPublicController(ctx) {
     return redirect("/shelves", ctx);
 }
 
-export const publishShelfController = shelfVisibilityController(1);
-export const unpublishShelfController = shelfVisibilityController(0);
+export function publishShelfController(ctx) {
+    return changeShelfVisibility(ctx, 1);
+}
+
+export function unpublishShelfController(ctx) {
+    return changeShelfVisibility(ctx, 0);
+}
 
 export function deleteShelfController(ctx) {
     const { data: { shelf: { id } } } = ctx;

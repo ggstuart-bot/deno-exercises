@@ -69,33 +69,39 @@ export function ownAdminStatusController(ctx) {
     return redirect("/users", ctx);
 }
 
-function adminStatusController(isAdmin) {
-    return (ctx) => {
-        const { data: { targetUser } } = ctx;
-        updateUserIsAdminById(targetUser.id, isAdmin);
-        ctx.flash = isAdmin
-            ? `'${targetUser.username}' is now an admin`
-            : `'${targetUser.username}' is no longer an admin`;
-        return redirect("/users", ctx);
-    };
+function changeAdminStatus(ctx, isAdmin) {
+    const { data: { targetUser } } = ctx;
+    updateUserIsAdminById(targetUser.id, isAdmin);
+    ctx.flash = isAdmin
+        ? `'${targetUser.username}' is now an admin`
+        : `'${targetUser.username}' is no longer an admin`;
+    return redirect("/users", ctx);
 }
 
-export const promoteController = adminStatusController(1);
-export const demoteController = adminStatusController(0);
+export function promoteController(ctx) {
+    return changeAdminStatus(ctx, 1);
+}
+
+export function demoteController(ctx) {
+    return changeAdminStatus(ctx, 0);
+}
 
 // Unpublishing a profile also unpublishes its shelves,
 // so a public shelf always has a public owner
-function profileVisibilityController(isPublic) {
-    return (ctx) => {
-        const { data: { targetUser } } = ctx;
-        updateUserIsPublicById(targetUser.id, isPublic);
-        if (!isPublic) {
-            unpublishShelvesByOwnerId(targetUser.id);
-        }
-        ctx.flash = isPublic ? "Your profile is now public" : "Your profile is now private";
-        return redirect("/profile", ctx);
-    };
+function changeProfileVisibility(ctx, isPublic) {
+    const { data: { targetUser } } = ctx;
+    updateUserIsPublicById(targetUser.id, isPublic);
+    if (!isPublic) {
+        unpublishShelvesByOwnerId(targetUser.id);
+    }
+    ctx.flash = isPublic ? "Your profile is now public" : "Your profile is now private";
+    return redirect("/profile", ctx);
 }
 
-export const publishProfileController = profileVisibilityController(1);
-export const unpublishProfileController = profileVisibilityController(0);
+export function publishProfileController(ctx) {
+    return changeProfileVisibility(ctx, 1);
+}
+
+export function unpublishProfileController(ctx) {
+    return changeProfileVisibility(ctx, 0);
+}
