@@ -4,7 +4,7 @@ import { cardGrid } from "./partials/cardGrid.js";
 import { searchForm } from "./partials/searchForm.js";
 
 export function booksView(ctx) {
-    const { data: { title, books, q, page, hasNext } } = ctx;
+    const { data: { title, books, q, page, pageCount } } = ctx;
 
     return html`
         <section>
@@ -17,18 +17,18 @@ export function booksView(ctx) {
                 books.map((book) => bookCard(book)),
                 q ? `No books match "${q}"` : "No books found",
             )}
-            ${pagination(q, page, hasNext)}
+            ${pagination(q, page, pageCount)}
         </section>
     `;
 }
 
 // Previous, the current page and next. Nothing at all if there's only one page
-function pagination(q, page, hasNext) {
-    if (page === 1 && !hasNext) return "";
+function pagination(q, page, pageCount) {
+    if (pageCount <= 1) return "";
     return html`<nav aria-label="Pagination">
             ${page > 1 ? html`<a href="${pageUrl(q, page - 1)}" rel="prev">previous</a>` : ""}
-            <a href="${pageUrl(q, page)}" aria-current="page">page ${page}</a>
-            ${hasNext ? html`<a href="${pageUrl(q, page + 1)}" rel="next">next</a>` : ""}
+            <a href="${pageUrl(q, page)}" aria-current="page">page ${page} of ${pageCount}</a>
+            ${page < pageCount ? html`<a href="${pageUrl(q, page + 1)}" rel="next">next</a>` : ""}
         </nav>`;
 }
 
