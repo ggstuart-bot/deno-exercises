@@ -1,8 +1,10 @@
-import { countBooks, PAGE_SIZE, searchBooks } from "../models/books.js";
+import { countPages, searchBooks } from "../models/books.js";
 import { getShelvesByOwnerId } from "../models/shelves.js";
 import { render } from "../tools/render.js";
 import { booksView } from "../views/books.js";
 import { bookView } from "../views/book.js";
+
+const PAGE_SIZE = 16;
 
 export function booksController(ctx) {
     const { url } = ctx;
@@ -11,8 +13,8 @@ export function booksController(ctx) {
     if (!Number.isSafeInteger(page) || page < 1) page = 1;
     ctx.data.q = q;
     ctx.data.page = page;
-    ctx.data.books = searchBooks(q, page);
-    ctx.data.pageCount = Math.ceil(countBooks(q) / PAGE_SIZE);
+    ctx.data.books = searchBooks(q, page, PAGE_SIZE);
+    ctx.data.pageCount = countPages(q, PAGE_SIZE);
     ctx.data.title = q ? `Books matching "${q}"` : "Books";
     return render(booksView, ctx);
 }
