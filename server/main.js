@@ -12,7 +12,7 @@ import {
     unpublishShelfController,
 } from "./controllers/shelves.js";
 import { staticController } from "./controllers/static.js";
-import { forbiddenController, notFoundController } from "./controllers/errors.js";
+import { forbiddenController } from "./controllers/errors.js";
 import { Router } from "./tools/router.js";
 import { withLogs } from "./middleware/logging.js";
 import { withErrors } from "./middleware/errors.js";
@@ -64,13 +64,13 @@ const validateAvatar = withValidation(avatarSchema, userController);
 const mustBeSignedIn = requireUser(signinRedirectController);
 const mustBeSignedOut = requireGuest(alreadySignedInRedirectController);
 const mustBeAdmin = requireAdmin(forbiddenController);
-const mayViewUser = requirePermission(canViewUser, "targetUser", notFoundController);
+const mayViewUser = requirePermission(canViewUser, "targetUser");
 const mayChangeAdmin = requirePermission(canChangeAdmin, "targetUser", ownAdminStatusController);
-const mayChangeAvatar = requirePermission(canChangeAvatar, "targetUser", notFoundController);
-const mayPublishProfile = requirePermission(canPublishProfile, "targetUser", notFoundController);
+const mayChangeAvatar = requirePermission(canChangeAvatar, "targetUser");
+const mayPublishProfile = requirePermission(canPublishProfile, "targetUser");
 const mayPublishShelf = requirePermission(canPublishShelf, "shelf", profileNotPublicController);
-const mayViewShelf = requirePermission(canViewShelf, "shelf", notFoundController);
-const mayUseShelf = requirePermission(canUseShelf, "shelf", notFoundController);
+const mayViewShelf = requirePermission(canViewShelf, "shelf");
+const mayUseShelf = requirePermission(canUseShelf, "shelf");
 
 const app = new Router();
 
