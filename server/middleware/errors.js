@@ -1,4 +1,4 @@
-import { ForbiddenError, NotFoundError } from "../tools/errors.js";
+import { ForbiddenError, NotFoundError, UnexpectedError } from "../tools/errors.js";
 import {
     forbiddenController,
     notFoundController,
@@ -12,6 +12,7 @@ export async function withErrors(ctx, next) {
         ctx.error = error;
         if (error instanceof NotFoundError) return notFoundController(ctx);
         if (error instanceof ForbiddenError) return forbiddenController(ctx);
+        ctx.error = new UnexpectedError("Unexpected error", { cause: error });
         return serverErrorController(ctx);
     }
 }
