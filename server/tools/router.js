@@ -27,11 +27,7 @@ export class Router {
         const route = this.routes.find((route) => {
             return route.method === request.method && route.pattern.test(url);
         });
-        if (!route) {
-            throw new NotFoundError(
-                `${request.method} ${url.pathname} doesn't match any known route`,
-            );
-        }
+        if (!route) return this.chain(ctx, [...this.middleware, noMatchingRoute]);
         ctx.params = route.pattern.exec(url).pathname.groups;
         return this.chain(ctx, [...this.middleware, ...route.handlers]);
     }
@@ -42,4 +38,9 @@ export class Router {
         const next = (ctx) => this.chain(ctx, remaining);
         return fn(ctx, next);
     }
+}
+
+function noMatchingRoute(ctx) {
+    const { url, request } = ctx;
+    throw new NotFoundError(`${request.method} ${url.pathname} doesn't match any known route`);
 }

@@ -13,9 +13,9 @@ import {
 } from "./controllers/shelves.js";
 import { staticController } from "./controllers/static.js";
 import { notFoundController } from "./controllers/notFound.js";
-import { NotFoundError } from "./tools/errors.js";
 import { Router } from "./tools/router.js";
 import { withLogs } from "./middleware/logging.js";
+import { withErrors } from "./middleware/errors.js";
 import { withValidation } from "./middleware/validation.js";
 import { shelfSchema } from "./schema/shelf.js";
 import {
@@ -76,6 +76,7 @@ const mayUseShelf = requirePermission(canUseShelf, "shelf", notFoundController);
 const app = new Router();
 
 app.use(withLogs);
+app.use(withErrors);
 app.use(withSession);
 
 app.get("/assets/*", staticController);
@@ -175,18 +176,9 @@ app.post(
     demoteController,
 );
 
-export async function server(request) {
+export function server(request) {
     const url = new URL(request.url);
     const headers = new Headers();
     const ctx = { request, url, data: {}, headers };
-
-    try {
-        return await app.handle(ctx);
-    } catch (error) {
-        if (error instanceof NotFoundError) {
-            console.log("Not found:", error.message);
-            return notFoundController(ctx);
-        }
-        throw error;
-    }
+    return app.handle(ctx);
 }
