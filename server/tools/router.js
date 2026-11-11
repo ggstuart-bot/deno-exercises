@@ -23,6 +23,10 @@ export class Router {
     }
 
     handle(ctx) {
+        return this.chain(ctx, [...this.middleware, (ctx) => this.dispatch(ctx)]);
+    }
+
+    dispatch(ctx) {
         const { url, request } = ctx;
         const route = this.routes.find((route) => {
             return route.method === request.method && route.pattern.test(url);
@@ -33,7 +37,7 @@ export class Router {
             );
         }
         ctx.params = route.pattern.exec(url).pathname.groups;
-        return this.chain(ctx, [...this.middleware, ...route.handlers]);
+        return this.chain(ctx, route.handlers);
     }
 
     chain(ctx, handlers) {

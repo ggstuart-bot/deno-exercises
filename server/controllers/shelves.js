@@ -56,11 +56,6 @@ function changeShelfVisibility(ctx, isPublic) {
     return redirect("/shelves", ctx);
 }
 
-export function profileNotPublicController(ctx) {
-    ctx.flash = "Publish your profile to share shelves";
-    return redirect("/shelves", ctx);
-}
-
 export function publishShelfController(ctx) {
     return changeShelfVisibility(ctx, 1);
 }

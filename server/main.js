@@ -6,23 +6,21 @@ import {
     deleteShelfController,
     editShelfController,
     myShelvesController,
-    profileNotPublicController,
     publishShelfController,
     shelfController,
     unpublishShelfController,
 } from "./controllers/shelves.js";
 import { staticController } from "./controllers/static.js";
-import { notFoundController } from "./controllers/notFound.js";
-import { NotFoundError } from "./tools/errors.js";
+import { ForbiddenError } from "./tools/errors.js";
 import { Router } from "./tools/router.js";
 import { withLogs } from "./middleware/logging.js";
+import { withErrors } from "./middleware/errors.js";
 import { withValidation } from "./middleware/validation.js";
 import { shelfSchema } from "./schema/shelf.js";
 import {
     avatarController,
     createUserController,
     demoteController,
-    ownAdminStatusController,
     profileController,
     promoteController,
     publishProfileController,
@@ -41,7 +39,6 @@ import {
     signinRedirectController,
     signoutController,
 } from "./controllers/sessions.js";
-import { forbiddenController } from "./controllers/forbidden.js";
 import { signinSchema } from "./schema/signin.js";
 import { withSession } from "./middleware/session.js";
 import { requireAdmin, requireGuest, requirePermission, requireUser } from "./middleware/access.js";
@@ -64,18 +61,18 @@ const validateAvatar = withValidation(avatarSchema, userController);
 
 const mustBeSignedIn = requireUser(signinRedirectController);
 const mustBeSignedOut = requireGuest(alreadySignedInRedirectController);
-const mustBeAdmin = requireAdmin(forbiddenController);
-const mayViewUser = requirePermission(canViewUser, "targetUser", notFoundController);
-const mayChangeAdmin = requirePermission(canChangeAdmin, "targetUser", ownAdminStatusController);
-const mayChangeAvatar = requirePermission(canChangeAvatar, "targetUser", notFoundController);
-const mayPublishProfile = requirePermission(canPublishProfile, "targetUser", notFoundController);
-const mayPublishShelf = requirePermission(canPublishShelf, "shelf", profileNotPublicController);
-const mayViewShelf = requirePermission(canViewShelf, "shelf", notFoundController);
-const mayUseShelf = requirePermission(canUseShelf, "shelf", notFoundController);
+const mayViewUser = requirePermission(canViewUser, "targetUser");
+const mayChangeAdmin = requirePermission(canChangeAdmin, "targetUser", ForbiddenError);
+const mayChangeAvatar = requirePermission(canChangeAvatar, "targetUser");
+const mayPublishProfile = requirePermission(canPublishProfile, "targetUser");
+const mayPublishShelf = requirePermission(canPublishShelf, "shelf", ForbiddenError);
+const mayViewShelf = requirePermission(canViewShelf, "shelf");
+const mayUseShelf = requirePermission(canUseShelf, "shelf");
 
 const app = new Router();
 
 app.use(withLogs);
+app.use(withErrors);
 app.use(withSession);
 
 app.get("/assets/*", staticController);
@@ -133,7 +130,7 @@ app.post(
     mayUseShelf,
     removeBookController,
 );
-app.get("/users", mustBeSignedIn, mustBeAdmin, usersController);
+app.get("/users", mustBeSignedIn, requireAdmin, usersController);
 app.get("/users/:userId", withTargetUser, mayViewUser, userController);
 app.get("/users/:userId/avatar", withTargetUser, mayViewUser, avatarController);
 app.post(
@@ -161,7 +158,7 @@ app.post(
 app.post(
     "/users/:userId/promote",
     mustBeSignedIn,
-    mustBeAdmin,
+    requireAdmin,
     withTargetUser,
     mayChangeAdmin,
     promoteController,
@@ -169,24 +166,15 @@ app.post(
 app.post(
     "/users/:userId/demote",
     mustBeSignedIn,
-    mustBeAdmin,
+    requireAdmin,
     withTargetUser,
     mayChangeAdmin,
     demoteController,
 );
 
-export async function server(request) {
+export function server(request) {
     const url = new URL(request.url);
     const headers = new Headers();
     const ctx = { request, url, data: {}, headers };
-
-    try {
-        return await app.handle(ctx);
-    } catch (error) {
-        if (error instanceof NotFoundError) {
-            console.log("Not found:", error.message);
-            return notFoundController(ctx);
-        }
-        throw error;
-    }
+    return app.handle(ctx);
 }
