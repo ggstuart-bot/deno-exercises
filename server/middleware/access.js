@@ -1,11 +1,17 @@
 import { ForbiddenError, NotFoundError } from "../tools/errors.js";
 
 export function requireUser(fallback) {
-    return (ctx, next) => ctx.user ? next(ctx) : fallback(ctx);
+    return (ctx, next) => {
+        if (ctx.user) return next(ctx);
+        return fallback(ctx);
+    };
 }
 
 export function requireGuest(fallback) {
-    return (ctx, next) => ctx.user ? fallback(ctx) : next(ctx);
+    return (ctx, next) => {
+        if (!ctx.user) return next(ctx);
+        return fallback(ctx);
+    };
 }
 
 export function requireAdmin(ctx, next) {
