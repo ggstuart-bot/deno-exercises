@@ -1,3 +1,5 @@
+import { UnexpectedError } from "../tools/errors.js";
+
 export async function withLogs(ctx, next) {
     const { url, request } = ctx;
     console.log("\n============================");
@@ -7,7 +9,8 @@ export async function withLogs(ctx, next) {
     console.log("[user]", ctx.user);
     if (ctx.flash) console.log("[flash sent]", ctx.flash);
     if (ctx.data.flash) console.log("[flash received]", ctx.data.flash);
-    if (ctx.error) console.log("[error]", ctx.error);
+    if (ctx.error instanceof UnexpectedError) console.log("[error]", ctx.error);
+    else if (ctx.error) console.log("[error]", ctx.error.message);
     console.log("RESPONSE", response.status);
     console.log("============================");
 
