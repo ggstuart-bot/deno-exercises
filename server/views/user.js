@@ -1,5 +1,4 @@
 import { html } from "../tools/html.js";
-import { shelfCard } from "./partials/shelfCard.js";
 import {
     canChangeAdmin,
     canChangeAvatar,
@@ -10,6 +9,7 @@ import { adminButton } from "./partials/adminButton.js";
 import { cardGrid } from "./partials/cardGrid.js";
 import { avatarImage } from "./partials/avatarImage.js";
 import { postButton } from "./partials/postButton.js";
+import { shelfCard } from "./partials/shelfCard.js";
 import { AVATAR_TYPES } from "../schema/avatar.js";
 
 export function userView(ctx) {
@@ -28,15 +28,17 @@ export function userView(ctx) {
             ${cardGrid(publicShelves.map((shelf) => shelfCard(shelf)), "No public shelves")}
         </section>
         ${hasControls
-            ? html`<aside>
-        ${canChangeAvatar(currentUser, targetUser) ? avatarForm(targetUser, errors) : ""}
-        ${
-                canChangeAdmin(currentUser, targetUser)
-                    ? html`<h2>Admin status</h2>${adminButton(targetUser)}`
-                    : ""
-            }
-        ${canPublishProfile(currentUser, targetUser) ? visibilityForm(targetUser) : ""}
-    </aside>`
+            ? html`
+                <aside>
+                    ${canChangeAvatar(currentUser, targetUser)
+                        ? avatarForm(targetUser, errors)
+                        : ""}
+                    ${canChangeAdmin(currentUser, targetUser)
+                        ? html`<h2>Admin status</h2>${adminButton(targetUser)}`
+                        : ""}
+                    ${canPublishProfile(currentUser, targetUser) ? visibilityForm(targetUser) : ""}
+                </aside>
+            `
             : ""}
     `;
 }
