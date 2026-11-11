@@ -14,11 +14,10 @@ export function requireAdmin(ctx, next) {
     throw new ForbiddenError(`${request.method} ${url.pathname} is for admins only`);
 }
 
-export function requirePermission(predicate, key, fallback = hidden) {
-    return (ctx, next) => predicate(ctx.user, ctx.data[key]) ? next(ctx) : fallback(ctx);
-}
-
-function hidden(ctx) {
-    const { url, request } = ctx;
-    throw new NotFoundError(`${request.method} ${url.pathname} is hidden from this user`);
+export function requirePermission(predicate, key, DeadEnd = NotFoundError) {
+    return (ctx, next) => {
+        if (predicate(ctx.user, ctx.data[key])) return next(ctx);
+        const { url, request } = ctx;
+        throw new DeadEnd(`${request.method} ${url.pathname} is not permitted`);
+    };
 }

@@ -64,11 +64,6 @@ export function profileController(ctx) {
     return redirect(`/users/${ctx.user.id}`, ctx);
 }
 
-export function ownAdminStatusController(ctx) {
-    ctx.flash = "You can't change your own admin status";
-    return redirect("/users", ctx);
-}
-
 function changeAdminStatus(ctx, isAdmin) {
     const { data: { targetUser } } = ctx;
     updateUserIsAdminById(targetUser.id, isAdmin);
