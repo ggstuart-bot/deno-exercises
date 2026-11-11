@@ -12,7 +12,6 @@ import {
     unpublishShelfController,
 } from "./controllers/shelves.js";
 import { staticController } from "./controllers/static.js";
-import { forbiddenController } from "./controllers/errors.js";
 import { Router } from "./tools/router.js";
 import { withLogs } from "./middleware/logging.js";
 import { withErrors } from "./middleware/errors.js";
@@ -63,7 +62,6 @@ const validateAvatar = withValidation(avatarSchema, userController);
 
 const mustBeSignedIn = requireUser(signinRedirectController);
 const mustBeSignedOut = requireGuest(alreadySignedInRedirectController);
-const mustBeAdmin = requireAdmin(forbiddenController);
 const mayViewUser = requirePermission(canViewUser, "targetUser");
 const mayChangeAdmin = requirePermission(canChangeAdmin, "targetUser", ownAdminStatusController);
 const mayChangeAvatar = requirePermission(canChangeAvatar, "targetUser");
@@ -133,7 +131,7 @@ app.post(
     mayUseShelf,
     removeBookController,
 );
-app.get("/users", mustBeSignedIn, mustBeAdmin, usersController);
+app.get("/users", mustBeSignedIn, requireAdmin, usersController);
 app.get("/users/:userId", withTargetUser, mayViewUser, userController);
 app.get("/users/:userId/avatar", withTargetUser, mayViewUser, avatarController);
 app.post(
@@ -161,7 +159,7 @@ app.post(
 app.post(
     "/users/:userId/promote",
     mustBeSignedIn,
-    mustBeAdmin,
+    requireAdmin,
     withTargetUser,
     mayChangeAdmin,
     promoteController,
@@ -169,7 +167,7 @@ app.post(
 app.post(
     "/users/:userId/demote",
     mustBeSignedIn,
-    mustBeAdmin,
+    requireAdmin,
     withTargetUser,
     mayChangeAdmin,
     demoteController,
