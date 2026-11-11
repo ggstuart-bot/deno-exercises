@@ -12,7 +12,7 @@ import {
     unpublishShelfController,
 } from "./controllers/shelves.js";
 import { staticController } from "./controllers/static.js";
-import { notFoundController } from "./controllers/notFound.js";
+import { forbiddenController, notFoundController } from "./controllers/errors.js";
 import { Router } from "./tools/router.js";
 import { withLogs } from "./middleware/logging.js";
 import { withErrors } from "./middleware/errors.js";
@@ -41,7 +41,6 @@ import {
     signinRedirectController,
     signoutController,
 } from "./controllers/sessions.js";
-import { forbiddenController } from "./controllers/forbidden.js";
 import { signinSchema } from "./schema/signin.js";
 import { withSession } from "./middleware/session.js";
 import { requireAdmin, requireGuest, requirePermission, requireUser } from "./middleware/access.js";

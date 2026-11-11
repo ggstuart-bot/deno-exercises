@@ -1,11 +1,12 @@
 import { html } from "../tools/html.js";
 
-export function forbiddenView() {
+export function errorView(ctx) {
+    const { data: { title, message } } = ctx;
     return html`
         <section>
             <header>
-                <h1>Forbidden</h1>
-                <p>You do not have permission to view this page.</p>
+                <h1>${title}</h1>
+                <p>${message}</p>
             </header>
         </section>
     `;
