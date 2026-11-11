@@ -40,7 +40,7 @@ nav a[aria-current="page"] {
     outline-offset: 2px;
 }
 
-/* The header and footer are dark panels with light text */
+/* A secondary panel is dark, with light text */
 .secondary {
     background: #333;
     color: white;
@@ -174,7 +174,7 @@ nav a {
     }
 }
 
-/* An input may shrink below its default width, so the search row never overflows */
+/* min-width: 0 lets an input shrink below its default width to fit its container */
 input {
     min-width: 0;
 }
@@ -205,7 +205,7 @@ search > form {
     }
 }
 
-/* An error has an accent bar, and takes no space when it is empty */
+/* A secondary form is padded with rounded corners, and its errors have an accent bar */
 form.secondary {
     padding: 1.5rem;
     border-radius: 0.5rem;
