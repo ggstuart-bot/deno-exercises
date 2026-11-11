@@ -18,6 +18,7 @@ export function searchBooks(q, page, pageSize) {
     return db.prepare(`
         SELECT id, title, author, year, thumbnailUrl, coverUrl FROM books
         WHERE title LIKE :pattern OR author LIKE :pattern
+        ORDER BY title
         LIMIT :limit OFFSET :offset
     `).all({ pattern: `%${q}%`, limit: pageSize, offset: (page - 1) * pageSize });
 }
