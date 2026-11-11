@@ -7,6 +7,7 @@ export async function withLogs(ctx, next) {
     console.log("[user]", ctx.user);
     if (ctx.flash) console.log("[flash sent]", ctx.flash);
     if (ctx.data.flash) console.log("[flash received]", ctx.data.flash);
+    if (ctx.error) console.log("[error]", ctx.error);
     console.log("RESPONSE", response.status);
     console.log("============================");
 

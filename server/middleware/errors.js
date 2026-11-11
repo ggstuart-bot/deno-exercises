@@ -6,11 +6,8 @@ export async function withErrors(ctx, next) {
     try {
         return await next(ctx);
     } catch (error) {
-        if (error instanceof NotFoundError) {
-            console.log("Not found:", error.message);
-            return notFoundController(ctx);
-        }
-        console.error(error);
+        ctx.error = error;
+        if (error instanceof NotFoundError) return notFoundController(ctx);
         return serverErrorController(ctx);
     }
 }
