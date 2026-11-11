@@ -2,15 +2,17 @@
 :root {
     color-scheme: light dark; /* light or dark page colours, from the OS setting */
     --hue: 20; /* change the hue (0 to 360) to pick any accent colour */
-    --highlight: oklch(62% 0.2 var(--hue));
+    --highlight: oklch(62% 0.2 var(--hue)); /* a strong, mid-lightness colour in that hue */
 }
 
+/* No gap around the page, and the system's own font at a light weight */
 body {
     margin: 0;
     font-family: system-ui;
     font-weight: 300;
 }
 
+/* Headings are a little heavier than the light body text */
 h1,
 h2,
 h3 {
@@ -24,11 +26,12 @@ a {
     text-decoration-thickness: 2px;
 }
 
+/* Badges, the flash message and the current page's nav link are filled with the accent */
 .badge,
 #flash,
 nav a[aria-current="page"] {
     background: var(--highlight);
-    color: contrast-color(var(--highlight));
+    color: contrast-color(var(--highlight)); /* black or white, whichever is easier to read */
 }
 
 /* Anything you can tab to gets an accent outline */
@@ -52,8 +55,9 @@ body > * {
 body {
     display: grid;
     grid-template-rows: auto 1fr auto;
-    min-block-size: 100vh;
+    min-block-size: 100vh; /* at least as tall as the window, so the footer stays at the bottom */
 
+    /* The header and footer spread their items along a row that wraps */
     & > header,
     & > footer {
         display: flex;
@@ -70,6 +74,7 @@ body {
     align-items: center;
     gap: 0.5rem;
     font-size: 1.5em;
+    /* The logo is as tall as the text */
     img {
         block-size: 1em;
     }
@@ -110,7 +115,7 @@ img {
     display: grid;
     border: 1px solid;
     border-radius: 0.5rem;
-    overflow: clip;
+    overflow: clip; /* the cover is cut to the rounded corners */
     overflow-wrap: anywhere; /* a very long word breaks, rather than squashing the cover */
 
     /* The text is spread from the top of the card to the bottom */
@@ -121,6 +126,7 @@ img {
         padding: 0.5rem;
     }
 
+    /* Headings and paragraphs in a card have no margins and stay at the text size */
     h2,
     h3,
     p {
@@ -142,6 +148,7 @@ img {
     grid-template-columns: 2fr 3fr;
 }
 
+/* A row puts its items side by side, wrapping when there isn't room. A picture in it is 15rem wide */
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -161,15 +168,18 @@ nav a {
     background: none;
     color: inherit;
     text-decoration: none;
+    /* Hovering adds an accent underline */
     &:hover {
         text-decoration: underline var(--highlight) 2px;
     }
 }
 
+/* An input may shrink below its default width, so the search row never overflows */
 input {
     min-width: 0;
 }
 
+/* Buttons and inputs use the page font rather than the browser's */
 button,
 input {
     font: inherit;
@@ -180,6 +190,7 @@ form {
     display: grid;
     gap: 0.5rem;
     max-inline-size: 30rem;
+    /* A button is only as wide as its text */
     button {
         justify-self: start;
     }
@@ -188,6 +199,7 @@ form {
 /* The search box and its button share a row, under the label */
 search > form {
     grid-template-columns: 1fr auto;
+    /* The label spans both columns */
     label {
         grid-column: 1 / -1;
     }
@@ -201,6 +213,7 @@ form.secondary {
         padding-inline-start: 0.5em;
         border-inline-start: 0.25em solid var(--highlight);
         font-size: 0.8em;
+        /* An empty error is hidden */
         &:empty {
             display: none;
         }
@@ -214,9 +227,11 @@ form.secondary {
     inset-inline-end: 0;
     margin: 0;
     padding: 0.5rem 1rem;
+    /* Only animate when the visitor hasn't asked for reduced motion */
     @media (prefers-reduced-motion: no-preference) {
-        animation: slide-away 0.5s 3s forwards;
+        animation: slide-away 0.5s 3s forwards; /* wait 3s, slide for 0.5s, then stay put */
     }
+    /* Stopping the animation brings the message back */
     &:hover,
     &:focus {
         animation: none;
@@ -235,6 +250,7 @@ form.secondary {
     main {
         display: grid;
         grid-template-columns: 1fr auto;
+        /* A gap and a line separate the aside from the section */
         > aside {
             margin-inline-start: 1rem;
             padding-inline-start: 1rem;
@@ -246,11 +262,13 @@ form.secondary {
 /* A shelf card: a strip of covers on top, the text fills the rest */
 .card.shelf {
     grid-template-rows: auto 1fr;
+    /* The row's items are pushed to opposite ends */
     .row {
         justify-content: space-between;
     }
 }
 
+/* A centred strip of covers with a line underneath */
 .covers {
     display: flex;
     justify-content: center;
@@ -270,8 +288,8 @@ form.secondary {
     aspect-ratio: 1;
     border-radius: 50%;
     object-fit: cover;
-    vertical-align: middle;
-    background: gray;
+    vertical-align: middle; /* lines up with the middle of the text beside it */
+    background: gray; /* grey shows behind a transparent picture, or until it loads */
 }
 
 /* Inside a link, an avatar is one line of text tall */
@@ -285,6 +303,7 @@ a .avatar {
     grid-template-rows: auto 1fr;
     justify-items: center;
     text-align: center;
+    /* The avatar is smaller on a card, with a gap above it */
     > .avatar {
         inline-size: 6rem;
         margin-block-start: 1rem;
