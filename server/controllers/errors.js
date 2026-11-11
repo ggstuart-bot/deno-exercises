@@ -11,7 +11,7 @@ export function notFoundController(ctx) {
 export function forbiddenController(ctx) {
     ctx.status = 403;
     ctx.data.title = "Forbidden";
-    ctx.data.message = "You do not have permission to view this page.";
+    ctx.data.message = "You do not have permission to take the requested action.";
     return render(errorView, ctx);
 }
 
