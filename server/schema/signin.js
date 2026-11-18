@@ -1,6 +1,12 @@
 import { required } from "../tools/validators.js";
 
 export const signinSchema = {
-    username: { validators: [required] },
-    password: { validators: [required] },
+    username: {
+        displayName: "Username",
+        validators: [required],
+    },
+    password: {
+        displayName: "Password",
+        validators: [required],
+    },
 };
