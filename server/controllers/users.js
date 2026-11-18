@@ -8,6 +8,7 @@ import {
 import { getPublicShelvesByOwnerId, unpublishShelvesByOwnerId } from "../models/shelves.js";
 import { addThumbnails } from "../models/shelfBooks.js";
 import { createFile, deleteFileById, getFileById } from "../models/files.js";
+import { signin } from "../tools/authentication.js";
 import { NotFoundError } from "../tools/errors.js";
 import { redirect } from "../tools/redirect.js";
 import { render } from "../tools/render.js";
@@ -23,8 +24,9 @@ export function signupFormController(ctx) {
 export async function createUserController(ctx) {
     const { validated } = ctx;
     const user = await createUser(validated);
-    ctx.flash = `User '${user.username}' created`;
-    return redirect("/signin", ctx);
+    signin(user.id, ctx);
+    ctx.flash = `Welcome, ${user.username}`;
+    return redirect("/", ctx);
 }
 
 export function usersController(ctx) {
