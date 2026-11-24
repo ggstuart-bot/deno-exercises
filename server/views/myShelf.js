@@ -41,16 +41,13 @@ export function myShelfView(ctx) {
 function visibilityControls(user, shelf) {
     if (shelf.isPublic) {
         return html`<p>Anyone can see this shelf</p>
-        ${visibilityButton(user, shelf)}`;
+        ${visibilityButton(shelf)}`;
     }
-    if (canPublishShelf(user, shelf)) {
-        return html`<p>Only you can see this shelf</p>
-        ${visibilityButton(user, shelf)}`;
-    }
-    return html`
-        <p>Only you can see this shelf</p>
-        <p><a href="/profile">Publish your profile</a> to share shelves</p>
-    `;
+    const control = canPublishShelf(user, shelf)
+        ? visibilityButton(shelf)
+        : html`<p><a href="/profile">Publish your profile</a> to share shelves</p>`;
+    return html`<p>Only you can see this shelf</p>
+        ${control}`;
 }
 
 function removeForm(shelf, book) {

@@ -1,4 +1,5 @@
 import { html } from "../tools/html.js";
+import { canPublishShelf } from "../tools/permissions.js";
 import { cardGrid } from "./partials/cardGrid.js";
 import { shelfCard } from "./partials/shelfCard.js";
 import { shelfTitleForm } from "./partials/shelfTitleForm.js";
@@ -18,13 +19,15 @@ export function myShelvesView(ctx) {
             <h2>Public shelves</h2>
             <p>Anyone can see these shelves</p>
             ${cardGrid(
-                publicShelves.map((shelf) => shelfCard(shelf, visibilityButton(user, shelf))),
+                publicShelves.map((shelf) => shelfCard(shelf, visibilityButton(shelf))),
                 "No public shelves yet",
             )}
             <h2>Private shelves</h2>
             <p>Only you can see these shelves</p>
             ${cardGrid(
-                privateShelves.map((shelf) => shelfCard(shelf, visibilityButton(user, shelf))),
+                privateShelves.map((shelf) =>
+                    shelfCard(shelf, canPublishShelf(user, shelf) ? visibilityButton(shelf) : "")
+                ),
                 "No private shelves yet",
             )}
             ${user.isPublic
