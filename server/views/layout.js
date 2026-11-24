@@ -1,4 +1,5 @@
 import { html } from "../tools/html.js";
+import { isAdmin } from "../tools/permissions.js";
 import { avatarImage } from "./partials/avatarImage.js";
 import { postButton } from "./partials/postButton.js";
 
@@ -49,7 +50,7 @@ function userMessage(user) {
 }
 
 function adminLinks(user, path) {
-    return user?.isAdmin ? navLink("/users", "users", path) : "";
+    return isAdmin(user) ? navLink("/users", "users", path) : "";
 }
 
 function authLinks(user, path) {

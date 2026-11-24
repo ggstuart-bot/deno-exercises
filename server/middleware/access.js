@@ -1,4 +1,5 @@
 import { ForbiddenError, NotFoundError } from "../tools/errors.js";
+import { isAdmin } from "../tools/permissions.js";
 
 export function requireUser(fallback) {
     return (ctx, next) => {
@@ -15,7 +16,7 @@ export function requireGuest(fallback) {
 }
 
 export function requireAdmin(ctx, next) {
-    if (ctx.user?.isAdmin) return next(ctx);
+    if (isAdmin(ctx.user)) return next(ctx);
     const { url, request } = ctx;
     throw new ForbiddenError(`${request.method} ${url.pathname} is for admins only`);
 }
