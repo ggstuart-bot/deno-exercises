@@ -6,8 +6,8 @@ import {
     isSelf,
 } from "../tools/permissions.js";
 import { adminButton } from "./partials/adminButton.js";
-import { cardGrid } from "./partials/cardGrid.js";
 import { avatarImage } from "./partials/avatarImage.js";
+import { cardGrid } from "./partials/cardGrid.js";
 import { postButton } from "./partials/postButton.js";
 import { shelfCard } from "./partials/shelfCard.js";
 import { AVATAR_TYPES } from "../schema/avatar.js";
